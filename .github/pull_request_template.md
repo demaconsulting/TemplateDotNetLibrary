@@ -54,6 +54,7 @@ Please run the following checks before submitting:
 ### Documentation
 
 - [ ] Updated README.md (if applicable)
+- [ ] Updated ARCHITECTURE.md (if applicable)
 - [ ] Added code examples for new features (if applicable)
 - [ ] Updated requirements.yaml (if applicable)
 
