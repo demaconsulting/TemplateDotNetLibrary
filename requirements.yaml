@@ -1,0 +1,52 @@
+---
+sections:
+  - title: Template DotNet Library Requirements
+    sections:
+      - title: Library API
+        requirements:
+          - id: TMPL-REQ-001
+            title: The library shall provide a method to generate a greeting.
+            justification: |
+              Provides a simple demonstration of library functionality following
+              .NET library best practices for DEMA Consulting libraries.
+            tests:
+              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+
+      - title: Platform Support
+        requirements:
+          - id: TMPL-REQ-002
+            title: The library shall build and run on Windows platforms.
+            justification: |
+              DEMA Consulting libraries must support Windows as a major development platform.
+            tests:
+              # Tests link to "windows" to ensure results come from Windows platform
+              - "windows@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
+          - id: TMPL-REQ-003
+            title: The library shall build and run on Linux platforms.
+            justification: |
+              DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
+            tests:
+              # Tests link to "ubuntu" to ensure results come from Linux platform
+              - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
+          - id: TMPL-REQ-004
+            title: The library shall support .NET 8 runtime.
+            justification: |
+              .NET 8 is an LTS release providing long-term stability for enterprise users.
+            tests:
+              - "net8.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
+          - id: TMPL-REQ-005
+            title: The library shall support .NET 9 runtime.
+            justification: |
+              .NET 9 support enables users to leverage the latest .NET features.
+            tests:
+              - "net9.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
+          - id: TMPL-REQ-006
+            title: The library shall support .NET 10 runtime.
+            justification: |
+              .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
+            tests:
+              - "net10.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"

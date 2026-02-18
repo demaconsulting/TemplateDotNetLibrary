@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TemplateDotNetLibrary/TemplateDotNetLibrary.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/TemplateDotNetLibrary.Tests/TemplateDotNetLibrary.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,29 @@
+---
+# yamllint configuration for Template DotNet Library
+# This configuration defines the rules for YAML file linting
+
+extends: default
+
+ignore: |
+  node_modules/
+  .git/
+
+rules:
+  # Allow 'on:' in GitHub Actions workflows (not a boolean value)
+  truthy:
+    allowed-values: ['true', 'false', 'on', 'off']
+    check-keys: true
+
+  # Allow longer lines for URLs and complex expressions
+  line-length:
+    max: 120
+    level: error
+
+  # Ensure proper indentation
+  indentation:
+    spaces: 2
+    indent-sequences: true
+
+  # Ensure proper comment formatting
+  comments:
+    min-spaces-from-content: 2

@@ -1,0 +1,14 @@
+---
+title: Template DotNet Library
+subtitle: Build Notes
+author: DEMA Consulting
+description: Build notes for the Template DotNet Library reference implementation
+lang: en-US
+keywords:
+  - Template DotNet Library
+  - Build Notes
+  - Release Notes
+  - C#
+  - .NET
+  - Documentation
+---

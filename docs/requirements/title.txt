@@ -1,0 +1,13 @@
+---
+title: Template DotNet Library Requirements
+subtitle: Requirements Specification for the Template DotNet Library
+author: DEMA Consulting
+description: Requirements Specification for the Template DotNet Library
+lang: en-US
+keywords:
+  - Template DotNet Library
+  - Requirements
+  - Specification
+  - .NET
+  - Library
+---
