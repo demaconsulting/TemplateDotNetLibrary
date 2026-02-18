@@ -289,10 +289,10 @@ By contributing to Template DotNet Library, you agree that your contributions wi
 
 Thank you for contributing to Template DotNet Library!
 
-[code-of-conduct]: https://github.com/demaconsulting/TemplateDotNetTool/blob/main/CODE_OF_CONDUCT.md
+[code-of-conduct]: https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/CODE_OF_CONDUCT.md
 [dotnet-download]: https://dotnet.microsoft.com/download
 [csharp-conventions]: https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
 [reqstream]: https://github.com/demaconsulting/ReqStream
-[discussions]: https://github.com/demaconsulting/TemplateDotNetTool/discussions
-[issues]: https://github.com/demaconsulting/TemplateDotNetTool/issues
-[security]: https://github.com/demaconsulting/TemplateDotNetTool/blob/main/SECURITY.md
+[discussions]: https://github.com/demaconsulting/TemplateDotNetLibrary/discussions
+[issues]: https://github.com/demaconsulting/TemplateDotNetLibrary/issues
+[security]: https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/SECURITY.md

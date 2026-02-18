@@ -134,7 +134,7 @@ For general bugs and feature requests, please use [GitHub Issues][issues].
 
 Thank you for helping keep Template DotNet Library and its users safe!
 
-[security-advisories]: https://github.com/demaconsulting/TemplateDotNetTool/security/advisories
-[issues]: https://github.com/demaconsulting/TemplateDotNetTool/issues
+[security-advisories]: https://github.com/demaconsulting/TemplateDotNetLibrary/security/advisories
+[issues]: https://github.com/demaconsulting/TemplateDotNetLibrary/issues
 [owasp-practices]: https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/
 [dotnet-security]: https://learn.microsoft.com/en-us/dotnet/standard/security/

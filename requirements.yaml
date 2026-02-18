@@ -21,7 +21,7 @@ sections:
               Provides a clear and consistent API following .NET library best practices
               for DEMA Consulting libraries.
             tests:
-              - DemoClass_GetMessage_ReturnsExpectedMessage
+              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
 
       - title: Platform Support
         requirements:
@@ -31,7 +31,7 @@ sections:
               DEMA Consulting libraries must support Windows as a major development platform.
             tests:
               # Tests link to "windows" to ensure results come from Windows platform
-              - "windows@LibraryTest_BasicFunctionality"
+              - "windows@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-009
             title: The library shall build and run on Linux platforms.
@@ -39,25 +39,25 @@ sections:
               DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
             tests:
               # Tests link to "ubuntu" to ensure results come from Linux platform
-              - "ubuntu@LibraryTest_BasicFunctionality"
+              - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-010
             title: The library shall support .NET 8 runtime.
             justification: |
               .NET 8 is an LTS release providing long-term stability for enterprise users.
             tests:
-              - "dotnet8.x@LibraryTest_BasicFunctionality"
+              - "dotnet8.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-011
             title: The library shall support .NET 9 runtime.
             justification: |
               .NET 9 support enables users to leverage the latest .NET features.
             tests:
-              - "dotnet9.x@LibraryTest_BasicFunctionality"
+              - "dotnet9.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-012
             title: The library shall support .NET 10 runtime.
             justification: |
               .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
             tests:
-              - "dotnet10.x@LibraryTest_BasicFunctionality"
+              - "dotnet10.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
