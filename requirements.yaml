@@ -19,16 +19,16 @@ sections:
             justification: |
               DEMA Consulting libraries must support Windows as a major development platform.
             tests:
-              # Tests link to "windows-latest" to ensure results come from Windows platform
-              - "windows-latest@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              # Tests link to "windows" to ensure results come from Windows platform
+              - "windows@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-003
             title: The library shall build and run on Linux platforms.
             justification: |
               DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
             tests:
-              # Tests link to "ubuntu-latest" to ensure results come from Linux platform
-              - "ubuntu-latest@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              # Tests link to "ubuntu" to ensure results come from Linux platform
+              - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-004
             title: The library shall support .NET 8 runtime.
