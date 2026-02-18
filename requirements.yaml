@@ -1,0 +1,135 @@
+# Requirements Testing Strategy
+#
+# This project uses three categories of tests to verify requirements:
+#
+# 1. Unit Tests - Run locally via "dotnet test"
+# 2. Self-Validation Tests - Run locally via "--validate"
+# 3. Platform Tests - Run via CI/CD across OS/runtime matrix
+#
+# NOTE: Running "reqstream --enforce" with only local test results (unit tests
+# and local self-validation) is expected to show some unsatisfied requirements.
+# Platform-specific requirements require test results from CI/CD runs across
+# the full OS and runtime matrix.
+#
+---
+sections:
+  - title: Template DotNet Tool Requirements
+    sections:
+      - title: Command-Line Interface
+        requirements:
+          - id: TMPL-REQ-001
+            title: The tool shall implement a Context class for command-line argument handling.
+            justification: |
+              Provides a standardized approach to command-line argument parsing and output
+              handling across all DEMA Consulting DotNet Tools.
+            tests:
+              - Context_Create_NoArguments_ReturnsDefaultContext
+              - Context_Create_VersionFlag_SetsVersionTrue
+              - Context_Create_HelpFlag_SetsHelpTrue
+              - Context_Create_SilentFlag_SetsSilentTrue
+              - Context_Create_ValidateFlag_SetsValidateTrue
+              - Context_Create_ResultsFlag_SetsResultsFile
+              - Context_Create_LogFlag_OpensLogFile
+
+          - id: TMPL-REQ-002
+            title: The tool shall support -v and --version flags to display version information.
+            justification: |
+              Users need to quickly identify the version of the tool they are using for
+              troubleshooting and compatibility verification.
+            tests:
+              - Context_Create_VersionFlag_SetsVersionTrue
+              - Context_Create_ShortVersionFlag_SetsVersionTrue
+              - Program_Run_WithVersionFlag_DisplaysVersionOnly
+              - IntegrationTest_VersionFlag_OutputsVersion
+
+          - id: TMPL-REQ-003
+            title: The tool shall support -?, -h, and --help flags to display usage information.
+            justification: |
+              Users need access to command-line usage documentation without requiring
+              external resources.
+            tests:
+              - Context_Create_HelpFlag_SetsHelpTrue
+              - Context_Create_ShortHelpFlag_H_SetsHelpTrue
+              - Context_Create_ShortHelpFlag_Question_SetsHelpTrue
+              - Program_Run_WithHelpFlag_DisplaysUsageInformation
+              - IntegrationTest_HelpFlag_OutputsUsageInformation
+
+          - id: TMPL-REQ-004
+            title: The tool shall support --silent flag to suppress console output.
+            justification: |
+              Enables automated scripts and CI/CD pipelines to run the tool without
+              cluttering output logs.
+            tests:
+              - Context_Create_SilentFlag_SetsSilentTrue
+              - Context_WriteLine_Silent_DoesNotWriteToConsole
+              - IntegrationTest_SilentFlag_SuppressesOutput
+
+          - id: TMPL-REQ-005
+            title: The tool shall support --validate flag to run self-validation tests.
+            justification: |
+              Provides a built-in mechanism to verify the tool is functioning correctly
+              in the deployment environment.
+            tests:
+              - Context_Create_ValidateFlag_SetsValidateTrue
+              - Program_Run_WithValidateFlag_RunsValidation
+              - IntegrationTest_ValidateFlag_RunsValidation
+
+          - id: TMPL-REQ-006
+            title: The tool shall support --results flag to write validation results in TRX or JUnit format.
+            justification: |
+              Enables integration with CI/CD systems that expect standard test result formats.
+            tests:
+              - Context_Create_ResultsFlag_SetsResultsFile
+              - IntegrationTest_ValidateWithResults_GeneratesTrxFile
+
+          - id: TMPL-REQ-007
+            title: The tool shall support --log flag to write output to a log file.
+            justification: |
+              Provides persistent logging for debugging and audit trails.
+            tests:
+              - Context_Create_LogFlag_OpensLogFile
+              - IntegrationTest_LogFlag_WritesOutputToFile
+
+      - title: Platform Support
+        requirements:
+          - id: TMPL-REQ-008
+            title: The tool shall build and run on Windows platforms.
+            justification: |
+              DEMA Consulting tools must support Windows as a major development platform.
+            tests:
+              # Tests link to "windows" to ensure results come from Windows platform
+              - "windows@TemplateTool_VersionDisplay"
+              - "windows@TemplateTool_HelpDisplay"
+
+          - id: TMPL-REQ-009
+            title: The tool shall build and run on Linux platforms.
+            justification: |
+              DEMA Consulting tools must support Linux for CI/CD and containerized environments.
+            tests:
+              # Tests link to "ubuntu" to ensure results come from Linux platform
+              - "ubuntu@TemplateTool_VersionDisplay"
+              - "ubuntu@TemplateTool_HelpDisplay"
+
+          - id: TMPL-REQ-010
+            title: The tool shall support .NET 8 runtime.
+            justification: |
+              .NET 8 is an LTS release providing long-term stability for enterprise users.
+            tests:
+              - "dotnet8.x@TemplateTool_VersionDisplay"
+              - "dotnet8.x@TemplateTool_HelpDisplay"
+
+          - id: TMPL-REQ-011
+            title: The tool shall support .NET 9 runtime.
+            justification: |
+              .NET 9 support enables users to leverage the latest .NET features.
+            tests:
+              - "dotnet9.x@TemplateTool_VersionDisplay"
+              - "dotnet9.x@TemplateTool_HelpDisplay"
+
+          - id: TMPL-REQ-012
+            title: The tool shall support .NET 10 runtime.
+            justification: |
+              .NET 10 support ensures the tool remains compatible with the latest .NET ecosystem.
+            tests:
+              - "dotnet10.x@TemplateTool_VersionDisplay"
+              - "dotnet10.x@TemplateTool_HelpDisplay"

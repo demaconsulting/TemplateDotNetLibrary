@@ -1,93 +1,89 @@
 # Introduction
 
-This is the Template DotNet Tool, a demonstration project that showcases best practices for
-DEMA Consulting DotNet Tools.
+This is the Template DotNet Library, a demonstration project that showcases best practices for
+DEMA Consulting DotNet Libraries.
 
 ## Installation
 
-Install the tool globally using the .NET CLI:
+Install the library using the .NET CLI:
 
 ```bash
-dotnet tool install -g DemaConsulting.TemplateDotNetTool
+dotnet add package TemplateDotNetLibrary
 ```
 
 ## Usage
 
-### Display Version
+### Basic Usage
 
-Display the tool version:
+```csharp
+using TemplateDotNetLibrary;
 
-```bash
-templatetool --version
+var demo = new DemoClass();
+var result = demo.DemoMethod("World");
+Console.WriteLine(result); // Output: Hello, World!
 ```
 
-### Display Help
+### API Reference
 
-Display usage information:
+#### DemoClass
 
-```bash
-templatetool --help
+The `DemoClass` provides demonstration functionality for the template library.
+
+##### Methods
+
+###### DemoMethod
+
+```csharp
+public string DemoMethod(string name)
 ```
 
-### Run Self-Validation
+Returns a greeting message for the specified name.
 
-Run self-validation tests:
+**Parameters:**
 
-```bash
-templatetool --validate
+- `name` (string): The name to greet. Must not be null.
+
+**Returns:**
+
+A string containing the greeting message in the format "Hello, {name}!".
+
+**Exceptions:**
+
+- `ArgumentNullException`: Thrown when `name` is null.
+
+**Example:**
+
+```csharp
+var demo = new DemoClass();
+var greeting = demo.DemoMethod("World");
+// greeting = "Hello, World!"
 ```
-
-Save validation results to a file:
-
-```bash
-templatetool --validate --results results.trx
-```
-
-### Silent Mode
-
-Suppress console output:
-
-```bash
-templatetool --silent
-```
-
-### Logging
-
-Write output to a log file:
-
-```bash
-templatetool --log output.log
-```
-
-## Command-Line Options
-
-The following command-line options are supported:
-
-| Option               | Description                                                  |
-| -------------------- | ------------------------------------------------------------ |
-| `-v`, `--version`    | Display version information                                  |
-| `-?`, `-h`, `--help` | Display help message                                         |
-| `--silent`           | Suppress console output                                      |
-| `--validate`         | Run self-validation                                          |
-| `--results <file>`   | Write validation results to file (TRX or JUnit format)       |
-| `--log <file>`       | Write output to log file                                     |
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Greeting
 
-```bash
-templatetool
+```csharp
+using TemplateDotNetLibrary;
+
+var demo = new DemoClass();
+var result = demo.DemoMethod("Alice");
+Console.WriteLine(result);
+// Output: Hello, Alice!
 ```
 
-### Example 2: Self-Validation with Results
+### Example 2: Error Handling
 
-```bash
-templatetool --validate --results validation-results.trx
-```
+```csharp
+using TemplateDotNetLibrary;
 
-### Example 3: Silent Mode with Logging
-
-```bash
-templatetool --silent --log tool-output.log
+var demo = new DemoClass();
+try
+{
+    var result = demo.DemoMethod(null);
+}
+catch (ArgumentNullException ex)
+{
+    Console.WriteLine("Name cannot be null");
+}
 ```
