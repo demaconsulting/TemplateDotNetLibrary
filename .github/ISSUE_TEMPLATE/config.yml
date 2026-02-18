@@ -3,7 +3,7 @@ blank_issues_enabled: false
 contact_links:
   - name: 📚 Documentation
     url: https://github.com/demaconsulting/TemplateDotNetLibrary
-    about: Read the documentation for TemplateDotNetTool
+    about: Read the documentation for TemplateDotNetLibrary
   - name: 💬 Discussions
     url: https://github.com/demaconsulting/TemplateDotNetLibrary/discussions
     about: Ask questions and discuss with the community
