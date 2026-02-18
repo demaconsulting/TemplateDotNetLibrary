@@ -14,7 +14,6 @@ Invoke the requirements-agent for:
 - Creating new requirements in `requirements.yaml`
 - Reviewing and improving existing requirements
 - Ensuring requirements have appropriate test coverage
-- Determining which type of test (unit, integration, or self-validation) is appropriate
 - Differentiating requirements from design details
 
 ## Responsibilities
@@ -35,10 +34,7 @@ Invoke the requirements-agent for:
   - Testing design decisions
   - Failure-testing scenarios
   - Implementation validation beyond requirement scope
-- **Self-validation tests**: Preferred for library functionality, features
-  that ship with the product
-- **Unit tests**: For internal component behavior, isolated logic
-- **Integration tests**: For cross-component interactions, end-to-end scenarios
+- **Unit tests**: For library functionality and internal component behavior
 
 ### Requirements Format
 

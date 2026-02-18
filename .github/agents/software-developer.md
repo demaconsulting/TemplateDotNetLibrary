@@ -5,14 +5,13 @@ description: Writes production code and self-validation tests - targets design-f
 
 # Software Developer - Template DotNet Library
 
-Develop production code and self-validation tests with emphasis on testability and clarity.
+Develop production code with emphasis on testability and clarity.
 
 ## When to Invoke This Agent
 
 Invoke the software-developer for:
 
 - Implementing production code features
-- Creating and maintaining self-validation tests
 - Code refactoring for testability and maintainability
 - Implementing library APIs and functionality
 
@@ -32,15 +31,15 @@ Write code in a **literate style**:
 Example:
 
 ```csharp
-// Parse the command line arguments
-var options = ParseArguments(args);
+// Validate the input parameter
+if (string.IsNullOrEmpty(input))
+    throw new ArgumentException("Input cannot be null or empty", nameof(input));
 
-// Validate the input file exists
-if (!File.Exists(options.InputFile))
-    throw new InvalidOperationException($"Input file not found: {options.InputFile}");
+// Process the input data
+var results = ProcessData(input);
 
-// Process the file contents
-var results = ProcessFile(options.InputFile);
+// Return the formatted results
+return FormatResults(results);
 ```
 
 ### Design for Testability
@@ -54,16 +53,9 @@ var results = ProcessFile(options.InputFile);
 
 - **XML Docs**: On ALL members (public/internal/private) with spaces after `///`
   - Follow standard XML indentation rules with four-space indentation
-- **Errors**: `ArgumentException` for parsing, `InvalidOperationException` for runtime issues
 - **Namespace**: File-scoped namespaces only
 - **Using Statements**: Top of file only
 - **String Formatting**: Use interpolated strings ($"") for clarity
-
-### Self-Validation Tests
-
-- These tests ship with the product and can be run to validate functionality
-- Must support TRX/JUnit output format
-- Link to requirements in `requirements.yaml`
 
 ## Defer To
 

@@ -55,7 +55,7 @@ For documents requiring regulatory compliance:
 ## Defer To
 
 - **Requirements Agent**: For requirements.yaml content and test linkage
-- **Software Developer Agent**: For code examples and self-validation behavior
+- **Software Developer Agent**: For code examples
 - **Test Developer Agent**: For test documentation
 - **Code Quality Agent**: For running linters and fixing lint issues
 

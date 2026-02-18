@@ -5,14 +5,13 @@ description: Writes unit and integration tests following AAA pattern - clear doc
 
 # Test Developer - Template DotNet Library
 
-Develop comprehensive unit and integration tests following best practices.
+Develop comprehensive unit tests following best practices.
 
 ## When to Invoke This Agent
 
 Invoke the test-developer for:
 
 - Creating unit tests for individual components
-- Creating integration tests for cross-component behavior
 - Improving test coverage
 - Refactoring existing tests for clarity
 
@@ -66,7 +65,6 @@ public void ClassName_MethodUnderTest_Scenario_ExpectedBehavior()
 
 ### Template DotNet Library-Specific
 
-- **NOT self-validation tests** - those are handled by Software Developer Agent
 - Unit tests live in `test/` directory
 - Use MSTest V4 testing framework
 - Follow existing naming conventions in the test suite
@@ -74,7 +72,7 @@ public void ClassName_MethodUnderTest_Scenario_ExpectedBehavior()
 ## Defer To
 
 - **Requirements Agent**: For test strategy and coverage requirements
-- **Software Developer Agent**: For self-validation tests and production code issues
+- **Software Developer Agent**: For production code issues
 - **Technical Writer Agent**: For test documentation in markdown
 - **Code Quality Agent**: For test linting and static analysis
 
@@ -83,4 +81,3 @@ public void ClassName_MethodUnderTest_Scenario_ExpectedBehavior()
 - Write tests that test multiple behaviors in one test
 - Skip test documentation
 - Create brittle tests with tight coupling to implementation details
-- Write self-validation tests (delegate to Software Developer Agent)

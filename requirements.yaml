@@ -1,14 +1,3 @@
-# Requirements Testing Strategy
-#
-# This project uses two categories of tests to verify requirements:
-#
-# 1. Unit Tests - Run locally via "dotnet test"
-# 2. Platform Tests - Run via CI/CD across OS/runtime matrix
-#
-# NOTE: Running "reqstream --enforce" with only local test results (unit tests)
-# is expected to show some unsatisfied requirements. Platform-specific requirements
-# require test results from CI/CD runs across the full OS and runtime matrix.
-#
 ---
 sections:
   - title: Template DotNet Library Requirements
@@ -16,16 +5,16 @@ sections:
       - title: Library API
         requirements:
           - id: TMPL-REQ-001
-            title: The library shall provide a well-documented public API.
+            title: The library shall provide a method to generate a greeting.
             justification: |
-              Provides a clear and consistent API following .NET library best practices
-              for DEMA Consulting libraries.
+              Provides a simple demonstration of library functionality following
+              .NET library best practices for DEMA Consulting libraries.
             tests:
               - DemoMethod_ReturnsGreeting_WithDefaultPrefix
 
       - title: Platform Support
         requirements:
-          - id: TMPL-REQ-008
+          - id: TMPL-REQ-002
             title: The library shall build and run on Windows platforms.
             justification: |
               DEMA Consulting libraries must support Windows as a major development platform.
@@ -33,7 +22,7 @@ sections:
               # Tests link to "windows" to ensure results come from Windows platform
               - "windows@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-009
+          - id: TMPL-REQ-003
             title: The library shall build and run on Linux platforms.
             justification: |
               DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
@@ -41,21 +30,21 @@ sections:
               # Tests link to "ubuntu" to ensure results come from Linux platform
               - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-010
+          - id: TMPL-REQ-004
             title: The library shall support .NET 8 runtime.
             justification: |
               .NET 8 is an LTS release providing long-term stability for enterprise users.
             tests:
               - "dotnet8.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-011
+          - id: TMPL-REQ-005
             title: The library shall support .NET 9 runtime.
             justification: |
               .NET 9 support enables users to leverage the latest .NET features.
             tests:
               - "dotnet9.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-012
+          - id: TMPL-REQ-006
             title: The library shall support .NET 10 runtime.
             justification: |
               .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.

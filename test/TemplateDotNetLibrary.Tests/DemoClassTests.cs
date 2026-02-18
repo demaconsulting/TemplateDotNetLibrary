@@ -1,13 +1,13 @@
 namespace TemplateDotNetLibrary.Tests;
 
 /// <summary>
-/// Unit tests for the DemoClass.
+///     Unit tests for the DemoClass.
 /// </summary>
 [TestClass]
 public class DemoClassTests
 {
     /// <summary>
-    /// Test that DemoMethod returns the expected greeting with default prefix.
+    ///     Test that DemoMethod returns the expected greeting with default prefix.
     /// </summary>
     [TestMethod]
     public void DemoMethod_ReturnsGreeting_WithDefaultPrefix()
@@ -24,7 +24,7 @@ public class DemoClassTests
     }
 
     /// <summary>
-    /// Test that DemoMethod returns the expected greeting with custom prefix.
+    ///     Test that DemoMethod returns the expected greeting with custom prefix.
     /// </summary>
     [TestMethod]
     public void DemoMethod_ReturnsGreeting_WithCustomPrefix()
@@ -41,7 +41,7 @@ public class DemoClassTests
     }
 
     /// <summary>
-    /// Test that DemoMethod throws ArgumentNullException for null input.
+    ///     Test that DemoMethod throws ArgumentNullException for null input.
     /// </summary>
     [TestMethod]
     public void DemoMethod_ThrowsArgumentNullException_ForNullInput()
@@ -54,7 +54,7 @@ public class DemoClassTests
     }
 
     /// <summary>
-    /// Test that constructor throws ArgumentNullException for null prefix.
+    ///     Test that constructor throws ArgumentNullException for null prefix.
     /// </summary>
     [TestMethod]
     public void Constructor_ThrowsArgumentNullException_ForNullPrefix()

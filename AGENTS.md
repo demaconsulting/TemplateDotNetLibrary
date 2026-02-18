@@ -7,8 +7,8 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 
 - **Requirements Agent** - Develops requirements and ensures test coverage linkage
 - **Technical Writer** - Creates accurate documentation following regulatory best practices
-- **Software Developer** - Writes production code and self-validation tests in literate style
-- **Test Developer** - Creates unit and integration tests following AAA pattern
+- **Software Developer** - Writes production code in literate style
+- **Test Developer** - Creates unit tests following AAA pattern
 - **Code Quality Agent** - Enforces linting, static analysis, and security standards
 - **Repo Consistency Agent** - Ensures downstream repositories remain consistent with template patterns
 
@@ -24,21 +24,20 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 
 ## Requirements
 
-- All requirements MUST be linked to tests (prefer `TemplateTool_*` self-validation tests)
+- All requirements MUST be linked to tests
 - Not all tests need to be linked to requirements (tests may exist for corner cases, design testing, failure-testing, etc.)
 - Enforced in CI: `dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --enforce`
 - When adding features: add requirement + link to test
 
 ## Testing
 
-- **Test Naming**: `ClassName_MethodUnderTest_Scenario` for unit tests
+- **Test Naming**: `ClassName_MethodUnderTest_Scenario_ExpectedBehavior` for unit tests
 - **Test Framework**: Uses MSTest for unit testing
 - **Code Coverage**: Maintain high code coverage for library APIs
 
 ## Code Style
 
 - **XML Docs**: On ALL members (public/internal/private) with spaces after `///` in summaries
-- **Errors**: `ArgumentException` for parsing, `InvalidOperationException` for runtime issues
 - **Namespace**: File-scoped namespaces only
 - **Using Statements**: Top of file only (no nested using declarations except for IDisposable)
 - **String Formatting**: Use interpolated strings ($"") for clarity
@@ -82,7 +81,6 @@ build.bat     # Windows
 - **Quality Checks**: Markdown lint, spell check, YAML lint
 - **Build**: Multi-platform (Windows/Linux)
 - **CodeQL**: Security scanning
-- **Integration Tests**: .NET 8/9/10 on Windows/Linux
 - **Documentation**: Auto-generated via Pandoc + Weasyprint
 
 ## Common Tasks

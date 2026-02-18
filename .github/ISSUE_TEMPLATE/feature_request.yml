@@ -43,7 +43,8 @@ body:
       placeholder: |
         ```csharp
         // Example usage
-        templatetool --input report.json --output report.md --feature-flag
+        var demo = new DemoClass("Greetings");
+        var result = demo.DemoMethod("User");
         ```
       render: csharp
 
