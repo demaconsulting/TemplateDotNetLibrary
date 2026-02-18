@@ -3,7 +3,7 @@ name: Code Quality Agent
 description: Ensures code quality through linting and static analysis - responsible for security, maintainability, and correctness
 ---
 
-# Code Quality Agent - Template DotNet Tool
+# Code Quality Agent - Template DotNet Library
 
 Enforce quality standards through linting, static analysis, and security scanning.
 
@@ -42,11 +42,11 @@ Ensure the project is:
    - `dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --enforce`
 5. **Tests**: All validation tests passing
 
-### Template DotNet Tool-Specific
+### Template DotNet Library-Specific
 
 - **XML Docs**: Enforce on ALL members (public/internal/private)
 - **Code Style**: Verify `.editorconfig` compliance
-- **Test Naming**: Check `TemplateTool_*` pattern for self-validation tests
+- **Test Quality**: Ensure test coverage and quality
 
 ### Commands to Run
 
@@ -57,9 +57,8 @@ dotnet format --verify-no-changes
 # Build with zero warnings
 dotnet build --configuration Release
 
-# Run self-validation tests
-dotnet run --project src/DemaConsulting.TemplateDotNetTool \
-  --configuration Release --framework net10.0 --no-build -- --validate
+# Run unit tests
+dotnet test --configuration Release
 
 # Requirements enforcement
 dotnet reqstream --requirements requirements.yaml \

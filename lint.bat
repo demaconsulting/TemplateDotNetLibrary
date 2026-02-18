@@ -1,5 +1,5 @@
 @echo off
-REM Run all linters for Template DotNet Tool (Windows)
+REM Run all linters for Template DotNet Library (Windows)
 
 echo Checking markdown...
 call npx markdownlint-cli2 "**/*.md"

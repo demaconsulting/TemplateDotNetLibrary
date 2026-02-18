@@ -1,6 +1,6 @@
 ---
 name: 🐛 Bug Report
-description: Report a bug or issue with the TemplateDotNetTool
+description: Report a bug or issue with the TemplateDotNetLibrary
 title: "[Bug]: "
 labels: ["bug"]
 assignees: []
@@ -26,8 +26,8 @@ body:
       label: Steps to Reproduce
       description: Detailed steps to reproduce the behavior
       placeholder: |
-        1. Run TemplateDotNetTool with command '...'
-        2. Provide input file '...'
+        1. Use TemplateDotNetLibrary with code '...'
+        2. Call method '...'
         3. Observe error...
       value: |
         1.
@@ -68,8 +68,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: Tool Version
-      description: What version of the TemplateDotNetTool are you using?
+      label: Library Version
+      description: What version of the TemplateDotNetLibrary are you using?
       placeholder: e.g., 1.0.0
     validations:
       required: true

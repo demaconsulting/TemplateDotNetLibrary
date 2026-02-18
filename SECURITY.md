@@ -11,7 +11,7 @@ We release patches for security vulnerabilities in the following versions:
 
 ## Reporting a Vulnerability
 
-We take the security of Template DotNet Tool seriously. If you believe you have found a
+We take the security of Template DotNet Library seriously. If you believe you have found a
 security vulnerability, please report it to us as described below.
 
 ### How to Report
@@ -60,35 +60,35 @@ Security updates will be released as:
 
 ## Security Best Practices
 
-When using Template DotNet Tool, we recommend following these security best practices:
+When using Template DotNet Library, we recommend following these security best practices:
 
 ### Input Validation
 
-- Validate command-line arguments and file paths before processing
+- Validate input parameters and data before processing
 - Be cautious when processing data from untrusted sources
-- Use the latest version of Template DotNet Tool to benefit from security updates
+- Use the latest version of Template DotNet Library to benefit from security updates
 
 ### Dependencies
 
-- Keep Template DotNet Tool and its dependencies up to date
+- Keep Template DotNet Library and its dependencies up to date
 - Review the release notes for security-related updates
 - Use `dotnet list package --vulnerable` to check for vulnerable dependencies
 
-### Execution Environment
+### Usage Environment
 
-- Run Template DotNet Tool with the minimum required permissions
-- Avoid running Template DotNet Tool as a privileged user unless necessary
+- Use Template DotNet Library with the minimum required permissions
 - Validate API tokens and credentials are stored securely
+- Follow secure coding practices when integrating the library
 
 ## Known Security Considerations
 
-### File System Access
+### Data Handling
 
-Template DotNet Tool reads and writes files on the local file system. Users should:
+Template DotNet Library processes data according to its API. Users should:
 
-- Ensure appropriate file permissions are set on output files
-- Be cautious when processing files in shared directories
-- Validate file paths to prevent directory traversal attacks
+- Validate input data before passing to library functions
+- Handle sensitive data according to security requirements
+- Be cautious when processing data from untrusted sources
 
 ## Security Disclosure Policy
 
@@ -107,7 +107,7 @@ We will credit security researchers who report vulnerabilities responsibly. If y
 
 ## Third-Party Dependencies
 
-Template DotNet Tool relies on third-party packages. We:
+Template DotNet Library relies on third-party packages. We:
 
 - Regularly update dependencies to address known vulnerabilities
 - Use Dependabot to monitor for security updates
@@ -132,7 +132,7 @@ For general bugs and feature requests, please use [GitHub Issues][issues].
 - [.NET Security Best Practices][dotnet-security]
 - [GitHub Security Advisories][security-advisories]
 
-Thank you for helping keep Template DotNet Tool and its users safe!
+Thank you for helping keep Template DotNet Library and its users safe!
 
 [security-advisories]: https://github.com/demaconsulting/TemplateDotNetTool/security/advisories
 [issues]: https://github.com/demaconsulting/TemplateDotNetTool/issues

@@ -1,7 +1,7 @@
 # Agent Quick Reference
 
-Project-specific guidance for agents working on Template DotNet Tool - a reference
-implementation demonstrating best practices for DEMA Consulting .NET CLI tools.
+Project-specific guidance for agents working on Template DotNet Library - a reference
+implementation demonstrating best practices for DEMA Consulting .NET libraries.
 
 ## Available Specialized Agents
 
@@ -31,9 +31,9 @@ implementation demonstrating best practices for DEMA Consulting .NET CLI tools.
 
 ## Testing
 
-- **Test Naming**: `TemplateTool_MethodUnderTest_Scenario` for self-validation tests
-- **Self-Validation**: All tests run via `--validate` flag and can output TRX/JUnit format
-- **Test Framework**: Uses DemaConsulting.TestResults library for test result generation
+- **Test Naming**: `ClassName_MethodUnderTest_Scenario` for unit tests
+- **Test Framework**: Uses MSTest for unit testing
+- **Code Coverage**: Maintain high code coverage for library APIs
 
 ## Code Style
 
@@ -45,9 +45,8 @@ implementation demonstrating best practices for DEMA Consulting .NET CLI tools.
 
 ## Project Structure
 
-- **Context.cs**: Handles command-line argument parsing, logging, and output
-- **Program.cs**: Main entry point with version/help/validation routing
-- **Validation.cs**: Self-validation tests with TRX/JUnit output support
+- **DemoClass.cs**: Example library class demonstrating API patterns
+- **TemplateDotNetLibrary.csproj**: Project configuration with NuGet package settings
 
 ## Build and Test
 
@@ -57,10 +56,6 @@ dotnet build --configuration Release
 
 # Run unit tests
 dotnet test --configuration Release
-
-# Run self-validation
-dotnet run --project src/DemaConsulting.TemplateDotNetTool \
-  --configuration Release --framework net10.0 --no-build -- --validate
 
 # Use convenience scripts
 ./build.sh    # Linux/macOS

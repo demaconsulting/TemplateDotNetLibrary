@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run all linters for Template DotNet Tool
+# Run all linters for Template DotNet Library
 
 set -e  # Exit on error
 

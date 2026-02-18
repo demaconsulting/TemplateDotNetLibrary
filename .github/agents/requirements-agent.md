@@ -3,7 +3,7 @@ name: Requirements Agent
 description: Develops requirements and ensures appropriate test coverage - knows which requirements need unit/integration/self-validation tests
 ---
 
-# Requirements Agent - Template DotNet Tool
+# Requirements Agent - Template DotNet Library
 
 Develop and maintain high-quality requirements with proper test coverage linkage.
 
@@ -35,7 +35,7 @@ Invoke the requirements-agent for:
   - Testing design decisions
   - Failure-testing scenarios
   - Implementation validation beyond requirement scope
-- **Self-validation tests** (`TemplateTool_*`): Preferred for command-line behavior, features
+- **Self-validation tests**: Preferred for library functionality, features
   that ship with the product
 - **Unit tests**: For internal component behavior, isolated logic
 - **Integration tests**: For cross-component interactions, end-to-end scenarios

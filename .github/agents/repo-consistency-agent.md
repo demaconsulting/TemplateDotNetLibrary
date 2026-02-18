@@ -1,11 +1,11 @@
 ---
 name: Repo Consistency Agent
-description: Ensures downstream repositories remain consistent with the TemplateDotNetTool template patterns and best practices
+description: Ensures downstream repositories remain consistent with the TemplateDotNetLibrary template patterns and best practices
 ---
 
-# Repo Consistency Agent - Template DotNet Tool
+# Repo Consistency Agent - Template DotNet Library
 
-Maintain consistency between downstream projects and the TemplateDotNetTool template at <https://github.com/demaconsulting/TemplateDotNetTool>.
+Maintain consistency between downstream projects and the TemplateDotNetLibrary template at <https://github.com/demaconsulting/TemplateDotNetLibrary>.
 
 ## When to Invoke This Agent
 
@@ -16,7 +16,7 @@ Invoke the repo-consistency-agent for:
 - Identifying drift from template standards
 - Recommending updates to bring projects back in sync with template
 
-**Note**: This agent should NOT be invoked for the TemplateDotNetTool repository itself (<https://github.com/demaconsulting/TemplateDotNetTool>),
+**Note**: This agent should NOT be invoked for the TemplateDotNetLibrary repository itself (<https://github.com/demaconsulting/TemplateDotNetLibrary>),
 as that would try to ensure the repository is consistent with itself (implicitly a no-op).
 
 ## Responsibilities
@@ -39,10 +39,9 @@ The agent reviews the following areas for consistency with the template:
 
 #### Code Structure and Patterns
 
-- **Context Parsing**: `Context.cs` pattern for command-line argument handling
-- **Self-Validation**: `Validation.cs` pattern for built-in tests
-- **Program Entry**: `Program.cs` pattern with version/help/validation routing
-- **Standard Arguments**: Support for `-v`, `--version`, `-?`, `-h`, `--help`, `--silent`, `--validate`, `--results`, `--log`
+- **Library API**: Public API design following .NET library best practices
+- **Self-Validation**: Self-validation pattern for built-in tests
+- **Standard Patterns**: Following common library design patterns
 
 #### Documentation
 
@@ -64,7 +63,7 @@ The agent reviews the following areas for consistency with the template:
 #### Project Configuration
 
 - **csproj Sections**: Key sections in .csproj files:
-  - NuGet Tool Package Configuration
+  - NuGet Package Configuration
   - Symbol Package Configuration
   - Code Quality Configuration (TreatWarningsAsErrors, GenerateDocumentationFile, etc.)
   - SBOM Configuration
@@ -106,10 +105,10 @@ The agent reviews the following areas for consistency with the template:
 
 ## Usage Pattern
 
-This agent is typically invoked on downstream repositories (not on TemplateDotNetTool itself):
+This agent is typically invoked on downstream repositories (not on TemplateDotNetLibrary itself):
 
 1. Clone or access the downstream repository
-2. Invoke repo-consistency-agent to review consistency with the TemplateDotNetTool template (<https://github.com/demaconsulting/TemplateDotNetTool>)
+2. Invoke repo-consistency-agent to review consistency with the TemplateDotNetLibrary template (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
 3. Review agent recommendations
 4. Apply relevant changes using appropriate specialized agents
 5. Test changes to ensure they don't break existing functionality

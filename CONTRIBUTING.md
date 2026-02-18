@@ -1,6 +1,6 @@
-# Contributing to Template DotNet Tool
+# Contributing to Template DotNet Library
 
-Thank you for your interest in contributing to Template DotNet Tool! We welcome contributions from the community and appreciate
+Thank you for your interest in contributing to Template DotNet Library! We welcome contributions from the community and appreciate
 your help in making this project better.
 
 ## Code of Conduct
@@ -18,7 +18,7 @@ If you find a bug, please create an issue on GitHub with the following informati
 - **Steps to Reproduce**: Detailed steps to reproduce the issue
 - **Expected Behavior**: What you expected to happen
 - **Actual Behavior**: What actually happened
-- **Environment**: Operating system, .NET version, Template DotNet Tool version
+- **Environment**: Operating system, .NET version, Template DotNet Library version
 - **Logs**: Any relevant error messages or logs
 
 ### Suggesting Features
@@ -56,8 +56,8 @@ We follow a standard GitHub workflow for contributions:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/demaconsulting/TemplateDotNetTool.git
-   cd TemplateDotNetTool
+   git clone https://github.com/demaconsulting/TemplateDotNetLibrary.git
+   cd TemplateDotNetLibrary
    ```
 
 2. Restore dependencies:
@@ -163,14 +163,6 @@ dotnet test --filter "FullyQualifiedName~YourTestName"
 dotnet test --collect "XPlat Code Coverage"
 ```
 
-#### Self-Validation Tests
-
-```bash
-# Run self-validation tests
-dotnet run --project src/DemaConsulting.TemplateDotNetTool \
-  --configuration Release --framework net10.0 --no-build -- --validate
-```
-
 ## Documentation
 
 ### Markdown Guidelines
@@ -209,9 +201,6 @@ dotnet build --configuration Release
 
 # Run unit tests
 dotnet test --configuration Release
-
-# Run self-validation tests
-dotnet run --project src/DemaConsulting.TemplateDotNetTool --configuration Release --framework net10.0 --no-build -- --validate
 ```
 
 All tests must pass with zero warnings.
@@ -271,7 +260,7 @@ When creating a pull request, include:
 
 ## Requirements Management
 
-Template DotNet Tool uses [DemaConsulting.ReqStream][reqstream] for requirements traceability:
+Template DotNet Library uses [DemaConsulting.ReqStream][reqstream] for requirements traceability:
 
 - All requirements are defined in `requirements.yaml`
 - Each requirement should be linked to test cases
@@ -296,9 +285,9 @@ Releases are managed by project maintainers. The process includes:
 
 ## License
 
-By contributing to Template DotNet Tool, you agree that your contributions will be licensed under the MIT License.
+By contributing to Template DotNet Library, you agree that your contributions will be licensed under the MIT License.
 
-Thank you for contributing to Template DotNet Tool!
+Thank you for contributing to Template DotNet Library!
 
 [code-of-conduct]: https://github.com/demaconsulting/TemplateDotNetTool/blob/main/CODE_OF_CONDUCT.md
 [dotnet-download]: https://dotnet.microsoft.com/download

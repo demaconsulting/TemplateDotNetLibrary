@@ -1,13 +1,13 @@
 ---
-title: Template DotNet Tool User Guide
-subtitle: A .NET Reference Implementation for CLI Tools
+title: Template DotNet Library User Guide
+subtitle: A .NET Reference Implementation for Libraries
 author: DEMA Consulting
-description: A .NET Reference Implementation for CLI Tools
+description: A .NET Reference Implementation for Libraries
 lang: en-US
 keywords:
-  - Template DotNet Tool
+  - Template DotNet Library
   - .NET
-  - Command-Line Tool
+  - Library
   - Documentation
   - Best Practices
 ---

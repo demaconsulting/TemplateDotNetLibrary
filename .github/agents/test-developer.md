@@ -3,7 +3,7 @@ name: Test Developer
 description: Writes unit and integration tests following AAA pattern - clear documentation of what's tested and proved
 ---
 
-# Test Developer - Template DotNet Tool
+# Test Developer - Template DotNet Library
 
 Develop comprehensive unit and integration tests following best practices.
 
@@ -64,7 +64,7 @@ public void ClassName_MethodUnderTest_Scenario_ExpectedBehavior()
   - Failure-testing and error handling scenarios
   - Verifying internal behavior beyond requirement scope
 
-### Template DotNet Tool-Specific
+### Template DotNet Library-Specific
 
 - **NOT self-validation tests** - those are handled by Software Developer Agent
 - Unit tests live in `test/` directory

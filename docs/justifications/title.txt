@@ -1,11 +1,11 @@
 ---
-title: Template DotNet Tool Requirements Justifications
-subtitle: Requirements Justifications for the Template DotNet Tool
+title: Template DotNet Library Requirements Justifications
+subtitle: Requirements Justifications for the Template DotNet Library
 author: DEMA Consulting
-description: Requirements Justifications for the Template DotNet Tool
+description: Requirements Justifications for the Template DotNet Library
 lang: en-US
 keywords:
-  - Template DotNet Tool
+  - Template DotNet Library
   - Requirements
   - Justifications
   - .NET

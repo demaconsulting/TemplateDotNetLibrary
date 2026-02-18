@@ -3,7 +3,7 @@ name: Technical Writer
 description: Ensures documentation is accurate and complete - knowledgeable about regulatory documentation and special document types
 ---
 
-# Technical Writer - Template DotNet Tool
+# Technical Writer - Template DotNet Library
 
 Create and maintain clear, accurate, and complete documentation following best practices.
 
@@ -27,7 +27,7 @@ Invoke the technical-writer for:
 - **Design docs**: Implementation approach, algorithms, data structures
 - **User guides**: Task-oriented, clear examples, troubleshooting
 
-### Template DotNet Tool-Specific Rules
+### Template DotNet Library-Specific Rules
 
 #### Markdown Style
 
