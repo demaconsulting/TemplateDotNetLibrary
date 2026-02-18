@@ -19,34 +19,34 @@ sections:
             justification: |
               DEMA Consulting libraries must support Windows as a major development platform.
             tests:
-              # Tests link to "windows" to ensure results come from Windows platform
-              - "windows@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              # Tests link to "windows-latest" to ensure results come from Windows platform
+              - "windows-latest@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-003
             title: The library shall build and run on Linux platforms.
             justification: |
               DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
             tests:
-              # Tests link to "ubuntu" to ensure results come from Linux platform
-              - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              # Tests link to "ubuntu-latest" to ensure results come from Linux platform
+              - "ubuntu-latest@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-004
             title: The library shall support .NET 8 runtime.
             justification: |
               .NET 8 is an LTS release providing long-term stability for enterprise users.
             tests:
-              - "dotnet8.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              - "net8.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-005
             title: The library shall support .NET 9 runtime.
             justification: |
               .NET 9 support enables users to leverage the latest .NET features.
             tests:
-              - "dotnet9.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              - "net9.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
           - id: TMPL-REQ-006
             title: The library shall support .NET 10 runtime.
             justification: |
               .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
             tests:
-              - "dotnet10.x@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+              - "net10.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
