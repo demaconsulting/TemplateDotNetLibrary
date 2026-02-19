@@ -69,6 +69,41 @@ public void ClassName_MethodUnderTest_Scenario_ExpectedBehavior()
 - Use MSTest V4 testing framework
 - Follow existing naming conventions in the test suite
 
+### MSTest V4 Best Practices
+
+Common anti-patterns to avoid (not exhaustive):
+
+1. **Avoid Assertions in Catch Blocks (MSTEST0058)** - Instead of wrapping code in try/catch and asserting in the
+   catch block, use `Assert.ThrowsExactly<T>()`:
+
+   ```csharp
+   var ex = Assert.ThrowsExactly<ArgumentNullException>(() => SomeWork());
+   Assert.Contains("Some message", ex.Message);
+   ```
+
+2. **Avoid using Assert.IsTrue / Assert.IsFalse for equality checks** - Use `Assert.AreEqual` /
+   `Assert.AreNotEqual` instead, as it provides better failure messages:
+
+   ```csharp
+   // ❌ Bad: Assert.IsTrue(result == expected);
+   // ✅ Good: Assert.AreEqual(expected, result);
+   ```
+
+3. **Avoid non-public test classes and methods** - Test classes and `[TestMethod]` methods must be `public` or
+   they will be silently ignored:
+
+   ```csharp
+   // ❌ Bad: internal class MyTests
+   // ✅ Good: public class MyTests
+   ```
+
+4. **Avoid Assert.IsTrue(collection.Count == N)** - Use `Assert.HasCount` for count assertions:
+
+   ```csharp
+   // ❌ Bad: Assert.IsTrue(collection.Count == 3);
+   // ✅ Good: Assert.HasCount(3, collection);
+   ```
+
 ## Defer To
 
 - **Requirements Agent**: For test strategy and coverage requirements
