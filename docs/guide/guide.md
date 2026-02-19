@@ -29,6 +29,32 @@ Console.WriteLine(result); // Output: Hello, World!
 
 The `DemoClass` provides demonstration functionality for the template library.
 
+##### Constructors
+
+###### DemoClass()
+
+```csharp
+public DemoClass()
+```
+
+Initializes a new instance of the `DemoClass` class with the default prefix "Hello".
+
+###### DemoClass(string prefix)
+
+```csharp
+public DemoClass(string prefix)
+```
+
+Initializes a new instance of the `DemoClass` class with a custom prefix.
+
+**Parameters:**
+
+- `prefix` (string): The prefix to use in greetings. Must not be null.
+
+**Exceptions:**
+
+- `ArgumentNullException`: Thrown when `prefix` is null.
+
 ##### Methods
 
 ###### DemoMethod
@@ -45,7 +71,7 @@ Returns a greeting message for the specified name.
 
 **Returns:**
 
-A string containing the greeting message in the format "Hello, {name}!".
+A string containing the greeting message in the format "{prefix}, {name}!".
 
 **Exceptions:**
 
@@ -72,7 +98,18 @@ Console.WriteLine(result);
 // Output: Hello, Alice!
 ```
 
-### Example 2: Error Handling
+### Example 2: Custom Prefix
+
+```csharp
+using TemplateDotNetLibrary;
+
+var demo = new DemoClass("Hi");
+var result = demo.DemoMethod("Alice");
+Console.WriteLine(result);
+// Output: Hi, Alice!
+```
+
+### Example 3: Error Handling
 
 ```csharp
 using TemplateDotNetLibrary;
