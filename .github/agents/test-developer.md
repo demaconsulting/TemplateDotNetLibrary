@@ -63,6 +63,20 @@ public void ClassName_MethodUnderTest_Scenario_ExpectedBehavior()
   - Failure-testing and error handling scenarios
   - Verifying internal behavior beyond requirement scope
 
+### Test Source Filters
+
+Test links in `requirements.yaml` can include a source filter prefix to restrict which test results count as
+evidence. These filters are critical for platform and framework requirements - **do not remove them**.
+
+- `windows@TestName` - proves the test passed on a Windows platform
+- `ubuntu@TestName` - proves the test passed on a Linux (Ubuntu) platform
+- `net8.0@TestName` - proves the test passed under the .NET 8 runtime
+- `net9.0@TestName` - proves the test passed under the .NET 9 runtime
+- `net10.0@TestName` - proves the test passed under the .NET 10 runtime
+
+Removing a source filter means a test result from any environment can satisfy the requirement, which invalidates
+the evidence-based proof that the library works on a specific platform or framework.
+
 ### Template DotNet Library-Specific
 
 - Unit tests live in `test/` directory

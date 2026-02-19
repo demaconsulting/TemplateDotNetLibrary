@@ -1,4 +1,14 @@
 ---
+# Test links can include a source filter prefix (e.g. "windows@", "ubuntu@", "net8.0@") to restrict
+# which test results count as evidence for a requirement. This is critical for platform and framework
+# requirements - removing these filters invalidates the evidence-based proof.
+#
+# Source filter prefixes:
+#   windows@TestName  - proves the test passed on a Windows platform
+#   ubuntu@TestName   - proves the test passed on a Linux (Ubuntu) platform
+#   net8.0@TestName   - proves the test passed under the .NET 8 runtime
+#   net9.0@TestName   - proves the test passed under the .NET 9 runtime
+#   net10.0@TestName  - proves the test passed under the .NET 10 runtime
 sections:
   - title: Template DotNet Library Requirements
     sections:

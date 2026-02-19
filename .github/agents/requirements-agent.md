@@ -36,6 +36,20 @@ Invoke the requirements-agent for:
   - Implementation validation beyond requirement scope
 - **Unit tests**: For library functionality and internal component behavior
 
+### Test Source Filters
+
+Test links can include a source filter prefix to restrict which test results count as evidence. This is essential
+for platform and framework requirements - **never remove these filters**.
+
+- `windows@TestName` - proves the test passed on a Windows platform
+- `ubuntu@TestName` - proves the test passed on a Linux (Ubuntu) platform
+- `net8.0@TestName` - proves the test passed under the .NET 8 runtime
+- `net9.0@TestName` - proves the test passed under the .NET 9 runtime
+- `net10.0@TestName` - proves the test passed under the .NET 10 runtime
+
+Without the source filter, any matching test result satisfies the requirement regardless of which platform or
+framework produced it. Removing a filter invalidates the evidence for platform/framework requirements.
+
 ### Requirements Format
 
 Follow the `requirements.yaml` structure:
