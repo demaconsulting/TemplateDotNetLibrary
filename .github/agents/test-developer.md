@@ -97,13 +97,11 @@ Common anti-patterns to avoid (not exhaustive):
    // ✅ Good: public class MyTests
    ```
 
-4. **Avoid Assert.IsTrue(collection.Count == N)** - Use `Assert.HasCount` or `Assert.AreEqual(N, collection.Count)`
-   for count assertions:
+4. **Avoid Assert.IsTrue(collection.Count == N)** - Use `Assert.HasCount` for count assertions:
 
    ```csharp
    // ❌ Bad: Assert.IsTrue(collection.Count == 3);
    // ✅ Good: Assert.HasCount(3, collection);
-   // ✅ Also good: Assert.AreEqual(3, collection.Count);
    ```
 
 ## Defer To
