@@ -85,24 +85,19 @@ The agent reviews the following areas for consistency with the template:
 To ensure downstream projects benefit from recent template improvements, review recent pull requests
 merged into the template repository:
 
-1. **List Recent PRs**: Use `github-mcp-server-list_pull_requests` to retrieve recently merged PRs
-   from `demaconsulting/TemplateDotNetLibrary`:
-   - Set `state: "closed"` and `sort: "updated"` to get recently merged PRs
+1. **List Recent PRs**: Retrieve recently merged PRs from `demaconsulting/TemplateDotNetLibrary`
    - Review the last 10-20 PRs to identify template improvements
 
 2. **Identify Propagatable Changes**: For each PR, determine if changes should apply to downstream
    projects:
-   - Use `github-mcp-server-pull_request_read` with `method: "get"` to view PR details
-   - Use `github-mcp-server-pull_request_read` with `method: "get_files"` to see modified files
    - Focus on structural changes (workflows, agents, configurations) over content-specific changes
    - Note changes to `.github/`, linting configurations, project patterns, and documentation
      structure
 
 3. **Check Downstream Application**: Verify if identified changes exist in the downstream project:
-   - Use `view` or `grep` tools to check if similar files/patterns exist in downstream
+   - Check if similar files/patterns exist in downstream
    - Compare file contents between template and downstream project
-   - Look for similar PR titles or commit messages in downstream repository history using
-     `github-mcp-server-list_commits`
+   - Look for similar PR titles or commit messages in downstream repository history
 
 4. **Recommend Missing Updates**: For changes not yet applied, include them in the consistency
    review with:
