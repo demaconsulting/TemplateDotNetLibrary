@@ -1,9 +1,19 @@
 # Introduction
 
-This is the Template DotNet Library, a demonstration project that showcases best practices for
-DEMA Consulting DotNet Libraries.
+## Purpose
 
-## Installation
+This document is the user guide for the Template DotNet Library, a demonstration project that
+showcases best practices for DEMA Consulting DotNet Libraries.
+
+## Scope
+
+This user guide covers:
+
+- Installation of the library
+- Basic usage and examples
+- API reference
+
+# Installation
 
 Install the library using the .NET CLI:
 
@@ -11,9 +21,9 @@ Install the library using the .NET CLI:
 dotnet add package TemplateDotNetLibrary
 ```
 
-## Usage
+# Usage
 
-### Basic Usage
+## Basic Usage
 
 ```csharp
 using TemplateDotNetLibrary;
@@ -23,15 +33,15 @@ var result = demo.DemoMethod("World");
 Console.WriteLine(result); // Output: Hello, World!
 ```
 
-### API Reference
+## API Reference
 
-#### DemoClass
+### DemoClass
 
 The `DemoClass` provides demonstration functionality for the template library.
 
-##### Constructors
+#### Constructors
 
-###### DemoClass()
+##### DemoClass()
 
 ```csharp
 public DemoClass()
@@ -39,7 +49,7 @@ public DemoClass()
 
 Initializes a new instance of the `DemoClass` class with the default prefix "Hello".
 
-###### DemoClass(string prefix)
+##### DemoClass(string prefix)
 
 ```csharp
 public DemoClass(string prefix)
@@ -55,9 +65,9 @@ Initializes a new instance of the `DemoClass` class with a custom prefix.
 
 - `ArgumentNullException`: Thrown when `prefix` is null.
 
-##### Methods
+#### Methods
 
-###### DemoMethod
+##### DemoMethod
 
 ```csharp
 public string DemoMethod(string name)
@@ -85,9 +95,9 @@ var greeting = demo.DemoMethod("World");
 // greeting = "Hello, World!"
 ```
 
-## Examples
+# Examples
 
-### Example 1: Basic Greeting
+## Example 1: Basic Greeting
 
 ```csharp
 using TemplateDotNetLibrary;
@@ -98,7 +108,7 @@ Console.WriteLine(result);
 // Output: Hello, Alice!
 ```
 
-### Example 2: Custom Prefix
+## Example 2: Custom Prefix
 
 ```csharp
 using TemplateDotNetLibrary;
@@ -109,7 +119,7 @@ Console.WriteLine(result);
 // Output: Hi, Alice!
 ```
 
-### Example 3: Error Handling
+## Example 3: Error Handling
 
 ```csharp
 using TemplateDotNetLibrary;
