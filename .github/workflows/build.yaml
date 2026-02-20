@@ -258,12 +258,6 @@ jobs:
           pattern: '*test-results*'
         continue-on-error: true
 
-      - name: Download Library package
-        uses: actions/download-artifact@v7
-        with:
-          name: artifacts-windows-latest
-          path: packages
-
       - name: Download CodeQL SARIF
         uses: actions/download-artifact@v7
         with:
