@@ -80,6 +80,39 @@ The agent reviews the following areas for consistency with the template:
   - `quality/` (auto-generated)
 - **Definition Files**: `definition.yaml` files for document generation
 
+### Tracking Template Evolution
+
+To ensure downstream projects benefit from recent template improvements, review recent pull requests
+merged into the template repository:
+
+1. **List Recent PRs**: Use `github-mcp-server-list_pull_requests` to retrieve recently merged PRs
+   from `demaconsulting/TemplateDotNetLibrary`:
+   - Set `state: "closed"` and `sort: "updated"` to get recently merged PRs
+   - Review the last 10-20 PRs to identify template improvements
+
+2. **Identify Propagatable Changes**: For each PR, determine if changes should apply to downstream
+   projects:
+   - Use `github-mcp-server-pull_request_read` with `method: "get"` to view PR details
+   - Use `github-mcp-server-pull_request_read` with `method: "get_files"` to see modified files
+   - Focus on structural changes (workflows, agents, configurations) over content-specific changes
+   - Note changes to `.github/`, linting configurations, project patterns, and documentation
+     structure
+
+3. **Check Downstream Application**: Verify if identified changes exist in the downstream project:
+   - Use `view` or `grep` tools to check if similar files/patterns exist in downstream
+   - Compare file contents between template and downstream project
+   - Look for similar PR titles or commit messages in downstream repository history using
+     `github-mcp-server-list_commits`
+
+4. **Recommend Missing Updates**: For changes not yet applied, include them in the consistency
+   review with:
+   - Description of the template change (reference PR number)
+   - Explanation of benefits for the downstream project
+   - Specific files or patterns that need updating
+
+This technique ensures downstream projects don't miss important template improvements and helps
+maintain long-term consistency.
+
 ### Review Process
 
 1. **Identify Differences**: Compare downstream repository structure with template
