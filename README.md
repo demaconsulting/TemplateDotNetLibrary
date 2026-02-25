@@ -55,6 +55,8 @@ Generated documentation includes:
 
 Copyright (c) DEMA Consulting. Licensed under the MIT License. See [LICENSE][link-license] for details.
 
+By contributing to this project, you agree that your contributions will be licensed under the MIT License.
+
 <!-- Badge References -->
 [badge-forks]: https://img.shields.io/github/forks/demaconsulting/TemplateDotNetLibrary?style=plastic
 [badge-stars]: https://img.shields.io/github/stars/demaconsulting/TemplateDotNetLibrary?style=plastic
