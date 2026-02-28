@@ -46,10 +46,15 @@
     <SBOMPackageSupplier>Organization: $(Company)</SBOMPackageSupplier>
   </PropertyGroup>
 
+  <!-- Build Tool Dependencies -->
   <ItemGroup>
     <PackageReference Include="Microsoft.Sbom.Targets" Version="4.1.5" PrivateAssets="All" />
     <PackageReference Include="Polyfill" Version="9.12.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.103" PrivateAssets="All" />
+  </ItemGroup>
+
+  <!-- Code Analysis Dependencies -->
+  <ItemGroup>
     <!-- Analyzer packages use child-element form to configure both PrivateAssets and IncludeAssets:
          - PrivateAssets="all" prevents these build-time analyzers from becoming transitive dependencies
            in packages that consume this library.
