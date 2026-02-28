@@ -118,6 +118,15 @@ Common anti-patterns to avoid (not exhaustive):
    // ✅ Good: Assert.HasCount(3, collection);
    ```
 
+5. **Avoid Assert.IsTrue for string prefix checks** - Use `Assert.StartsWith` instead of wrapping
+   `string.StartsWith` in `Assert.IsTrue`, as it produces clearer failure messages that show the expected prefix
+   and actual value:
+
+   ```csharp
+   // ❌ Bad: Assert.IsTrue(value.StartsWith("prefix"));
+   // ✅ Good: Assert.StartsWith("prefix", value);
+   ```
+
 ## Defer To
 
 - **Requirements Agent**: For test strategy and coverage requirements
