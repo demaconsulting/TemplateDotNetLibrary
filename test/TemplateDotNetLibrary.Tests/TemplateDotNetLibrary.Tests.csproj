@@ -10,7 +10,7 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <!-- Code Quality Configuration -->
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
