@@ -38,7 +38,7 @@ jobs:
           echo "✓ Tool versions captured"
 
       - name: Upload version capture
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: version-capture-quality
           path: versionmark-quality.json
@@ -155,19 +155,19 @@ jobs:
           echo "✓ Tool versions captured"
 
       - name: Upload version capture
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: version-capture-${{ matrix.os }}
           path: versionmark-build-*.json
 
       - name: Upload Test Results
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: test-results-${{ matrix.os }}
           path: test-results/*.trx
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: artifacts-${{ matrix.os }}
           path: |
@@ -229,7 +229,7 @@ jobs:
           upload: false
 
       - name: Upload CodeQL SARIF
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: codeql-sarif
           path: sarif-results/csharp.sarif
@@ -495,7 +495,7 @@ jobs:
       # Downstream projects: Add any additional artifact uploads here.
 
       - name: Upload documentation
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: documents
           path: |
