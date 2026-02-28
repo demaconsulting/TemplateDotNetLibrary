@@ -19,6 +19,11 @@
     <AnalysisLevel>latest</AnalysisLevel>
   </PropertyGroup>
 
+  <!-- Implicit Usings -->
+  <ItemGroup>
+    <Using Include="Polyfills" />
+  </ItemGroup>
+
   <!-- Test Framework Dependencies -->
   <ItemGroup>
     <!-- coverlet.collector uses child-element form to configure both PrivateAssets and IncludeAssets:
