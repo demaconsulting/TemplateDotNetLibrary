@@ -21,8 +21,7 @@ public class DemoClass
     /// <param name="prefix">The prefix to use in greetings.</param>
     public DemoClass(string prefix)
     {
-        ArgumentNullException.ThrowIfNull(prefix);
-        _prefix = prefix;
+        _prefix = prefix ?? throw new ArgumentNullException(nameof(prefix));
     }
 
     /// <summary>
@@ -32,7 +31,7 @@ public class DemoClass
     /// <returns>A greeting message.</returns>
     public string DemoMethod(string name)
     {
-        ArgumentNullException.ThrowIfNull(name);
+        _ = name ?? throw new ArgumentNullException(nameof(name));
         return $"{_prefix}, {name}!";
     }
 }

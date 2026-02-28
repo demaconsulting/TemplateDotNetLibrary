@@ -60,3 +60,13 @@ sections:
               .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
             tests:
               - "net10.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
+          - id: TMPL-REQ-007
+            title: The library shall support the .NET Standard 2.0 target framework.
+            justification: |
+              .NET Standard 2.0 is a widely-supported target framework that enables the library to
+              be used in MSBuild extensions and other tooling that requires .NET Standard compatibility.
+              Supporting this target framework ensures the library can be integrated into a broader
+              range of .NET projects, including those targeting .NET Framework and older .NET Core versions.
+            tests:
+              - "net481@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
