@@ -17,7 +17,7 @@ This template demonstrates:
 
 - **Simple Library Structure**: Demo class with example methods
 - **Multi-Platform Support**: Builds and runs on Windows and Linux
-- **Multi-Runtime Support**: Targets .NET 8, 9, and 10
+- **Multi-Runtime Support**: Targets .NET Standard 2.0, .NET 8, 9, and 10
 - **MSTest V4**: Modern unit testing with MSTest framework version 4
 - **Comprehensive CI/CD**: GitHub Actions workflows with quality checks and builds
 - **Documentation Generation**: Automated build notes, user guide, code quality reports,

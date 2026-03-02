@@ -39,6 +39,16 @@ Console.WriteLine(result); // Output: Hello, World!
 
 The `DemoClass` provides demonstration functionality for the template library.
 
+#### Constants
+
+##### DefaultPrefix
+
+```csharp
+public const string DefaultPrefix = "Hello";
+```
+
+The greeting prefix used when no custom prefix is specified.
+
 #### Constructors
 
 ##### DemoClass()
@@ -59,11 +69,22 @@ Initializes a new instance of the `DemoClass` class with a custom prefix.
 
 **Parameters:**
 
-- `prefix` (string): The prefix to use in greetings. Must not be null.
+- `prefix` (string): The prefix to use in greetings. Must not be null or empty.
 
 **Exceptions:**
 
 - `ArgumentNullException`: Thrown when `prefix` is null.
+- `ArgumentException`: Thrown when `prefix` is an empty string.
+
+#### Properties
+
+##### Prefix
+
+```csharp
+public string Prefix { get; }
+```
+
+Gets the greeting prefix used by this instance.
 
 #### Methods
 
@@ -77,7 +98,7 @@ Returns a greeting message for the specified name.
 
 **Parameters:**
 
-- `name` (string): The name to greet. Must not be null.
+- `name` (string): The name to greet. Must not be null or empty.
 
 **Returns:**
 
@@ -86,6 +107,7 @@ A string containing the greeting message in the format "{prefix}, {name}!".
 **Exceptions:**
 
 - `ArgumentNullException`: Thrown when `name` is null.
+- `ArgumentException`: Thrown when `name` is an empty string.
 
 **Example:**
 
