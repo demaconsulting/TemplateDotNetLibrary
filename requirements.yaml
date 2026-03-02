@@ -21,6 +21,30 @@ sections:
               .NET library best practices for DEMA Consulting libraries.
             tests:
               - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - DemoMethod_ReturnsGreeting_WithCustomPrefix
+
+          - id: TMPL-REQ-008
+            title: The library shall support a customizable greeting prefix.
+            justification: |
+              Consumers may need to produce greetings with a prefix other than the
+              default, so the library must allow the prefix to be specified at
+              construction time.
+            tests:
+              - DemoMethod_ReturnsGreeting_WithCustomPrefix
+
+          - id: TMPL-REQ-009
+            title: The library shall reject null and empty arguments with an appropriate ArgumentException.
+            justification: |
+              Null-safety and non-empty validation are fundamental API contracts: passing null or an
+              empty string to the constructor or to DemoMethod is a programming error. Throwing
+              ArgumentNullException for null arguments and ArgumentException for empty-string arguments
+              immediately surfaces the mistake to callers and prevents malformed output (such as
+              ", World!" or "Hello, !") and obscure failures deeper in the call stack.
+            tests:
+              - DemoMethod_ThrowsArgumentNullException_ForNullInput
+              - DemoMethod_ThrowsArgumentException_ForEmptyInput
+              - Constructor_ThrowsArgumentNullException_ForNullPrefix
+              - Constructor_ThrowsArgumentException_ForEmptyPrefix
 
       - title: Platform Support
         requirements:

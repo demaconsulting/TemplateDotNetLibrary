@@ -5,13 +5,24 @@ namespace TemplateDotNetLibrary;
 /// </summary>
 public class DemoClass
 {
+    /// <summary>
+    ///     The greeting prefix used when no custom prefix is specified.
+    /// </summary>
+    public const string DefaultPrefix = "Hello";
+
+    /// <summary>
+    ///     The prefix prepended to every greeting produced by this instance.
+    /// </summary>
     private readonly string _prefix;
 
     /// <summary>
-    ///     Initializes a new instance of the <see cref="DemoClass"/> class with default prefix.
+    ///     Initializes a new instance of the <see cref="DemoClass"/> class with the default prefix.
     /// </summary>
+    /// <remarks>
+    ///     The prefix is set to <see cref="DefaultPrefix"/>.
+    /// </remarks>
     public DemoClass()
-        : this("Hello")
+        : this(DefaultPrefix)
     {
     }
 
@@ -19,20 +30,44 @@ public class DemoClass
     ///     Initializes a new instance of the <see cref="DemoClass"/> class with a custom prefix.
     /// </summary>
     /// <param name="prefix">The prefix to use in greetings.</param>
+    /// <exception cref="ArgumentNullException">
+    ///     Thrown when <paramref name="prefix"/> is <see langword="null"/>.
+    /// </exception>
+    /// <exception cref="ArgumentException">
+    ///     Thrown when <paramref name="prefix"/> is an empty string.
+    /// </exception>
     public DemoClass(string prefix)
     {
-        ArgumentNullException.ThrowIfNull(prefix);
+        // Validate that the prefix is non-null and non-empty before storing it
+        ArgumentException.ThrowIfNullOrEmpty(prefix);
         _prefix = prefix;
     }
 
     /// <summary>
-    ///     Demo method that returns a greeting message.
+    ///     Gets the greeting prefix used by this instance.
     /// </summary>
-    /// <param name="name">The name to greet.</param>
-    /// <returns>A greeting message.</returns>
+    public string Prefix => _prefix;
+
+    /// <summary>
+    ///     Returns a greeting message that combines the instance prefix with the given name.
+    /// </summary>
+    /// <param name="name">The name to include in the greeting.</param>
+    /// <returns>
+    ///     A greeting string in the format <c>{prefix}, {name}!</c>,
+    ///     for example <c>Hello, World!</c>.
+    /// </returns>
+    /// <exception cref="ArgumentNullException">
+    ///     Thrown when <paramref name="name"/> is <see langword="null"/>.
+    /// </exception>
+    /// <exception cref="ArgumentException">
+    ///     Thrown when <paramref name="name"/> is an empty string.
+    /// </exception>
     public string DemoMethod(string name)
     {
-        ArgumentNullException.ThrowIfNull(name);
+        // Validate that the name is non-null and non-empty before building the greeting
+        ArgumentException.ThrowIfNullOrEmpty(name);
+
+        // Combine the prefix and name into the standard greeting format
         return $"{_prefix}, {name}!";
     }
 }
