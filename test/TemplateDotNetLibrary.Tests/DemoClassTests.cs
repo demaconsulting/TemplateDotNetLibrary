@@ -6,10 +6,6 @@ namespace TemplateDotNetLibrary.Tests;
 [TestClass]
 public class DemoClassTests
 {
-    // -------------------------------------------------------------------------
-    // DemoMethod – happy-path greeting output
-    // -------------------------------------------------------------------------
-
     /// <summary>
     ///     Proves that DemoMethod produces the expected "{prefix}, {name}!" format
     ///     when the default constructor is used.
@@ -46,10 +42,6 @@ public class DemoClassTests
         Assert.AreEqual("Hi, Alice!", result);
     }
 
-    // -------------------------------------------------------------------------
-    // DemoMethod – argument validation
-    // -------------------------------------------------------------------------
-
     /// <summary>
     ///     Proves that DemoMethod throws ArgumentNullException (not a base
     ///     ArgumentException) when a null name is supplied.
@@ -78,10 +70,6 @@ public class DemoClassTests
         Assert.ThrowsExactly<ArgumentException>(() => demo.DemoMethod(string.Empty));
     }
 
-    // -------------------------------------------------------------------------
-    // Constructor – argument validation
-    // -------------------------------------------------------------------------
-
     /// <summary>
     ///     Proves that the custom-prefix constructor throws ArgumentNullException
     ///     (not a base ArgumentException) when a null prefix is supplied.
@@ -104,10 +92,6 @@ public class DemoClassTests
         Assert.ThrowsExactly<ArgumentException>(() => new DemoClass(string.Empty));
     }
 
-    // -------------------------------------------------------------------------
-    // DefaultPrefix constant
-    // -------------------------------------------------------------------------
-
     /// <summary>
     ///     Proves that the DefaultPrefix constant exposes the value "Hello",
     ///     which is the expected default greeting prefix.
@@ -124,10 +108,6 @@ public class DemoClassTests
         // Assert – constant value must not silently change
         Assert.AreEqual(expected, actual);
     }
-
-    // -------------------------------------------------------------------------
-    // Prefix property
-    // -------------------------------------------------------------------------
 
     /// <summary>
     ///     Proves that the Prefix property returns the custom value provided to
