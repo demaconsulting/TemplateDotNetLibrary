@@ -14,7 +14,7 @@ sections:
     sections:
       - title: Library API
         requirements:
-          - id: TMPL-REQ-001
+          - id: Template-Lib-Greeting
             title: The library shall provide a method to generate a greeting.
             justification: |
               Provides a simple demonstration of library functionality following
@@ -23,7 +23,7 @@ sections:
               - DemoMethod_ReturnsGreeting_WithDefaultPrefix
               - DemoMethod_ReturnsGreeting_WithCustomPrefix
 
-          - id: TMPL-REQ-008
+          - id: Template-Lib-CustomPrefix
             title: The library shall support a customizable greeting prefix.
             justification: |
               Consumers may need to produce greetings with a prefix other than the
@@ -32,7 +32,7 @@ sections:
             tests:
               - DemoMethod_ReturnsGreeting_WithCustomPrefix
 
-          - id: TMPL-REQ-009
+          - id: Template-Lib-Validation
             title: The library shall reject null and empty arguments with an appropriate ArgumentException.
             justification: |
               Null-safety and non-empty validation are fundamental API contracts: passing null or an
@@ -48,7 +48,7 @@ sections:
 
       - title: Platform Support
         requirements:
-          - id: TMPL-REQ-002
+          - id: Template-Platform-Windows
             title: The library shall build and run on Windows platforms.
             justification: |
               DEMA Consulting libraries must support Windows as a major development platform.
@@ -56,7 +56,7 @@ sections:
               # Tests link to "windows" to ensure results come from Windows platform
               - "windows@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-003
+          - id: Template-Platform-Linux
             title: The library shall build and run on Linux platforms.
             justification: |
               DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
@@ -64,28 +64,28 @@ sections:
               # Tests link to "ubuntu" to ensure results come from Linux platform
               - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-004
+          - id: Template-Platform-Net8
             title: The library shall support .NET 8 runtime.
             justification: |
               .NET 8 is an LTS release providing long-term stability for enterprise users.
             tests:
               - "net8.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-005
+          - id: Template-Platform-Net9
             title: The library shall support .NET 9 runtime.
             justification: |
               .NET 9 support enables users to leverage the latest .NET features.
             tests:
               - "net9.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-006
+          - id: Template-Platform-Net10
             title: The library shall support .NET 10 runtime.
             justification: |
               .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
             tests:
               - "net10.0@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
-          - id: TMPL-REQ-007
+          - id: Template-Platform-NetStd20
             title: The library shall support the .NET Standard 2.0 target framework.
             justification: |
               .NET Standard 2.0 is a widely-supported target framework that enables the library to
