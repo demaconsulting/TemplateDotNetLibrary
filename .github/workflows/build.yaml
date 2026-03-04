@@ -18,6 +18,10 @@ jobs:
     permissions:
       contents: read
     steps:
+      # === INSTALL DEPENDENCIES ===
+      # This section installs all required dependencies and tools for quality checks.
+      # Downstream projects: Add any additional dependency installations here.
+
       - name: Checkout
         uses: actions/checkout@v6
 
@@ -55,11 +59,9 @@ jobs:
           --validate
           --results artifacts/versionmark-self-validation-quality.trx
 
-      - name: Upload quality artifacts
-        uses: actions/upload-artifact@v7
-        with:
-          name: artifacts-quality
-          path: artifacts/
+      # === RUN QUALITY CHECKS ===
+      # This section runs the linting and quality checks for the project.
+      # Downstream projects: Add any additional quality check steps here.
 
       - name: Run markdown linter
         uses: DavidAnson/markdownlint-cli2-action@v22
@@ -76,6 +78,16 @@ jobs:
         uses: ibiqlik/action-yamllint@v3
         with:
           config_file: .yamllint.yaml
+
+      # === UPLOAD ARTIFACTS ===
+      # This section uploads all generated artifacts for use by downstream jobs.
+      # Downstream projects: Add any additional artifact uploads here.
+
+      - name: Upload quality artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: artifacts-quality
+          path: artifacts/
 
   # Builds and unit-tests the project on supported operating systems to ensure
   # unit-tests operate on all platforms and to run SonarScanner for generating
@@ -94,6 +106,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+
+      # === INSTALL DEPENDENCIES ===
+      # This section installs all required dependencies and tools for building the project.
+      # Downstream projects: Add any additional dependency installations here.
 
       - name: Checkout
         uses: actions/checkout@v6
@@ -139,6 +155,10 @@ jobs:
           dotnet versionmark
           --validate
           --results artifacts/versionmark-self-validation-${{ matrix.os }}.trx
+
+      # === BUILD AND TEST ===
+      # This section builds and tests the project.
+      # Downstream projects: Add any additional build or test steps here.
 
       - name: Restore Dependencies
         run: >
@@ -189,6 +209,10 @@ jobs:
           --no-restore
           --property:PackageVersion=${{ inputs.version }}
 
+      # === UPLOAD ARTIFACTS ===
+      # This section uploads all generated artifacts for use by downstream jobs.
+      # Downstream projects: Add any additional artifact uploads here.
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
@@ -215,6 +239,10 @@ jobs:
       security-events: write
 
     steps:
+      # === INSTALL DEPENDENCIES ===
+      # This section installs all required dependencies and tools for CodeQL analysis.
+      # Downstream projects: Add any additional dependency installations here.
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
@@ -243,6 +271,10 @@ jobs:
         run: >
           dotnet restore
 
+      # === BUILD AND ANALYZE ===
+      # This section builds the project and performs CodeQL analysis.
+      # Downstream projects: Add any additional analysis steps here.
+
       - name: Build
         run: >
           dotnet build
@@ -256,6 +288,10 @@ jobs:
           category: "/language:csharp"
           output: artifacts
           upload: false
+
+      # === UPLOAD ARTIFACTS ===
+      # This section uploads all generated artifacts for use by downstream jobs.
+      # Downstream projects: Add any additional artifact uploads here.
 
       - name: Upload CodeQL artifacts
         uses: actions/upload-artifact@v7
