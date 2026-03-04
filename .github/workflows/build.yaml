@@ -169,22 +169,23 @@ jobs:
           --validate
           --results test-results/versionmark-self-validation-${{ matrix.os }}.trx
 
-      - name: Upload version capture
-        uses: actions/upload-artifact@v7
-        with:
-          name: version-capture-${{ matrix.os }}
-          path: versionmark-build-*.json
+      - name: Assemble build artifacts
+        shell: bash
+        run: |
+          mkdir -p build-artifacts
+          cp test-results/*.trx build-artifacts/ 2>/dev/null || true
+          cp versionmark-build-*.json build-artifacts/ 2>/dev/null || true
 
-      - name: Upload Test Results
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: test-results-${{ matrix.os }}
-          path: test-results/*.trx
+          name: artifacts-build-${{ matrix.os }}
+          path: build-artifacts/
 
-      - name: Upload Artifacts
+      - name: Upload packages
         uses: actions/upload-artifact@v7
         with:
-          name: artifacts-${{ matrix.os }}
+          name: packages-${{ matrix.os }}
           path: |
             src/TemplateDotNetLibrary/bin/Release/*.nupkg
             src/TemplateDotNetLibrary/bin/Release/*.snupkg
@@ -266,11 +267,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Download all test results
+      - name: Download all build artifacts
         uses: actions/download-artifact@v8
         with:
-          path: test-results
-          pattern: '*test-results*'
+          path: build-artifacts
+          pattern: 'artifacts-build-*'
         continue-on-error: true
 
       - name: Download CodeQL SARIF
@@ -278,13 +279,6 @@ jobs:
         with:
           name: codeql-sarif
           path: codeql-results
-
-      - name: Download all version captures
-        uses: actions/download-artifact@v8
-        with:
-          path: version-captures
-          pattern: 'version-capture-*'
-        continue-on-error: true
 
       # === INSTALL DEPENDENCIES ===
       # This section installs all required dependencies and tools for document generation.
@@ -361,6 +355,7 @@ jobs:
         run: >
           dotnet reqstream
           --requirements requirements.yaml
+          --tests "build-artifacts/**/*.trx"
           --tests "test-results/**/*.trx"
           --report docs/requirements/requirements.md
           --justifications docs/justifications/justifications.md
@@ -421,7 +416,7 @@ jobs:
         run: |
           echo "Publishing tool versions..."
           dotnet versionmark --publish --report docs/buildnotes/versions.md --report-depth 1 \
-            -- "versionmark-*.json" "version-captures/**/versionmark-*.json"
+            -- "versionmark-*.json" "build-artifacts/**/versionmark-*.json"
           echo "✓ Tool versions published"
 
       - name: Display Tool Versions Report
