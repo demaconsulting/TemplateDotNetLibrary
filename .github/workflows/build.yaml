@@ -126,7 +126,7 @@ jobs:
           --property:Version=${{ inputs.version }}
           --collect "XPlat Code Coverage;Format=opencover"
           --logger "trx;LogFilePrefix=${{ matrix.os }}"
-          --results-directory test-results
+          --results-directory build-artifacts
 
       - name: End Sonar Scanner
         env:
@@ -154,7 +154,9 @@ jobs:
           # Create short job ID: build-win, build-ubuntu
           OS_SHORT=$(echo "${{ matrix.os }}" | sed 's/windows-latest/win/;s/ubuntu-latest/ubuntu/')
           JOB_ID="build-${OS_SHORT}"
-          dotnet versionmark --capture --job-id "${JOB_ID}" -- \
+          mkdir -p build-artifacts
+          dotnet versionmark --capture --job-id "${JOB_ID}" \
+            --output "build-artifacts/versionmark-${JOB_ID}.json" -- \
             dotnet git dotnet-sonarscanner versionmark
           echo "✓ Tool versions captured"
 
@@ -167,14 +169,7 @@ jobs:
         run: >
           dotnet versionmark
           --validate
-          --results test-results/versionmark-self-validation-${{ matrix.os }}.trx
-
-      - name: Assemble build artifacts
-        shell: bash
-        run: |
-          mkdir -p build-artifacts
-          cp test-results/*.trx build-artifacts/ 2>/dev/null || true
-          cp versionmark-build-*.json build-artifacts/ 2>/dev/null || true
+          --results build-artifacts/versionmark-self-validation-${{ matrix.os }}.trx
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
