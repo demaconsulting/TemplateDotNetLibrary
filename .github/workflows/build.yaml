@@ -30,18 +30,35 @@ jobs:
         run: >
           dotnet tool restore
 
+      # === CAPTURE TOOL VERSIONS ===
+      # This section captures the versions of all tools used in the build process.
+      # Downstream projects: Add any additional tools to capture here.
+
       - name: Capture tool versions
         shell: bash
         run: |
           echo "Capturing tool versions..."
-          dotnet versionmark --capture --job-id "quality" -- dotnet git versionmark
+          dotnet versionmark --capture --job-id "quality" \
+            --output "artifacts/versionmark-quality.json" -- \
+            dotnet git versionmark
           echo "✓ Tool versions captured"
 
-      - name: Upload version capture
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results artifacts/versionmark-self-validation-quality.trx
+
+      - name: Upload quality artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: version-capture-quality
-          path: versionmark-quality.json
+          name: artifacts-quality
+          path: artifacts/
 
       - name: Run markdown linter
         uses: DavidAnson/markdownlint-cli2-action@v22
@@ -126,7 +143,7 @@ jobs:
           --property:Version=${{ inputs.version }}
           --collect "XPlat Code Coverage;Format=opencover"
           --logger "trx;LogFilePrefix=${{ matrix.os }}"
-          --results-directory build-artifacts
+          --results-directory artifacts
 
       - name: End Sonar Scanner
         env:
@@ -154,9 +171,8 @@ jobs:
           # Create short job ID: build-win, build-ubuntu
           OS_SHORT=$(echo "${{ matrix.os }}" | sed 's/windows-latest/win/;s/ubuntu-latest/ubuntu/')
           JOB_ID="build-${OS_SHORT}"
-          mkdir -p build-artifacts
           dotnet versionmark --capture --job-id "${JOB_ID}" \
-            --output "build-artifacts/versionmark-${JOB_ID}.json" -- \
+            --output "artifacts/versionmark-${JOB_ID}.json" -- \
             dotnet git dotnet-sonarscanner versionmark
           echo "✓ Tool versions captured"
 
@@ -169,13 +185,13 @@ jobs:
         run: >
           dotnet versionmark
           --validate
-          --results build-artifacts/versionmark-self-validation-${{ matrix.os }}.trx
+          --results artifacts/versionmark-self-validation-${{ matrix.os }}.trx
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
           name: artifacts-build-${{ matrix.os }}
-          path: build-artifacts/
+          path: artifacts/
 
       - name: Upload packages
         uses: actions/upload-artifact@v7
@@ -265,8 +281,8 @@ jobs:
       - name: Download all build artifacts
         uses: actions/download-artifact@v8
         with:
-          path: build-artifacts
-          pattern: 'artifacts-build-*'
+          path: artifacts
+          pattern: 'artifacts-*'
         continue-on-error: true
 
       - name: Download CodeQL SARIF
@@ -303,7 +319,8 @@ jobs:
         shell: bash
         run: |
           echo "Capturing tool versions..."
-          dotnet versionmark --capture --job-id "build-docs" -- \
+          dotnet versionmark --capture --job-id "build-docs" \
+            --output "artifacts/versionmark-build-docs.json" -- \
             dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream buildmark versionmark
           echo "✓ Tool versions captured"
 
@@ -316,31 +333,31 @@ jobs:
         run: >
           dotnet reqstream
           --validate
-          --results test-results/reqstream-self-validation.trx
+          --results artifacts/reqstream-self-validation.trx
 
       - name: Run BuildMark self-validation
         run: >
           dotnet buildmark
           --validate
-          --results test-results/buildmark-self-validation.trx
+          --results artifacts/buildmark-self-validation.trx
 
       - name: Run VersionMark self-validation
         run: >
           dotnet versionmark
           --validate
-          --results test-results/versionmark-self-validation.trx
+          --results artifacts/versionmark-self-validation.trx
 
       - name: Run SarifMark self-validation
         run: >
           dotnet sarifmark
           --validate
-          --results test-results/sarifmark-self-validation.trx
+          --results artifacts/sarifmark-self-validation.trx
 
       - name: Run SonarMark self-validation
         run: >
           dotnet sonarmark
           --validate
-          --results test-results/sonarmark-self-validation.trx
+          --results artifacts/sonarmark-self-validation.trx
 
       # === GENERATE MARKDOWN REPORTS ===
       # This section generates all markdown reports from various tools and sources.
@@ -350,8 +367,7 @@ jobs:
         run: >
           dotnet reqstream
           --requirements requirements.yaml
-          --tests "build-artifacts/**/*.trx"
-          --tests "test-results/**/*.trx"
+          --tests "artifacts/**/*.trx"
           --report docs/requirements/requirements.md
           --justifications docs/justifications/justifications.md
           --matrix docs/tracematrix/tracematrix.md
@@ -411,7 +427,7 @@ jobs:
         run: |
           echo "Publishing tool versions..."
           dotnet versionmark --publish --report docs/buildnotes/versions.md --report-depth 1 \
-            -- "versionmark-*.json" "build-artifacts/**/versionmark-*.json"
+            -- "artifacts/**/versionmark-*.json"
           echo "✓ Tool versions published"
 
       - name: Display Tool Versions Report
