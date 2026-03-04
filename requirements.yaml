@@ -116,91 +116,63 @@ sections:
               - DemoClass_Prefix_ReturnsCustomPrefix
               - DemoClass_DefaultConstructor_SetsDefaultPrefix
 
-          - id: Template-OTS-Coverlet
-            title: Coverlet shall collect code-coverage data during unit-test execution.
-            justification: |
-              coverlet.collector integrates with the .NET test host to measure how much of the library
-              source code is exercised by the test suite. Coverage data is published to SonarCloud and
-              used to detect untested code paths. Any passing test confirms that coverlet collected
-              coverage successfully.
-            tags: [ots]
-            tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
-
           - id: Template-OTS-ReqStream
             title: ReqStream shall enforce that every requirement is linked to passing test evidence.
             justification: |
-              demaconsulting.reqstream processes requirements.yaml and the TRX test-result files to
+              DemaConsulting.ReqStream processes requirements.yaml and the TRX test-result files to
               produce a requirements report, justifications document, and traceability matrix. When
               run with --enforce, it exits with a non-zero code if any requirement lacks test evidence,
               making unproven requirements a build-breaking condition. A successful pipeline run with
               --enforce proves all requirements are covered and that ReqStream is functioning.
             tags: [ots]
             tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - ReqStream_EnforcementMode
 
           - id: Template-OTS-BuildMark
             title: BuildMark shall generate build-notes documentation from GitHub Actions metadata.
             justification: |
-              demaconsulting.buildmark queries the GitHub API to capture workflow run details and
+              DemaConsulting.BuildMark queries the GitHub API to capture workflow run details and
               renders them as a markdown build-notes document included in the release artifacts.
               It runs as part of the same CI pipeline that produces the TRX test results, so a
               successful pipeline run is evidence that BuildMark executed without error.
             tags: [ots]
             tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - BuildMark_MarkdownReportGeneration
 
           - id: Template-OTS-VersionMark
-            title: VersionMark shall capture and publish tool-version information.
+            title: VersionMark shall publish captured tool-version information.
             justification: |
-              demaconsulting.versionmark reads version metadata for each dotnet tool used in the
+              DemaConsulting.VersionMark reads version metadata for each dotnet tool used in the
               pipeline and writes a versions markdown document included in the release artifacts.
               It runs in the same CI pipeline that produces the TRX test results, so a successful
               pipeline run is evidence that VersionMark executed without error.
             tags: [ots]
             tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - VersionMark_CapturesVersions
+              - VersionMark_GeneratesMarkdownReport
 
           - id: Template-OTS-SarifMark
             title: SarifMark shall convert CodeQL SARIF results into a markdown report.
             justification: |
-              demaconsulting.sarifmark reads the SARIF output produced by CodeQL code scanning and
+              DemaConsulting.SarifMark reads the SARIF output produced by CodeQL code scanning and
               renders it as a human-readable markdown document included in the release artifacts.
               It runs in the same CI pipeline that produces the TRX test results, so a successful
               pipeline run is evidence that SarifMark executed without error.
             tags: [ots]
             tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - SarifMark_SarifReading
+              - SarifMark_MarkdownReportGeneration
 
           - id: Template-OTS-SonarMark
             title: SonarMark shall generate a SonarCloud quality report.
             justification: |
-              demaconsulting.sonarmark retrieves quality-gate and metrics data from SonarCloud and
+              DemaConsulting.SonarMark retrieves quality-gate and metrics data from SonarCloud and
               renders it as a markdown document included in the release artifacts. It runs in the
               same CI pipeline that produces the TRX test results, so a successful pipeline run is
               evidence that SonarMark executed without error.
             tags: [ots]
             tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
-
-          - id: Template-OTS-PandocTool
-            title: PandocTool shall convert markdown documentation to HTML.
-            justification: |
-              demaconsulting.pandoctool wraps the pandoc document converter and is used to transform
-              the markdown release documents (requirements report, traceability matrix, etc.) into
-              styled HTML pages. It runs in the same CI pipeline that produces the TRX test results,
-              so a successful pipeline run is evidence that PandocTool executed without error.
-            tags: [ots]
-            tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
-
-          - id: Template-OTS-WeasyPrintTool
-            title: WeasyPrintTool shall convert HTML documentation to PDF.
-            justification: |
-              demaconsulting.weasyprinttool wraps the WeasyPrint renderer and is used to convert the
-              HTML release documents into PDF artifacts for distribution. It runs in the same CI
-              pipeline that produces the TRX test results, so a successful pipeline run is evidence
-              that WeasyPrintTool executed without error.
-            tags: [ots]
-            tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - SonarMark_QualityGateRetrieval
+              - SonarMark_IssuesRetrieval
+              - SonarMark_HotSpotsRetrieval
+              - SonarMark_MarkdownReportGeneration
