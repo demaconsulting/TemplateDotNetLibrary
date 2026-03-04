@@ -167,7 +167,7 @@ jobs:
         run: >
           dotnet versionmark
           --validate
-          --results test-results/versionmark-self-validation.trx
+          --results test-results/versionmark-self-validation-${{ matrix.os }}.trx
 
       - name: Upload version capture
         uses: actions/upload-artifact@v7
