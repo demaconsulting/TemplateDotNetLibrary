@@ -37,6 +37,7 @@ jobs:
       - name: Capture tool versions
         shell: bash
         run: |
+          mkdir -p artifacts
           echo "Capturing tool versions..."
           dotnet versionmark --capture --job-id "quality" \
             --output "artifacts/versionmark-quality.json" -- \
@@ -111,6 +112,34 @@ jobs:
         run: >
           dotnet tool restore
 
+      # === CAPTURE TOOL VERSIONS ===
+      # This section captures the versions of all tools used in the build process.
+      # Downstream projects: Add any additional tools to capture here.
+
+      - name: Capture tool versions
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          echo "Capturing tool versions..."
+          # Create short job ID: build-win, build-ubuntu
+          OS_SHORT=$(echo "${{ matrix.os }}" | sed 's/windows-latest/win/;s/ubuntu-latest/ubuntu/')
+          JOB_ID="build-${OS_SHORT}"
+          dotnet versionmark --capture --job-id "${JOB_ID}" \
+            --output "artifacts/versionmark-${JOB_ID}.json" -- \
+            dotnet git dotnet-sonarscanner versionmark
+          echo "✓ Tool versions captured"
+
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results artifacts/versionmark-self-validation-${{ matrix.os }}.trx
+
       - name: Restore Dependencies
         run: >
           dotnet restore
@@ -159,33 +188,6 @@ jobs:
           --no-build
           --no-restore
           --property:PackageVersion=${{ inputs.version }}
-
-      # === CAPTURE TOOL VERSIONS ===
-      # This section captures the versions of all tools used in the build process.
-      # Downstream projects: Add any additional tools to capture here.
-
-      - name: Capture tool versions
-        shell: bash
-        run: |
-          echo "Capturing tool versions..."
-          # Create short job ID: build-win, build-ubuntu
-          OS_SHORT=$(echo "${{ matrix.os }}" | sed 's/windows-latest/win/;s/ubuntu-latest/ubuntu/')
-          JOB_ID="build-${OS_SHORT}"
-          dotnet versionmark --capture --job-id "${JOB_ID}" \
-            --output "artifacts/versionmark-${JOB_ID}.json" -- \
-            dotnet git dotnet-sonarscanner versionmark
-          echo "✓ Tool versions captured"
-
-      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
-      # This section runs the self-validation of each OTS tool and saves TRX results
-      # so that OTS Software Requirements in requirements.yaml can be satisfied.
-      # Downstream projects: Add any additional OTS tool self-validation steps here.
-
-      - name: Run VersionMark self-validation
-        run: >
-          dotnet versionmark
-          --validate
-          --results artifacts/versionmark-self-validation-${{ matrix.os }}.trx
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
