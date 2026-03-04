@@ -13,6 +13,20 @@ This user guide covers:
 - Basic usage and examples
 - API reference
 
+# Continuous Compliance
+
+This template follows the [Continuous Compliance][continuous-compliance] methodology, which ensures
+compliance evidence is generated automatically on every CI run.
+
+## Key Practices
+
+- **Requirements Traceability**: Every requirement is linked to passing tests, and a trace matrix is
+  auto-generated on each release
+- **Linting Enforcement**: markdownlint, cspell, and yamllint are enforced before any build proceeds
+- **Automated Audit Documentation**: Each release ships with generated requirements, justifications,
+  trace matrix, and quality reports
+- **CodeQL and SonarCloud**: Security and quality analysis runs on every build
+
 # Installation
 
 Install the library using the .NET CLI:
@@ -156,3 +170,6 @@ catch (ArgumentNullException ex)
     Console.WriteLine("Name cannot be null");
 }
 ```
+
+<!-- Link References -->
+[continuous-compliance]: https://github.com/demaconsulting/ContinuousCompliance

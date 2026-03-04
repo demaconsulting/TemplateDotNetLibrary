@@ -20,8 +20,13 @@ This template demonstrates:
 - **Multi-Runtime Support**: Targets .NET Standard 2.0, .NET 8, 9, and 10
 - **MSTest V4**: Modern unit testing with MSTest framework version 4
 - **Comprehensive CI/CD**: GitHub Actions workflows with quality checks and builds
+- **Linting Enforcement**: markdownlint, cspell, and yamllint enforced on every CI run
+- **Continuous Compliance**: Compliance evidence generated automatically on every CI run, following
+  the [Continuous Compliance][link-continuous-compliance] methodology
+- **SonarCloud Integration**: Quality gate and security analysis on every build
 - **Documentation Generation**: Automated build notes, user guide, code quality reports,
   requirements, justifications, and trace matrix
+- **Requirements Traceability**: Requirements linked to passing tests with auto-generated trace matrix
 
 ## Installation
 
@@ -76,3 +81,4 @@ By contributing to this project, you agree that your contributions will be licen
 [link-quality]: https://sonarcloud.io/dashboard?id=demaconsulting_TemplateDotNetLibrary
 [link-security]: https://sonarcloud.io/dashboard?id=demaconsulting_TemplateDotNetLibrary
 [link-nuget]: https://www.nuget.org/packages/TemplateDotNetLibrary
+[link-continuous-compliance]: https://github.com/demaconsulting/ContinuousCompliance
