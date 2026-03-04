@@ -143,6 +143,10 @@ jobs:
           --no-restore
           --property:PackageVersion=${{ inputs.version }}
 
+      # === CAPTURE TOOL VERSIONS ===
+      # This section captures the versions of all tools used in the build process.
+      # Downstream projects: Add any additional tools to capture here.
+
       - name: Capture tool versions
         shell: bash
         run: |
@@ -153,6 +157,17 @@ jobs:
           dotnet versionmark --capture --job-id "${JOB_ID}" -- \
             dotnet git dotnet-sonarscanner versionmark
           echo "✓ Tool versions captured"
+
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results test-results/versionmark-self-validation.trx
 
       - name: Upload version capture
         uses: actions/upload-artifact@v7
@@ -312,31 +327,31 @@ jobs:
         run: >
           dotnet reqstream
           --validate
-          --results test-results/ots/reqstream-self-validation.trx
+          --results test-results/reqstream-self-validation.trx
 
       - name: Run BuildMark self-validation
         run: >
           dotnet buildmark
           --validate
-          --results test-results/ots/buildmark-self-validation.trx
+          --results test-results/buildmark-self-validation.trx
 
       - name: Run VersionMark self-validation
         run: >
           dotnet versionmark
           --validate
-          --results test-results/ots/versionmark-self-validation.trx
+          --results test-results/versionmark-self-validation.trx
 
       - name: Run SarifMark self-validation
         run: >
           dotnet sarifmark
           --validate
-          --results test-results/ots/sarifmark-self-validation.trx
+          --results test-results/sarifmark-self-validation.trx
 
       - name: Run SonarMark self-validation
         run: >
           dotnet sonarmark
           --validate
-          --results test-results/ots/sonarmark-self-validation.trx
+          --results test-results/sonarmark-self-validation.trx
 
       # === GENERATE MARKDOWN REPORTS ===
       # This section generates all markdown reports from various tools and sources.
