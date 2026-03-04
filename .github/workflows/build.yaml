@@ -18,6 +18,10 @@ jobs:
     permissions:
       contents: read
     steps:
+      # === INSTALL DEPENDENCIES ===
+      # This section installs all required dependencies and tools for quality checks.
+      # Downstream projects: Add any additional dependency installations here.
+
       - name: Checkout
         uses: actions/checkout@v6
 
@@ -30,18 +34,34 @@ jobs:
         run: >
           dotnet tool restore
 
+      # === CAPTURE TOOL VERSIONS ===
+      # This section captures the versions of all tools used in the build process.
+      # Downstream projects: Add any additional tools to capture here.
+
       - name: Capture tool versions
         shell: bash
         run: |
+          mkdir -p artifacts
           echo "Capturing tool versions..."
-          dotnet versionmark --capture --job-id "quality" -- dotnet git versionmark
+          dotnet versionmark --capture --job-id "quality" \
+            --output "artifacts/versionmark-quality.json" -- \
+            dotnet git versionmark
           echo "✓ Tool versions captured"
 
-      - name: Upload version capture
-        uses: actions/upload-artifact@v7
-        with:
-          name: version-capture-quality
-          path: versionmark-quality.json
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results artifacts/versionmark-self-validation-quality.trx
+
+      # === RUN QUALITY CHECKS ===
+      # This section runs the linting and quality checks for the project.
+      # Downstream projects: Add any additional quality check steps here.
 
       - name: Run markdown linter
         uses: DavidAnson/markdownlint-cli2-action@v22
@@ -58,6 +78,16 @@ jobs:
         uses: ibiqlik/action-yamllint@v3
         with:
           config_file: .yamllint.yaml
+
+      # === UPLOAD ARTIFACTS ===
+      # This section uploads all generated artifacts for use by downstream jobs.
+      # Downstream projects: Add any additional artifact uploads here.
+
+      - name: Upload quality artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: artifacts-quality
+          path: artifacts/
 
   # Builds and unit-tests the project on supported operating systems to ensure
   # unit-tests operate on all platforms and to run SonarScanner for generating
@@ -77,6 +107,10 @@ jobs:
 
     steps:
 
+      # === INSTALL DEPENDENCIES ===
+      # This section installs all required dependencies and tools for building the project.
+      # Downstream projects: Add any additional dependency installations here.
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
@@ -93,6 +127,38 @@ jobs:
       - name: Restore Tools
         run: >
           dotnet tool restore
+
+      # === CAPTURE TOOL VERSIONS ===
+      # This section captures the versions of all tools used in the build process.
+      # Downstream projects: Add any additional tools to capture here.
+
+      - name: Capture tool versions
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          echo "Capturing tool versions..."
+          # Create short job ID: build-win, build-ubuntu
+          OS_SHORT=$(echo "${{ matrix.os }}" | sed 's/windows-latest/win/;s/ubuntu-latest/ubuntu/')
+          JOB_ID="build-${OS_SHORT}"
+          dotnet versionmark --capture --job-id "${JOB_ID}" \
+            --output "artifacts/versionmark-${JOB_ID}.json" -- \
+            dotnet git dotnet-sonarscanner versionmark
+          echo "✓ Tool versions captured"
+
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results artifacts/versionmark-self-validation-${{ matrix.os }}.trx
+
+      # === BUILD AND TEST ===
+      # This section builds and tests the project.
+      # Downstream projects: Add any additional build or test steps here.
 
       - name: Restore Dependencies
         run: >
@@ -126,7 +192,7 @@ jobs:
           --property:Version=${{ inputs.version }}
           --collect "XPlat Code Coverage;Format=opencover"
           --logger "trx;LogFilePrefix=${{ matrix.os }}"
-          --results-directory test-results
+          --results-directory artifacts
 
       - name: End Sonar Scanner
         env:
@@ -143,33 +209,20 @@ jobs:
           --no-restore
           --property:PackageVersion=${{ inputs.version }}
 
-      - name: Capture tool versions
-        shell: bash
-        run: |
-          echo "Capturing tool versions..."
-          # Create short job ID: build-win, build-ubuntu
-          OS_SHORT=$(echo "${{ matrix.os }}" | sed 's/windows-latest/win/;s/ubuntu-latest/ubuntu/')
-          JOB_ID="build-${OS_SHORT}"
-          dotnet versionmark --capture --job-id "${JOB_ID}" -- \
-            dotnet git dotnet-sonarscanner versionmark
-          echo "✓ Tool versions captured"
+      # === UPLOAD ARTIFACTS ===
+      # This section uploads all generated artifacts for use by downstream jobs.
+      # Downstream projects: Add any additional artifact uploads here.
 
-      - name: Upload version capture
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: version-capture-${{ matrix.os }}
-          path: versionmark-build-*.json
+          name: artifacts-build-${{ matrix.os }}
+          path: artifacts/
 
-      - name: Upload Test Results
+      - name: Upload packages
         uses: actions/upload-artifact@v7
         with:
-          name: test-results-${{ matrix.os }}
-          path: test-results/*.trx
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v7
-        with:
-          name: artifacts-${{ matrix.os }}
+          name: packages-${{ matrix.os }}
           path: |
             src/TemplateDotNetLibrary/bin/Release/*.nupkg
             src/TemplateDotNetLibrary/bin/Release/*.snupkg
@@ -186,6 +239,10 @@ jobs:
       security-events: write
 
     steps:
+      # === INSTALL DEPENDENCIES ===
+      # This section installs all required dependencies and tools for CodeQL analysis.
+      # Downstream projects: Add any additional dependency installations here.
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
@@ -214,6 +271,10 @@ jobs:
         run: >
           dotnet restore
 
+      # === BUILD AND ANALYZE ===
+      # This section builds the project and performs CodeQL analysis.
+      # Downstream projects: Add any additional analysis steps here.
+
       - name: Build
         run: >
           dotnet build
@@ -225,14 +286,18 @@ jobs:
         uses: github/codeql-action/analyze@v4
         with:
           category: "/language:csharp"
-          output: sarif-results
+          output: artifacts
           upload: false
 
-      - name: Upload CodeQL SARIF
+      # === UPLOAD ARTIFACTS ===
+      # This section uploads all generated artifacts for use by downstream jobs.
+      # Downstream projects: Add any additional artifact uploads here.
+
+      - name: Upload CodeQL artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: codeql-sarif
-          path: sarif-results/csharp.sarif
+          name: artifacts-codeql
+          path: artifacts/
 
   # Builds the supporting documentation including user guides, requirements,
   # trace matrices, code quality reports, and build notes.
@@ -251,24 +316,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Download all test results
+      - name: Download all job artifacts
         uses: actions/download-artifact@v8
         with:
-          path: test-results
-          pattern: '*test-results*'
-        continue-on-error: true
-
-      - name: Download CodeQL SARIF
-        uses: actions/download-artifact@v8
-        with:
-          name: codeql-sarif
-          path: codeql-results
-
-      - name: Download all version captures
-        uses: actions/download-artifact@v8
-        with:
-          path: version-captures
-          pattern: 'version-capture-*'
+          path: artifacts
+          pattern: 'artifacts-*'
+          merge-multiple: true
         continue-on-error: true
 
       # === INSTALL DEPENDENCIES ===
@@ -299,9 +352,45 @@ jobs:
         shell: bash
         run: |
           echo "Capturing tool versions..."
-          dotnet versionmark --capture --job-id "build-docs" -- \
+          dotnet versionmark --capture --job-id "build-docs" \
+            --output "artifacts/versionmark-build-docs.json" -- \
             dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream buildmark versionmark
           echo "✓ Tool versions captured"
+
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run ReqStream self-validation
+        run: >
+          dotnet reqstream
+          --validate
+          --results artifacts/reqstream-self-validation.trx
+
+      - name: Run BuildMark self-validation
+        run: >
+          dotnet buildmark
+          --validate
+          --results artifacts/buildmark-self-validation.trx
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results artifacts/versionmark-self-validation.trx
+
+      - name: Run SarifMark self-validation
+        run: >
+          dotnet sarifmark
+          --validate
+          --results artifacts/sarifmark-self-validation.trx
+
+      - name: Run SonarMark self-validation
+        run: >
+          dotnet sonarmark
+          --validate
+          --results artifacts/sonarmark-self-validation.trx
 
       # === GENERATE MARKDOWN REPORTS ===
       # This section generates all markdown reports from various tools and sources.
@@ -311,7 +400,7 @@ jobs:
         run: >
           dotnet reqstream
           --requirements requirements.yaml
-          --tests "test-results/**/*.trx"
+          --tests "artifacts/**/*.trx"
           --report docs/requirements/requirements.md
           --justifications docs/justifications/justifications.md
           --matrix docs/tracematrix/tracematrix.md
@@ -320,7 +409,7 @@ jobs:
       - name: Generate CodeQL Quality Report with SarifMark
         run: >
           dotnet sarifmark
-          --sarif codeql-results/csharp.sarif
+          --sarif artifacts/csharp.sarif
           --report docs/quality/codeql-quality.md
           --heading "Template DotNet Library CodeQL Analysis"
           --report-depth 1
@@ -371,7 +460,7 @@ jobs:
         run: |
           echo "Publishing tool versions..."
           dotnet versionmark --publish --report docs/buildnotes/versions.md --report-depth 1 \
-            -- "versionmark-*.json" "version-captures/**/versionmark-*.json"
+            -- "artifacts/**/versionmark-*.json"
           echo "✓ Tool versions published"
 
       - name: Display Tool Versions Report

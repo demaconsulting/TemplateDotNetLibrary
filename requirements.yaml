@@ -94,3 +94,85 @@ sections:
               range of .NET projects, including those targeting .NET Framework and older .NET Core versions.
             tests:
               - "net481@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
+      - title: OTS Software
+        requirements:
+          - id: Template-OTS-MSTest
+            title: MSTest shall execute unit tests and report results.
+            justification: |
+              MSTest (MSTest.TestFramework and MSTest.TestAdapter) is the unit-testing framework used
+              by the project. It discovers and runs all test methods and writes TRX result files that
+              feed into coverage reporting and requirements traceability. Passing tests confirm the
+              framework is functioning correctly.
+            tags: [ots]
+            tests:
+              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+              - DemoMethod_ReturnsGreeting_WithCustomPrefix
+              - DemoMethod_ThrowsArgumentNullException_ForNullInput
+              - DemoMethod_ThrowsArgumentException_ForEmptyInput
+              - Constructor_ThrowsArgumentNullException_ForNullPrefix
+              - Constructor_ThrowsArgumentException_ForEmptyPrefix
+              - DemoClass_DefaultPrefix_IsHello
+              - DemoClass_Prefix_ReturnsCustomPrefix
+              - DemoClass_DefaultConstructor_SetsDefaultPrefix
+
+          - id: Template-OTS-ReqStream
+            title: ReqStream shall enforce that every requirement is linked to passing test evidence.
+            justification: |
+              DemaConsulting.ReqStream processes requirements.yaml and the TRX test-result files to
+              produce a requirements report, justifications document, and traceability matrix. When
+              run with --enforce, it exits with a non-zero code if any requirement lacks test evidence,
+              making unproven requirements a build-breaking condition. A successful pipeline run with
+              --enforce proves all requirements are covered and that ReqStream is functioning.
+            tags: [ots]
+            tests:
+              - ReqStream_EnforcementMode
+
+          - id: Template-OTS-BuildMark
+            title: BuildMark shall generate build-notes documentation from GitHub Actions metadata.
+            justification: |
+              DemaConsulting.BuildMark queries the GitHub API to capture workflow run details and
+              renders them as a markdown build-notes document included in the release artifacts.
+              It runs as part of the same CI pipeline that produces the TRX test results, so a
+              successful pipeline run is evidence that BuildMark executed without error.
+            tags: [ots]
+            tests:
+              - BuildMark_MarkdownReportGeneration
+
+          - id: Template-OTS-VersionMark
+            title: VersionMark shall publish captured tool-version information.
+            justification: |
+              DemaConsulting.VersionMark reads version metadata for each dotnet tool used in the
+              pipeline and writes a versions markdown document included in the release artifacts.
+              It runs in the same CI pipeline that produces the TRX test results, so a successful
+              pipeline run is evidence that VersionMark executed without error.
+            tags: [ots]
+            tests:
+              - VersionMark_CapturesVersions
+              - VersionMark_GeneratesMarkdownReport
+
+          - id: Template-OTS-SarifMark
+            title: SarifMark shall convert CodeQL SARIF results into a markdown report.
+            justification: |
+              DemaConsulting.SarifMark reads the SARIF output produced by CodeQL code scanning and
+              renders it as a human-readable markdown document included in the release artifacts.
+              It runs in the same CI pipeline that produces the TRX test results, so a successful
+              pipeline run is evidence that SarifMark executed without error.
+            tags: [ots]
+            tests:
+              - SarifMark_SarifReading
+              - SarifMark_MarkdownReportGeneration
+
+          - id: Template-OTS-SonarMark
+            title: SonarMark shall generate a SonarCloud quality report.
+            justification: |
+              DemaConsulting.SonarMark retrieves quality-gate and metrics data from SonarCloud and
+              renders it as a markdown document included in the release artifacts. It runs in the
+              same CI pipeline that produces the TRX test results, so a successful pipeline run is
+              evidence that SonarMark executed without error.
+            tags: [ots]
+            tests:
+              - SonarMark_QualityGateRetrieval
+              - SonarMark_IssuesRetrieval
+              - SonarMark_HotSpotsRetrieval
+              - SonarMark_MarkdownReportGeneration
