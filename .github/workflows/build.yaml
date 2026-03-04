@@ -283,6 +283,7 @@ jobs:
         with:
           path: artifacts
           pattern: 'artifacts-*'
+          merge-multiple: true
         continue-on-error: true
 
       # === INSTALL DEPENDENCIES ===
@@ -370,7 +371,7 @@ jobs:
       - name: Generate CodeQL Quality Report with SarifMark
         run: >
           dotnet sarifmark
-          --sarif artifacts/artifacts-codeql/csharp.sarif
+          --sarif artifacts/csharp.sarif
           --report docs/quality/codeql-quality.md
           --heading "Template DotNet Library CodeQL Analysis"
           --report-depth 1
