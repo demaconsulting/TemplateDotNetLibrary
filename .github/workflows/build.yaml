@@ -303,6 +303,41 @@ jobs:
             dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream buildmark versionmark
           echo "✓ Tool versions captured"
 
+      # === CAPTURE OTS SELF-VALIDATION RESULTS ===
+      # This section runs the self-validation of each OTS tool and saves TRX results
+      # so that OTS Software Requirements in requirements.yaml can be satisfied.
+      # Downstream projects: Add any additional OTS tool self-validation steps here.
+
+      - name: Run ReqStream self-validation
+        run: >
+          dotnet reqstream
+          --validate
+          --results test-results/ots/reqstream-self-validation.trx
+
+      - name: Run BuildMark self-validation
+        run: >
+          dotnet buildmark
+          --validate
+          --results test-results/ots/buildmark-self-validation.trx
+
+      - name: Run VersionMark self-validation
+        run: >
+          dotnet versionmark
+          --validate
+          --results test-results/ots/versionmark-self-validation.trx
+
+      - name: Run SarifMark self-validation
+        run: >
+          dotnet sarifmark
+          --validate
+          --results test-results/ots/sarifmark-self-validation.trx
+
+      - name: Run SonarMark self-validation
+        run: >
+          dotnet sonarmark
+          --validate
+          --results test-results/ots/sonarmark-self-validation.trx
+
       # === GENERATE MARKDOWN REPORTS ===
       # This section generates all markdown reports from various tools and sources.
       # Downstream projects: Add any additional markdown report generation steps here.
