@@ -252,14 +252,14 @@ jobs:
         uses: github/codeql-action/analyze@v4
         with:
           category: "/language:csharp"
-          output: sarif-results
+          output: artifacts
           upload: false
 
-      - name: Upload CodeQL SARIF
+      - name: Upload CodeQL artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: codeql-sarif
-          path: sarif-results/csharp.sarif
+          name: artifacts-codeql
+          path: artifacts/
 
   # Builds the supporting documentation including user guides, requirements,
   # trace matrices, code quality reports, and build notes.
@@ -278,18 +278,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Download all build artifacts
+      - name: Download all job artifacts
         uses: actions/download-artifact@v8
         with:
           path: artifacts
           pattern: 'artifacts-*'
         continue-on-error: true
-
-      - name: Download CodeQL SARIF
-        uses: actions/download-artifact@v8
-        with:
-          name: codeql-sarif
-          path: codeql-results
 
       # === INSTALL DEPENDENCIES ===
       # This section installs all required dependencies and tools for document generation.
@@ -376,7 +370,7 @@ jobs:
       - name: Generate CodeQL Quality Report with SarifMark
         run: >
           dotnet sarifmark
-          --sarif codeql-results/csharp.sarif
+          --sarif artifacts/artifacts-codeql/csharp.sarif
           --report docs/quality/codeql-quality.md
           --heading "Template DotNet Library CodeQL Analysis"
           --report-depth 1
