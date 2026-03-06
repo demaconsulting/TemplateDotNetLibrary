@@ -64,6 +64,14 @@ sections:
               # Tests link to "ubuntu" to ensure results come from Linux platform
               - "ubuntu@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
 
+          - id: Template-Platform-MacOS
+            title: The library shall build and run on macOS platforms.
+            justification: |
+              DEMA Consulting libraries must support macOS for developers using Apple platforms.
+            tests:
+              # Tests link to "macos" to ensure results come from macOS platform
+              - "macos@DemoMethod_ReturnsGreeting_WithDefaultPrefix"
+
           - id: Template-Platform-Net8
             title: The library shall support .NET 8 runtime.
             justification: |
