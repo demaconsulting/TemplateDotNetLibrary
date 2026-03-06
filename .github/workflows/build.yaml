@@ -252,6 +252,7 @@ jobs:
         uses: github/codeql-action/init@v4
         with:
           languages: csharp
+          build-mode: manual
           queries: security-and-quality
           config-file: ./.github/codeql-config.yml
 
