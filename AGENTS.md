@@ -12,7 +12,7 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 - **Code Quality Agent** - Enforces linting, static analysis, and security standards
 - **Repo Consistency Agent** - Ensures downstream repositories remain consistent with template patterns
 
-## Agent Selection Decision Tree
+## Agent Selection Guide
 
 - Fix a bug → **Software Developer**
 - Add a new feature → **Requirements Agent** → **Software Developer** → **Test Developer**
