@@ -93,7 +93,7 @@ build.bat     # Windows
 ## CI/CD
 
 - **Quality Checks**: Markdown lint, spell check, YAML lint
-- **Build**: Multi-platform (Windows/Linux)
+- **Build**: Multi-platform (Windows/Linux/macOS)
 - **CodeQL**: Security scanning
 - **Documentation**: Auto-generated via Pandoc + Weasyprint
 
