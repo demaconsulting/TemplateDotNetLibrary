@@ -22,7 +22,7 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 - Add or update requirements → **Requirements Agent**
 - Ensure test coverage linkage in `requirements.yaml` → **Requirements Agent**
 - Run security scanning or address CodeQL alerts → **Code Quality Agent**
-- Propagate template changes to downstream repositories → **Repo Consistency Agent**
+- Propagate template changes → **Repo Consistency Agent**
 
 ## Tech Stack
 
