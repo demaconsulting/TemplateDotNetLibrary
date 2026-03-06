@@ -12,6 +12,18 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 - **Code Quality Agent** - Enforces linting, static analysis, and security standards
 - **Repo Consistency Agent** - Ensures downstream repositories remain consistent with template patterns
 
+## Agent Selection Guide
+
+- Fix a bug → **Software Developer**
+- Add a new feature → **Requirements Agent** → **Software Developer** → **Test Developer**
+- Write a test → **Test Developer**
+- Fix linting or static analysis issues → **Code Quality Agent**
+- Update documentation → **Technical Writer**
+- Add or update requirements → **Requirements Agent**
+- Ensure test coverage linkage in `requirements.yaml` → **Requirements Agent**
+- Run security scanning or address CodeQL alerts → **Code Quality Agent**
+- Propagate template changes → **Repo Consistency Agent**
+
 ## Tech Stack
 
 - C# 12, .NET 8.0/9.0/10.0, dotnet CLI, NuGet
