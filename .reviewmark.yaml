@@ -15,7 +15,7 @@ needs-review:
 # and an index.json before enforcement (--enforce flag) can be enabled in the pipeline.
 evidence-source:
   type: url
-  location: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/reviews/
+  location: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/reviews/index.json
 
 # Review sets grouping files by logical unit of review.
 reviews:
