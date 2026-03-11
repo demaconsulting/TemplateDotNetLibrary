@@ -7,11 +7,7 @@
 # Processed in order; prefix a pattern with '!' to exclude.
 needs-review:
   - "**/*.cs"
-  - "**/*.yaml"
-  - "**/*.yml"
   - "!**/obj/**"
-  - "!node_modules/**"
-  - "!.git/**"
 
 # Evidence source: review data and index.json are located in the 'reviews' branch
 # of this repository, accessed through the GitHub public HTTPS blob access.
@@ -27,8 +23,4 @@ reviews:
     title: Review of Template DotNet Library
     paths:
       - "**/*.cs"
-      - "**/*.yaml"
-      - "**/*.yml"
       - "!**/obj/**"
-      - "!node_modules/**"
-      - "!.git/**"
