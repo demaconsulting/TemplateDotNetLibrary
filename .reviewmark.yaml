@@ -10,7 +10,7 @@ needs-review:
   - "!**/obj/**"
 
 # Evidence source: review data and index.json are located in the 'reviews' branch
-# of this repository, accessed through the GitHub public HTTPS blob access.
+# of this repository, accessed through the GitHub public HTTPS raw content access.
 # Note: The 'reviews' branch must be created and populated with review evidence PDFs
 # and an index.json before enforcement (--enforce flag) can be enabled in the pipeline.
 evidence-source:
