@@ -184,3 +184,15 @@ sections:
               - SonarMark_IssuesRetrieval
               - SonarMark_HotSpotsRetrieval
               - SonarMark_MarkdownReportGeneration
+
+          - id: Template-OTS-ReviewMark
+            title: ReviewMark shall generate a review plan and review report from the review configuration.
+            justification: |
+              DemaConsulting.ReviewMark reads the .reviewmark.yaml configuration and the review
+              evidence store to produce a review plan and review report documenting file review
+              coverage and currency. It runs in the same CI pipeline that produces the TRX test
+              results, so a successful pipeline run is evidence that ReviewMark executed without error.
+            tags: [ots]
+            tests:
+              - ReviewMark_ReviewPlanGeneration
+              - ReviewMark_ReviewReportGeneration

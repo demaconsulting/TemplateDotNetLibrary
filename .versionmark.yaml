@@ -62,3 +62,8 @@ tools:
   versionmark:
     command: dotnet tool list
     regex: '(?i)demaconsulting\.versionmark\s+(?<version>\d+\.\d+\.\d+)'
+
+  # ReviewMark (DemaConsulting.ReviewMark from dotnet tool list)
+  reviewmark:
+    command: dotnet tool list
+    regex: '(?i)demaconsulting\.reviewmark\s+(?<version>\d+\.\d+\.\d+(?:-[a-zA-Z0-9.]+)?)'
