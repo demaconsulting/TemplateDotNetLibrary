@@ -355,7 +355,7 @@ jobs:
           echo "Capturing tool versions..."
           dotnet versionmark --capture --job-id "build-docs" \
             --output "artifacts/versionmark-build-docs.json" -- \
-            dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream buildmark versionmark
+            dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream buildmark versionmark reviewmark
           echo "✓ Tool versions captured"
 
       # === CAPTURE OTS SELF-VALIDATION RESULTS ===
@@ -392,6 +392,12 @@ jobs:
           dotnet sonarmark
           --validate
           --results artifacts/sonarmark-self-validation.trx
+
+      - name: Run ReviewMark self-validation
+        run: >
+          dotnet reviewmark
+          --validate
+          --results artifacts/reviewmark-self-validation.trx
 
       # === GENERATE MARKDOWN REPORTS ===
       # This section generates all markdown reports from various tools and sources.
@@ -439,6 +445,28 @@ jobs:
         run: |
           echo "=== SonarCloud Quality Report ==="
           cat docs/quality/sonar-quality.md
+
+      - name: Generate Review Plan and Review Report with ReviewMark
+        shell: bash
+        run: >
+          dotnet reviewmark
+          --definition .reviewmark.yaml
+          --plan docs/reviewplan/review-plan.md
+          --plan-depth 1
+          --report docs/reviewreport/review-report.md
+          --report-depth 1
+
+      - name: Display Review Plan
+        shell: bash
+        run: |
+          echo "=== Review Plan ==="
+          cat docs/reviewplan/review-plan.md
+
+      - name: Display Review Report
+        shell: bash
+        run: |
+          echo "=== Review Report ==="
+          cat docs/reviewreport/review-report.md
 
       - name: Generate Build Notes with BuildMark
         shell: bash
@@ -534,6 +562,26 @@ jobs:
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/tracematrix/tracematrix.html
 
+      - name: Generate Review Plan HTML with Pandoc
+        shell: bash
+        run: >
+          dotnet pandoc
+          --defaults docs/reviewplan/definition.yaml
+          --filter node_modules/.bin/mermaid-filter.cmd
+          --metadata version="${{ inputs.version }}"
+          --metadata date="$(date +'%Y-%m-%d')"
+          --output docs/reviewplan/review-plan.html
+
+      - name: Generate Review Report HTML with Pandoc
+        shell: bash
+        run: >
+          dotnet pandoc
+          --defaults docs/reviewreport/definition.yaml
+          --filter node_modules/.bin/mermaid-filter.cmd
+          --metadata version="${{ inputs.version }}"
+          --metadata date="$(date +'%Y-%m-%d')"
+          --output docs/reviewreport/review-report.html
+
       # === GENERATE PDF DOCUMENTS WITH WEASYPRINT ===
       # This section converts HTML documents to PDF using Weasyprint.
       # Downstream projects: Add any additional Weasyprint PDF generation steps here.
@@ -579,6 +627,20 @@ jobs:
           --pdf-variant pdf/a-3u
           docs/tracematrix/tracematrix.html
           "docs/TemplateDotNetLibrary Trace Matrix.pdf"
+
+      - name: Generate Review Plan PDF with Weasyprint
+        run: >
+          dotnet weasyprint
+          --pdf-variant pdf/a-3u
+          docs/reviewplan/review-plan.html
+          "docs/TemplateDotNetLibrary Review Plan.pdf"
+
+      - name: Generate Review Report PDF with Weasyprint
+        run: >
+          dotnet weasyprint
+          --pdf-variant pdf/a-3u
+          docs/reviewreport/review-report.html
+          "docs/TemplateDotNetLibrary Review Report.pdf"
 
       # === UPLOAD ARTIFACTS ===
       # This section uploads all generated documentation artifacts.
