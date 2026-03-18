@@ -4,17 +4,9 @@ description: Writes unit and integration tests following AAA pattern - clear doc
 tools: [read, edit, search, execute]
 ---
 
-# Test Developer - Template DotNet Library
+# Test Developer
 
 Develop comprehensive unit tests following best practices.
-
-## When to Invoke This Agent
-
-Invoke the @test-developer agent for:
-
-- Creating unit tests for individual components
-- Improving test coverage
-- Refactoring existing tests for clarity
 
 ## Responsibilities
 
@@ -128,7 +120,7 @@ Common anti-patterns to avoid (not exhaustive):
    // ✅ Good: Assert.StartsWith("prefix", value);
    ```
 
-## Defer To
+## Subagent Delegation
 
 If test strategy or coverage requirements need clarification, call the @requirements agent with the **request** to
 clarify test strategy and the **context** of the coverage gaps identified.

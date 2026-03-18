@@ -4,17 +4,9 @@ description: Writes production code and self-validation tests - targets design-f
 tools: [read, edit, search, execute]
 ---
 
-# Software Developer - Template DotNet Library
+# Software Developer
 
 Develop production code with emphasis on testability and clarity.
-
-## When to Invoke This Agent
-
-Invoke the @software-developer agent for:
-
-- Implementing production code features
-- Code refactoring for testability and maintainability
-- Implementing library APIs and functionality
 
 ## Responsibilities
 
@@ -58,7 +50,7 @@ return FormatResults(results);
 - **Using Statements**: Top of file only
 - **String Formatting**: Use interpolated strings ($"") for clarity
 
-## Defer To
+## Subagent Delegation
 
 If new requirement creation or test strategy is needed, call the @requirements agent with the **request** to define
 requirements or test strategy and the **context** of the feature being developed.

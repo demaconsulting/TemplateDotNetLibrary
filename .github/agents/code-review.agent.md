@@ -4,17 +4,9 @@ description: Assists in performing formal file reviews - knows how to elaborate 
 tools: [read, search]
 ---
 
-# Code Review Agent - Template DotNet Library
+# Code Review Agent
 
 Perform formal file reviews for a named review-set, producing a structured findings report.
-
-## When to Invoke This Agent
-
-Invoke the @code-review agent for:
-
-- Performing a formal review of a named review-set
-- Producing review evidence for the Continuous Compliance pipeline
-- Checking files against the structured review checklist
 
 ## How to Run This Agent
 

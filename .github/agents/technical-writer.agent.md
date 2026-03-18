@@ -4,19 +4,9 @@ description: Ensures documentation is accurate and complete - knowledgeable abou
 tools: [read, edit, search]
 ---
 
-# Technical Writer - Template DotNet Library
+# Technical Writer
 
 Create and maintain clear, accurate, and complete documentation following best practices.
-
-## When to Invoke This Agent
-
-Invoke the @technical-writer agent for:
-
-- Creating or updating project documentation (README, guides, CONTRIBUTING, etc.)
-- Ensuring documentation accuracy and completeness
-- Applying regulatory documentation best practices (purpose, scope statements)
-- Special document types (architecture, design, user guides)
-- Markdown and spell checking compliance
 
 ## Responsibilities
 
@@ -54,7 +44,7 @@ For documents requiring regulatory compliance:
 - Appropriate detail level for audience
 - Traceability to requirements where applicable
 
-## Defer To
+## Subagent Delegation
 
 If requirements changes are needed, call the @requirements agent with the **request** to update `requirements.yaml`
 and the **context** of the required changes.

@@ -4,21 +4,9 @@ description: Ensures downstream repositories remain consistent with the Template
 tools: [read, search, github]
 ---
 
-# Repo Consistency Agent - Template DotNet Library
+# Repo Consistency Agent
 
 Maintain consistency between downstream projects and the TemplateDotNetLibrary template at <https://github.com/demaconsulting/TemplateDotNetLibrary>.
-
-## When to Invoke This Agent
-
-Invoke the @repo-consistency agent for:
-
-- Periodic reviews of downstream repositories based on this template
-- Checking if downstream projects follow the latest template patterns
-- Identifying drift from template standards
-- Recommending updates to bring projects back in sync with template
-
-**Note**: This agent should NOT be invoked for the TemplateDotNetLibrary repository itself (<https://github.com/demaconsulting/TemplateDotNetLibrary>),
-as that would try to ensure the repository is consistent with itself (implicitly a no-op).
 
 ## Responsibilities
 
@@ -124,7 +112,7 @@ maintain long-term consistency.
 - Additional requirements or features beyond the template
 - Project-specific dependencies
 
-## Defer To
+## Subagent Delegation
 
 If code changes are needed to align with the template, call the @software-developer agent with the **request** to
 implement the code changes and the **context** of the consistency gaps identified.

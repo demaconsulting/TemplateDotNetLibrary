@@ -4,19 +4,9 @@ description: Ensures code quality through linting and static analysis - responsi
 tools: [read, search, execute]
 ---
 
-# Code Quality Agent - Template DotNet Library
+# Code Quality Agent
 
 Enforce quality standards through linting, static analysis, and security scanning.
-
-## When to Invoke This Agent
-
-Invoke the @code-quality agent for:
-
-- Running and fixing linting issues (markdown, YAML, spell check, code formatting)
-- Ensuring static analysis passes with zero warnings
-- Verifying code security
-- Enforcing quality gates before merging
-- Validating the project does what it claims to do
 
 ## Responsibilities
 
@@ -70,7 +60,7 @@ dotnet reqstream --requirements requirements.yaml \
 lint.bat     # Windows
 ```
 
-## Defer To
+## Subagent Delegation
 
 If requirements or test linkage issues are found, call the @requirements agent with the **request** to address
 requirements quality and test linkage strategy and the **context** of the issues found.

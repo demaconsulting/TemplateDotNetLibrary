@@ -4,18 +4,9 @@ description: Develops requirements and ensures appropriate test coverage - knows
 tools: [read, edit, search, github]
 ---
 
-# Requirements Agent - Template DotNet Library
+# Requirements Agent
 
 Develop and maintain high-quality requirements with proper test coverage linkage.
-
-## When to Invoke This Agent
-
-Invoke the @requirements agent for:
-
-- Creating new requirements in `requirements.yaml`
-- Reviewing and improving existing requirements
-- Ensuring requirements have appropriate test coverage
-- Differentiating requirements from design details
 
 ## Responsibilities
 
@@ -60,7 +51,7 @@ Follow the `requirements.yaml` structure:
 - Linked to appropriate test(s)
 - Enforced via: `dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --enforce`
 
-## Defer To
+## Subagent Delegation
 
 If self-validation tests need implementing, call the @software-developer agent with the **request** to implement the
 self-validation tests and the **context** of the requirements to be validated.
