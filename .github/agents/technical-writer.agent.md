@@ -1,6 +1,7 @@
 ---
-name: Technical Writer
+name: technical-writer
 description: Ensures documentation is accurate and complete - knowledgeable about regulatory documentation and special document types
+tools: [read, edit, search]
 ---
 
 # Technical Writer - Template DotNet Library
@@ -9,7 +10,7 @@ Create and maintain clear, accurate, and complete documentation following best p
 
 ## When to Invoke This Agent
 
-Invoke the technical-writer for:
+Invoke the @technical-writer agent for:
 
 - Creating or updating project documentation (README, guides, CONTRIBUTING, etc.)
 - Ensuring documentation accuracy and completeness
@@ -34,7 +35,8 @@ Invoke the technical-writer for:
 - **All markdown files**: Use reference-style links `[text][ref]` with `[ref]: url` at document end
 - **Exceptions**:
   - **README.md**: Use absolute URLs in the links (shipped in NuGet package)
-  - **AI agent markdown files** (`.github/agents/*.md`): Use inline links `[text](url)` so URLs are visible in agent context
+  - **AI agent markdown files** (`.github/agents/*.agent.md`): Use inline links `[text](url)` so URLs are
+    visible in agent context
 - Max 120 characters per line
 - Lists require blank lines (MD032)
 
@@ -54,10 +56,17 @@ For documents requiring regulatory compliance:
 
 ## Defer To
 
-- **Requirements Agent**: For requirements.yaml content and test linkage
-- **Software Developer Agent**: For code examples
-- **Test Developer Agent**: For test documentation
-- **Code Quality Agent**: For running linters and fixing lint issues
+If requirements changes are needed, call the @requirements agent with the **request** to update `requirements.yaml`
+and the **context** of the required changes.
+
+If code examples are needed, call the @software-developer agent with the **request** to provide code examples and
+the **context** of what needs to be demonstrated.
+
+If test documentation is needed, call the @test-developer agent with the **request** to provide test documentation
+and the **context** of the tests to be documented.
+
+If linting or formatting issues are found, call the @code-quality agent with the **request** to fix the linting
+issues and the **context** of the errors encountered.
 
 ## Don't
 

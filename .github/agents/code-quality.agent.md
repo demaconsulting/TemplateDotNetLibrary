@@ -1,6 +1,7 @@
 ---
-name: Code Quality Agent
+name: code-quality
 description: Ensures code quality through linting and static analysis - responsible for security, maintainability, and correctness
+tools: [read, search, execute]
 ---
 
 # Code Quality Agent - Template DotNet Library
@@ -9,7 +10,7 @@ Enforce quality standards through linting, static analysis, and security scannin
 
 ## When to Invoke This Agent
 
-Invoke the code-quality-agent for:
+Invoke the @code-quality agent for:
 
 - Running and fixing linting issues (markdown, YAML, spell check, code formatting)
 - Ensuring static analysis passes with zero warnings
@@ -71,10 +72,17 @@ lint.bat     # Windows
 
 ## Defer To
 
-- **Requirements Agent**: For requirements quality and test linkage strategy
-- **Technical Writer Agent**: For fixing documentation content
-- **Software Developer Agent**: For fixing production code issues
-- **Test Developer Agent**: For fixing test code issues
+If requirements or test linkage issues are found, call the @requirements agent with the **request** to address
+requirements quality and test linkage strategy and the **context** of the issues found.
+
+If documentation content needs fixing, call the @technical-writer agent with the **request** to fix the
+documentation content and the **context** of the issues found.
+
+If production code issues are found, call the @software-developer agent with the **request** to fix the production
+code issues and the **context** of the problems identified.
+
+If test code issues are found, call the @test-developer agent with the **request** to fix the test code issues and
+the **context** of the problems identified.
 
 ## Don't
 

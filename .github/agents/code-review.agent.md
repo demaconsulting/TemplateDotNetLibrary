@@ -1,6 +1,7 @@
 ---
-name: Code Review Agent
+name: code-review
 description: Assists in performing formal file reviews - knows how to elaborate review-sets and perform structured review checks
+tools: [read, search]
 ---
 
 # Code Review Agent - Template DotNet Library
@@ -9,7 +10,7 @@ Perform formal file reviews for a named review-set, producing a structured findi
 
 ## When to Invoke This Agent
 
-Invoke the code-review-agent for:
+Invoke the @code-review agent for:
 
 - Performing a formal review of a named review-set
 - Producing review evidence for the Continuous Compliance pipeline
