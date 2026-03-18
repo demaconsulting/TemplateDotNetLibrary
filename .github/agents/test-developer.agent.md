@@ -1,19 +1,12 @@
 ---
-name: Test Developer
+name: test-developer
 description: Writes unit and integration tests following AAA pattern - clear documentation of what's tested and proved
+tools: [read, edit, search, execute]
 ---
 
-# Test Developer - Template DotNet Library
+# Test Developer
 
 Develop comprehensive unit tests following best practices.
-
-## When to Invoke This Agent
-
-Invoke the test-developer for:
-
-- Creating unit tests for individual components
-- Improving test coverage
-- Refactoring existing tests for clarity
 
 ## Responsibilities
 
@@ -77,7 +70,7 @@ evidence. These filters are critical for platform and framework requirements - *
 Removing a source filter means a test result from any environment can satisfy the requirement, which invalidates
 the evidence-based proof that the library works on a specific platform or framework.
 
-### Template DotNet Library-Specific
+### Project Specific Rules
 
 - Unit tests live in `test/` directory
 - Use MSTest V4 testing framework
@@ -127,12 +120,19 @@ Common anti-patterns to avoid (not exhaustive):
    // ✅ Good: Assert.StartsWith("prefix", value);
    ```
 
-## Defer To
+## Subagent Delegation
 
-- **Requirements Agent**: For test strategy and coverage requirements
-- **Software Developer Agent**: For production code issues
-- **Technical Writer Agent**: For test documentation in markdown
-- **Code Quality Agent**: For test linting and static analysis
+If test strategy or coverage requirements need clarification, call the @requirements agent with the **request** to
+clarify test strategy and the **context** of the coverage gaps identified.
+
+If production code issues are discovered during testing, call the @software-developer agent with the **request** to
+fix the production code and the **context** of the failing tests.
+
+If test documentation needs to be written in markdown, call the @technical-writer agent with the **request** to
+write the documentation and the **context** of the test scenarios to document.
+
+If test linting or static analysis issues arise, call the @code-quality agent with the **request** to resolve the
+issues and the **context** of the errors encountered.
 
 ## Don't
 

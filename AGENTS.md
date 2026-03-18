@@ -5,26 +5,38 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 
 ## Available Specialized Agents
 
-- **Requirements Agent** - Develops requirements and ensures test coverage linkage
-- **Technical Writer** - Creates accurate documentation following regulatory best practices
-- **Software Developer** - Writes production code in literate style
-- **Test Developer** - Creates unit tests following AAA pattern
-- **Code Quality Agent** - Enforces linting, static analysis, and security standards
-- **Code Review Agent** - Assists in performing formal file reviews
-- **Repo Consistency Agent** - Ensures downstream repositories remain consistent with template patterns
+- **requirements** agent - Develops requirements and ensures test coverage linkage
+- **technical-writer** agent - Creates accurate documentation following regulatory best practices
+- **software-developer** agent - Writes production code in literate style
+- **test-developer** agent - Creates unit tests following AAA pattern
+- **code-quality** agent - Enforces linting, static analysis, and security standards
+- **code-review** agent - Assists in performing formal file reviews
+- **repo-consistency** agent - Ensures downstream repositories remain consistent with template patterns
 
 ## Agent Selection Guide
 
-- Fix a bug → **Software Developer**
-- Add a new feature → **Requirements Agent** → **Software Developer** → **Test Developer**
-- Write a test → **Test Developer**
-- Fix linting or static analysis issues → **Code Quality Agent**
-- Update documentation → **Technical Writer**
-- Add or update requirements → **Requirements Agent**
-- Ensure test coverage linkage in `requirements.yaml` → **Requirements Agent**
-- Run security scanning or address CodeQL alerts → **Code Quality Agent**
-- Perform a formal file review → **Code Review Agent**
-- Propagate template changes → **Repo Consistency Agent**
+- Fix a bug → call the @software-developer agent with the **request** to fix the bug and the **context** of the
+  bug details
+- Add a new feature → call the @requirements agent with the **request** to define the feature requirements and the
+  **context** of the feature details, then call the @software-developer agent with the **request** to implement the
+  feature and the **context** of the requirements, then call the @test-developer agent with the **request** to add
+  tests and the **context** of the feature implemented
+- Write a test → call the @test-developer agent with the **request** to write the test and the **context** of
+  what needs to be tested
+- Fix linting or static analysis issues → call the @code-quality agent with the **request** to fix the issues
+  and the **context** of the errors encountered
+- Update documentation → call the @technical-writer agent with the **request** to update the documentation and
+  the **context** of what needs to change
+- Add or update requirements → call the @requirements agent with the **request** to add or update requirements
+  and the **context** of the feature details
+- Ensure test coverage linkage in `requirements.yaml` → call the @requirements agent with the **request** to
+  ensure test coverage linkage and the **context** of the current coverage gaps
+- Run security scanning or address CodeQL alerts → call the @code-quality agent with the **request** to address
+  security scanning or CodeQL alerts and the **context** of the alerts found
+- Perform a formal file review → call the @code-review agent with the **request** to perform a formal review and
+  the **context** of the review-set name
+- Propagate template changes → call the @repo-consistency agent with the **request** to propagate template
+  changes and the **context** of the downstream repository
 
 ## Tech Stack
 
@@ -100,7 +112,8 @@ build.bat     # Windows
 
 ## Markdown Link Style
 
-- **AI agent markdown files** (`.github/agents/*.md`): Use inline links `[text](url)` so URLs are visible in agent context
+- **AI agent markdown files** (`.github/agents/*.agent.md`): Use inline links `[text](url)` so URLs are
+  visible in agent context
 - **README.md**: Use absolute URLs (shipped in NuGet package)
 - **All other markdown files**: Use reference-style links `[text][ref]` with `[ref]: url` at document end
 
