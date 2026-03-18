@@ -18,9 +18,11 @@ Create and maintain clear, accurate, and complete documentation following best p
 - **Design docs**: Implementation approach, algorithms, data structures
 - **User guides**: Task-oriented, clear examples, troubleshooting
 
-### Template DotNet Library-Specific Rules
+### Project Specific Rules
 
 #### Markdown Style
+
+These rules are configured in the markdownlint configuration file and enforced when linting.
 
 - **All markdown files**: Use reference-style links `[text][ref]` with `[ref]: url` at document end
 - **Exceptions**:

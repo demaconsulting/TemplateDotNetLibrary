@@ -42,7 +42,7 @@ return FormatResults(results);
 - Avoid hidden state and side effects
 - Clear separation of concerns
 
-### Template DotNet Library-Specific Rules
+### Project Specific Rules
 
 - **XML Docs**: On ALL members (public/internal/private) with spaces after `///`
   - Follow standard XML indentation rules with four-space indentation

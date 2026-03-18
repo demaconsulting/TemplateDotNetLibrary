@@ -33,7 +33,7 @@ Ensure the project is:
    - `dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --enforce`
 5. **Tests**: All validation tests passing
 
-### Template DotNet Library-Specific
+### Project Specific Rules
 
 - **XML Docs**: Enforce on ALL members (public/internal/private)
 - **Code Style**: Verify `.editorconfig` compliance

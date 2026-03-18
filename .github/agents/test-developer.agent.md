@@ -70,7 +70,7 @@ evidence. These filters are critical for platform and framework requirements - *
 Removing a source filter means a test result from any environment can satisfy the requirement, which invalidates
 the evidence-based proof that the library works on a specific platform or framework.
 
-### Template DotNet Library-Specific
+### Project Specific Rules
 
 - Unit tests live in `test/` directory
 - Use MSTest V4 testing framework
