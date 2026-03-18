@@ -1,3 +1,4 @@
+---
 # Markdown Linting Standards
 #
 # PURPOSE:
@@ -10,7 +11,6 @@
 # - Do not relax rules to accommodate existing non-compliant files
 # - Consistency across repositories is critical for documentation quality
 
----
 config:
   # Enable all default rules
   default: true

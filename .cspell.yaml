@@ -1,3 +1,4 @@
+---
 # Spell-Checking
 #
 # PURPOSE:
@@ -5,7 +6,6 @@
 # - Catch spelling errors before publication
 # - Support consistent technical terminology usage
 
----
 version: "0.2"
 language: en
 

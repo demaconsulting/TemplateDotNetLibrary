@@ -1,3 +1,4 @@
+---
 # YAML Linting Standards
 #
 # PURPOSE:
@@ -10,9 +11,9 @@
 # - Do not relax rules to accommodate existing non-compliant files
 # - Consistency across repositories is critical for maintainability
 
----
 extends: default
 
+# Exclude common build artifacts and dependencies
 ignore: |
   node_modules/
   .git/
