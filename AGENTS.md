@@ -17,8 +17,10 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 
 - Fix a bug → call the @software-developer agent with the **request** to fix the bug and the **context** of the
   bug details
-- Add a new feature → call the @requirements agent with the **request** to define the feature requirements, then
-  the @software-developer agent to implement, then the @test-developer agent to add tests
+- Add a new feature → call the @requirements agent with the **request** to define the feature requirements and the
+  **context** of the feature details, then call the @software-developer agent with the **request** to implement the
+  feature and the **context** of the requirements, then call the @test-developer agent with the **request** to add
+  tests and the **context** of the feature implemented
 - Write a test → call the @test-developer agent with the **request** to write the test and the **context** of
   what needs to be tested
 - Fix linting or static analysis issues → call the @code-quality agent with the **request** to fix the issues
