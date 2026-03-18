@@ -85,6 +85,7 @@ npm-debug.log
 __pycache__/
 *.py[cod]
 *$py.class
+.venv/
 
 # Generated documentation
 docs/**/*.html

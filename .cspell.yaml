@@ -1,0 +1,99 @@
+# Spell-Checking
+#
+# PURPOSE:
+# - Maintain professional documentation and code quality
+# - Catch spelling errors before publication
+# - Support consistent technical terminology usage
+
+version: "0.2"
+language: en
+
+# Project-specific technical terms and tool names (update as needed)
+words:
+  - Anson
+  - Blockquotes
+  - buildmark
+  - BuildMark
+  - buildnotes
+  - camelcase
+  - Checkmarx
+  - CodeQL
+  - copilot
+  - cspell
+  - csproj
+  - dbproj
+  - dcterms
+  - Dema
+  - demaconsulting
+  - DEMACONSULTINGNUGETKEY
+  - Dependabot
+  - dependabot
+  - doctitle
+  - dotnet
+  - editorconfig
+  - filepart
+  - fsproj
+  - Gidget
+  - gitattributes
+  - ibiqlik
+  - LINQ
+  - maintainer
+  - markdownlint
+  - mermaid
+  - mstest
+  - myterm
+  - ncipollo
+  - nuget
+  - nupkg
+  - opencover
+  - pagetitle
+  - pandoc
+  - Pylint
+  - Qube
+  - reqstream
+  - ReqStream
+  - reviewmark
+  - ReviewMark
+  - reviewplan
+  - reviewreport
+  - Sarif
+  - SarifMark
+  - SBOM
+  - Semgrep
+  - semver
+  - slnx
+  - snupkg
+  - sonarmark
+  - SonarMark
+  - SonarQube
+  - spdx
+  - streetsidesoftware
+  - templatetool
+  - testname
+  - TMPL
+  - tracematrix
+  - triaging
+  - Trivy
+  - trx
+  - vbproj
+  - vcxproj
+  - versionmark
+  - Weasyprint
+  - yamllint
+
+# Exclude common build artifacts and dependencies
+ignorePaths:
+  - node_modules/**
+  - .git/**
+  - bin/**
+  - obj/**
+  - .venv/**
+  - "*.nupkg"
+  - "*.snupkg"
+  - "*.dll"
+  - "*.exe"
+  - "*.trx"
+  - "*.spdx.json"
+  - package-lock.json
+  - yarn.lock
+  - AGENT_REPORT_*.md
