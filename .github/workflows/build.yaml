@@ -34,6 +34,16 @@ jobs:
         run: >
           dotnet tool restore
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
       # === CAPTURE TOOL VERSIONS ===
       # This section captures the versions of all tools used in the build process.
       # Downstream projects: Add any additional tools to capture here.
@@ -63,21 +73,9 @@ jobs:
       # This section runs the linting and quality checks for the project.
       # Downstream projects: Add any additional quality check steps here.
 
-      - name: Run markdown linter
-        uses: DavidAnson/markdownlint-cli2-action@v22
-        with:
-          globs: '**/*.md'
-
-      - name: Run spell checker
-        uses: streetsidesoftware/cspell-action@v8
-        with:
-          files: '**/*.{md,cs}'
-          incremental_files_only: false
-
-      - name: Run YAML linter
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          config_file: .yamllint.yaml
+      - name: Run linters
+        shell: bash
+        run: bash ./lint.sh
 
       # === UPLOAD ARTIFACTS ===
       # This section uploads all generated artifacts for use by downstream jobs.
