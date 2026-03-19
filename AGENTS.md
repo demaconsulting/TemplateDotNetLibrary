@@ -48,6 +48,16 @@ implementation demonstrating best practices for DEMA Consulting .NET libraries.
 - **`.editorconfig`** - Code style (file-scoped namespaces, 4-space indent, UTF-8, LF endings)
 - **`.cspell.yaml`, `.markdownlint-cli2.yaml`, `.yamllint.yaml`** - Linting configs
 
+### Spell check word list policy
+
+**Never** add a word to the `.cspell.yaml` word list in order to silence a spell-checking failure.
+Doing so defeats the purpose of spell-checking and reduces the quality of the repository.
+
+- If cspell flags a word that is **misspelled**, fix the spelling in the source file.
+- If cspell flags a word that is a **genuine technical term** (tool name, project identifier, etc.) and is
+  spelled correctly, raise a **proposal** (e.g. open an issue or pull request) explaining why the word
+  should be added. The proposal must be reviewed and approved before the word is added to the list.
+
 ## Requirements
 
 - All requirements MUST be linked to tests
