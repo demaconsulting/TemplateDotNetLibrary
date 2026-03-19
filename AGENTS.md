@@ -55,7 +55,7 @@ Doing so defeats the purpose of spell-checking and reduces the quality of the re
 
 - If cspell flags a word that is **misspelled**, fix the spelling in the source file.
 - If cspell flags a word that is a **genuine technical term** (tool name, project identifier, etc.) and is
-  spelled correctly, raise a **proposal** (e.g. open an issue or pull request) explaining why the word
+  spelled correctly, raise a **proposal** (e.g. comment in a pull request) explaining why the word
   should be added. The proposal must be reviewed and approved before the word is added to the list.
 
 ## Requirements
