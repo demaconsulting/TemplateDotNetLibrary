@@ -207,8 +207,9 @@ All tests must pass with zero warnings.
 
 ```bash
 # Use the lint script which installs dependencies and runs all linters
-bash ./lint.sh    # Linux/macOS
-lint.bat          # Windows
+./lint.sh           # Linux/macOS (or: bash ./lint.sh)
+cmd /c lint.bat     # Windows (Command Prompt)
+./lint.bat          # Windows (PowerShell)
 ```
 
 ### 3. Code Coverage
