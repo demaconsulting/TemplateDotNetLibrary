@@ -85,19 +85,15 @@ words:
   - Weasyprint
   - yamllint
 
-# Exclude common build artifacts and dependencies
+# Exclude common build artifacts, dependencies, and vendored third-party code
 ignorePaths:
-  - node_modules/**
-  - .git/**
-  - bin/**
-  - obj/**
-  - .venv/**
-  - "*.nupkg"
-  - "*.snupkg"
-  - "*.dll"
-  - "*.exe"
-  - "*.trx"
-  - "*.spdx.json"
+  - "**/.git/**"
+  - "**/node_modules/**"
+  - "**/.venv/**"
+  - "**/thirdparty/**"
+  - "**/third-party/**"
+  - "**/3rd-party/**"
+  - "**/AGENT_REPORT_*.md"
+  - "**/bin/**"
+  - "**/obj/**"
   - package-lock.json
-  - yarn.lock
-  - AGENT_REPORT_*.md
