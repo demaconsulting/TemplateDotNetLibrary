@@ -40,7 +40,13 @@ reviews:
   - id: OTS-Dependencies
     title: Review of Off-The-Shelf Software Dependencies
     paths:
-      - "docs/reqstream/ots-software.yaml"
+      - "docs/reqstream/ots-mstest.yaml"
+      - "docs/reqstream/ots-reqstream.yaml"
+      - "docs/reqstream/ots-buildmark.yaml"
+      - "docs/reqstream/ots-versionmark.yaml"
+      - "docs/reqstream/ots-sarifmark.yaml"
+      - "docs/reqstream/ots-sonarmark.yaml"
+      - "docs/reqstream/ots-reviewmark.yaml"
 
   - id: Project-Configuration
     title: Review of Project Configuration and Root Requirements

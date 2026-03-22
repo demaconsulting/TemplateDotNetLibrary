@@ -1,19 +1,14 @@
 ---
-# Test links can include a source filter prefix (e.g. "windows@", "ubuntu@", "net8.0@") to restrict
-# which test results count as evidence for a requirement. This is critical for platform and framework
-# requirements - removing these filters invalidates the evidence-based proof.
-#
-# Source filter prefixes:
-#   windows@TestName  - proves the test passed on a Windows platform
-#   ubuntu@TestName   - proves the test passed on a Linux (Ubuntu) platform
-#   net8.0@TestName   - proves the test passed under the .NET 8 runtime
-#   net9.0@TestName   - proves the test passed under the .NET 9 runtime
-#   net10.0@TestName  - proves the test passed under the .NET 10 runtime
-
 # Root requirements file - includes all subsystem, platform, and OTS requirements
 sections:
   - title: Template DotNet Library Requirements
     includes:
       - docs/reqstream/library-subsystem.yaml
       - docs/reqstream/platform-requirements.yaml
-      - docs/reqstream/ots-software.yaml
+      - docs/reqstream/ots-mstest.yaml
+      - docs/reqstream/ots-reqstream.yaml
+      - docs/reqstream/ots-buildmark.yaml
+      - docs/reqstream/ots-versionmark.yaml
+      - docs/reqstream/ots-sarifmark.yaml
+      - docs/reqstream/ots-sonarmark.yaml
+      - docs/reqstream/ots-reviewmark.yaml
