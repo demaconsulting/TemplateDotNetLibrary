@@ -7,8 +7,7 @@
 # Processed in order; prefix a pattern with '!' to exclude.
 needs-review:
   - "**/*.cs"                    # All C# source and test files
-  - "**/*.yaml"                  # Configuration and requirements files
-  - "**/*.yml"                   # Configuration files
+  - "docs/reqstream/**/*.yaml"   # Requirements files
   - "!**/obj/**"                 # Exclude build output
   - "!**/bin/**"                 # Exclude build output
   - "!node_modules/**"           # Exclude npm dependencies
@@ -47,17 +46,3 @@ reviews:
       - "docs/reqstream/ots-sarifmark.yaml"
       - "docs/reqstream/ots-sonarmark.yaml"
       - "docs/reqstream/ots-reviewmark.yaml"
-
-  - id: Project-Configuration
-    title: Review of Project Configuration and Root Requirements
-    paths:
-      - "requirements.yaml"
-      - ".reviewmark.yaml"
-      - ".cspell.yaml"
-      - ".markdownlint-cli2.yaml"
-      - ".versionmark.yaml"
-      - ".yamllint.yaml"
-      - ".github/workflows/**/*.yaml"
-      - ".github/workflows/**/*.yml"
-      - ".github/**/*.yml"
-      - "docs/**/definition.yaml"
