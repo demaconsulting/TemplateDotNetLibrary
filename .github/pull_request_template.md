@@ -40,7 +40,7 @@ Before submitting this pull request, ensure you have completed the following:
 
 Please run the following checks before submitting:
 
-- [ ] **All linters pass**: `./lint.sh` (Unix/macOS) or `lint.bat` (Windows)
+- [ ] **All linters pass**: `./lint.sh` (Unix/macOS) or `cmd /c lint.bat` / `./lint.bat` (Windows)
 
 ### Testing
 
