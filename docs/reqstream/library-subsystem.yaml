@@ -1,6 +1,6 @@
 ---
 # Software Subsystem Requirements for Template DotNet Library API
-# 
+#
 # These requirements describe the externally visible behavior of the library
 # from the perspective of its consumers, without specifying implementation details.
 
