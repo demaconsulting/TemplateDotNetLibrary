@@ -244,7 +244,7 @@ This agent is designed for downstream repository analysis (not TemplateDotNetLib
 #### 1. **Repository Assessment Phase**
 
 - Access and analyze the downstream repository structure
-- Reference current TemplateDotNetLibrary template (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
+- Reference current TemplateDotNetLibrary template <https://github.com/demaconsulting/TemplateDotNetLibrary>
 - Identify template evolution changes since last downstream update
 
 #### 2. **Consistency Analysis Phase**

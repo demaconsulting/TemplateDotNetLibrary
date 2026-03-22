@@ -30,14 +30,14 @@ Use the Requirements Agent for:
 
 ### Core Principles
 
-The @requirements agent implements the [Continuous Compliance](https://github.com/demaconsulting/ContinuousCompliance)
-methodology, which provides automated compliance evidence generation through structured requirements management:
+The @requirements agent implements the Continuous Compliance methodology
+<https://github.com/demaconsulting/ContinuousCompliance>, which provides automated compliance evidence generation
+through structured requirements management:
 
-**📚 [Complete Methodology Documentation](https://github.com/demaconsulting/ContinuousCompliance)**
-**📋
-[Detailed Requirements Guidelines](https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md
-)**
-**🔧 [ReqStream Tool Documentation](https://github.com/demaconsulting/ReqStream)**
+- **📚 Complete Methodology Documentation:** <https://github.com/demaconsulting/ContinuousCompliance>
+- **📋 Detailed Requirements Guidelines:**
+  <https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>
+- **🔧 [ReqStream Tool Documentation]:** <https://github.com/demaconsulting/ReqStream>
 
 #### Automated Evidence Generation
 
@@ -115,7 +115,7 @@ sections:
 
 ### Continuous Compliance Enforcement
 
-Following the [Continuous Compliance methodology](https://github.com/demaconsulting/ContinuousCompliance),
+Following the Continuous Compliance methodology <https://github.com/demaconsulting/ContinuousCompliance>,
 requirements management operates on these enforcement principles:
 
 #### Traceability Requirements (ENFORCED)
@@ -134,9 +134,8 @@ requirements management operates on these enforcement principles:
 
 #### Compliance Documentation
 
-Per
-[Continuous Compliance requirements documentation](<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs>
-/requirements.md):
+Per Continuous Compliance requirements documentation
+<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>:
 
 - **Requirements Reports**: Generated documentation showing all requirements and their status
 - **Justifications**: Business and regulatory rationale for each requirement
@@ -194,7 +193,7 @@ Before completing any requirements work, verify:
 
 ReqStream is the core tool for implementing Continuous Compliance requirements management:
 
-**🔧 [ReqStream Repository](https://github.com/demaconsulting/ReqStream)**
+**🔧 ReqStream Repository:** <https://github.com/demaconsulting/ReqStream>
 
 #### Key Capabilities
 
@@ -297,9 +296,8 @@ includes:
 
 ### Requirements Quality Standards
 
-Following
-[Continuous Compliance requirements guidelines](<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/re>
-quirements.md):
+Following the Continuous Compliance requirements guidelines
+<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>.
 
 #### 1. **Observable Behavior Focus**
 

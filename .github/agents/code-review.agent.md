@@ -35,7 +35,8 @@ For detailed information about file review processes and tool usage:
 - **File Reviews Documentation**:
   <https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/file-reviews.md>
   Comprehensive guide to file review methodology, organization strategies, and compliance best practices
-- **ReviewMark Tool Documentation**: <https://raw.githubusercontent.com/demaconsulting/ReviewMark/refs/heads/main/README.md>
+- **ReviewMark Tool Documentation**:
+  <https://raw.githubusercontent.com/demaconsulting/ReviewMark/refs/heads/main/README.md>
   Complete ReviewMark tool usage, configuration options, and command-line reference
 
 Reference these resources when you need detailed information about review workflows, ReviewMark configuration, or
@@ -145,9 +146,8 @@ dotnet reviewmark --definition .reviewmark.yaml --report docs/code_review_report
 
 Use the comprehensive, evolving review checklist template maintained in the Continuous Compliance repository:
 
-**📋
-[Review Template Checklist](<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/review-template/review>
--template.md)**
+**📋 Review Template Checklist:**
+<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/review-template/review-template.md>
 
 This template provides detailed checklists for:
 
@@ -166,9 +166,8 @@ best practices - always use the latest version from the official repository.
 
 Generate review reports following the structure defined in the evolving review checklist template:
 
-**📋
-[Review Template Checklist](<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/review-template/review>
--template.md)**
+**📋 Review Template Checklist:**
+<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/review-template/review-template.md>
 
 The report format and required sections are defined within the template and will evolve based on lessons learned and
 best practices. Key principles for any review report:
