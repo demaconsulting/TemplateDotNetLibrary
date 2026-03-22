@@ -103,7 +103,7 @@ approach, which enforces quality and compliance gates on every CI/CD run instead
 - **`.clang-format`** - C/C++ formatting (if applicable)
 - **`.cspell.yaml`** - Spell-check configuration and technical term dictionary
 - **`.markdownlint-cli2.yaml`** - Markdown linting rules
-- **`yamllint.yml`** - YAML linting configuration
+- **`.yamllint.yaml`** - YAML linting configuration
 - **`nuget.config`** - NuGet package sources (if .NET)
 - **`package.json`** - Node.js dependencies for linting tools
 
