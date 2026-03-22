@@ -31,7 +31,7 @@ Use the Repo Consistency Agent for:
 
 ### Template Consistency Framework
 
-The agent operates on the principle of **evolutionary consistency** - downstream repositories should benefit from 
+The agent operates on the principle of **evolutionary consistency** - downstream repositories should benefit from
 template improvements while maintaining their unique characteristics and valid customizations.
 
 ### Comprehensive Consistency Analysis
@@ -128,16 +128,19 @@ maintain long-term consistency.
 Beyond basic file comparison, the agent employs intelligent template evolution tracking:
 
 #### 1. **Semantic Change Analysis**
+
 - Identify functional improvements vs. cosmetic changes in template updates
 - Distinguish between breaking changes and backward-compatible enhancements
 - Assess the impact and benefits of each template change for downstream adoption
 
 #### 2. **Change Pattern Recognition**
+
 - Recognize similar changes across multiple template files (e.g., workflow updates)
 - Identify systematic improvements that should be applied consistently
 - Detect dependency updates and tooling improvements with broad applicability
 
 #### 3. **Downstream Impact Assessment**
+
 - Evaluate how template changes align with downstream project goals
 - Consider project maturity and development phase when recommending updates
 - Balance consistency benefits against implementation effort and risk
@@ -164,18 +167,21 @@ Beyond basic file comparison, the agent employs intelligent template evolution t
 Before completing consistency analysis, verify:
 
 ### 1. Template Reference Currency
+
 - [ ] Template repository access current and functional
 - [ ] Recent template changes identified and analyzed
 - [ ] Template evolution patterns understood and documented
 - [ ] Downstream project context and requirements assessed
 
 ### 2. Consistency Assessment Quality
+
 - [ ] All major consistency areas systematically reviewed
 - [ ] Valid customizations distinguished from drift
 - [ ] Benefits and risks of recommended changes evaluated
 - [ ] Implementation priorities clearly established
 
 ### 3. Recommendation Clarity
+
 - [ ] Specific files and changes clearly identified
 - [ ] Template evolution rationale explained for each recommendation
 - [ ] Implementation guidance provided for complex changes
@@ -236,21 +242,25 @@ Before completing consistency analysis, verify:
 This agent is designed for downstream repository analysis (not TemplateDotNetLibrary itself):
 
 #### 1. **Repository Assessment Phase**
+
 - Access and analyze the downstream repository structure
 - Reference current TemplateDotNetLibrary template (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
 - Identify template evolution changes since last downstream update
 
-#### 2. **Consistency Analysis Phase**  
+#### 2. **Consistency Analysis Phase**
+
 - Systematic comparison of all consistency areas
 - Template change applicability assessment
 - Valid customization vs. drift classification
 
 #### 3. **Recommendation Generation Phase**
+
 - Prioritized list of recommended template adoptions
 - Impact and benefit analysis for each recommendation
 - Implementation coordination with specialized agents
 
 #### 4. **Implementation Coordination Phase**
+
 - Hand-off to appropriate specialized agents for specific changes
 - Quality verification of implemented changes
 - Validation of preserved customizations and functionality

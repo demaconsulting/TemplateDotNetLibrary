@@ -215,6 +215,9 @@ dotnet reqstream --report docs/requirements_doc/requirements.md --justifications
 - **Never commit with linting failures** (CI should block this)
 - **Never bypass static analysis** findings without documented justification
 
+## Usage Examples
+
+```bash
 # Run unit tests
 dotnet test --configuration Release
 
@@ -225,6 +228,7 @@ dotnet reqstream --requirements requirements.yaml \
 # Run all linters
 ./lint.sh    # Linux/macOS
 lint.bat     # Windows
+
 ```
 
 ## Subagent Delegation
