@@ -14,7 +14,8 @@ one named review-set.
 This review plan covers:
 
 - C# source code files requiring formal review
-- Mapping of C# source files to named review-sets
+- YAML configuration and requirements files requiring formal review
+- Mapping of reviewed files to named review-sets
 
 ## Generation Source
 

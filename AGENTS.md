@@ -87,12 +87,11 @@ and compliance gates on every CI/CD run instead of as a last-mile activity.
 
 - `docs/` - Documentation and compliance artifacts
   - `reqstream/` - Subsystem requirements YAML files (included by root requirements.yaml)
-  - `.reviewmark.yaml` - File review definitions and tracking
   - Auto-generated reports (requirements, justifications, trace matrix)
 - `src/` - Source code files
 - `test/` - Test files
-- `pipelines/` - CI/CD pipeline definitions
-- Configuration files: `.editorconfig`, `.clang-format`, `nuget.config`, etc.
+- `.github/workflows/` - CI/CD pipeline definitions (build.yaml, build_on_push.yaml, release.yaml)
+- Configuration files: `.editorconfig`, `.clang-format`, `nuget.config`, `.reviewmark.yaml`, etc.
 
 ## Key Configuration Files
 
