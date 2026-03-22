@@ -1,13 +1,18 @@
 ---
 # ReviewMark Configuration File
 # This file defines which files require review, where the evidence store is located,
-# and how files are grouped into named review-sets.
+# and how files are grouped into named review-sets following software unit boundaries.
 
 # Patterns identifying all files that require review.
 # Processed in order; prefix a pattern with '!' to exclude.
 needs-review:
-  - "**/*.cs"
-  - "!**/obj/**"
+  - "**/*.cs"                    # All C# source and test files
+  - "**/*.yaml"                  # Configuration and requirements files
+  - "**/*.yml"                   # Configuration files
+  - "!**/obj/**"                 # Exclude build output
+  - "!**/bin/**"                 # Exclude build output
+  - "!node_modules/**"           # Exclude npm dependencies
+  - "!**/.venv/**"               # Exclude Python virtual environment
 
 # Evidence source: review data and index.json are located in the 'reviews' branch
 # of this repository, accessed through the GitHub public HTTPS raw content access.
@@ -18,9 +23,41 @@ evidence-source:
   location: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/reviews/index.json
 
 # Review sets grouping files by logical unit of review.
+# Each review-set should group requirements, design, source, and tests for a coherent unit.
 reviews:
-  - id: Template-Review
-    title: Review of Template DotNet Library
+  - id: Library-Core
+    title: Review of Template DotNet Library Core Implementation
     paths:
-      - "**/*.cs"
-      - "!**/obj/**"
+      - "src/TemplateDotNetLibrary/**/*.cs"
+      - "test/TemplateDotNetLibrary.Tests/**/*.cs"
+      - "docs/reqstream/library-subsystem.yaml"
+
+  - id: Platform-Support
+    title: Review of Platform and Runtime Support Requirements
+    paths:
+      - "docs/reqstream/platform-requirements.yaml"
+
+  - id: OTS-Dependencies
+    title: Review of Off-The-Shelf Software Dependencies
+    paths:
+      - "docs/reqstream/ots-mstest.yaml"
+      - "docs/reqstream/ots-reqstream.yaml"
+      - "docs/reqstream/ots-buildmark.yaml"
+      - "docs/reqstream/ots-versionmark.yaml"
+      - "docs/reqstream/ots-sarifmark.yaml"
+      - "docs/reqstream/ots-sonarmark.yaml"
+      - "docs/reqstream/ots-reviewmark.yaml"
+
+  - id: Project-Configuration
+    title: Review of Project Configuration and Root Requirements
+    paths:
+      - "requirements.yaml"
+      - ".reviewmark.yaml"
+      - ".cspell.yaml"
+      - ".markdownlint-cli2.yaml"
+      - ".versionmark.yaml"
+      - ".yamllint.yaml"
+      - ".github/workflows/**/*.yaml"
+      - ".github/workflows/**/*.yml"
+      - ".github/**/*.yml"
+      - "docs/**/definition.yaml"

@@ -63,10 +63,10 @@ jobs:
           name: documents
           path: artifacts
 
-      - name: Move buildnotes.md to root
+      - name: Move build_notes.md to root
         run: |
           set -e
-          mv artifacts/buildnotes.md buildnotes.md
+          mv artifacts/build_notes.md build_notes.md
 
       - name: Create GitHub Release
         if: inputs.publish == 'release' || inputs.publish == 'publish'
@@ -74,7 +74,7 @@ jobs:
         with:
           tag: ${{ inputs.version }}
           artifacts: artifacts/*
-          bodyFile: buildnotes.md
+          bodyFile: build_notes.md
           generateReleaseNotes: false
 
       - name: Publish to NuGet.org
