@@ -35,7 +35,7 @@ jobs:
           dotnet tool restore
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24.x
 
@@ -446,6 +446,7 @@ jobs:
 
       - name: Generate Review Plan and Review Report with ReviewMark
         shell: bash
+        # TODO: Add --enforce once reviews branch is populated with review evidence PDFs and index.json
         run: >
           dotnet reviewmark
           --definition .reviewmark.yaml
