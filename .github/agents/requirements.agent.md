@@ -36,7 +36,7 @@ generation through structured requirements management:
 
 - **📚 Complete Methodology Documentation:** <https://github.com/demaconsulting/ContinuousCompliance>
 - **📋 Detailed Requirements Guidelines:**
-  <https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>
+  <https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/requirements.md>
 - **🔧 ReqStream Tool Documentation:** <https://github.com/demaconsulting/ReqStream>
 
 #### Automated Evidence Generation
@@ -135,7 +135,7 @@ requirements management operates on these enforcement principles:
 #### Compliance Documentation
 
 Per Continuous Compliance requirements documentation
-<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>:
+<https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/requirements.md>:
 
 - **Requirements Reports**: Generated documentation showing all requirements and their status
 - **Justifications**: Business and regulatory rationale for each requirement
@@ -299,7 +299,7 @@ includes:
 ### Requirements Quality Standards
 
 Following Continuous Compliance requirements guidelines
-<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>:
+<https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/requirements.md>:
 
 #### 1. **Observable Behavior Focus**
 

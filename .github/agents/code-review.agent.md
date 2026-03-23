@@ -19,7 +19,7 @@ for the specific review-set.
 ## Review Steps
 
 1. Download the
-   <https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/review-template/review-template.md>
+   <https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/review-template/review-template.md>
    to get the checklist to fill in
 2. Use `dotnet reviewmark --elaborate [review-set]` to get the files to review
 3. Review the files all together
