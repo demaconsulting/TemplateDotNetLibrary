@@ -30,7 +30,7 @@
          - PrivateAssets="all" keeps this test-coverage tool out of any consuming project's dependencies.
          - IncludeAssets lists all asset types (including 'build' and 'buildtransitive') to ensure the
            data collector MSBuild targets are activated so coverage is collected during test runs. -->
-    <PackageReference Include="coverlet.collector" Version="8.0.0">
+    <PackageReference Include="coverlet.collector" Version="8.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
