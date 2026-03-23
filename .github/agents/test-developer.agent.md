@@ -212,7 +212,7 @@ dotnet test --configuration Release --framework net8.0-windows --logger "trx;Log
                --verbosity normal
     
 - name: Upload Test Results
-  uses: actions/upload-artifact@v4
+  uses: actions/upload-artifact@v7
   with:
     name: test-results
     path: TestResults/**/*.trx

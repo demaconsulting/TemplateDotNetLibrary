@@ -83,7 +83,7 @@ Organize requirements into separate files under `docs/reqstream/` to enable inde
 
 #### OTS Software Requirements
 
-- **File Pattern**: `{component}-ots.yaml` (e.g., `systemtextjson-ots.yaml`)
+- **File Pattern**: `ots-{component}.yaml` (e.g., `ots-systemtextjson.yaml`)
 - **Content Focus**: Required functionality from third-party components, libraries, and frameworks
 - **Review Scope**: Dependency validation and integration testing reviews
 - **Team Assignment**: Can be reviewed by teams responsible for external dependency management
@@ -155,8 +155,10 @@ Per Continuous Compliance requirements documentation
 ```yaml
 tests:
   - "windows@TestMethodName"    # Windows platform evidence only
-  - "iar@TestMethodName"        # IAR target evidence only  
-  - "linux@TestMethodName"      # Linux platform evidence only
+  - "ubuntu@TestMethodName"     # Linux (Ubuntu) platform evidence only
+  - "net8.0@TestMethodName"     # .NET 8 runtime evidence only
+  - "net9.0@TestMethodName"     # .NET 9 runtime evidence only
+  - "net10.0@TestMethodName"    # .NET 10 runtime evidence only
   - "TestMethodName"            # Any platform evidence acceptable
 ```
 
@@ -245,9 +247,9 @@ docs/
     ui-controller-class.yaml            # UI Controller class requirements
     
     # OTS Software requirements (enable dependency review-sets)
-    systemtextjson-ots.yaml            # System.Text.Json OTS requirements
-    nunit-ots.yaml                     # NUnit framework OTS requirements
-    entityframework-ots.yaml           # Entity Framework OTS requirements
+    ots-systemtextjson.yaml            # System.Text.Json OTS requirements
+    ots-nunit.yaml                     # NUnit framework OTS requirements
+    ots-entityframework.yaml           # Entity Framework OTS requirements
     
   requirements_doc/                 # Pandoc document folder for requirements publication
     definition.yaml                 # Document content definition
@@ -287,9 +289,9 @@ includes:
   - docs/reqstream/data-repository-class.yaml
   - docs/reqstream/ui-controller-class.yaml
   # OTS Software requirements (third-party components)
-  - docs/reqstream/systemtextjson-ots.yaml
-  - docs/reqstream/nunit-ots.yaml
-  - docs/reqstream/entityframework-ots.yaml
+  - docs/reqstream/ots-systemtextjson.yaml
+  - docs/reqstream/ots-nunit.yaml
+  - docs/reqstream/ots-entityframework.yaml
 ```
 
 ## Continuous Compliance Best Practices
