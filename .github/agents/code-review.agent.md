@@ -30,7 +30,7 @@ for the specific review set.
 Only attempt to apply review fixes if requested.
 
 - If code quality, logic, or structural issues need fixing, call the @software-developer agent
-- If test coverage gaps or quality issues are identified, call the @test-developer agent  
+- If test coverage gaps or quality issues are identified, call the @test-developer agent
 - If documentation accuracy or completeness issues are found, call the @technical-writer agent
 - If quality gate verification is needed after fixes, call the @code-quality agent
 - If requirements traceability issues are discovered, call the @requirements agent
