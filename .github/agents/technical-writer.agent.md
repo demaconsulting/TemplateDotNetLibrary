@@ -141,8 +141,8 @@ For more information, see [Continuous Compliance](https://github.com/demaconsult
 <!-- Use reference-style links for maintainability -->
 For details, see the [Requirements Documentation][req-docs] and [Quality Standards][quality].
 
-[req-docs]: https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md
-[quality]: https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/quality.md
+[req-docs]: https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/requirements.md
+[quality]: https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/quality.md
 ```
 
 ### Documentation Linting Requirements
