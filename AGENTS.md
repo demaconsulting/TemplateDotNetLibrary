@@ -144,7 +144,7 @@ This repository follows continuous compliance practices from DEMA Consulting Con
 ### Core Requirements Traceability Rules
 
 - **ALL requirements MUST be linked to tests** - Enforced in CI via `dotnet reqstream --enforce`
-- **NOT all tests need requirement links** - Tests may exist for corner cases, design validation, failure scenarios  
+- **NOT all tests need requirement links** - Tests may exist for corner cases, design validation, failure scenarios
 - **Source filters are critical** - Platform/framework requirements need specific test evidence
 
 For detailed requirements format, test linkage patterns, and ReqStream integration, call the @requirements agent.

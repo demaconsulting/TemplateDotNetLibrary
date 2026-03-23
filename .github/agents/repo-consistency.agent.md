@@ -86,11 +86,10 @@ The agent reviews the following areas for consistency with the template:
 
 - **Document Structure**: `docs/` directory with:
   - `guide/` (user guide)
-  - `requirements/` (auto-generated)
-  - `justifications/` (auto-generated)
-  - `tracematrix/` (auto-generated)
-  - `buildnotes/` (auto-generated)
-  - `quality/` (auto-generated)
+  - `requirements_doc/` (auto-generated)
+  - `requirements_report/` (auto-generated)
+  - `build_notes/` (auto-generated)
+  - `code_quality/` (auto-generated)
 - **Definition Files**: `definition.yaml` files for document generation
 
 ### Tracking Template Evolution
