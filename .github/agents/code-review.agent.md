@@ -13,8 +13,8 @@ requirements.
 ## Reporting
 
 Create a report using the filename pattern `AGENT_REPORT_code_review_[review-set].md`
-(e.g., `AGENT_REPORT_code_review_auth_module.md`) to document review criteria, identified issues, and recommendations
-for the specific review set.
+(e.g., `AGENT_REPORT_code_review_auth-module.md`) to document review criteria, identified issues, and recommendations
+for the specific review-set.
 
 ## Review Steps
 
