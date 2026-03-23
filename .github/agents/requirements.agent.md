@@ -31,13 +31,13 @@ Use the Requirements Agent for:
 ### Core Principles
 
 The @requirements agent implements the Continuous Compliance methodology
-<https://github.com/demaconsulting/ContinuousCompliance>, which provides automated compliance evidence generation
-through structured requirements management:
+<https://github.com/demaconsulting/ContinuousCompliance>, which provides automated compliance evidence
+generation through structured requirements management:
 
 - **📚 Complete Methodology Documentation:** <https://github.com/demaconsulting/ContinuousCompliance>
 - **📋 Detailed Requirements Guidelines:**
   <https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>
-- **🔧 [ReqStream Tool Documentation]:** <https://github.com/demaconsulting/ReqStream>
+- **🔧 ReqStream Tool Documentation:** <https://github.com/demaconsulting/ReqStream>
 
 #### Automated Evidence Generation
 
@@ -216,7 +216,7 @@ dotnet reqstream --requirements requirements.yaml --report docs/requirements_doc
 dotnet reqstream --requirements requirements.yaml --justifications docs/requirements_doc/justifications.md
 
 # Generate trace matrix
-dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --tracematrix docs/requirements_report/trace_matrix.md
+dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --matrix docs/requirements_report/trace_matrix.md
 ```
 
 ### Required Tools & Configuration
@@ -296,8 +296,8 @@ includes:
 
 ### Requirements Quality Standards
 
-Following the Continuous Compliance requirements guidelines
-<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>.
+Following Continuous Compliance requirements guidelines
+<https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/requirements.md>:
 
 #### 1. **Observable Behavior Focus**
 
@@ -383,16 +383,3 @@ Removing them invalidates regulatory audit trails.
 - Skip justification text (required for compliance audits)
 - Change test code directly (delegate to @test-developer agent)
 - Modify CI/CD enforcement thresholds without compliance review
-
-If documentation of requirements or processes is needed, call the @technical-writer agent with the **request** to
-write the documentation and the **context** of the requirements to be documented.
-
-If test quality or enforcement issues arise, call the @code-quality agent with the **request** to verify test
-quality and enforcement and the **context** of the requirements traceability concerns.
-
-## Don't
-
-- Mix requirements with implementation details
-- Create requirements without test linkage
-- Expect all tests to be linked to requirements (some tests exist for other purposes)
-- Change code directly (delegate to developer agents)

@@ -50,9 +50,9 @@ modification policies in header comments.
 
 ## Continuous Compliance Overview
 
-This repository follows the DEMA Consulting Continuous Compliance approach
-<https://github.com/demaconsulting/ContinuousCompliance>, which enforces quality
-and compliance gates on every CI/CD run instead of as a last-mile activity.
+This repository follows the DEMA Consulting Continuous Compliance
+<https://github.com/demaconsulting/ContinuousCompliance> approach, which enforces quality and
+compliance gates on every CI/CD run instead of as a last-mile activity.
 
 ### Core Principles
 
