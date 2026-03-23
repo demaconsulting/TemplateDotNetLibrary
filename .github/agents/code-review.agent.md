@@ -13,17 +13,17 @@ requirements.
 ## Reporting
 
 Create a report using the filename pattern `AGENT_REPORT_code_review_[review-set].md`
-(e.g., `AGENT_REPORT_code_review_auth_module.md`) to document review criteria, identified issues, and recommendations
-for the specific review set.
+(e.g., `AGENT_REPORT_code_review_auth-module.md`) to document review criteria, identified issues, and recommendations
+for the specific review-set.
 
 ## Review Steps
 
 1. Download the
    <https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/review-template/review-template.md>
-   to get the check-list to fill in
+   to get the checklist to fill in
 2. Use `dotnet reviewmark --elaborate [review-set]` to get the files to review
 3. Review the files all together
-4. Populate the check-list with the findings to make the report
+4. Populate the checklist with the findings to make the report
 
 ## Hand-off to Other Agents
 
