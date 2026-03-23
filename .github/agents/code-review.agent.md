@@ -20,10 +20,10 @@ for the specific review set.
 
 1. Download the
    <https://raw.githubusercontent.com/demaconsulting/ContinuousCompliance/refs/heads/main/docs/review-template/review-template.md>
-   to get the check-list to fill in
+   to get the checklist to fill in
 2. Use `dotnet reviewmark --elaborate [review-set]` to get the files to review
 3. Review the files all together
-4. Populate the check-list with the findings to make the report
+4. Populate the checklist with the findings to make the report
 
 ## Hand-off to Other Agents
 
