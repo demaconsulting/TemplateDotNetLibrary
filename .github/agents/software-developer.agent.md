@@ -251,7 +251,6 @@ ProcessedMeasurement ProcessSensorData(const SensorReading& sensorReading)
 - Implement functionality without requirement traceability
 - Ignore static analysis or security scanning results
 - Write monolithic functions with multiple responsibilities
-- **String Formatting**: Use interpolated strings ($"") for clarity
 
 ## Subagent Delegation
 
@@ -266,6 +265,10 @@ documentation and the **context** of what has changed.
 
 If linting, formatting, or static analysis issues arise, call the @code-quality agent with the **request** to
 resolve the issues and the **context** of the errors encountered.
+
+## Do
+
+- **String Formatting**: Use interpolated strings ($"") for clarity
 
 ## Don't
 

@@ -216,7 +216,7 @@ dotnet reqstream --requirements requirements.yaml --report docs/requirements_doc
 dotnet reqstream --requirements requirements.yaml --justifications docs/requirements_doc/justifications.md
 
 # Generate trace matrix
-dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --tracematrix docs/requirements_report/trace_matrix.md
+dotnet reqstream --requirements requirements.yaml --tests "test-results/**/*.trx" --matrix docs/requirements_report/trace_matrix.md
 ```
 
 ### Required Tools & Configuration
