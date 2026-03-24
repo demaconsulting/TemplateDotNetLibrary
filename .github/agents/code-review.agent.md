@@ -1,7 +1,7 @@
 ---
 name: code-review
 description: Assists in performing formal file reviews.
-tools: [read, search, github, agent, execute]
+tools: [read, search, edit, execute, github, web, agent]
 user-invocable: true
 ---
 
