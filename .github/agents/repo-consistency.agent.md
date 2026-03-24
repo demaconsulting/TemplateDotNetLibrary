@@ -1,7 +1,7 @@
 ---
 name: repo-consistency
 description: Ensures downstream repositories remain consistent with the TemplateDotNetLibrary template patterns and best practices.
-tools: [read, search, github]
+tools: [edit, read, search, github, agent]
 user-invocable: true
 ---
 
@@ -18,7 +18,7 @@ consistency gaps, template evolution updates, and recommended changes for the sp
 
 ## Consistency Steps
 
-1. Fetch the last 20 completed pull requests from the public DemaConsulting/TemplateDotNetLibrary repo
+1. Fetch the last 20 merged pull requests from <https://github.com/demaconsulting/TemplateDotNetLibrary>
 2. Determine the intent of the template pull requests (what changes were performed to which files)
 3. Apply missing changes to this repository's files (if appropriate and with translation)
 
