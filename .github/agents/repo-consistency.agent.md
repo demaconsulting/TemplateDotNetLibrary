@@ -29,7 +29,6 @@ consistency gaps, template evolution updates, and recommended changes for the sp
 - **Never apply template changes blindly** without assessing downstream project impact
 - **Never ignore template evolution benefits** when they clearly improve downstream projects
 - **Never recommend breaking changes** without migration guidance and impact assessment
-- **Never modify downstream code directly** (coordinate through appropriate specialized agents)
 - **Never skip validation** of preserved functionality after template alignment
 - **Never assume all template patterns apply universally** (assess project-specific needs)
 
@@ -38,5 +37,3 @@ consistency gaps, template evolution updates, and recommended changes for the sp
 - **Evolutionary Consistency**: Template improvements should enhance downstream projects systematically
 - **Intelligent Customization Respect**: Distinguished valid customizations from unintentional drift
 - **Incremental Template Adoption**: Support phased adoption of template improvements based on project capacity
-- **Evidence-Based Recommendations**: All consistency recommendations backed by clear benefits and rationale
-- **Cross-Agent Coordination**: Leverage specialized agents for implementation while maintaining oversight
