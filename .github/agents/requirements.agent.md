@@ -1,7 +1,7 @@
 ---
 name: requirements
 description: Develops requirements and ensures appropriate test coverage.
-tools: [read, search, edit, execute, github]
+tools: [read, search, edit, execute, github, agent]
 user-invocable: true
 ---
 

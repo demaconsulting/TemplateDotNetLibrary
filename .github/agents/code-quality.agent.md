@@ -1,7 +1,7 @@
 ---
 name: code-quality
 description: Ensures code quality through comprehensive linting and static analysis.
-tools: [edit, read, search, execute, github]  
+tools: [read, search, edit, execute, github, agent]
 user-invocable: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: test-developer
 description: Writes unit and integration tests.
-tools: [read, search, edit, execute, github]
+tools: [read, search, edit, execute, github, agent]
 user-invocable: true
 ---
 

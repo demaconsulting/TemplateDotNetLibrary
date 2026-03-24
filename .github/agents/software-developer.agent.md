@@ -1,7 +1,7 @@
 ---
 name: software-developer
 description: Writes production code and self-validation tests.
-tools: [edit, read, search, execute, github]
+tools: [read, search, edit, execute, github, agent]
 user-invocable: true
 ---
 

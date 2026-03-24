@@ -1,7 +1,7 @@
 ---
 name: technical-writer
 description: Ensures documentation is accurate and complete.
-tools: [read, search, edit, execute, github]
+tools: [read, search, edit, execute, github, agent]
 user-invocable: true
 ---
 
