@@ -36,7 +36,7 @@ Delegate to specialized agents only for specific scenarios:
   appropriate standards based on the work being performed
 - **implementation** - Orchestrator agent that manages quality implementations
   through a formal state machine workflow
-- **quality** - Quality assurance agent that grades developer work against Dema
+- **quality** - Quality assurance agent that grades developer work against DEMA
   Consulting standards and Continuous Compliance practices  
 - **repo-consistency** - Ensures downstream repositories remain consistent with
   the TemplateDotNetLibrary template patterns and best practices
