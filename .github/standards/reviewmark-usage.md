@@ -1,6 +1,6 @@
 # ReviewMark File Review Standards
 
-This document defines Dema Consulting standards for managing file reviews using
+This document defines DEMA Consulting standards for managing file reviews using
 ReviewMark within Continuous Compliance environments.
 
 # Core Purpose
