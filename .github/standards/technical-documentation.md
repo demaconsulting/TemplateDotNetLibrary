@@ -1,6 +1,6 @@
 # Technical Documentation Standards
 
-This document defines Dema Consulting standards for technical documentation
+This document defines DEMA Consulting standards for technical documentation
 within Continuous Compliance environments.
 
 # Core Principles
