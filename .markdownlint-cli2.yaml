@@ -11,6 +11,12 @@
 # - Do not relax rules to accommodate existing non-compliant files
 # - Consistency across repositories is critical for documentation quality
 
+# Disable the banner message (e.g., version info) on stdout
+noBanner: true
+
+# Disable the progress indicator on stdout
+noProgress: true
+
 config:
   # Enable all default rules
   default: true
@@ -45,3 +51,4 @@ ignores:
   - "**/third-party/**"
   - "**/3rd-party/**"
   - "**/AGENT_REPORT_*.md"
+  - "**/.agent-logs/**"
