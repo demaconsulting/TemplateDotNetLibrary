@@ -23,8 +23,8 @@ Delegate to specialized agents only for specific scenarios:
 
 - **Light development work** (small fixes, simple features) → Call @developer agent
 - **Light quality checking** (linting, basic validation) → Call @quality agent
-- **Formal feature implementation** (complex, multi-step) → Call @implementation orchestrator
-- **Formal bug resolution** (complex debugging, systematic fixes) → Call @implementation orchestrator
+- **Formal feature implementation** (complex, multi-step) → Call the `@implementation` agent
+- **Formal bug resolution** (complex debugging, systematic fixes) → Call the `@implementation` agent
 - **Formal reviews** (compliance verification, detailed analysis) → Call @code-review agent
 - **Template consistency** (downstream repository alignment) → Call @repo-consistency agent
 
