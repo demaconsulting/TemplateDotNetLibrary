@@ -49,7 +49,8 @@ Link tests to requirements because every requirement must have passing test evid
 
 # Mock Dependencies
 
-Mock external dependencies using NSubstitute (preferred) because tests must run in isolation to generate reliable evidence.
+Mock external dependencies using NSubstitute (preferred) because tests must run in isolation to generate
+reliable evidence.
 
 - **Isolate System Under Test**: Mock all external dependencies (databases, web services, file systems)
 - **Verify Interactions**: Assert that expected method calls occurred with correct parameters
