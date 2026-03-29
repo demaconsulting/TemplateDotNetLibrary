@@ -1,6 +1,8 @@
 ---
 name: developer
-description: General-purpose software development agent that applies appropriate standards based on the work being performed.
+description: >
+  General-purpose software development agent that applies appropriate standards
+  based on the work being performed.
 user-invocable: true
 ---
 
