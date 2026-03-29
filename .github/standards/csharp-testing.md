@@ -15,10 +15,10 @@ public void ServiceName_MethodName_Scenario_ExpectedBehavior()
 {
     // Arrange - (description)
     // TODO: Set up test data, mocks, and system under test.
-    
+
     // Act - (description)
     // TODO: Execute the action being tested
-    
+
     // Assert - (description)
     // TODO: Verify expected outcomes and interactions
 }
