@@ -144,7 +144,7 @@ Structure README.md for both human readers and AI agent processing:
 Before submitting technical documentation, verify:
 
 - [ ] Documentation organized under `docs/` following standard folder structure
-- [ ] Pandoc collections include `introduction.md` with Purpose and Scope sections  
+- [ ] Pandoc collections include `introduction.md` with Purpose and Scope sections
 - [ ] Content follows clear and concise writing guidelines with specific examples
 - [ ] No modifications made to auto-generated markdown files in compliance folders
 - [ ] README.md includes all required sections with absolute URLs and concrete examples
