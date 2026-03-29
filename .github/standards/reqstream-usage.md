@@ -10,7 +10,7 @@ generation:
 
 - **Requirements Traceability**: Every requirement MUST link to passing tests
 - **Platform Evidence**: Source filters ensure correct testing environment
-  validation  
+  validation
 - **Quality Gate Enforcement**: CI/CD fails on requirements without test
   coverage
 - **Audit Documentation**: Generated reports provide compliance evidence

@@ -12,7 +12,7 @@ Categorize all software into four primary groups:
 - **Software System**: Complete deliverable product including all components
   and external interfaces
 - **Software Subsystem**: Major architectural component with well-defined
-  interfaces and responsibilities  
+  interfaces and responsibilities
 - **Software Unit**: Individual class, function, or tightly coupled set of
   functions that can be tested in isolation
 - **OTS Software Item**: Third-party component (library, framework, tool)

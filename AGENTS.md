@@ -22,7 +22,7 @@ The default agent should handle simple, straightforward tasks directly.
 Delegate to specialized agents only for specific scenarios:
 
 - **Light development work** (small fixes, simple features) → Call @developer agent
-- **Light quality checking** (linting, basic validation) → Call @quality agent  
+- **Light quality checking** (linting, basic validation) → Call @quality agent
 - **Formal feature implementation** (complex, multi-step) → Call @implementation orchestrator
 - **Formal bug resolution** (complex debugging, systematic fixes) → Call @implementation orchestrator
 - **Formal reviews** (compliance verification, detailed analysis) → Call @code-review agent
@@ -37,7 +37,7 @@ Delegate to specialized agents only for specific scenarios:
 - **implementation** - Orchestrator agent that manages quality implementations
   through a formal state machine workflow
 - **quality** - Quality assurance agent that grades developer work against DEMA
-  Consulting standards and Continuous Compliance practices  
+  Consulting standards and Continuous Compliance practices
 - **repo-consistency** - Ensures downstream repositories remain consistent with
   the TemplateDotNetLibrary template patterns and best practices
 
