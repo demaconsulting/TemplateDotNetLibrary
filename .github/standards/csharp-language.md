@@ -1,6 +1,6 @@
 # C# Language Coding Standards
 
-This document defines Dema Consulting standards for C# software development
+This document defines DEMA Consulting standards for C# software development
 within Continuous Compliance environments.
 
 ## Literate Programming Style (MANDATORY)
