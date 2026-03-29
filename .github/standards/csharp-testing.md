@@ -1,6 +1,6 @@
 # C# Testing Standards (MSTest)
 
-This document defines Dema Consulting standards for C# test development using
+This document defines DEMA Consulting standards for C# test development using
 MSTest within Continuous Compliance environments.
 
 # AAA Pattern Implementation (MANDATORY)
