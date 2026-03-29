@@ -49,7 +49,7 @@ through automated tests linked to requirements.
 
 ### Rules
 
-- **Inject Dependencies**: Constructor inject all external dependencies.
+- **Inject Dependencies**: Use constructor injection for all external dependencies.
   Enables mocking for unit tests.
 - **Avoid Static Dependencies**: Use dependency injection instead of static
   calls. Makes code testable in isolation.
