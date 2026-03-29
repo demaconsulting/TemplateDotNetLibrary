@@ -102,22 +102,18 @@ Essential ReviewMark commands for Continuous Compliance:
 ```bash
 # Lint review configuration for issues (run before use)
 dotnet reviewmark \
-  --definition .reviewmark.yaml \
   --lint
 
 # Generate review plan (shows coverage)
 dotnet reviewmark \
-  --definition .reviewmark.yaml \
   --plan docs/code_review_plan/plan.md
 
 # Generate review report (shows status)
 dotnet reviewmark \
-  --definition .reviewmark.yaml \
   --report docs/code_review_report/report.md
 
 # Enforce review compliance (use in CI/CD)
 dotnet reviewmark \
-  --definition .reviewmark.yaml \
   --plan docs/code_review_plan/plan.md \
   --report docs/code_review_report/report.md \
   --enforce

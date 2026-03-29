@@ -159,6 +159,7 @@ integration, call the @developer agent with requirements management context.
 ## Agent Report Files
 
 Upon completion, create a report file at `.agent-logs/[agent-name]-[subject]-[unique-id].md` that includes:
+
 - A concise summary of the work performed
 - Any important decisions made and their rationale
 - Follow-up items, open questions, or TODOs
