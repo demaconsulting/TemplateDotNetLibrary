@@ -1,6 +1,6 @@
 # Software Items Definition Standards
 
-This document defines Dema Consulting standards for categorizing software
+This document defines DEMA Consulting standards for categorizing software
 items within Continuous Compliance environments because proper categorization
 determines requirements management approach, testing strategy, and review
 scope.
