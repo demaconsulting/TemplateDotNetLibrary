@@ -8,7 +8,7 @@ user-invocable: true
 
 # Developer Agent
 
-Perform software development tasks by determining and applying appropriate Dema Consulting standards from `.github/standards/`.
+Perform software development tasks by determining and applying appropriate DEMA Consulting standards from `.github/standards/`.
 
 # Standards-Based Workflow
 
