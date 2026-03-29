@@ -2,38 +2,37 @@
 
 Comprehensive guidance for AI agents working on repositories following Continuous Compliance practices.
 
+## Standards Application (ALL Agents Must Follow)
+
+Before performing any work, agents must read and apply the relevant standards from `.github/standards/`:
+
+- **`csharp-language.md`** - For C# code development (literate programming, XML docs, dependency injection)
+- **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest antipatterns)
+- **`reqstream-usage.md`** - For requirements management (traceability, semantic IDs, source filters)
+- **`reviewmark-usage.md`** - For file review management (review-sets, file patterns, enforcement)
+- **`software-items.md`** - For software categorization (system/subsystem/unit/OTS classification)
+- **`technical-documentation.md`** - For documentation creation and maintenance (structure, Pandoc, README best practices)
+
+Load only the standards relevant to your specific task scope and apply their quality checks and guidelines throughout your work.
+
+## Agent Delegation Guidelines
+
+The default agent should handle simple, straightforward tasks directly. Delegate to specialized agents only for specific scenarios:
+
+- **Light development work** (small fixes, simple features) → Call @developer agent
+- **Light quality checking** (linting, basic validation) → Call @quality agent  
+- **Formal feature implementation** (complex, multi-step) → Call @implementation orchestrator
+- **Formal bug resolution** (complex debugging, systematic fixes) → Call @implementation orchestrator
+- **Formal reviews** (compliance verification, detailed analysis) → Call @code-review agent
+- **Template consistency** (downstream repository alignment) → Call @repo-consistency agent
+
 ## Available Specialized Agents
 
-- **requirements** - Develops requirements and ensures test coverage linkage
-- **technical-writer** - Creates accurate documentation following regulatory best practices
-- **software-developer** - Writes production code and self-validation tests with emphasis on design-for-testability
-- **test-developer** - Creates unit tests following AAA pattern
-- **code-quality** - Enforces linting, static analysis, and security standards; maintains lint scripts infrastructure
-- **code-review** - Assists in performing formal file reviews
-- **repo-consistency** - Ensures downstream repositories remain consistent with template patterns
-
-## Agent Selection
-
-- To fix a bug, call the @software-developer agent with the **context** of the bug details and **goal** of resolving
-  the issue while maintaining code quality.
-- To add a new feature, call the @requirements agent with the **request** to define feature requirements and **context**
-  of business needs and **goal** of comprehensive requirement specification.
-- To write or fix tests, call the @test-developer agent with the **context** of the functionality to be tested and
-  **goal** of achieving comprehensive test coverage.
-- To update documentation, call the @technical-writer agent with the **context** of changes requiring documentation and
-  **goal** of maintaining current and accurate documentation.
-- To manage requirements and traceability, call the @requirements agent with the **context** of requirement changes and
-  **goal** of maintaining compliance traceability.
-- To resolve quality or linting issues, call the @code-quality agent with the **context** of quality gate failures and
-  **goal** of achieving compliance standards.
-- To update linting tools or scripts, call the @code-quality agent with the **context** of tool requirements and
-  **goal** of maintaining quality infrastructure.
-- To address security alerts or scanning issues, call the @code-quality agent with the **context** of security findings
-  and **goal** of resolving vulnerabilities.
-- To perform file reviews, call the @code-review agent with the **context** of files requiring review and **goal** of
-  compliance verification.
-- To ensure template consistency, call the @repo-consistency agent with the **context** of downstream repository
-  and **goal** of maintaining template alignment.
+- **code-review** - Agent for performing formal reviews using standardized review processes
+- **developer** - General-purpose software development agent that applies appropriate standards based on the work being performed
+- **implementation** - Orchestrator agent that manages quality implementations through a formal state machine workflow
+- **quality** - Quality assurance agent that grades developer work against Dema Consulting standards and Continuous Compliance practices  
+- **repo-consistency** - Ensures downstream repositories remain consistent with the TemplateDotNetLibrary template patterns and best practices
 
 ## Quality Gate Enforcement (ALL Agents Must Verify)
 
@@ -147,16 +146,11 @@ This repository follows continuous compliance practices from DEMA Consulting Con
 - **NOT all tests need requirement links** - Tests may exist for corner cases, design validation, failure scenarios
 - **Source filters are critical** - Platform/framework requirements need specific test evidence
 
-For detailed requirements format, test linkage patterns, and ReqStream integration, call the @requirements agent.
+For detailed requirements format, test linkage patterns, and ReqStream integration, call the @developer agent with requirements management context.
 
 ## Agent Report Files
 
-When agents need to write report files to communicate with each other or the user, follow these guidelines:
-
-- **Naming Convention**: Use the pattern `AGENT_REPORT_xxxx.md` (e.g., `AGENT_REPORT_analysis.md`,
-  `AGENT_REPORT_results.md`)
-- **Purpose**: These files are for temporary inter-agent communication and should not be committed
-- **Exclusions**: Files matching `AGENT_REPORT_*.md` are automatically:
-  - Excluded from git (via .gitignore)
-  - Excluded from markdown linting
-  - Excluded from spell checking
+Upon completion create a summary in `.agent-logs/[agent-name]-[subject]-[unique-id].md`
+of the project consisting of a summary of the work performed. Placing the agent logs in
+the `.agent-logs/` folder is so they are covered with the .gitignore and excluded from
+linting or being committed.
