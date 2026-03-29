@@ -118,7 +118,7 @@ Structure README.md for both human readers and AI agent processing:
 ## Content Requirements
 
 - **Project Overview**: Clear description of what the software does and why it exists
-- **Installation Instructions**: Step-by-step setup with specific version requirements  
+- **Installation Instructions**: Step-by-step setup with specific version requirements
 - **Usage Examples**: Concrete examples with expected outputs, not just syntax
 - **API Documentation**: Links to detailed API docs or inline examples for key functions
 - **Contributing Guidelines**: Link to CONTRIBUTING.md with development setup

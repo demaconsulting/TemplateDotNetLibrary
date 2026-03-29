@@ -23,7 +23,7 @@ needs-review:
   - "**/*.cs"                    # All C# source and test files
   - "**/*.md"                    # Requirements and design documentation
   - "docs/reqstream/**/*.yaml"   # Requirements files only
-  
+
   # Exclude build output and generated content
   - "!**/obj/**"                 # Exclude build output
   - "!**/bin/**"                 # Exclude binary output
@@ -42,7 +42,7 @@ reviews:
       - "docs/reqstream/auth-passwordvalidator-class.yaml"
       - "test/Auth/PasswordValidatorTests.cs"
       - "docs/design/password-validation.md"
-      
+
   - id: MyProduct-AllRequirements
     title: All Requirements Review
     paths:
