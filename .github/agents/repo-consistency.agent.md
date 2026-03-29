@@ -1,6 +1,8 @@
 ---
 name: repo-consistency
-description: Ensures downstream repositories remain consistent with the TemplateDotNetLibrary template patterns and best practices.
+description: >-
+  Ensures downstream repositories remain consistent with the TemplateDotNetLibrary
+  template patterns and best practices.
 user-invocable: true
 ---
 
