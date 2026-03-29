@@ -1,13 +1,15 @@
 ---
 name: quality
-description: Quality assurance agent that grades developer work against Dema Consulting standards and Continuous Compliance practices.
+description: >
+  Quality assurance agent that grades developer work against DEMA Consulting
+  standards and Continuous Compliance practices.
 user-invocable: true
 ---
 
 # Quality Agent
 
 Grade and validate software development work by ensuring compliance with
-Dema Consulting standards and Continuous Compliance practices.
+DEMA Consulting standards and Continuous Compliance practices.
 
 # Standards-Based Quality Assessment
 
