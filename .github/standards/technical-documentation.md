@@ -92,7 +92,7 @@ Write technical documentation for clarity and compliance verification:
 - **Structured Sections**: Use consistent heading hierarchy and section
   organization. Enables automated processing and review.
 - **Specific Examples**: Include concrete examples with actual values rather
-  than placeholders. Supports implementation verification.  
+  than placeholders. Supports implementation verification.
 - **Current Information**: Keep documentation synchronized with code changes.
   Outdated documentation invalidates compliance evidence.
 - **Traceable Content**: Link documentation to requirements and implementation
