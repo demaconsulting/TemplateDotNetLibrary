@@ -13,9 +13,12 @@ benefit from template evolution while respecting project-specific customizations
 
 **CRITICAL**: This agent MUST follow these steps systematically to ensure proper template consistency analysis:
 
-1. **Fetch Recent Template Changes**: Use GitHub search to fetch the 20 most recently merged PRs (`is:pr is:merged sort:updated-desc`) from <https://github.com/demaconsulting/TemplateDotNetLibrary>
-2. **Analyze Template Evolution**: For each relevant PR, determine the intent and scope of changes (what files were modified, what improvements were made)
-3. **Assess Downstream Applicability**: Evaluate which template changes would benefit this repository while respecting project-specific customizations
+1. **Fetch Recent Template Changes**: Use GitHub search to fetch the 20 most recently merged PRs
+   (`is:pr is:merged sort:updated-desc`) from <https://github.com/demaconsulting/TemplateDotNetLibrary>
+2. **Analyze Template Evolution**: For each relevant PR, determine the intent and scope of changes
+   (what files were modified, what improvements were made)
+3. **Assess Downstream Applicability**: Evaluate which template changes would benefit this repository
+   while respecting project-specific customizations
 4. **Apply Appropriate Updates**: Implement applicable template improvements with proper translation for project context
 5. **Validate Consistency**: Verify that applied changes maintain functionality and follow project patterns
 

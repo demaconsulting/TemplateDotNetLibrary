@@ -20,7 +20,7 @@ states:
 - **DEVELOPMENT** - develops the implementation changes
 - **QUALITY** - performs quality validation
 - **REPORT** - generates final implementation report
- 
+
 The state-transitions include retrying a limited number of times, using a 'retry-count'
 counting how many retries have occurred.
 

@@ -7,17 +7,19 @@ Comprehensive guidance for AI agents working on repositories following Continuou
 Before performing any work, agents must read and apply the relevant standards from `.github/standards/`:
 
 - **`csharp-language.md`** - For C# code development (literate programming, XML docs, dependency injection)
-- **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest antipatterns)
+- **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest anti-patterns)
 - **`reqstream-usage.md`** - For requirements management (traceability, semantic IDs, source filters)
 - **`reviewmark-usage.md`** - For file review management (review-sets, file patterns, enforcement)
 - **`software-items.md`** - For software categorization (system/subsystem/unit/OTS classification)
 - **`technical-documentation.md`** - For documentation creation and maintenance (structure, Pandoc, README best practices)
 
-Load only the standards relevant to your specific task scope and apply their quality checks and guidelines throughout your work.
+Load only the standards relevant to your specific task scope and apply their
+quality checks and guidelines throughout your work.
 
 ## Agent Delegation Guidelines
 
-The default agent should handle simple, straightforward tasks directly. Delegate to specialized agents only for specific scenarios:
+The default agent should handle simple, straightforward tasks directly.
+Delegate to specialized agents only for specific scenarios:
 
 - **Light development work** (small fixes, simple features) → Call @developer agent
 - **Light quality checking** (linting, basic validation) → Call @quality agent  
@@ -28,11 +30,16 @@ The default agent should handle simple, straightforward tasks directly. Delegate
 
 ## Available Specialized Agents
 
-- **code-review** - Agent for performing formal reviews using standardized review processes
-- **developer** - General-purpose software development agent that applies appropriate standards based on the work being performed
-- **implementation** - Orchestrator agent that manages quality implementations through a formal state machine workflow
-- **quality** - Quality assurance agent that grades developer work against Dema Consulting standards and Continuous Compliance practices  
-- **repo-consistency** - Ensures downstream repositories remain consistent with the TemplateDotNetLibrary template patterns and best practices
+- **code-review** - Agent for performing formal reviews using standardized
+  review processes
+- **developer** - General-purpose software development agent that applies
+  appropriate standards based on the work being performed
+- **implementation** - Orchestrator agent that manages quality implementations
+  through a formal state machine workflow
+- **quality** - Quality assurance agent that grades developer work against Dema
+  Consulting standards and Continuous Compliance practices  
+- **repo-consistency** - Ensures downstream repositories remain consistent with
+  the TemplateDotNetLibrary template patterns and best practices
 
 ## Quality Gate Enforcement (ALL Agents Must Verify)
 
@@ -137,8 +144,8 @@ All stages must pass before merge. Pipeline fails immediately on:
 
 ## Continuous Compliance Requirements
 
-This repository follows continuous compliance practices from DEMA Consulting Continuous Compliance
-<https://github.com/demaconsulting/ContinuousCompliance>.
+This repository follows continuous compliance practices from DEMA Consulting
+Continuous Compliance <https://github.com/demaconsulting/ContinuousCompliance>.
 
 ### Core Requirements Traceability Rules
 
@@ -146,7 +153,8 @@ This repository follows continuous compliance practices from DEMA Consulting Con
 - **NOT all tests need requirement links** - Tests may exist for corner cases, design validation, failure scenarios
 - **Source filters are critical** - Platform/framework requirements need specific test evidence
 
-For detailed requirements format, test linkage patterns, and ReqStream integration, call the @developer agent with requirements management context.
+For detailed requirements format, test linkage patterns, and ReqStream
+integration, call the @developer agent with requirements management context.
 
 ## Agent Report Files
 

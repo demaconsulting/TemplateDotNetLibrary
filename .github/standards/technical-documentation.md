@@ -53,6 +53,7 @@ docs/
 # Pandoc Document Structure (MANDATORY)
 
 All document collections processed by Pandoc MUST include:
+
 - `definition.yaml` - specifying the files to include
 - `title.txt` - document metadata
 - `introduction.md` - document introduction
