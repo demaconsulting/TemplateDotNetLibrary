@@ -158,7 +158,9 @@ integration, call the @developer agent with requirements management context.
 
 ## Agent Report Files
 
-Upon completion create a summary in `.agent-logs/[agent-name]-[subject]-[unique-id].md`
-of the project consisting of a summary of the work performed. Placing the agent logs in
-the `.agent-logs/` folder is so they are covered with the .gitignore and excluded from
-linting or being committed.
+Upon completion, create a report file at `.agent-logs/[agent-name]-[subject]-[unique-id].md` that includes:
+- A concise summary of the work performed
+- Any important decisions made and their rationale
+- Follow-up items, open questions, or TODOs
+
+Store agent logs in the `.agent-logs/` folder so they are ignored via `.gitignore` and excluded from linting and commits.
