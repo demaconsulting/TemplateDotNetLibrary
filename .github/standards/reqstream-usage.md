@@ -1,6 +1,6 @@
 # ReqStream Requirements Management Standards
 
-This document defines Dema Consulting standards for requirements management
+This document defines DEMA Consulting standards for requirements management
 using ReqStream within Continuous Compliance environments.
 
 # Core Principles
