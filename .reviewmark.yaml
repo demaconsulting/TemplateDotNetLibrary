@@ -31,6 +31,14 @@ reviews:
       - "docs/reqstream/library-system.yaml"
       - "docs/design/introduction.md"
 
+  - id: TemplateDotNetLibrary-Design
+    title: Review of Template DotNet Library Architectural and Design Consistency
+    paths:
+      - "docs/reqstream/library-system.yaml"
+      - "docs/reqstream/platform-requirements.yaml"
+      - "docs/design/introduction.md"
+      - "docs/design/demo.md"
+
   - id: TemplateDotNetLibrary-Demo
     title: Review of Demo Unit Implementation
     paths:
