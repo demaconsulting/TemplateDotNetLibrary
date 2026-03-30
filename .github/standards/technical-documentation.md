@@ -107,10 +107,10 @@ All markdown files must follow the formatting standards enforced by
   Break long lines naturally at punctuation or logical breaks.
 - **No Trailing Whitespace**: Remove all trailing spaces and tabs from line
   endings to prevent formatting inconsistencies.
-- **Blank Line After Sections**: Include a blank line after each section
-  heading to improve document structure and readability.
-- **Blank Line Before Lists**: Add a blank line before numbered and bullet
-  lists to ensure proper rendering and visual separation.
+- **Blank Lines Around Headings**: Include a blank line both before and after
+  each heading to improve document structure and readability.
+- **Blank Lines Around Lists**: Include a blank line both before and after
+  numbered and bullet lists to ensure proper rendering and visual separation.
 - **ATX-Style Headers**: Use `#` syntax for headers instead of underline style
   for consistency across all documentation.
 - **Consistent List Indentation**: Use 2-space indentation for nested list
