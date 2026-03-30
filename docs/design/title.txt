@@ -1,0 +1,13 @@
+---
+title: Template DotNet Library Software Design Document
+subtitle: A .NET Reference Implementation for Libraries
+author: DEMA Consulting
+description: Detailed design document for the Template DotNet Library
+lang: en-US
+keywords:
+  - Template DotNet Library
+  - .NET
+  - Library
+  - Design
+  - Software Design Document
+---

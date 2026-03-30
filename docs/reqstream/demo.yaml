@@ -1,0 +1,25 @@
+---
+# Software Unit Requirements for Demo
+#
+# These requirements describe the design-level behavior of the Demo unit.
+
+sections:
+  - title: Demo Unit
+    requirements:
+      - id: Demo-Greeting
+        title: The Demo class shall return a greeting in the format "{prefix}, {name}!".
+        justification: |
+          The greeting format is the core contract of the Demo unit: combining the
+          stored prefix with the caller-supplied name in a predictable, testable format.
+        tests:
+          - DemoMethod_ReturnsGreeting_WithDefaultPrefix
+          - DemoMethod_ReturnsGreeting_WithCustomPrefix
+
+      - id: Demo-Prefix
+        title: The Demo class shall expose the greeting prefix via a Prefix property.
+        justification: |
+          Exposing the prefix as a read-only property allows callers to inspect the
+          configured prefix without resorting to reflection or other indirect means.
+        tests:
+          - Demo_Prefix_ReturnsCustomPrefix
+          - Demo_DefaultConstructor_SetsDefaultPrefix

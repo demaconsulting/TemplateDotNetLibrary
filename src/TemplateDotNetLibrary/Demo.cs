@@ -3,7 +3,7 @@ namespace TemplateDotNetLibrary;
 /// <summary>
 ///     Demonstration class for the template library.
 /// </summary>
-public class DemoClass
+public class Demo
 {
     /// <summary>
     ///     The greeting prefix used when no custom prefix is specified.
@@ -16,18 +16,18 @@ public class DemoClass
     private readonly string _prefix;
 
     /// <summary>
-    ///     Initializes a new instance of the <see cref="DemoClass"/> class with the default prefix.
+    ///     Initializes a new instance of the <see cref="Demo"/> class with the default prefix.
     /// </summary>
     /// <remarks>
     ///     The prefix is set to <see cref="DefaultPrefix"/>.
     /// </remarks>
-    public DemoClass()
+    public Demo()
         : this(DefaultPrefix)
     {
     }
 
     /// <summary>
-    ///     Initializes a new instance of the <see cref="DemoClass"/> class with a custom prefix.
+    ///     Initializes a new instance of the <see cref="Demo"/> class with a custom prefix.
     /// </summary>
     /// <param name="prefix">The prefix to use in greetings.</param>
     /// <exception cref="ArgumentNullException">
@@ -36,7 +36,7 @@ public class DemoClass
     /// <exception cref="ArgumentException">
     ///     Thrown when <paramref name="prefix"/> is an empty string.
     /// </exception>
-    public DemoClass(string prefix)
+    public Demo(string prefix)
     {
         // Validate that the prefix is non-null and non-empty before storing it
         ArgumentException.ThrowIfNullOrEmpty(prefix);

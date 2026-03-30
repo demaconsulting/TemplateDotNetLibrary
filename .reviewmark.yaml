@@ -29,7 +29,8 @@ reviews:
     paths:
       - "src/TemplateDotNetLibrary/**/*.cs"
       - "test/TemplateDotNetLibrary.Tests/**/*.cs"
-      - "docs/reqstream/library-subsystem.yaml"
+      - "docs/reqstream/library.yaml"
+      - "docs/reqstream/demo.yaml"
 
   - id: Platform-Support
     title: Review of Platform and Runtime Support Requirements

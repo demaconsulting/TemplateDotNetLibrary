@@ -41,7 +41,7 @@ dotnet add package TemplateDotNetLibrary
 ```csharp
 using TemplateDotNetLibrary;
 
-var demo = new DemoClass();
+var demo = new Demo();
 var result = demo.DemoMethod("World");
 ```
 
