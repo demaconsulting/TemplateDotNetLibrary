@@ -103,7 +103,7 @@ Write technical documentation for clarity and compliance verification:
 All markdown files must follow the formatting standards enforced by
 `.markdownlint-cli2.yaml` for consistency and professional presentation:
 
-- **120 Character Line Limit**: Keep lines under 120 characters for readability.
+- **120 Character Line Limit**: Keep lines 120 characters or fewer for readability.
   Break long lines naturally at punctuation or logical breaks.
 - **No Trailing Whitespace**: Remove all trailing spaces and tabs from line
   endings to prevent formatting inconsistencies.
