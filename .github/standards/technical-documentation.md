@@ -98,6 +98,24 @@ Write technical documentation for clarity and compliance verification:
 - **Traceable Content**: Link documentation to requirements and implementation
   where applicable for audit trails.
 
+# Markdown Format Requirements
+
+All markdown files must follow the formatting standards enforced by
+`.markdownlint-cli2.yaml` for consistency and professional presentation:
+
+- **120 Character Line Limit**: Keep lines under 120 characters for readability.
+  Break long lines naturally at punctuation or logical breaks.
+- **No Trailing Whitespace**: Remove all trailing spaces and tabs from line
+  endings to prevent formatting inconsistencies.
+- **Blank Line After Sections**: Include a blank line after each section
+  heading to improve document structure and readability.
+- **Blank Line Before Lists**: Add a blank line before numbered and bullet
+  lists to ensure proper rendering and visual separation.
+- **ATX-Style Headers**: Use `#` syntax for headers instead of underline style
+  for consistency across all documentation.
+- **Consistent List Indentation**: Use 2-space indentation for nested list
+  items to maintain uniform formatting.
+
 # Auto-Generated Content (CRITICAL)
 
 **NEVER modify auto-generated markdown files** because changes will be
