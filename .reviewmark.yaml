@@ -8,6 +8,7 @@
 needs-review:
   - "**/*.cs"                    # All C# source and test files
   - "docs/reqstream/**/*.yaml"   # Requirements files
+  - "docs/design/**/*.md"        # Design documentation files
   - "!**/obj/**"                 # Exclude build output
   - "!**/bin/**"                 # Exclude build output
   - "!node_modules/**"           # Exclude npm dependencies
@@ -24,25 +25,30 @@ evidence-source:
 # Review sets grouping files by logical unit of review.
 # Each review-set should group requirements, design, source, and tests for a coherent unit.
 reviews:
-  - id: Library-Core
-    title: Review of Template DotNet Library Core Implementation
+  - id: TemplateDotNetLibrary-System
+    title: Review of Template DotNet Library System Requirements and Design
     paths:
-      - "src/TemplateDotNetLibrary/**/*.cs"
-      - "test/TemplateDotNetLibrary.Tests/**/*.cs"
-      - "docs/reqstream/library-subsystem.yaml"
+      - "docs/reqstream/library-system.yaml"
+      - "docs/design/introduction.md"
 
-  - id: Platform-Support
-    title: Review of Platform and Runtime Support Requirements
+  - id: TemplateDotNetLibrary-Design
+    title: Review of Template DotNet Library Architectural and Design Consistency
     paths:
+      - "docs/reqstream/library-system.yaml"
       - "docs/reqstream/platform-requirements.yaml"
+      - "docs/design/introduction.md"
+      - "docs/design/demo.md"
 
-  - id: OTS-Dependencies
-    title: Review of Off-The-Shelf Software Dependencies
+  - id: TemplateDotNetLibrary-Demo
+    title: Review of Demo Unit Implementation
     paths:
-      - "docs/reqstream/ots-mstest.yaml"
-      - "docs/reqstream/ots-reqstream.yaml"
-      - "docs/reqstream/ots-buildmark.yaml"
-      - "docs/reqstream/ots-versionmark.yaml"
-      - "docs/reqstream/ots-sarifmark.yaml"
-      - "docs/reqstream/ots-sonarmark.yaml"
-      - "docs/reqstream/ots-reviewmark.yaml"
+      - "docs/reqstream/demo.yaml"
+      - "docs/design/demo.md"
+      - "src/TemplateDotNetLibrary/Demo.cs"
+      - "test/TemplateDotNetLibrary.Tests/DemoTests.cs"
+
+  - id: TemplateDotNetLibrary-AllRequirements
+    title: Review of All Requirements Including Platform and OTS Dependencies
+    paths:
+      - "requirements.yaml"
+      - "docs/reqstream/**/*.yaml"

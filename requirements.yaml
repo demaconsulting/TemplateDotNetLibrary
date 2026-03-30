@@ -1,7 +1,8 @@
 ---
-# Root requirements file - includes all subsystem, platform, and OTS requirements
+# Root requirements file - includes all system, unit, platform, and OTS requirements
 includes:
-  - docs/reqstream/library-subsystem.yaml
+  - docs/reqstream/library-system.yaml
+  - docs/reqstream/demo.yaml
   - docs/reqstream/platform-requirements.yaml
   - docs/reqstream/ots-mstest.yaml
   - docs/reqstream/ots-reqstream.yaml

@@ -43,16 +43,16 @@ dotnet add package TemplateDotNetLibrary
 ```csharp
 using TemplateDotNetLibrary;
 
-var demo = new DemoClass();
+var demo = new Demo();
 var result = demo.DemoMethod("World");
 Console.WriteLine(result); // Output: Hello, World!
 ```
 
 ## API Reference
 
-### DemoClass
+### Demo
 
-The `DemoClass` provides demonstration functionality for the template library.
+The `Demo` class provides demonstration functionality for the template library.
 
 #### Constants
 
@@ -66,21 +66,21 @@ The greeting prefix used when no custom prefix is specified.
 
 #### Constructors
 
-##### DemoClass()
+##### Demo()
 
 ```csharp
-public DemoClass()
+public Demo()
 ```
 
-Initializes a new instance of the `DemoClass` class with the default prefix "Hello".
+Initializes a new instance of the `Demo` class with the default prefix "Hello".
 
-##### DemoClass(string prefix)
+##### Demo(string prefix)
 
 ```csharp
-public DemoClass(string prefix)
+public Demo(string prefix)
 ```
 
-Initializes a new instance of the `DemoClass` class with a custom prefix.
+Initializes a new instance of the `Demo` class with a custom prefix.
 
 **Parameters:**
 
@@ -127,7 +127,7 @@ A string containing the greeting message in the format "{prefix}, {name}!".
 **Example:**
 
 ```csharp
-var demo = new DemoClass();
+var demo = new Demo();
 var greeting = demo.DemoMethod("World");
 // greeting = "Hello, World!"
 ```
@@ -139,7 +139,7 @@ var greeting = demo.DemoMethod("World");
 ```csharp
 using TemplateDotNetLibrary;
 
-var demo = new DemoClass();
+var demo = new Demo();
 var result = demo.DemoMethod("Alice");
 Console.WriteLine(result);
 // Output: Hello, Alice!
@@ -150,7 +150,7 @@ Console.WriteLine(result);
 ```csharp
 using TemplateDotNetLibrary;
 
-var demo = new DemoClass("Hi");
+var demo = new Demo("Hi");
 var result = demo.DemoMethod("Alice");
 Console.WriteLine(result);
 // Output: Hi, Alice!
@@ -161,7 +161,7 @@ Console.WriteLine(result);
 ```csharp
 using TemplateDotNetLibrary;
 
-var demo = new DemoClass();
+var demo = new Demo();
 try
 {
     var result = demo.DemoMethod(null);

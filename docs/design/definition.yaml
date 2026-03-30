@@ -1,0 +1,11 @@
+---
+resource-path:
+  - docs/design
+  - docs/template
+input-files:
+  - docs/design/title.txt
+  - docs/design/introduction.md
+  - docs/design/demo.md
+template: template.html
+table-of-contents: true
+number-sections: true
