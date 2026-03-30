@@ -8,6 +8,7 @@
 needs-review:
   - "**/*.cs"                    # All C# source and test files
   - "docs/reqstream/**/*.yaml"   # Requirements files
+  - "docs/design/**/*.md"        # Design documentation files
   - "!**/obj/**"                 # Exclude build output
   - "!**/bin/**"                 # Exclude build output
   - "!node_modules/**"           # Exclude npm dependencies
@@ -31,6 +32,8 @@ reviews:
       - "test/TemplateDotNetLibrary.Tests/**/*.cs"
       - "docs/reqstream/library.yaml"
       - "docs/reqstream/demo.yaml"
+      - "docs/design/introduction.md"
+      - "docs/design/demo.md"
 
   - id: Platform-Support
     title: Review of Platform and Runtime Support Requirements

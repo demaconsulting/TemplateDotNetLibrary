@@ -23,6 +23,6 @@ sections:
               - DemoMethod_ThrowsArgumentException_ForEmptyInput
               - Constructor_ThrowsArgumentNullException_ForNullPrefix
               - Constructor_ThrowsArgumentException_ForEmptyPrefix
-              - DemoClass_DefaultPrefix_IsHello
-              - DemoClass_Prefix_ReturnsCustomPrefix
-              - DemoClass_DefaultConstructor_SetsDefaultPrefix
+              - Demo_DefaultPrefix_IsHello
+              - Demo_Prefix_ReturnsCustomPrefix
+              - Demo_DefaultConstructor_SetsDefaultPrefix

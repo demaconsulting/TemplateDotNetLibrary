@@ -43,7 +43,7 @@ body:
       placeholder: |
         ```csharp
         // Example usage
-        var demo = new DemoClass("Greetings");
+        var demo = new Demo("Greetings");
         var result = demo.DemoMethod("User");
         ```
       render: csharp
