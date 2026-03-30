@@ -100,8 +100,9 @@ Write technical documentation for clarity and compliance verification:
 
 # Markdown Format Requirements
 
-All markdown files must follow the formatting standards enforced by
-`.markdownlint-cli2.yaml` for consistency and professional presentation:
+Markdown documentation in this repository must follow the formatting standards
+defined in `.markdownlint-cli2.yaml` (subject to any exclusions configured there)
+for consistency and professional presentation:
 
 - **120 Character Line Limit**: Keep lines 120 characters or fewer for readability.
   Break long lines naturally at punctuation or logical breaks.
