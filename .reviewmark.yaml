@@ -50,11 +50,5 @@ reviews:
   - id: TemplateDotNetLibrary-AllRequirements
     title: Review of All Requirements Including Platform and OTS Dependencies
     paths:
-      - "docs/reqstream/platform-requirements.yaml"
-      - "docs/reqstream/ots-mstest.yaml"
-      - "docs/reqstream/ots-reqstream.yaml"
-      - "docs/reqstream/ots-buildmark.yaml"
-      - "docs/reqstream/ots-versionmark.yaml"
-      - "docs/reqstream/ots-sarifmark.yaml"
-      - "docs/reqstream/ots-sonarmark.yaml"
-      - "docs/reqstream/ots-reviewmark.yaml"
+      - "requirements.yaml"
+      - "docs/reqstream/**/*.yaml"
