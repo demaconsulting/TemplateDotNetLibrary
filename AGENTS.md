@@ -92,6 +92,8 @@ compliance gates on every CI/CD run instead of as a last-mile activity.
 ## Project Structure Template
 
 - `docs/` - Documentation and compliance artifacts
+  - `design/` - Detailed design documents
+    - `introduction.md` - System/Subsystem/Unit breakdown for this repository
   - `reqstream/` - Subsystem requirements YAML files (included by root requirements.yaml)
   - Auto-generated reports (requirements, justifications, trace matrix)
 - `src/` - Source code files
