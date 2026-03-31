@@ -92,7 +92,8 @@ compliance gates on every CI/CD run instead of as a last-mile activity.
 ## Project Structure Template
 
 - `docs/` - Documentation and compliance artifacts
-  - [`design/introduction.md`][design-intro] - System/Subsystem/Unit breakdown for this repository
+  - `design/` - Detailed design documents
+    - `introduction.md` - System/Subsystem/Unit breakdown for this repository
   - `reqstream/` - Subsystem requirements YAML files (included by root requirements.yaml)
   - Auto-generated reports (requirements, justifications, trace matrix)
 - `src/` - Source code files
@@ -166,5 +167,3 @@ Upon completion, create a report file at `.agent-logs/[agent-name]-[subject]-[un
 - Follow-up items, open questions, or TODOs
 
 Store agent logs in the `.agent-logs/` folder so they are ignored via `.gitignore` and excluded from linting and commits.
-
-[design-intro]: docs/design/introduction.md
