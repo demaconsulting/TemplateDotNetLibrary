@@ -28,7 +28,7 @@ The system depends on the following OTS components:
 
 The system exposes:
 
-- **Demo.GetGreeting()**: Returns greeting string for demonstration purposes
+- **Demo.DemoMethod(string name)**: Returns greeting string for demonstration purposes
 - Package metadata and documentation for NuGet distribution
 
 ## Data Flow
