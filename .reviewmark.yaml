@@ -6,6 +6,7 @@
 # Patterns identifying all files that require review.
 # Processed in order; prefix a pattern with '!' to exclude.
 needs-review:
+  - "requirements.yaml"          # Root requirements file
   - "**/*.cs"                    # All C# source and test files
   - "docs/reqstream/**/*.yaml"   # Requirements files
   - "docs/design/**/*.md"        # Design documentation files

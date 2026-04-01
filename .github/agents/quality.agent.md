@@ -23,14 +23,14 @@ This assessment is a quality control system of the project and MUST be performed
 
 # Reporting
 
-Upon completion create a summary in `.agent-logs/[agent-name]-[subject]-[unique-id].md`
+Upon completion create a summary in `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
 of the project consisting of:
 
 ```markdown
 # Quality Assessment Report
 
-**Result**: <SUCCEEDED/FAILED>
-**Overall Grade**: <PASS/FAIL/NEEDS_WORK>
+**Result**: (SUCCEEDED|FAILED)
+**Overall Grade**: (PASS|FAIL|NEEDS_WORK)
 
 ## Assessment Summary
 
@@ -40,71 +40,71 @@ of the project consisting of:
 
 ## Requirements Compliance: (PASS|FAIL|N/A)
 
-- Were requirements updated to reflect functional changes? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were new requirements created for new features? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do requirement IDs follow semantic naming standards? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do requirement files follow kebab-case naming convention? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are requirement files organized under `docs/reqstream/` with proper folder structure? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are OTS requirements properly placed in `docs/reqstream/ots/` subfolder? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were source filters applied appropriately for platform-specific requirements? (PASS|FAIL|N/A) - [Evidence/Details]
-- Does ReqStream enforcement pass without errors? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is requirements traceability maintained to tests? (PASS|FAIL|N/A) - [Evidence/Details]
+- Were requirements updated to reflect functional changes? (PASS|FAIL|N/A) - [Evidence]
+- Were new requirements created for new features? (PASS|FAIL|N/A) - [Evidence]
+- Do requirement IDs follow semantic naming standards? (PASS|FAIL|N/A) - [Evidence]
+- Do requirement files follow kebab-case naming convention? (PASS|FAIL|N/A) - [Evidence]
+- Are requirement files organized under `docs/reqstream/` with proper folder structure? (PASS|FAIL|N/A) - [Evidence]
+- Are OTS requirements properly placed in `docs/reqstream/ots/` subfolder? (PASS|FAIL|N/A) - [Evidence]
+- Were source filters applied appropriately for platform-specific requirements? (PASS|FAIL|N/A) - [Evidence]
+- Does ReqStream enforcement pass without errors? (PASS|FAIL|N/A) - [Evidence]
+- Is requirements traceability maintained to tests? (PASS|FAIL|N/A) - [Evidence]
 
 ## Design Documentation Compliance: (PASS|FAIL|N/A)
 
-- Were design documents updated for architectural changes? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were new design artifacts created for new components? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do design folder names use kebab-case convention matching source structure? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are design files properly named ({subsystem-name}.md, {unit-name}.md patterns)? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is `docs/design/introduction.md` present with required Software Structure section? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are design decisions documented with rationale? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is system/subsystem/unit categorization maintained? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is design-to-implementation traceability preserved? (PASS|FAIL|N/A) - [Evidence/Details]
+- Were design documents updated for architectural changes? (PASS|FAIL|N/A) - [Evidence]
+- Were new design artifacts created for new components? (PASS|FAIL|N/A) - [Evidence]
+- Do design folder names use kebab-case convention matching source structure? (PASS|FAIL|N/A) - [Evidence]
+- Are design files properly named ({subsystem-name}.md, {unit-name}.md patterns)? (PASS|FAIL|N/A) - [Evidence]
+- Is `docs/design/introduction.md` present with required Software Structure section? (PASS|FAIL|N/A) - [Evidence]
+- Are design decisions documented with rationale? (PASS|FAIL|N/A) - [Evidence]
+- Is system/subsystem/unit categorization maintained? (PASS|FAIL|N/A) - [Evidence]
+- Is design-to-implementation traceability preserved? (PASS|FAIL|N/A) - [Evidence]
 
 ## Code Quality Compliance: (PASS|FAIL|N/A)
 
-- Are language-specific standards followed (from applicable standards files)? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are quality checks from standards files satisfied? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is code properly categorized (system/subsystem/unit/OTS)? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is appropriate separation of concerns maintained? (PASS|FAIL|N/A) - [Evidence/Details]
-- Was language-specific tooling executed and passing? (PASS|FAIL|N/A) - [Evidence/Details]
+- Are language-specific standards followed (from applicable standards files)? (PASS|FAIL|N/A) - [Evidence]
+- Are quality checks from standards files satisfied? (PASS|FAIL|N/A) - [Evidence]
+- Is code properly categorized (system/subsystem/unit/OTS)? (PASS|FAIL|N/A) - [Evidence]
+- Is appropriate separation of concerns maintained? (PASS|FAIL|N/A) - [Evidence]
+- Was language-specific tooling executed and passing? (PASS|FAIL|N/A) - [Evidence]
 
 ## Testing Compliance: (PASS|FAIL|N/A)
 
-- Were tests created/updated for all functional changes? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is test coverage maintained for all requirements? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are testing standards followed (AAA pattern, etc.)? (PASS|FAIL|N/A) - [Evidence/Details]
-- Does test categorization align with code structure? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do all tests pass without failures? (PASS|FAIL|N/A) - [Evidence/Details]
+- Were tests created/updated for all functional changes? (PASS|FAIL|N/A) - [Evidence]
+- Is test coverage maintained for all requirements? (PASS|FAIL|N/A) - [Evidence]
+- Are testing standards followed (AAA pattern, etc.)? (PASS|FAIL|N/A) - [Evidence]
+- Does test categorization align with code structure? (PASS|FAIL|N/A) - [Evidence]
+- Do all tests pass without failures? (PASS|FAIL|N/A) - [Evidence]
 
 ## Review Management Compliance: (PASS|FAIL|N/A)
 
-- Were review-sets updated to include new/modified files? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do file patterns follow include-then-exclude approach? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is review scope appropriate for change magnitude? (PASS|FAIL|N/A) - [Evidence/Details]
-- Was ReviewMark tooling executed and passing? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were review artifacts generated correctly? (PASS|FAIL|N/A) - [Evidence/Details]
+- Were review-sets updated to include new/modified files? (PASS|FAIL|N/A) - [Evidence]
+- Do file patterns follow include-then-exclude approach? (PASS|FAIL|N/A) - [Evidence]
+- Is review scope appropriate for change magnitude? (PASS|FAIL|N/A) - [Evidence]
+- Was ReviewMark tooling executed and passing? (PASS|FAIL|N/A) - [Evidence]
+- Were review artifacts generated correctly? (PASS|FAIL|N/A) - [Evidence]
 
 ## Documentation Compliance: (PASS|FAIL|N/A)
 
-- Was README.md updated for user-facing changes? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were user guides updated for feature changes? (PASS|FAIL|N/A) - [Evidence/Details]
-- Does API documentation reflect code changes? (PASS|FAIL|N/A) - [Evidence/Details]
-- Was compliance documentation generated? (PASS|FAIL|N/A) - [Evidence/Details]
-- Does documentation follow standards formatting? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is documentation organized under `docs/` following standard folder structure? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do Pandoc collections include proper `introduction.md` files with Purpose and Scope sections? (PASS|FAIL|N/A) - [Evidence/Details]
-- Are auto-generated markdown files left unmodified? (PASS|FAIL|N/A) - [Evidence/Details]
-- Do README.md files use absolute URLs and include concrete examples? (PASS|FAIL|N/A) - [Evidence/Details]
-- Is documentation integrated into ReviewMark review-sets for formal review? (PASS|FAIL|N/A) - [Evidence/Details]
+- Was README.md updated for user-facing changes? (PASS|FAIL|N/A) - [Evidence]
+- Were user guides updated for feature changes? (PASS|FAIL|N/A) - [Evidence]
+- Does API documentation reflect code changes? (PASS|FAIL|N/A) - [Evidence]
+- Was compliance documentation generated? (PASS|FAIL|N/A) - [Evidence]
+- Does documentation follow standards formatting? (PASS|FAIL|N/A) - [Evidence]
+- Is documentation organized under `docs/` following standard folder structure? (PASS|FAIL|N/A) - [Evidence]
+- Do Pandoc collections include proper `introduction.md` with Purpose and Scope sections? (PASS|FAIL|N/A) - [Evidence]
+- Are auto-generated markdown files left unmodified? (PASS|FAIL|N/A) - [Evidence]
+- Do README.md files use absolute URLs and include concrete examples? (PASS|FAIL|N/A) - [Evidence]
+- Is documentation integrated into ReviewMark review-sets for formal review? (PASS|FAIL|N/A) - [Evidence]
 
 ## Process Compliance: (PASS|FAIL|N/A)
 
-- Was Continuous Compliance workflow followed? (PASS|FAIL|N/A) - [Evidence/Details]
-- Did all quality gates execute successfully? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were appropriate tools used for validation? (PASS|FAIL|N/A) - [Evidence/Details]
-- Were standards consistently applied across work? (PASS|FAIL|N/A) - [Evidence/Details]
-- Was compliance evidence generated and preserved? (PASS|FAIL|N/A) - [Evidence/Details]
+- Was Continuous Compliance workflow followed? (PASS|FAIL|N/A) - [Evidence]
+- Did all quality gates execute successfully? (PASS|FAIL|N/A) - [Evidence]
+- Were appropriate tools used for validation? (PASS|FAIL|N/A) - [Evidence]
+- Were standards consistently applied across work? (PASS|FAIL|N/A) - [Evidence]
+- Was compliance evidence generated and preserved? (PASS|FAIL|N/A) - [Evidence]
 
 ## Overall Findings
 

@@ -135,7 +135,7 @@ Before submitting design documentation, verify:
 - [ ] Software structure correctly categorizes items as System/Subsystem/Unit per `software-items.md`
 - [ ] Folder layout matches actual source code organization
 - [ ] `system.md` provides comprehensive system-level design
-- [ ] Subsystem folders use kebab-case naming matching source code
+- [ ] Subsystem documentation folders use kebab-case names while mirroring source subsystem names and structure
 - [ ] Design documents contain sufficient implementation detail
 - [ ] All documents follow technical documentation formatting standards
 - [ ] Content is current with implementation and requirements

@@ -33,4 +33,8 @@ REM Run yamllint check
 yamllint .
 if errorlevel 1 set "LINT_ERROR=1"
 
+REM Run .NET formatting check (verifies no changes are needed)
+dotnet format --verify-no-changes
+if errorlevel 1 set "LINT_ERROR=1"
+
 exit /b %LINT_ERROR%
