@@ -33,9 +33,9 @@ The system exposes:
 
 ## Data Flow
 
-1. **Input**: Method parameters (optional name for greeting)
-2. **Processing**: Simple string formatting within Demo unit
-3. **Output**: Formatted greeting string
+1. **Input**: Method parameter `name` (required, non-empty string for greeting; null or empty values result in an error)
+2. **Processing**: Input validation and simple string formatting within Demo unit
+3. **Output**: Formatted greeting string when a valid `name` is provided
 
 ## System Constraints
 
