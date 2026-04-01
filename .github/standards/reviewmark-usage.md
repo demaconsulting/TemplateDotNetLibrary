@@ -20,8 +20,9 @@ Configure reviews in `.reviewmark.yaml` at repository root:
 # Patterns identifying all files that require review
 needs-review:
   # Include core development artifacts
-  - "docs/reqstream/**/*.yaml"   # Requirements files only
-  - "**/*.md"                    # Requirements and design documentation
+  - "requirements.yaml"          # Root requirements file
+  - "docs/reqstream/**/*.yaml"   # Requirements files
+  - "docs/design/*.md"           # Design documentation
   - "**/*.cs"                    # All C# source and test files
 
   # Exclude build output and generated content
@@ -40,8 +41,8 @@ reviews:
     paths:
       - "docs/reqstream/authentication/password-validator.yaml"
       - "docs/design/authentication/password-validator.md"
-      - "src/Authentication/PasswordValidator.cs"
-      - "test/Authentication/PasswordValidatorTests.cs"
+      - "src/{ProjectName}/Authentication/PasswordValidator.cs"
+      - "test/{ProjectName}.Tests/Authentication/PasswordValidatorTests.cs"
 
   - id: MyProduct-AllRequirements
     title: All Requirements Review
@@ -90,8 +91,8 @@ Reviews individual software unit implementation:
 - **File Path Pattern**:
   - Requirements: `docs/reqstream/{subsystem-name}/{unit-name}.yaml` or `docs/reqstream/{unit-name}.yaml`
   - Design: `docs/design/{subsystem-name}/{unit-name}.md` or `docs/design/{unit-name}.md`
-  - Source: `src/{SubsystemName}/{UnitName}.cs`
-  - Tests: `test/{SubsystemName}/{UnitName}Tests.cs`
+  - Source: `src/{ProjectName}/{SubsystemName}/{UnitName}.cs`
+  - Tests: `test/{ProjectName}.Tests/{SubsystemName}/{UnitName}Tests.cs`
 - **Example**: `MyProduct-PasswordValidator`, `MyProduct-ConfigParser`
 
 ## [Product]-[Subsystem] Review
@@ -103,7 +104,7 @@ Reviews subsystem architecture and interfaces:
 - **File Path Pattern**:
   - Requirements: `docs/reqstream/{subsystem-name}/{subsystem-name}.yaml`
   - Design: `docs/design/{subsystem-name}/{subsystem-name}.md`
-  - Tests: `test/{SubsystemName}Integration/` or similar
+  - Tests: `test/{ProjectName}.Tests/{SubsystemName}Integration/` or similar
 - **Example**: `MyProduct-Authentication`, `MyProduct-DataLayer`
 
 ## [Product]-OTS Review

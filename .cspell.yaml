@@ -18,7 +18,6 @@ words:
   - Blockquotes
   - buildmark
   - BuildMark
-  - buildnotes
   - build_notes
   - camelcase
   - Checkmarx
@@ -80,12 +79,12 @@ words:
   - templatetool
   - testname
   - TMPL
-  - tracematrix
   - triaging
   - Trivy
   - trx
   - vbproj
   - vcxproj
+  - venv
   - versionmark
   - Weasyprint
   - yamllint

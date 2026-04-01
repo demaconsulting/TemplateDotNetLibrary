@@ -60,14 +60,14 @@ Once the quality sub-agent finishes:
 
 ### REPORT State (end)
 
-Upon completion create a summary in `.agent-logs/[agent-name]-[subject]-[unique-id].md`
+Upon completion create a summary in `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
 of the project consisting of:
 
 ```markdown
 # Implementation Orchestration Report
 
-**Result**: <SUCCEEDED/FAILED>
-**Final State**: <RESEARCH/DEVELOPMENT/QUALITY/REPORT>
+**Result**: (SUCCEEDED|FAILED)
+**Final State**: (RESEARCH|DEVELOPMENT|QUALITY|REPORT)
 **Retry Count**: <Number of quality retry cycles>
 
 ## State Machine Execution

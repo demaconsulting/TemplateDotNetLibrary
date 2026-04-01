@@ -97,8 +97,8 @@ compliance gates on every CI/CD run instead of as a last-mile activity.
     - `introduction.md` - System/Subsystem/Unit breakdown for this repository
   - `reqstream/` - Subsystem requirements YAML files (included by root requirements.yaml)
   - Auto-generated reports (requirements, justifications, trace matrix)
-- `src/` - Source code files
-- `test/` - Test files
+- `src/{ProjectName}/` - Source code projects
+- `test/{ProjectName}.Tests/` - Test projects
 - `.github/workflows/` - CI/CD pipeline definitions (build.yaml, build_on_push.yaml, release.yaml)
 - Configuration files: `.editorconfig`, `.clang-format`, `nuget.config`, `.reviewmark.yaml`, etc.
 
@@ -161,7 +161,7 @@ integration, call the developer agent with requirements management context.
 
 ## Agent Report Files
 
-Upon completion, create a report file at `.agent-logs/[agent-name]-[subject]-[unique-id].md` that includes:
+Upon completion, create a report file at `.agent-logs/{agent-name}-{subject}-{unique-id}.md` that includes:
 
 - A concise summary of the work performed
 - Any important decisions made and their rationale
