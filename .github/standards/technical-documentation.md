@@ -34,7 +34,7 @@ docs/
   design/                      # Design documentation
     introduction.md            # Design overview
     system.md                  # System architecture
-    {subsystem-name}/          # Subsystem requirements folder
+    {subsystem-name}/          # Subsystem design folder
       {subsystem-name}.md      # Subsystem-specific designs
       {unit-name}.md           # Unit-specific designs
     {unit-name}.md             # Top-level unit design

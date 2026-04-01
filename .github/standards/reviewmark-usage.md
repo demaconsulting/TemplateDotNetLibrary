@@ -22,7 +22,7 @@ needs-review:
   # Include core development artifacts
   - "requirements.yaml"          # Root requirements file
   - "docs/reqstream/**/*.yaml"   # Requirements files
-  - "docs/design/*.md"           # Design documentation
+  - "docs/design/**/*.md"        # Design documentation
   - "**/*.cs"                    # All C# source and test files
 
   # Exclude build output and generated content
