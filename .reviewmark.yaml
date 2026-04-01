@@ -28,15 +28,17 @@ reviews:
   - id: TemplateDotNetLibrary-System
     title: Review of Template DotNet Library System Requirements and Design
     paths:
-      - "docs/reqstream/library-system.yaml"
+      - "docs/reqstream/system.yaml"
       - "docs/design/introduction.md"
+      - "docs/design/system.md"
 
   - id: TemplateDotNetLibrary-Design
     title: Review of Template DotNet Library Architectural and Design Consistency
     paths:
-      - "docs/reqstream/library-system.yaml"
+      - "docs/reqstream/system.yaml"
       - "docs/reqstream/platform-requirements.yaml"
       - "docs/design/introduction.md"
+      - "docs/design/system.md"
       - "docs/design/demo.md"
 
   - id: TemplateDotNetLibrary-Demo

@@ -8,6 +8,7 @@ Before performing any work, agents must read and apply the relevant standards fr
 
 - **`csharp-language.md`** - For C# code development (literate programming, XML docs, dependency injection)
 - **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest anti-patterns)
+- **`design-documentation.md`** - For design documentation (software structure diagrams, system.md, subsystem organization)
 - **`reqstream-usage.md`** - For requirements management (traceability, semantic IDs, source filters)
 - **`reviewmark-usage.md`** - For file review management (review-sets, file patterns, enforcement)
 - **`software-items.md`** - For software categorization (system/subsystem/unit/OTS classification)
@@ -21,12 +22,12 @@ quality checks and guidelines throughout your work.
 The default agent should handle simple, straightforward tasks directly.
 Delegate to specialized agents only for specific scenarios:
 
-- **Light development work** (small fixes, simple features) → Call @developer agent
-- **Light quality checking** (linting, basic validation) → Call @quality agent
-- **Formal feature implementation** (complex, multi-step) → Call the `@implementation` agent
-- **Formal bug resolution** (complex debugging, systematic fixes) → Call the `@implementation` agent
-- **Formal reviews** (compliance verification, detailed analysis) → Call @code-review agent
-- **Template consistency** (downstream repository alignment) → Call @repo-consistency agent
+- **Light development work** (small fixes, simple features) → Call developer agent
+- **Light quality checking** (linting, basic validation) → Call quality agent
+- **Formal feature implementation** (complex, multi-step) → Call the `implementation` agent
+- **Formal bug resolution** (complex debugging, systematic fixes) → Call the `implementation` agent
+- **Formal reviews** (compliance verification, detailed analysis) → Call code-review agent
+- **Template consistency** (downstream repository alignment) → Call repo-consistency agent
 
 ## Available Specialized Agents
 
@@ -156,7 +157,7 @@ Continuous Compliance <https://github.com/demaconsulting/ContinuousCompliance>.
 - **Source filters are critical** - Platform/framework requirements need specific test evidence
 
 For detailed requirements format, test linkage patterns, and ReqStream
-integration, call the @developer agent with requirements management context.
+integration, call the developer agent with requirements management context.
 
 ## Agent Report Files
 
