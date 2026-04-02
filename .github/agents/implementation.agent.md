@@ -28,7 +28,7 @@ counting how many retries have occurred.
 
 Call the built-in explore sub-agent with:
 
-- **context**: the user's request and any current quality findings
+- **context**: the user's request + any previous quality findings + retry context
 - **goal**: analyze the implementation state and develop a plan to implement the request
 
 Once the explore sub-agent finishes, transition to the DEVELOPMENT state.
@@ -37,7 +37,7 @@ Once the explore sub-agent finishes, transition to the DEVELOPMENT state.
 
 Call the developer sub-agent with:
 
-- **context** the user's request and the current implementation plan
+- **context** the user's request + research plan + specific quality issues to address (if retry)
 - **goal** implement the user's request and any identified quality fixes
 
 Once the developer sub-agent finishes:
@@ -49,7 +49,7 @@ Once the developer sub-agent finishes:
 
 Call the quality sub-agent with:
 
-- **context** the user's request and the current implementation report
+- **context** the user's request + development summary + files changed + previous issues (if any)
 - **goal** check the quality of the work performed for any issues
 
 Once the quality sub-agent finishes:

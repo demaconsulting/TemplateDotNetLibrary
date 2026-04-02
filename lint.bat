@@ -2,7 +2,7 @@
 setlocal
 
 REM Comprehensive Linting Script
-REM 
+REM
 REM PURPOSE:
 REM - Run ALL lint checks when executed (no options or modes)
 REM - Output lint failures directly for agent parsing
@@ -13,13 +13,16 @@ set "LINT_ERROR=0"
 
 REM Install npm dependencies
 call npm install --silent
+if errorlevel 1 set "LINT_ERROR=1"
 
 REM Create Python virtual environment (for yamllint) if missing
 if not exist ".venv\Scripts\activate.bat" (
     python -m venv .venv
+    if errorlevel 1 set "LINT_ERROR=1"
 )
 call .venv\Scripts\activate.bat
 pip install -r pip-requirements.txt --quiet --disable-pip-version-check
+if errorlevel 1 set "LINT_ERROR=1"
 
 REM Run spell check
 call npx cspell --no-progress --no-color --quiet "**/*.{md,yaml,yml,json,cs,cpp,hpp,h,txt}"
