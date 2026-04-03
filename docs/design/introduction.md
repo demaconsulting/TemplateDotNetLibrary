@@ -32,7 +32,7 @@ Version applicability: This design applies to all versions of the Template DotNe
 The following topics are explicitly excluded from this design documentation:
 
 - External library internals and third-party OTS components
-- Build pipeline configuration and CI/CD processes  
+- Build pipeline configuration and CI/CD processes
 - Deployment, packaging, and distribution mechanisms
 - Infrastructure and hosting environment details
 
