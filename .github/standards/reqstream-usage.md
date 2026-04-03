@@ -129,12 +129,6 @@ dotnet reqstream \
   --requirements requirements.yaml \
   --lint
 
-# Enforce requirements traceability (use in CI/CD)
-dotnet reqstream \
-  --requirements requirements.yaml \
-  --tests "artifacts/**/*.trx" \
-  --enforce
-
 # Generate requirements report
 dotnet reqstream \
   --requirements requirements.yaml \

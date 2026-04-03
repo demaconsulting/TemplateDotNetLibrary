@@ -89,9 +89,9 @@ Reviews subsystem architecture and interfaces:
   - Requirements: `docs/reqstream/{system-name}/{subsystem-name}/{subsystem-name}.yaml`
   - Design: `docs/design/{system-name}/{subsystem-name}/{subsystem-name}.md`
   - Tests: `test/{SystemName}.Tests/{SubsystemName}/{SubsystemName}*` or similar
-- **Example**: `SomeSystem-Authentication`, `MyProduct-DataLayer`
+- **Example**: `SomeSystem-Authentication`, `SomeSystem-DataLayer`
 
-## [System]-[Unit] Review
+## [System]-[Subsystem]-[Unit] Review
 
 Reviews individual software unit implementation:
 
@@ -102,7 +102,7 @@ Reviews individual software unit implementation:
   - Design: `docs/design/{system-name}/{subsystem-name}/{unit-name}.md` or `docs/design/{system-name}/{unit-name}.md`
   - Source: `src/{SystemName}/{SubsystemName}/{UnitName}.cs`
   - Tests: `test/{SystemName}.Tests/{SubsystemName}/{UnitName}Tests.cs`
-- **Example**: `SomeSystem-PasswordValidator`, `MyProduct-ConfigParser`
+- **Example**: `SomeSystem-Authentication-PasswordValidator`, `SomeSystem-DataLayer-ConfigParser`
 
 # Quality Checks
 
@@ -115,6 +115,5 @@ Before submitting ReviewMark configuration, verify:
 - [ ] File paths reflect current naming conventions (kebab-case design/requirements folders, PascalCase source folders)
 - [ ] Evidence source properly configured (`none` for dev, `url` for production)
 - [ ] Environment variables used for credentials (never hardcoded)
-- [ ] ReviewMark enforcement configured: `dotnet reviewmark --enforce`
 - [ ] Generated documents accessible for compliance auditing
-- [ ] Review-set organization follows standard patterns ([Product]-[Unit], [Product]-Design, etc.)
+- [ ] Review-set organization follows standard patterns ([System]-[Subsystem], [System]-Design, etc.)
