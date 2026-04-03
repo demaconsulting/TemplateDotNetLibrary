@@ -20,7 +20,12 @@ if not exist ".venv\Scripts\activate.bat" (
     python -m venv .venv
     if errorlevel 1 set "LINT_ERROR=1"
 )
+
+REM Activate Python virtual environment
 call .venv\Scripts\activate.bat
+if errorlevel 1 set "LINT_ERROR=1"
+
+REM Install Python tools
 pip install -r pip-requirements.txt --quiet --disable-pip-version-check
 if errorlevel 1 set "LINT_ERROR=1"
 

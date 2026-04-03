@@ -17,7 +17,11 @@ npm install --silent || lint_error=1
 if [ ! -d ".venv" ]; then
   python -m venv .venv || lint_error=1
 fi
-source .venv/bin/activate
+
+# Activate Python virtual environment
+source .venv/bin/activate || lint_error=1
+
+# Install Python tools
 pip install -r pip-requirements.txt --quiet --disable-pip-version-check || lint_error=1
 
 # Run spell check
