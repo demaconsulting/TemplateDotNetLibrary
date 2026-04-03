@@ -10,30 +10,47 @@
 
 lint_error=0
 
-# Install npm dependencies
-npm install --silent || lint_error=1
+# === PYTHON SECTION ===
 
-# Create Python virtual environment (for yamllint)
+# Create python venv if necessary
 if [ ! -d ".venv" ]; then
-  python -m venv .venv || lint_error=1
+    python -m venv .venv || { lint_error=1; skip_python=1; }
 fi
 
-# Activate Python virtual environment
-source .venv/bin/activate || lint_error=1
+# Activate python venv
+if [ "$skip_python" != "1" ]; then
+    source .venv/bin/activate || { lint_error=1; skip_python=1; }
+fi
 
-# Install Python tools
-pip install -r pip-requirements.txt --quiet --disable-pip-version-check || lint_error=1
+# Install python tools
+if [ "$skip_python" != "1" ]; then
+    pip install -r pip-requirements.txt --quiet --disable-pip-version-check || { lint_error=1; skip_python=1; }
+fi
 
-# Run spell check
-npx cspell --no-progress --no-color --quiet "**/*.{md,yaml,yml,json,cs,cpp,hpp,h,txt}" || lint_error=1
+# Run yamllint
+if [ "$skip_python" != "1" ]; then
+    yamllint . || lint_error=1
+fi
 
-# Run markdownlint check
-npx markdownlint-cli2 "**/*.md" || lint_error=1
+# === NPM SECTION ===
 
-# Run yamllint check
-yamllint . || lint_error=1
+# Install npm dependencies
+npm install --silent || { lint_error=1; skip_npm=1; }
 
-# Run .NET formatting check (verifies no changes are needed)
+# Run cspell
+if [ "$skip_npm" != "1" ]; then
+    npx cspell --no-progress --no-color --quiet "**/*.{md,yaml,yml,json,cs,cpp,hpp,h,txt}" || lint_error=1
+fi
+
+# Run markdownlint-cli2
+if [ "$skip_npm" != "1" ]; then
+    npx markdownlint-cli2 "**/*.md" || lint_error=1
+fi
+
+# === DOTNET SECTION ===
+
+# Run dotnet format
 dotnet format --verify-no-changes || lint_error=1
 
+# Report result
 exit $lint_error
