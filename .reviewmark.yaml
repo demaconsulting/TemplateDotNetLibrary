@@ -26,27 +26,28 @@ evidence-source:
 # Review sets grouping files by logical unit of review.
 # Each review-set should group requirements, design, source, and tests for a coherent unit.
 reviews:
-  - id: TemplateDotNetLibrary-System
-    title: Review of Template DotNet Library System Requirements and Design
+  - id: TemplateDotNetLibrary-Architecture
+    title: Review of Template DotNet Library System Architecture and Operational Validation
     paths:
-      - "docs/reqstream/system.yaml"
+      - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
       - "docs/design/introduction.md"
-      - "docs/design/system.md"
+      - "docs/design/template-dot-net-library/template-dot-net-library.md"
+      - "test/TemplateDotNetLibrary.Tests/DemoTests.cs"
 
   - id: TemplateDotNetLibrary-Design
     title: Review of Template DotNet Library Architectural and Design Consistency
     paths:
-      - "docs/reqstream/system.yaml"
-      - "docs/reqstream/platform-requirements.yaml"
+      - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
+      - "docs/reqstream/template-dot-net-library/platform-requirements.yaml"
       - "docs/design/introduction.md"
-      - "docs/design/system.md"
-      - "docs/design/demo.md"
+      - "docs/design/template-dot-net-library/template-dot-net-library.md"
+      - "docs/design/template-dot-net-library/demo.md"
 
   - id: TemplateDotNetLibrary-Demo
     title: Review of Demo Unit Implementation
     paths:
-      - "docs/reqstream/demo.yaml"
-      - "docs/design/demo.md"
+      - "docs/reqstream/template-dot-net-library/demo.yaml"
+      - "docs/design/template-dot-net-library/demo.md"
       - "src/TemplateDotNetLibrary/Demo.cs"
       - "test/TemplateDotNetLibrary.Tests/DemoTests.cs"
 

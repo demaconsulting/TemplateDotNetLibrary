@@ -1,65 +1,72 @@
 # Introduction
 
-<!-- TODO: Fill in for your project -->
-
 This document provides the detailed design for the Template DotNet Library, a .NET library
 demonstrating best practices for DEMA Consulting DotNet Libraries.
 
 ## Purpose
 
-<!-- TODO: Fill in for your project -->
+The purpose of this document is to serve as the design entry point and provide detailed design
+specifications for the Template DotNet Library system. This documentation enables formal code
+review by providing implementation specifications, supports compliance auditing by maintaining
+clear traceability from requirements through design to code, aids maintenance by documenting
+system structure and interactions, and ensures quality assurance through detailed technical
+specifications.
 
-The purpose of this document is to describe the internal design of each software unit that comprises
-the Template DotNet Library. It captures data models, algorithms, key methods, and inter-unit
-interactions at a level of detail sufficient for formal code review, compliance verification, and
-future maintenance. The document does not restate requirements; it explains how they are realized.
+This document is intended for:
+
+- Software developers implementing and maintaining the system
+- Code reviewers validating implementation against design
+- Compliance auditors tracing requirements through design to implementation
+- Quality assurance teams validating system behavior
 
 ## Scope
 
-<!-- TODO: Fill in for your project -->
+This document covers the detailed design of the Template DotNet Library system and its constituent
+software items, specifically:
 
-This document covers the detailed design of the following software units:
+- **TemplateDotNetLibrary (System)** — The complete .NET library template system
+- **Demo (Unit)** — Demonstration greeting class providing example functionality
 
-- **Demo** — demonstration greeting class (`Demo.cs`)
+Version applicability: This design applies to all versions of the Template DotNet Library.
 
-The following topics are out of scope:
+The following topics are explicitly excluded from this design documentation:
 
-- External library internals
-- Build pipeline configuration
-- Deployment and packaging
+- External library internals and third-party OTS components
+- Build pipeline configuration and CI/CD processes  
+- Deployment, packaging, and distribution mechanisms
+- Infrastructure and hosting environment details
 
 ## Software Structure
 
-<!-- TODO: Fill in for your project -->
-
-The following tree shows how the Template DotNet Library software items are organized at the
-system and unit levels:
+The following tree diagram shows how the Template DotNet Library software items are organized
+across System, Subsystem, and Unit levels according to software-items classification standards:
 
 ```text
 TemplateDotNetLibrary (System)
 └── Demo (Unit)
 ```
 
-This template is primitive and has no subsystems — it contains only the `Demo` unit. Replace this
-structure with your own subsystems and units as your project grows.
+This template demonstrates a minimal system structure with no subsystems — it contains only the
+`Demo` unit directly under the system level. In more complex implementations, subsystems would
+organize related units and provide architectural boundaries with well-defined interfaces and
+responsibilities.
 
 ## Folder Layout
 
-<!-- TODO: Fill in for your project -->
-
-The source code folder structure is flat, reflecting the single-unit nature of this template:
+The source code folder structure mirrors the software structure organization, with file paths
+and descriptions as follows:
 
 ```text
 src/TemplateDotNetLibrary/
-└── Demo.cs                     — demonstration greeting class
-```
+└── Demo.cs                     — Demonstration greeting class implementing template functionality
 
-The test project mirrors this layout under `test/TemplateDotNetLibrary.Tests/`:
-
-```text
 test/TemplateDotNetLibrary.Tests/
-└── DemoTests.cs                — unit tests for the Demo class
+└── DemoTests.cs                — Unit tests validating Demo class behavior and requirements
 ```
+
+This flat folder structure reflects the single-unit nature of this template system. As the system
+grows with additional subsystems and units, the folder structure will expand to mirror the
+software architecture with subsystem-specific folders containing their respective units.
 
 ## Document Conventions
 
