@@ -8,7 +8,7 @@ review, organizes them into review-sets, and generates review plans and reports.
 ## Key Commands
 
 - **Lint Configuration**: `dotnet reviewmark --lint`
-- **Elaborate Review-Set**: `dotnet reviewmark --elaborate [review-set]`
+- **Elaborate Review-Set**: `dotnet reviewmark --elaborate {review-set}`
 - **Generate Plan**: `dotnet reviewmark --plan docs/code_review_plan/plan.md`
 - **Generate Report**: `dotnet reviewmark --report docs/code_review_report/report.md`
 
@@ -84,12 +84,12 @@ Reviews user-facing capabilities and system promises:
   - Design introduction: `docs/design/introduction.md`
   - System design: `docs/design/{system-name}/{system-name}.md`
 
-## `[System]-Architecture` Review (one per system)
+## `{System}-Architecture` Review (one per system)
 
 Reviews system architecture and operational validation:
 
 - **Purpose**: Proves that the system is designed and tested to satisfy its requirements
-- **Title**: "Review that [System] Architecture Satisfies Requirements"
+- **Title**: "Review that {System} Architecture Satisfies Requirements"
 - **Scope**: Excludes subsystem and unit files, relying on system-level design to describe
   what subsystems and units it uses
 - **File Path Patterns**:
@@ -98,12 +98,12 @@ Reviews system architecture and operational validation:
   - System design: `docs/design/{system-name}/{system-name}.md`
   - System integration tests: `test/{SystemName}.Tests/{SystemName}Tests.cs`
 
-## `[System]-Design` Review (one per system)
+## `{System}-Design` Review (one per system)
 
 Reviews architectural and design consistency:
 
 - **Purpose**: Proves the system design is consistent and complete
-- **Title**: "Review that [System] Design is Consistent and Complete"
+- **Title**: "Review that {System} Design is Consistent and Complete"
 - **Scope**: Only brings in top-level requirements and relies on brevity of design documentation
 - **File Path Patterns**:
   - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
@@ -111,24 +111,24 @@ Reviews architectural and design consistency:
   - Design introduction: `docs/design/introduction.md`
   - System design files: `docs/design/{system-name}/**/*.md`
 
-## `[System]-AllRequirements` Review (one per system)
+## `{System}-AllRequirements` Review (one per system)
 
 Reviews requirements quality and traceability:
 
 - **Purpose**: Proves the requirements are consistent and complete
-- **Title**: "Review that All [System] Requirements are Complete"
+- **Title**: "Review that All {System} Requirements are Complete"
 - **Scope**: Only brings in requirements files to keep review manageable
 - **File Path Patterns**:
   - Root requirements: `requirements.yaml`
   - System requirements: `docs/reqstream/{system-name}/**/*.yaml`
   - OTS requirements: `docs/reqstream/ots/**/*.yaml` (if applicable)
 
-## `[System]-[Subsystem]` Review (one per subsystem)
+## `{System}-{Subsystem}` Review (one per subsystem)
 
 Reviews subsystem architecture and interfaces:
 
 - **Purpose**: Proves that the subsystem is designed and tested to satisfy its requirements
-- **Title**: "Review that [System] [Subsystem] Satisfies Subsystem Requirements"
+- **Title**: "Review that {System} {Subsystem} Satisfies Subsystem Requirements"
 - **Scope**: Excludes units under the subsystem, relying on subsystem design to describe
   what units it uses
 - **File Path Patterns**:
@@ -136,12 +136,12 @@ Reviews subsystem architecture and interfaces:
   - Design: `docs/design/{system-name}/{subsystem-name}/{subsystem-name}.md`
   - Tests: `test/{SystemName}.Tests/{SubsystemName}/{SubsystemName}Tests.cs`
 
-## `[System]-[Subsystem]-[Unit]` Review (one per unit)
+## `{System}-{Subsystem}-{Unit}` Review (one per unit)
 
 Reviews individual software unit implementation:
 
 - **Purpose**: Proves the unit is designed, implemented, and tested to satisfy its requirements
-- **Title**: "Review that [System] [Subsystem] [Unit] Implementation is Correct"
+- **Title**: "Review that {System} {Subsystem} {Unit} Implementation is Correct"
 - **Scope**: Complete unit review including all artifacts
 - **File Path Patterns**:
   - Requirements: `docs/reqstream/{system-name}/{subsystem-name}/{unit-name}.yaml` or
