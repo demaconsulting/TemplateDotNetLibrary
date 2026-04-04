@@ -29,7 +29,7 @@ Configure reviews in `.reviewmark.yaml` at repository root:
 needs-review:
   # Include source code (adjust file extensions for your repo)
   - "**/*.cs"           # C# source files
-  - "**/*.cpp"          # C++ source files  
+  - "**/*.cpp"          # C++ source files
   - "**/*.hpp"          # C++ header files
   - "!**/bin/**"        # Generated source in build outputs
   - "!**/obj/**"        # Generated source in build intermediates
@@ -65,8 +65,8 @@ When constructing review-sets, follow these principles to maintain manageable sc
 Organize review-sets using these standard patterns to ensure comprehensive coverage
 while keeping each review manageable in scope:
 
-**Note**: File path patterns shown below use C# naming conventions (PascalCase, `.cs` extensions). 
-Other languages should adapt these patterns to their conventions (e.g., C++ might use 
+**Note**: File path patterns shown below use C# naming conventions (PascalCase, `.cs` extensions).
+Other languages should adapt these patterns to their conventions (e.g., C++ might use
 `snake_case` with `.cpp`/`.hpp` extensions).
 
 ## `Purpose` Review (only one per repository)
