@@ -74,6 +74,7 @@ Other languages should adapt these patterns to their conventions (e.g., C++ migh
 Reviews user-facing capabilities and system promises:
 
 - **Purpose**: Proves that the systems provide the capabilities the user is being told about
+- **Title**: "Review that Advertised Features Match System Design"
 - **Scope**: Excludes subsystem and unit files, relying on system-level design documents
   to describe what subsystems and units they use
 - **File Path Patterns**:
@@ -88,6 +89,7 @@ Reviews user-facing capabilities and system promises:
 Reviews system architecture and operational validation:
 
 - **Purpose**: Proves that the system is designed and tested to satisfy its requirements
+- **Title**: "Review that [System] Architecture Satisfies Requirements"
 - **Scope**: Excludes subsystem and unit files, relying on system-level design to describe
   what subsystems and units it uses
 - **File Path Patterns**:
@@ -101,6 +103,7 @@ Reviews system architecture and operational validation:
 Reviews architectural and design consistency:
 
 - **Purpose**: Proves the system design is consistent and complete
+- **Title**: "Review that [System] Design is Consistent and Complete"
 - **Scope**: Only brings in top-level requirements and relies on brevity of design documentation
 - **File Path Patterns**:
   - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
@@ -113,6 +116,7 @@ Reviews architectural and design consistency:
 Reviews requirements quality and traceability:
 
 - **Purpose**: Proves the requirements are consistent and complete
+- **Title**: "Review that All [System] Requirements are Complete"
 - **Scope**: Only brings in requirements files to keep review manageable
 - **File Path Patterns**:
   - Root requirements: `requirements.yaml`
@@ -124,6 +128,7 @@ Reviews requirements quality and traceability:
 Reviews subsystem architecture and interfaces:
 
 - **Purpose**: Proves that the subsystem is designed and tested to satisfy its requirements
+- **Title**: "Review that [System] [Subsystem] Satisfies Subsystem Requirements"
 - **Scope**: Excludes units under the subsystem, relying on subsystem design to describe
   what units it uses
 - **File Path Patterns**:
@@ -136,6 +141,7 @@ Reviews subsystem architecture and interfaces:
 Reviews individual software unit implementation:
 
 - **Purpose**: Proves the unit is designed, implemented, and tested to satisfy its requirements
+- **Title**: "Review that [System] [Subsystem] [Unit] Implementation is Correct"
 - **Scope**: Complete unit review including all artifacts
 - **File Path Patterns**:
   - Requirements: `docs/reqstream/{system-name}/{subsystem-name}/{unit-name}.yaml` or
