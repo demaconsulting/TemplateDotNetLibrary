@@ -1,19 +1,21 @@
 ---
 # ReviewMark Configuration File
 # This file defines which files require review, where the evidence store is located,
-# and how files are grouped into named review-sets following software unit boundaries.
+# and how files are grouped into named review-sets following hierarchical scope principles.
 
 # Patterns identifying all files that require review.
 # Processed in order; prefix a pattern with '!' to exclude.
 needs-review:
-  - "requirements.yaml"          # Root requirements file
-  - "**/*.cs"                    # All C# source and test files
-  - "docs/reqstream/**/*.yaml"   # Requirements files
-  - "docs/design/**/*.md"        # Design documentation files
-  - "!**/obj/**"                 # Exclude build output
-  - "!**/bin/**"                 # Exclude build output
-  - "!node_modules/**"           # Exclude npm dependencies
-  - "!**/.venv/**"               # Exclude Python virtual environment
+  - "README.md"                   # Root README file
+  - "requirements.yaml"           # Root requirements file
+  - "**/*.cs"                     # All C# source and test files
+  - "docs/reqstream/**/*.yaml"    # Requirements files
+  - "docs/design/**/*.md"         # Design documentation files
+  - "docs/user_guide/**/*.md"     # User guide documentation
+  - "!**/obj/**"                  # Exclude build output
+  - "!**/bin/**"                  # Exclude build output
+  - "!node_modules/**"            # Exclude npm dependencies
+  - "!**/.venv/**"                # Exclude Python virtual environment
 
 # Evidence source: review data and index.json are located in the 'reviews' branch
 # of this repository, accessed through the GitHub public HTTPS raw content access.
@@ -23,16 +25,25 @@ evidence-source:
   type: url
   location: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/reviews/index.json
 
-# Review sets grouping files by logical unit of review.
-# Each review-set should group requirements, design, source, and tests for a coherent unit.
+# Review sets following hierarchical scope principles.
+# Each review-set focuses on a single compliance question with manageable file counts.
 reviews:
+  - id: Purpose
+    title: Review of user-facing capabilities and system promises
+    paths:
+      - "README.md"
+      - "docs/user_guide/**/*.md"
+      - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
+      - "docs/design/introduction.md"
+      - "docs/design/template-dot-net-library/template-dot-net-library.md"
+
   - id: TemplateDotNetLibrary-Architecture
     title: Review of Template DotNet Library System Architecture and Operational Validation
     paths:
       - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
       - "docs/design/introduction.md"
       - "docs/design/template-dot-net-library/template-dot-net-library.md"
-      - "test/TemplateDotNetLibrary.Tests/DemoTests.cs"
+      - "test/TemplateDotNetLibrary.Tests/TemplateDotNetLibrary*"
 
   - id: TemplateDotNetLibrary-Design
     title: Review of Template DotNet Library Architectural and Design Consistency
@@ -40,8 +51,13 @@ reviews:
       - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
       - "docs/reqstream/template-dot-net-library/platform-requirements.yaml"
       - "docs/design/introduction.md"
-      - "docs/design/template-dot-net-library/template-dot-net-library.md"
-      - "docs/design/template-dot-net-library/demo.md"
+      - "docs/design/template-dot-net-library/**/*.md"
+
+  - id: TemplateDotNetLibrary-AllRequirements
+    title: Review of All Requirements Including Platform and OTS Dependencies
+    paths:
+      - "requirements.yaml"
+      - "docs/reqstream/**/*.yaml"
 
   - id: TemplateDotNetLibrary-Demo
     title: Review of Demo Unit Implementation
@@ -50,9 +66,3 @@ reviews:
       - "docs/design/template-dot-net-library/demo.md"
       - "src/TemplateDotNetLibrary/Demo.cs"
       - "test/TemplateDotNetLibrary.Tests/DemoTests.cs"
-
-  - id: TemplateDotNetLibrary-AllRequirements
-    title: Review of All Requirements Including Platform and OTS Dependencies
-    paths:
-      - "requirements.yaml"
-      - "docs/reqstream/**/*.yaml"

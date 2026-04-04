@@ -13,14 +13,14 @@ public class DemoTests
     [TestMethod]
     public void DemoMethod_ReturnsGreeting_WithDefaultPrefix()
     {
-        // Arrange
+        // Arrange: set up Demo with default constructor and test name
         var demo = new Demo();
         const string name = "World";
 
-        // Act
+        // Act: call DemoMethod with test name
         var result = demo.DemoMethod(name);
 
-        // Assert – greeting must be exactly "Hello, World!"
+        // Assert: greeting must be exactly "Hello, World!"
         Assert.AreEqual("Hello, World!", result);
     }
 
@@ -31,14 +31,14 @@ public class DemoTests
     [TestMethod]
     public void DemoMethod_ReturnsGreeting_WithCustomPrefix()
     {
-        // Arrange
+        // Arrange: set up Demo with custom prefix and test name
         var demo = new Demo("Hi");
         const string name = "Alice";
 
-        // Act
+        // Act: call DemoMethod with test name
         var result = demo.DemoMethod(name);
 
-        // Assert – greeting must use the custom prefix "Hi"
+        // Assert: greeting must use the custom prefix "Hi"
         Assert.AreEqual("Hi, Alice!", result);
     }
 
@@ -49,10 +49,10 @@ public class DemoTests
     [TestMethod]
     public void DemoMethod_ThrowsArgumentNullException_ForNullInput()
     {
-        // Arrange
+        // Arrange: set up Demo with default constructor
         var demo = new Demo();
 
-        // Act & Assert – exact exception type proves null is explicitly rejected
+        // Act & Assert: exact exception type proves null is explicitly rejected
         Assert.ThrowsExactly<ArgumentNullException>(() => demo.DemoMethod(null!));
     }
 
@@ -63,10 +63,10 @@ public class DemoTests
     [TestMethod]
     public void DemoMethod_ThrowsArgumentException_ForEmptyInput()
     {
-        // Arrange
+        // Arrange: set up Demo with default constructor
         var demo = new Demo();
 
-        // Act & Assert – ArgumentException (not the null sub-type) must be thrown
+        // Act & Assert: ArgumentException (not the null sub-type) must be thrown
         Assert.ThrowsExactly<ArgumentException>(() => demo.DemoMethod(string.Empty));
     }
 
@@ -77,7 +77,7 @@ public class DemoTests
     [TestMethod]
     public void Constructor_ThrowsArgumentNullException_ForNullPrefix()
     {
-        // Act & Assert – exact exception type proves null is explicitly rejected
+        // Act & Assert: exact exception type proves null is explicitly rejected
         Assert.ThrowsExactly<ArgumentNullException>(() => new Demo(null!));
     }
 
@@ -88,7 +88,7 @@ public class DemoTests
     [TestMethod]
     public void Constructor_ThrowsArgumentException_ForEmptyPrefix()
     {
-        // Act & Assert – ArgumentException (not the null sub-type) must be thrown
+        // Act & Assert: ArgumentException (not the null sub-type) must be thrown
         Assert.ThrowsExactly<ArgumentException>(() => new Demo(string.Empty));
     }
 
@@ -99,13 +99,13 @@ public class DemoTests
     [TestMethod]
     public void Demo_DefaultPrefix_IsHello()
     {
-        // Arrange
+        // Arrange: set expected value
         const string expected = "Hello";
 
-        // Act – read the public constant directly
+        // Act: read the public constant directly
         var actual = Demo.DefaultPrefix;
 
-        // Assert – constant value must not silently change
+        // Assert: constant value must not silently change
         Assert.AreEqual(expected, actual);
     }
 
@@ -116,14 +116,14 @@ public class DemoTests
     [TestMethod]
     public void Demo_Prefix_ReturnsCustomPrefix()
     {
-        // Arrange
+        // Arrange: set up Demo with custom prefix
         const string customPrefix = "Greetings";
         var demo = new Demo(customPrefix);
 
-        // Act
+        // Act: read the Prefix property
         var actual = demo.Prefix;
 
-        // Assert – Prefix must exactly match the value passed at construction
+        // Assert: Prefix must exactly match the value passed at construction
         Assert.AreEqual(customPrefix, actual);
     }
 
@@ -134,13 +134,13 @@ public class DemoTests
     [TestMethod]
     public void Demo_DefaultConstructor_SetsDefaultPrefix()
     {
-        // Arrange
+        // Arrange: set up Demo with default constructor
         var demo = new Demo();
 
-        // Act
+        // Act: read the Prefix property
         var actual = demo.Prefix;
 
-        // Assert – default constructor must yield exactly Demo.DefaultPrefix
+        // Assert: default constructor must yield exactly Demo.DefaultPrefix
         Assert.AreEqual(Demo.DefaultPrefix, actual);
     }
 }
