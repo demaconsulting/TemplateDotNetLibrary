@@ -65,69 +65,74 @@ When constructing review-sets, follow these principles to maintain manageable sc
 Organize review-sets using these standard patterns to ensure comprehensive coverage
 while keeping each review manageable in scope:
 
-## Purpose Review (only one per repository)
+## `Purpose` Review (only one per repository)
 
 Reviews user-facing capabilities and system promises:
 
-- **Files**: `README.md`, user guide (`docs/user_guide/**/*.md`), all system requirements
-  (`docs/reqstream/{system-name}/{system-name}.yaml`), design introduction
-  (`docs/design/introduction.md`), all system design files (`docs/design/{system-name}/{system-name}.md`)
 - **Purpose**: Proves that the systems provide the capabilities the user is being told about
 - **Scope**: Excludes subsystem and unit files, relying on system-level design documents
   to describe what subsystems and units they use
-- **Example**: `Purpose`
+- **File Path Patterns**:
+  - README: `README.md`
+  - User guide: `docs/user_guide/**/*.md`
+  - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
+  - Design introduction: `docs/design/introduction.md`
+  - System design: `docs/design/{system-name}/{system-name}.md`
 
-## [System]-Architecture Review (one per system)
+## `[System]-Architecture` Review (one per system)
 
 Reviews system architecture and operational validation:
 
-- **Files**: System requirements (`docs/reqstream/{system-name}/{system-name}.yaml`),
-  design introduction (`docs/design/introduction.md`), system design
-  (`docs/design/{system-name}/{system-name}.md`), system integration tests
 - **Purpose**: Proves that the system is designed and tested to satisfy its requirements
 - **Scope**: Excludes subsystem and unit files, relying on system-level design to describe
   what subsystems and units it uses
-- **Example**: `SomeSystem-Architecture`
+- **File Path Patterns**:
+  - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
+  - Design introduction: `docs/design/introduction.md`
+  - System design: `docs/design/{system-name}/{system-name}.md`
+  - System integration tests: `test/{SystemName}.Tests/{SystemName}*`
 
-## [System]-Design Review (one per system)
+## `[System]-Design` Review (one per system)
 
 Reviews architectural and design consistency:
 
-- **Files**: System requirements (`docs/reqstream/{system-name}/{system-name}.yaml`),
-  platform requirements (`docs/reqstream/{system-name}/platform-requirements.yaml`),
-  design introduction (`docs/design/introduction.md`), all design files for/under the system
-  (`docs/design/{system-name}/**/*.md`)
 - **Purpose**: Proves the system design is consistent and complete
 - **Scope**: Only brings in top-level requirements and relies on brevity of design documentation
-- **Example**: `SomeSystem-Design`
+- **File Path Patterns**:
+  - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
+  - Platform requirements: `docs/reqstream/{system-name}/platform-requirements.yaml`
+  - Design introduction: `docs/design/introduction.md`
+  - System design files: `docs/design/{system-name}/**/*.md`
 
-## [System]-AllRequirements Review (one per system)
+## `[System]-AllRequirements` Review (one per system)
 
 Reviews requirements quality and traceability:
 
-- **Files**: Root requirements file (`requirements.yaml`) and all requirement files under
-  `docs/reqstream/{system-name}/` (including OTS requirements if applicable)
 - **Purpose**: Proves the requirements are consistent and complete
 - **Scope**: Only brings in requirements files to keep review manageable
-- **Example**: `SomeSystem-AllRequirements`
+- **File Path Patterns**:
+  - Root requirements: `requirements.yaml`
+  - System requirements: `docs/reqstream/{system-name}/**/*.yaml`
+  - OTS requirements: `docs/reqstream/ots/**/*.yaml` (if applicable)
 
-## [System]-[Subsystem] Review (one per subsystem)
+## `[System]-[Subsystem]` Review (one per subsystem)
 
 Reviews subsystem architecture and interfaces:
 
-- **Files**: Subsystem requirements (`docs/reqstream/{system-name}/{subsystem-name}/{subsystem-name}.yaml`),
-  subsystem design (`docs/design/{system-name}/{subsystem-name}/{subsystem-name}.md`),
-  subsystem tests (`test/{SystemName}.Tests/{SubsystemName}/{SubsystemName}*`)
 - **Purpose**: Proves that the subsystem is designed and tested to satisfy its requirements
 - **Scope**: Excludes units under the subsystem, relying on subsystem design to describe
   what units it uses
-- **Example**: `SomeSystem-Authentication`, `SomeSystem-DataLayer`
+- **File Path Patterns**:
+  - Requirements: `docs/reqstream/{system-name}/{subsystem-name}/{subsystem-name}.yaml`
+  - Design: `docs/design/{system-name}/{subsystem-name}/{subsystem-name}.md`
+  - Tests: `test/{SystemName}.Tests/{SubsystemName}/{SubsystemName}*`
 
-## [System]-[Subsystem]-[Unit] Review (one per unit)
+## `[System]-[Subsystem]-[Unit]` Review (one per unit)
 
 Reviews individual software unit implementation:
 
-- **Files**: Unit requirements, unit design, unit source code, unit tests
+- **Purpose**: Proves the unit is designed, implemented, and tested to satisfy its requirements
+- **Scope**: Complete unit review including all artifacts
 - **File Path Patterns**:
   - Requirements: `docs/reqstream/{system-name}/{subsystem-name}/{unit-name}.yaml` or
     `docs/reqstream/{system-name}/{unit-name}.yaml`
@@ -136,9 +141,6 @@ Reviews individual software unit implementation:
   - Source: `src/{SystemName}/{SubsystemName}/{UnitName}.cs` or `src/{SystemName}/{UnitName}.cs`
   - Tests: `test/{SystemName}.Tests/{SubsystemName}/{UnitName}Tests.cs` or
     `test/{SystemName}.Tests/{UnitName}Tests.cs`
-- **Purpose**: Proves the unit is designed, implemented, and tested to satisfy its requirements
-- **Scope**: Complete unit review including all artifacts
-- **Example**: `SomeSystem-Authentication-PasswordValidator`, `SomeSystem-DataLayer-ConfigParser`
 
 # Quality Checks
 
