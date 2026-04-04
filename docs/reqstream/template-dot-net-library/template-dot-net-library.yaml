@@ -36,5 +36,7 @@ sections:
           ArgumentNullException for null arguments and ArgumentException for empty-string arguments
           immediately surfaces the mistake to callers and prevents malformed output (such as
           ", World!" or "Hello, !") and obscure failures deeper in the call stack.
+        children:
+          - Demo-Validation
         tests:
           - TemplateDotNetLibrary_SystemValidation_RejectsInvalidInput
