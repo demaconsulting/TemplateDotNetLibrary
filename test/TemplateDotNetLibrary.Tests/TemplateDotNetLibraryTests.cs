@@ -44,24 +44,51 @@ public class TemplateDotNetLibraryTests
     }
 
     /// <summary>
-    ///     Proves that the system properly validates input parameters and rejects
-    ///     invalid arguments with appropriate exceptions at the system level.
+    ///     Proves that the system rejects null input passed to DemoMethod
+    ///     with the expected exception at the system level.
     /// </summary>
     [TestMethod]
-    public void TemplateDotNetLibrary_SystemValidation_RejectsInvalidInput()
+    public void TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput()
     {
         // Arrange: set up system components
         var demo = new Demo();
 
         // Act & Assert: system validates DemoMethod null input properly
         Assert.ThrowsExactly<ArgumentNullException>(() => demo.DemoMethod(null!));
+    }
+
+    /// <summary>
+    ///     Proves that the system rejects empty input passed to DemoMethod
+    ///     with the expected exception at the system level.
+    /// </summary>
+    [TestMethod]
+    public void TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput()
+    {
+        // Arrange: set up system components
+        var demo = new Demo();
 
         // Act & Assert: system validates DemoMethod empty input properly
         Assert.ThrowsExactly<ArgumentException>(() => demo.DemoMethod(string.Empty));
+    }
 
+    /// <summary>
+    ///     Proves that the system rejects a null constructor prefix
+    ///     with the expected exception at the system level.
+    /// </summary>
+    [TestMethod]
+    public void TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix()
+    {
         // Act & Assert: system validates constructor null prefix properly
         Assert.ThrowsExactly<ArgumentNullException>(() => new Demo(null!));
+    }
 
+    /// <summary>
+    ///     Proves that the system rejects an empty constructor prefix
+    ///     with the expected exception at the system level.
+    /// </summary>
+    [TestMethod]
+    public void TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix()
+    {
         // Act & Assert: system validates constructor empty prefix properly
         Assert.ThrowsExactly<ArgumentException>(() => new Demo(string.Empty));
     }

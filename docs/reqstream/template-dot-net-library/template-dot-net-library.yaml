@@ -39,4 +39,7 @@ sections:
         children:
           - Demo-Validation
         tests:
-          - TemplateDotNetLibrary_SystemValidation_RejectsInvalidInput
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput
+          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix
+          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix
