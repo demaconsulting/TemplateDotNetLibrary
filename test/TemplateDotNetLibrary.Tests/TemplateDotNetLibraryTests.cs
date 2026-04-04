@@ -56,7 +56,7 @@ public class TemplateDotNetLibraryTests
         // Act & Assert: system validates DemoMethod null input properly
         Assert.ThrowsExactly<ArgumentNullException>(() => demo.DemoMethod(null!));
 
-        // Act & Assert: system validates DemoMethod empty input properly  
+        // Act & Assert: system validates DemoMethod empty input properly
         Assert.ThrowsExactly<ArgumentException>(() => demo.DemoMethod(string.Empty));
 
         // Act & Assert: system validates constructor null prefix properly
