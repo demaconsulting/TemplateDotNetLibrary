@@ -13,14 +13,11 @@ requirements.
 [TestMethod]
 public void ServiceName_MethodName_Scenario_ExpectedBehavior()
 {
-    // Arrange - (description)
-    // TODO: Set up test data, mocks, and system under test.
+    // Arrange: description of setup (omit if nothing to set up)
 
-    // Act - (description)
-    // TODO: Execute the action being tested
+    // Act: description of action (can combine with Assert when action occurs within assertion)
 
-    // Assert - (description)
-    // TODO: Verify expected outcomes and interactions
+    // Assert: description of verification
 }
 ```
 

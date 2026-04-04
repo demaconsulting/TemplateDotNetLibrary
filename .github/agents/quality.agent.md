@@ -86,7 +86,7 @@ This ensures orchestrators properly halt workflows when quality gates fail.
 
 ## Review Management Compliance: (PASS|FAIL|N/A)
 
-- Were review-sets updated to include new/modified files? (PASS|FAIL|N/A) - [Evidence]
+- Were review-sets updated for structural changes (new/deleted systems, subsystems, or units)? (PASS|FAIL|N/A) - [Evidence]
 - Do file patterns follow include-then-exclude approach? (PASS|FAIL|N/A) - [Evidence]
 - Is review scope appropriate for change magnitude? (PASS|FAIL|N/A) - [Evidence]
 - Was ReviewMark tooling executed and passing? (PASS|FAIL|N/A) - [Evidence]

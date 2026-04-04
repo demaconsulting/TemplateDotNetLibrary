@@ -81,7 +81,7 @@ Delegate to specialized agents only for specific scenarios:
 
 1. **Markdown Auto-fix**: `npx markdownlint-cli2 --fix **/*.md` (fixes most markdown issues except line length)
 2. **Dotnet Auto-fix**: `dotnet format` (reformats .NET languages)
-3. **Run full check**: `lint.bat` (Windows) or `lint.sh` (Unix)  
+3. **Run full check**: `lint.bat` (Windows) or `lint.sh` (Unix)
 4. **Fix remaining**: Address line length, spelling, YAML syntax manually
 5. **Verify clean**: Re-run until 0 errors before quality validation
 

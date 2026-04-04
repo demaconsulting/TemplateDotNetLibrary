@@ -58,6 +58,17 @@ only flow downward in the hierarchy to maintain clear traceability:
 This prevents circular dependencies and ensures clear hierarchical relationships
 for compliance auditing.
 
+# Test Linkage Hierarchy
+
+Requirements MUST link to tests at their own level to maintain proper test scope:
+
+- **System requirements** → link ONLY to system-level integration tests
+- **Subsystem requirements** → link ONLY to subsystem-level tests
+- **Unit requirements** → link ONLY to unit-level tests
+
+Lower-level tests validate implementation details, while higher-level requirements
+are validated through integration behavior at their architectural level.
+
 # Requirements File Format
 
 ```yaml

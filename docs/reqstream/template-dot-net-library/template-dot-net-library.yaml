@@ -12,9 +12,10 @@ sections:
         justification: |
           Provides a simple demonstration of library functionality following
           .NET library best practices for DEMA Consulting libraries.
+        children:
+          - Demo-Greeting
         tests:
-          - DemoMethod_ReturnsGreeting_WithDefaultPrefix
-          - DemoMethod_ReturnsGreeting_WithCustomPrefix
+          - TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality
 
       - id: Template-Lib-CustomPrefix
         title: The library shall support a customizable greeting prefix.
@@ -22,8 +23,10 @@ sections:
           Consumers may need to produce greetings with a prefix other than the
           default, so the library must allow the prefix to be specified at
           construction time.
+        children:
+          - Demo-Prefix
         tests:
-          - DemoMethod_ReturnsGreeting_WithCustomPrefix
+          - TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly
 
       - id: Template-Lib-Validation
         title: The library shall reject null and empty arguments with an appropriate ArgumentException.
@@ -33,8 +36,10 @@ sections:
           ArgumentNullException for null arguments and ArgumentException for empty-string arguments
           immediately surfaces the mistake to callers and prevents malformed output (such as
           ", World!" or "Hello, !") and obscure failures deeper in the call stack.
+        children:
+          - Demo-Validation
         tests:
-          - DemoMethod_ThrowsArgumentNullException_ForNullInput
-          - DemoMethod_ThrowsArgumentException_ForEmptyInput
-          - Constructor_ThrowsArgumentNullException_ForNullPrefix
-          - Constructor_ThrowsArgumentException_ForEmptyPrefix
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput
+          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix
+          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix
