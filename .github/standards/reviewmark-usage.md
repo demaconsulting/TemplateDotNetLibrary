@@ -65,6 +65,10 @@ When constructing review-sets, follow these principles to maintain manageable sc
 Organize review-sets using these standard patterns to ensure comprehensive coverage
 while keeping each review manageable in scope:
 
+**Note**: File path patterns shown below use C# naming conventions (PascalCase, `.cs` extensions). 
+Other languages should adapt these patterns to their conventions (e.g., C++ might use 
+`snake_case` with `.cpp`/`.hpp` extensions).
+
 ## `Purpose` Review (only one per repository)
 
 Reviews user-facing capabilities and system promises:
@@ -90,7 +94,7 @@ Reviews system architecture and operational validation:
   - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
   - Design introduction: `docs/design/introduction.md`
   - System design: `docs/design/{system-name}/{system-name}.md`
-  - System integration tests: `test/{SystemName}.Tests/{SystemName}*`
+  - System integration tests: `test/{SystemName}.Tests/{SystemName}Tests.cs`
 
 ## `[System]-Design` Review (one per system)
 
@@ -125,7 +129,7 @@ Reviews subsystem architecture and interfaces:
 - **File Path Patterns**:
   - Requirements: `docs/reqstream/{system-name}/{subsystem-name}/{subsystem-name}.yaml`
   - Design: `docs/design/{system-name}/{subsystem-name}/{subsystem-name}.md`
-  - Tests: `test/{SystemName}.Tests/{SubsystemName}/{SubsystemName}*`
+  - Tests: `test/{SystemName}.Tests/{SubsystemName}/{SubsystemName}Tests.cs`
 
 ## `[System]-[Subsystem]-[Unit]` Review (one per unit)
 

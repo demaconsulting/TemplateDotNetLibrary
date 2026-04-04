@@ -43,7 +43,7 @@ reviews:
       - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
       - "docs/design/introduction.md"
       - "docs/design/template-dot-net-library/template-dot-net-library.md"
-      - "test/TemplateDotNetLibrary.Tests/TemplateDotNetLibrary*"
+      - "test/TemplateDotNetLibrary.Tests/TemplateDotNetLibraryTests.cs"
 
   - id: TemplateDotNetLibrary-Design
     title: Review of Template DotNet Library Architectural and Design Consistency
