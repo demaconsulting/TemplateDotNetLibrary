@@ -15,7 +15,7 @@ public void ServiceName_MethodName_Scenario_ExpectedBehavior()
 {
     // Arrange: description of setup (omit if nothing to set up)
 
-    // Act: description of action (can combine with Assert for Assert.Throws)
+    // Act: description of action (can combine with Assert when action occurs within assertion)
 
     // Assert: description of verification
 }
