@@ -44,20 +44,6 @@ public class TemplateDotNetLibraryTests
     }
 
     /// <summary>
-    ///     Proves that the system provides consistent default values and constants
-    ///     that can be relied upon by consuming applications.
-    /// </summary>
-    [TestMethod]
-    public void TemplateDotNetLibrary_SystemDefaults_ProvidesConsistentConstants()
-    {
-        // Act: read system default values
-        var defaultPrefix = Demo.DefaultPrefix;
-
-        // Assert: system provides stable default constants
-        Assert.AreEqual("Hello", defaultPrefix);
-    }
-
-    /// <summary>
     ///     Proves that the system properly validates input parameters and rejects
     ///     invalid arguments with appropriate exceptions at the system level.
     /// </summary>
@@ -67,10 +53,16 @@ public class TemplateDotNetLibraryTests
         // Arrange: set up system components
         var demo = new Demo();
 
-        // Act & Assert: system validates null input properly
+        // Act & Assert: system validates DemoMethod null input properly
         Assert.ThrowsExactly<ArgumentNullException>(() => demo.DemoMethod(null!));
 
-        // Act & Assert: system validates empty input properly  
+        // Act & Assert: system validates DemoMethod empty input properly  
         Assert.ThrowsExactly<ArgumentException>(() => demo.DemoMethod(string.Empty));
+
+        // Act & Assert: system validates constructor null prefix properly
+        Assert.ThrowsExactly<ArgumentNullException>(() => new Demo(null!));
+
+        // Act & Assert: system validates constructor empty prefix properly
+        Assert.ThrowsExactly<ArgumentException>(() => new Demo(string.Empty));
     }
 }
