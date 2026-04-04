@@ -80,7 +80,9 @@ sections:
         justification: |
           Business rationale explaining why this requirement exists.
           Include regulatory or standard references where applicable.
-        tests:
+        children:  # Links to child requirements (optional)
+          - ChildSystem-Feature-Behavior
+        tests:     # Links to test methods (required)
           - TestMethodName
           - windows@PlatformSpecificTest  # Source filter for platform evidence
 ```
@@ -169,6 +171,7 @@ Before submitting requirements, verify:
 - [ ] Files organized under `docs/reqstream/` following folder structure patterns
 - [ ] Subsystem folders use kebab-case naming matching source code
 - [ ] OTS requirements placed in `ots/` subfolder
+- [ ] Every software unit has requirements file, design doc, and tests
 - [ ] Valid YAML syntax passes yamllint validation
 - [ ] ReqStream enforcement passes: `dotnet reqstream --enforce`
 - [ ] Test result formats compatible (TRX, JUnit XML)
