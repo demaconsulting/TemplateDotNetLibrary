@@ -46,7 +46,9 @@ or compliance drivers.
 ### Scope Section
 
 Define what software items are covered and what is explicitly excluded.
-Specify version boundaries and applicability constraints.
+Design documentation must NOT include test projects, test classes, or test
+infrastructure because design documentation documents the architecture of
+shipping product code, not ancillary content used to validate it.
 
 ### Software Structure Section (MANDATORY)
 
