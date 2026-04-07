@@ -26,7 +26,7 @@ public void ServiceName_MethodName_Scenario_ExpectedBehavior()
 Use descriptive test names because test names appear in requirements traceability matrices and compliance reports.
 
 - **System tests**: `{SystemName}_{Functionality}_{Scenario}_{ExpectedBehavior}`
-- **Subsystem tests**: `{SubsystemName}_{Functionality}_{Scenario}_{ExpectedBehavior}`  
+- **Subsystem tests**: `{SubsystemName}_{Functionality}_{Scenario}_{ExpectedBehavior}`
 - **Unit tests**: `{ClassName}_{MethodUnderTest}_{Scenario}_{ExpectedBehavior}`
 - **Descriptive Scenarios**: Clearly describe the input condition being tested
 - **Expected Behavior**: State the expected outcome or exception
@@ -45,6 +45,16 @@ Link tests to requirements because every requirement must have passing test evid
 - **Platform Filters**: Use source filters for platform-specific requirements (`windows@TestName`)
 - **TRX Format**: Generate test results in TRX format for ReqStream compatibility
 - **Coverage Completeness**: Test both success paths and error conditions
+
+# Test Dependency Boundaries (MANDATORY)
+
+Respect software item hierarchy boundaries to ensure review-sets can validate proper architectural scope.
+
+- **System Tests**: May use functionality from any subsystem or unit within the system
+- **Subsystem Tests**: May only use units within the subsystem + documented dependencies in design docs
+- **Unit Tests**: May only test the unit + documented dependencies in design docs
+
+Undocumented cross-hierarchy dependencies indicate either missing design documentation or architectural violations.
 
 # Mock Dependencies
 
@@ -113,6 +123,8 @@ Before submitting C# tests, verify:
 - [ ] Each test verifies single, specific behavior (no shared state)
 - [ ] Both success and failure scenarios covered including edge cases
 - [ ] External dependencies mocked with NSubstitute or equivalent
+- [ ] Tests respect software item hierarchy boundaries (System/Subsystem/Unit scope)
+- [ ] Cross-hierarchy test dependencies documented in design documentation
 - [ ] Tests linked to requirements with source filters where needed
 - [ ] Test results generate TRX format for ReqStream compatibility
 - [ ] MSTest V4 anti-patterns avoided (proper assertions, public visibility, etc.)

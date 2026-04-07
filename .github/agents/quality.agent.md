@@ -81,6 +81,8 @@ This ensures orchestrators properly halt workflows when quality gates fail.
 - Were tests created/updated for all functional changes? (PASS|FAIL|N/A) - {Evidence}
 - Is test coverage maintained for all requirements? (PASS|FAIL|N/A) - {Evidence}
 - Are testing standards followed (AAA pattern, etc.)? (PASS|FAIL|N/A) - {Evidence}
+- Do tests respect software item hierarchy boundaries (System/Subsystem/Unit scope)? (PASS|FAIL|N/A) - {Evidence}
+- Are cross-hierarchy test dependencies documented in design docs? (PASS|FAIL|N/A) - {Evidence}
 - Does test categorization align with code structure? (PASS|FAIL|N/A) - {Evidence}
 - Do all tests pass without failures? (PASS|FAIL|N/A) - {Evidence}
 
