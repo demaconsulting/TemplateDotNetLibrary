@@ -13,7 +13,7 @@ sections:
           Provides a simple demonstration of library functionality following
           .NET library best practices for DEMA Consulting libraries.
         children:
-          - Demo-Greeting
+          - Template-Demo-Greeting
         tests:
           - TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality
 
@@ -24,7 +24,7 @@ sections:
           default, so the library must allow the prefix to be specified at
           construction time.
         children:
-          - Demo-Prefix
+          - Template-Demo-Prefix
         tests:
           - TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly
 
@@ -37,7 +37,7 @@ sections:
           immediately surfaces the mistake to callers and prevents malformed output (such as
           ", World!" or "Hello, !") and obscure failures deeper in the call stack.
         children:
-          - Demo-Validation
+          - Template-Demo-Validation
         tests:
           - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput
           - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput

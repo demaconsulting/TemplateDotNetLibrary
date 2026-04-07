@@ -6,25 +6,25 @@
 sections:
   - title: Demo Unit
     requirements:
-      - id: Demo-Greeting
+      - id: Template-Demo-Greeting
         title: The Demo class shall return a greeting in the format "{prefix}, {name}!".
         justification: |
           The greeting format is the core contract of the Demo unit: combining the
           stored prefix with the caller-supplied name in a predictable, testable format.
         tests:
-          - DemoMethod_ReturnsGreeting_WithDefaultPrefix
-          - DemoMethod_ReturnsGreeting_WithCustomPrefix
+          - Demo_DemoMethod_DefaultPrefix_ReturnsGreeting
+          - Demo_DemoMethod_CustomPrefix_ReturnsGreeting
 
-      - id: Demo-Prefix
+      - id: Template-Demo-Prefix
         title: The Demo class shall expose the greeting prefix via a Prefix property.
         justification: |
           Exposing the prefix as a read-only property allows callers to inspect the
           configured prefix without resorting to reflection or other indirect means.
         tests:
-          - Demo_Prefix_ReturnsCustomPrefix
-          - Demo_DefaultConstructor_SetsDefaultPrefix
+          - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
+          - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix
 
-      - id: Demo-Validation
+      - id: Template-Demo-Validation
         title: The Demo class shall reject null and empty arguments with an appropriate ArgumentException.
         justification: |
           Null-safety and non-empty validation are fundamental contracts at the unit level:
@@ -32,7 +32,7 @@ sections:
           null arguments and ArgumentException for empty-string arguments to immediately
           surface programming errors to callers.
         tests:
-          - DemoMethod_ThrowsArgumentNullException_ForNullInput
-          - DemoMethod_ThrowsArgumentException_ForEmptyInput
-          - Constructor_ThrowsArgumentNullException_ForNullPrefix
-          - Constructor_ThrowsArgumentException_ForEmptyPrefix
+          - Demo_DemoMethod_NullInput_ThrowsArgumentNullException
+          - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
+          - Demo_Constructor_NullPrefix_ThrowsArgumentNullException
+          - Demo_Constructor_EmptyPrefix_ThrowsArgumentException
