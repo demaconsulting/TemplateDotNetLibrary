@@ -23,3 +23,16 @@ sections:
         tests:
           - Demo_Prefix_ReturnsCustomPrefix
           - Demo_DefaultConstructor_SetsDefaultPrefix
+
+      - id: Demo-Validation
+        title: The Demo class shall reject null and empty arguments with an appropriate ArgumentException.
+        justification: |
+          Null-safety and non-empty validation are fundamental contracts at the unit level:
+          DemoMethod and the custom-prefix constructor must throw ArgumentNullException for
+          null arguments and ArgumentException for empty-string arguments to immediately
+          surface programming errors to callers.
+        tests:
+          - DemoMethod_ThrowsArgumentNullException_ForNullInput
+          - DemoMethod_ThrowsArgumentException_ForEmptyInput
+          - Constructor_ThrowsArgumentNullException_ForNullPrefix
+          - Constructor_ThrowsArgumentException_ForEmptyPrefix
