@@ -17,12 +17,12 @@ sections:
               framework is functioning correctly.
             tags: [ots]
             tests:
-              - DemoMethod_ReturnsGreeting_WithDefaultPrefix
-              - DemoMethod_ReturnsGreeting_WithCustomPrefix
-              - DemoMethod_ThrowsArgumentNullException_ForNullInput
-              - DemoMethod_ThrowsArgumentException_ForEmptyInput
-              - Constructor_ThrowsArgumentNullException_ForNullPrefix
-              - Constructor_ThrowsArgumentException_ForEmptyPrefix
+              - Demo_DemoMethod_DefaultPrefix_ReturnsGreeting
+              - Demo_DemoMethod_CustomPrefix_ReturnsGreeting
+              - Demo_DemoMethod_NullInput_ThrowsArgumentNullException
+              - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
+              - Demo_Constructor_NullPrefix_ThrowsArgumentNullException
+              - Demo_Constructor_EmptyPrefix_ThrowsArgumentException
               - Demo_DefaultPrefix_IsHello
-              - Demo_Prefix_ReturnsCustomPrefix
-              - Demo_DefaultConstructor_SetsDefaultPrefix
+              - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
+              - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix
