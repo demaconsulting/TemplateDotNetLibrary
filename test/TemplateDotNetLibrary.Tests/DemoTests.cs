@@ -11,7 +11,7 @@ public class DemoTests
     ///     when the default constructor is used.
     /// </summary>
     [TestMethod]
-    public void DemoMethod_ReturnsGreeting_WithDefaultPrefix()
+    public void Demo_DemoMethod_DefaultPrefix_ReturnsGreeting()
     {
         // Arrange: set up Demo with default constructor and test name
         var demo = new Demo();
@@ -29,7 +29,7 @@ public class DemoTests
     ///     time instead of the default.
     /// </summary>
     [TestMethod]
-    public void DemoMethod_ReturnsGreeting_WithCustomPrefix()
+    public void Demo_DemoMethod_CustomPrefix_ReturnsGreeting()
     {
         // Arrange: set up Demo with custom prefix and test name
         var demo = new Demo("Hi");
@@ -47,7 +47,7 @@ public class DemoTests
     ///     ArgumentException) when a null name is supplied.
     /// </summary>
     [TestMethod]
-    public void DemoMethod_ThrowsArgumentNullException_ForNullInput()
+    public void Demo_DemoMethod_NullInput_ThrowsArgumentNullException()
     {
         // Arrange: set up Demo with default constructor
         var demo = new Demo();
@@ -61,7 +61,7 @@ public class DemoTests
     ///     when an empty string name is supplied.
     /// </summary>
     [TestMethod]
-    public void DemoMethod_ThrowsArgumentException_ForEmptyInput()
+    public void Demo_DemoMethod_EmptyInput_ThrowsArgumentException()
     {
         // Arrange: set up Demo with default constructor
         var demo = new Demo();
@@ -75,7 +75,7 @@ public class DemoTests
     ///     (not a base ArgumentException) when a null prefix is supplied.
     /// </summary>
     [TestMethod]
-    public void Constructor_ThrowsArgumentNullException_ForNullPrefix()
+    public void Demo_Constructor_NullPrefix_ThrowsArgumentNullException()
     {
         // Act & Assert: exact exception type proves null is explicitly rejected
         Assert.ThrowsExactly<ArgumentNullException>(() => new Demo(null!));
@@ -86,7 +86,7 @@ public class DemoTests
     ///     (not ArgumentNullException) when an empty string prefix is supplied.
     /// </summary>
     [TestMethod]
-    public void Constructor_ThrowsArgumentException_ForEmptyPrefix()
+    public void Demo_Constructor_EmptyPrefix_ThrowsArgumentException()
     {
         // Act & Assert: ArgumentException (not the null sub-type) must be thrown
         Assert.ThrowsExactly<ArgumentException>(() => new Demo(string.Empty));
@@ -114,7 +114,7 @@ public class DemoTests
     ///     the constructor, confirming the property reflects what was stored.
     /// </summary>
     [TestMethod]
-    public void Demo_Prefix_ReturnsCustomPrefix()
+    public void Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix()
     {
         // Arrange: set up Demo with custom prefix
         const string customPrefix = "Greetings";
@@ -132,7 +132,7 @@ public class DemoTests
     ///     property, tying the constant and the property together explicitly.
     /// </summary>
     [TestMethod]
-    public void Demo_DefaultConstructor_SetsDefaultPrefix()
+    public void Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix()
     {
         // Arrange: set up Demo with default constructor
         var demo = new Demo();
