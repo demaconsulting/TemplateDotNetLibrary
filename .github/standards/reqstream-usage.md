@@ -60,7 +60,7 @@ consistency with design documentation and enable automated tooling.
 
 # Requirement Hierarchies and Links
 
-Requirements link downward only - higher-level requirements reference lower-level 
+Requirements link downward only - higher-level requirements reference lower-level
 ones they decompose into:
 
 - **System requirements** → may link to subsystem or unit requirements
