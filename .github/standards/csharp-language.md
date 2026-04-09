@@ -45,4 +45,4 @@ return OutputFormatter.Format(validatedResults);
 # Quality Checks
 
 - [ ] Zero compiler warnings (`TreatWarningsAsErrors=true`)
-- [ ] XmlDoc documentation complete on all members
+- [ ] XmlDoc documentation complete on all members (public, internal, protected, private)
