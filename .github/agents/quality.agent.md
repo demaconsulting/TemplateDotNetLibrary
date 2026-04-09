@@ -26,13 +26,6 @@ This assessment is a quality control system of the project and MUST be performed
 Upon completion create a summary in `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
 of the project consisting of:
 
-The **Result** field MUST reflect the quality validation outcome for orchestrator decision-making:
-
-- **Result: SUCCEEDED** - Only when Overall Grade is PASS (all compliance requirements met)
-- **Result: FAILED** - When Overall Grade is FAIL or NEEDS_WORK (compliance failures present)
-
-This ensures orchestrators properly halt workflows when quality gates fail.
-
 ```markdown
 # Quality Assessment Report
 
@@ -133,5 +126,12 @@ This ensures orchestrators properly halt workflows when quality gates fail.
 - **Standards Adherence**: {Overall compliance rating with specific standards}
 - **Quality Gates**: {Status of automated quality checks with tool outputs}
 ```
+
+The **Result** field MUST reflect the quality validation outcome for orchestrator decision-making:
+
+- **Result: SUCCEEDED** - Only when Overall Grade is PASS (all compliance requirements met)
+- **Result: FAILED** - When Overall Grade is FAIL or NEEDS_WORK (compliance failures present)
+
+This ensures orchestrators properly halt workflows when quality gates fail.
 
 Return this summary to the caller.

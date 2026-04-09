@@ -18,9 +18,9 @@ existing files and to know where to make new files.
 │   ├── requirements_report/
 │   └── reqstream/
 ├── src/
-│   └── <project>/
+│   └── {project}/
 └── test/
-    └── <test-project>/
+    └── {test-project}/
 ```
 
 # Key Configuration Files
@@ -42,6 +42,8 @@ existing files and to know where to make new files.
 
 Before performing any work, agents must read and apply the relevant standards from `.github/standards/`:
 
+- **`coding-principles.md`** - For universal coding standards (literate programming, architecture principles, quality gates)
+- **`testing-principles.md`** - For universal testing standards (dependency boundaries, AAA pattern, requirements traceability)
 - **`csharp-language.md`** - For C# code development (literate programming, XML docs, dependency injection)
 - **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest anti-patterns)
 - **`design-documentation.md`** - For design documentation (software structure diagrams, system.md, subsystem organization)

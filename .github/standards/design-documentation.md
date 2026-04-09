@@ -1,9 +1,22 @@
+---
+name: Design Documentation
+description: Follow these standards when creating design documentation.
+globs: ["docs/design/**/*.md"]
+---
+
 # Design Documentation Standards
 
 This document defines DEMA Consulting standards for design documentation
 within Continuous Compliance environments, extending the general technical
 documentation standards with specific requirements for software design
 artifacts.
+
+## Required Standards
+
+Read these standards first before applying this standard:
+
+- **`technical-documentation.md`** - General technical documentation standards
+- **`software-items.md`** - Software categorization (System/Subsystem/Unit/OTS)
 
 # Core Principles
 
