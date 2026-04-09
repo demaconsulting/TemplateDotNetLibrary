@@ -34,7 +34,7 @@ All code MUST follow literate programming principles:
 
 ### Compliance-Ready Code Structure
 
-- **Documentation Standards**: Language-appropriate documentation required on ALL public members
+- **Documentation Standards**: Language-appropriate documentation required on ALL members
 - **Error Handling**: Comprehensive error cases with appropriate exception handling and logging
 - **Configuration**: Externalize settings for different compliance environments
 - **Resource Management**: Proper resource cleanup using language-appropriate patterns
@@ -45,7 +45,7 @@ All code MUST follow literate programming principles:
 
 - [ ] Zero compiler warnings (use language-specific warning-as-error flags)
 - [ ] All code follows literate programming style
-- [ ] Language-appropriate documentation complete on all public members
+- [ ] Language-appropriate documentation complete on all members
 - [ ] Passes static analysis (language-specific tools)
 
 ## Universal Anti-Patterns
