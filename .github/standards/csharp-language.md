@@ -15,7 +15,6 @@ Read these standards first before applying this standard:
 # File Patterns
 
 - **Source Files**: `**/*.cs`
-- **Project Files**: `**/*.csproj`, `**/*.sln`
 
 # Literate Coding Example
 
