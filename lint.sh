@@ -36,7 +36,7 @@ fi
 
 # Install npm dependencies
 export PUPPETEER_SKIP_DOWNLOAD=true
-npm install --silent || { lint_error=1; skip_npm=1; }
+npm install --silent || skip_npm=1
 
 # Run cspell
 if [ "$skip_npm" != "1" ]; then
@@ -48,7 +48,7 @@ if [ "$skip_npm" != "1" ]; then
     npx markdownlint-cli2 "**/*.md" || lint_error=1
 fi
 
-# === DOTNET SECTION ===
+# === DOTNET LINTING SECTION ===
 
 # Restore dotnet tools
 dotnet tool restore > /dev/null || { lint_error=1; skip_dotnet_tools=1; }
@@ -68,9 +68,15 @@ if [ "$skip_dotnet_tools" != "1" ]; then
     dotnet reviewmark --lint || lint_error=1
 fi
 
+# === DOTNET FORMATTING SECTION ===
+
+# Restore dotnet packages
+dotnet restore > /dev/null || { lint_error=1; skip_dotnet_format=1; }
+
 # Run dotnet format
-dotnet restore > /dev/null
-dotnet format --verify-no-changes --no-restore || lint_error=1
+if [ "$skip_dotnet_format" != "1" ]; then
+    dotnet format --verify-no-changes --no-restore || lint_error=1
+fi
 
 # Report result
 exit $lint_error
