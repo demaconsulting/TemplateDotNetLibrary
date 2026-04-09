@@ -38,6 +38,7 @@ REM === NPM SECTION ===
 :npm_section
 
 REM Install npm dependencies
+set "PUPPETEER_SKIP_DOWNLOAD=true"
 call npm install --silent
 if errorlevel 1 goto skip_npm
 
@@ -57,8 +58,27 @@ REM === DOTNET SECTION ===
 
 :dotnet_section
 
+REM Restore dotnet tools
+dotnet tool restore > nul
+if errorlevel 1 goto skip_dotnet_tools
+
+REM Run reqstream lint
+dotnet reqstream --lint --requirements requirements.yaml
+if errorlevel 1 set "LINT_ERROR=1"
+
+REM Run versionmark lint
+dotnet versionmark --lint
+if errorlevel 1 set "LINT_ERROR=1"
+
+REM Run reviewmark lint
+dotnet reviewmark --lint
+if errorlevel 1 set "LINT_ERROR=1"
+
+:skip_dotnet_tools
+
 REM Run dotnet format
-dotnet format --verify-no-changes
+dotnet restore > nul
+dotnet format --verify-no-changes --no-restore
 if errorlevel 1 set "LINT_ERROR=1"
 
 REM Report result
