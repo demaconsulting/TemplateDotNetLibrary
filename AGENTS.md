@@ -44,7 +44,7 @@ Before performing any work, agents must read and apply the relevant standards fr
 
 - **`coding-principles.md`** - For universal coding standards (literate programming, architecture principles)
 - **`testing-principles.md`** - For universal testing standards (dependency boundaries, AAA pattern)
-- **`csharp-language.md`** - For C# code development (literate programming, XML docs, dependency injection)
+- **`csharp-language.md`** - For C# code development (formatting, XML docs, C#-specific guidance)
 - **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest anti-patterns)
 - **`design-documentation.md`** - For design documentation (software structure diagrams, system.md, hierarchy)
 - **`reqstream-usage.md`** - For requirements management (traceability, semantic IDs, source filters)
