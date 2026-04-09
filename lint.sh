@@ -36,7 +36,7 @@ fi
 
 # Install npm dependencies
 export PUPPETEER_SKIP_DOWNLOAD=true
-npm install --silent || skip_npm=1
+npm install --silent || { lint_error=1; skip_npm=1; }
 
 # Run cspell
 if [ "$skip_npm" != "1" ]; then
