@@ -42,15 +42,15 @@ existing files and to know where to make new files.
 
 Before performing any work, agents must read and apply the relevant standards from `.github/standards/`:
 
-- **`coding-principles.md`** - For universal coding standards (literate programming, architecture principles, quality gates)
-- **`testing-principles.md`** - For universal testing standards (dependency boundaries, AAA pattern, requirements traceability)
+- **`coding-principles.md`** - For universal coding standards (literate programming, architecture principles)
+- **`testing-principles.md`** - For universal testing standards (dependency boundaries, AAA pattern)
 - **`csharp-language.md`** - For C# code development (literate programming, XML docs, dependency injection)
 - **`csharp-testing.md`** - For C# test development (AAA pattern, naming, MSTest anti-patterns)
-- **`design-documentation.md`** - For design documentation (software structure diagrams, system.md, subsystem organization)
+- **`design-documentation.md`** - For design documentation (software structure diagrams, system.md, hierarchy)
 - **`reqstream-usage.md`** - For requirements management (traceability, semantic IDs, source filters)
 - **`reviewmark-usage.md`** - For file review management (review-sets, file patterns, enforcement)
 - **`software-items.md`** - For software categorization (system/subsystem/unit/OTS classification)
-- **`technical-documentation.md`** - For documentation creation and maintenance (structure, Pandoc, README best practices)
+- **`technical-documentation.md`** - For documentation creation and maintenance (structure, Pandoc, best practices)
 
 Load only the standards relevant to your specific task scope and apply their
 quality checks and guidelines throughout your work.

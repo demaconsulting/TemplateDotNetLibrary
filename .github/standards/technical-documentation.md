@@ -116,8 +116,8 @@ Write technical documentation for clarity and compliance verification:
 
 References in design/technical documents must point to **external specifications only**:
 
-- **? INCLUDE**: Requirements documents, system specifications, program documents, standards (IEEE, ISO, etc.)
-- **? NEVER INCLUDE**: Internal development standards (`.github/standards/` files) - these are coding guides, not specifications
+- **INCLUDE**: Requirements documents, system specifications, program documents, standards (IEEE, ISO, etc.)
+- **NEVER INCLUDE**: Internal development standards (`.github/standards/` files) - these are agent guides
 
 # Markdown Format Requirements
 

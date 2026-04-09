@@ -56,7 +56,7 @@ All code MUST follow literate programming principles:
 - **Hidden Functionality**: Don't implement functionality without requirement traceability
 - **Monolithic Functions**: Don't write monolithic functions with multiple responsibilities
 - **Overcomplicated Solutions**: Don't make solutions more complex than necessary - favor simplicity and clarity
-- **Premature Optimization**: Don't optimize for performance before establishing correctness and identifying actual bottlenecks
+- **Premature Optimization**: Don't optimize for performance before establishing correctness
 - **Copy-Paste Programming**: Don't duplicate logic - extract common functionality into reusable components
 - **Magic Numbers**: Don't use unexplained constants - either name them or add clear comments
 
