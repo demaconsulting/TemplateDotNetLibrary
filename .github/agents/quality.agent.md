@@ -60,7 +60,6 @@ Priority-ordered list of issues that MUST be resolved for the next retry:
 - Are requirement files organized under `docs/reqstream/` with proper folder structure?
 - Are OTS requirements properly placed in `docs/reqstream/ots/` subfolder?
 - Were source filters applied appropriately for platform-specific requirements?
-- Does ReqStream enforcement pass without errors?
 - Is requirements traceability maintained to tests?
 
 ## Design Documentation Compliance: (PASS|FAIL|N/A)
