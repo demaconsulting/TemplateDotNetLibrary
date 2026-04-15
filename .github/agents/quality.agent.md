@@ -16,7 +16,8 @@ Grade and validate software development work by ensuring compliance with project
 3. **Evaluate only applicable categories** — skip entire report sections where
    no related artifacts were changed
 4. **Validate tool compliance** using ReqStream, ReviewMark, and language tools
-5. **Generate focused quality report** with only evaluated sections
+5. **Generate focused quality report** per the AGENTS.md reporting requirements — save to
+   `.agent-logs/{agent-name}-{subject}-{unique-id}.md` and return the summary to the caller
 
 **Quality-specific Result rule**: Result SUCCEEDED requires Overall Grade PASS.
 Result FAILED when Overall Grade is FAIL.

@@ -23,6 +23,8 @@ benefit from template evolution while respecting project-specific customizations
    while respecting project-specific customizations
 4. **Apply Appropriate Updates**: Implement applicable template improvements with proper translation for project context
 5. **Validate Consistency**: Verify that applied changes maintain functionality and follow project patterns
+6. **Generate completion report** per the AGENTS.md reporting requirements — save to
+   `.agent-logs/{agent-name}-{subject}-{unique-id}.md` and return the summary to the caller
 
 ## Key Principles
 
