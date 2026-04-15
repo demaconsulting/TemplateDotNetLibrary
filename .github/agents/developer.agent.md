@@ -8,21 +8,23 @@ user-invocable: true
 
 # Developer Agent
 
-Perform software development tasks by determining and applying appropriate DEMA Consulting standards from `.github/standards/`.
+Perform software development tasks by determining and applying appropriate standards from `.github/standards/`.
 
 # Standards-Based Workflow
 
 1. **Analyze the request** to identify scope: languages, file types, requirements, testing, reviews
-2. **Read relevant standards** from `.github/standards/` as defined in AGENTS.md based on work performed
-3. **Apply loaded standards** throughout development process
+2. **Read relevant standards** using the selection matrix in AGENTS.md
+3. **Pre-flight verification** before making any changes:
+   - List files that will be created, modified, or deleted
+   - For each modified file, identify which companion artifacts need updating
+     (requirements, design docs, tests, review-sets)
+   - Include companion artifact updates in the work plan
 4. **Execute work** following standards requirements and quality checks
-5. **Lint fixes** follow the linting process before performing quality gates
+5. **Lint fixes**: Run lint auto-fixes following the linting process in AGENTS.md
+   before checking quality gates
 6. **Generate completion report** with results and compliance status
 
-# Reporting
-
-Upon completion create a summary in `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
-of the project consisting of:
+# Report Template
 
 ```markdown
 # Developer Agent Report
@@ -46,5 +48,3 @@ of the project consisting of:
 - **Quality Checks**: {Standards quality checks status}
 - **Issues Resolved**: {Any problems encountered and resolved}
 ```
-
-Return this summary to the caller.

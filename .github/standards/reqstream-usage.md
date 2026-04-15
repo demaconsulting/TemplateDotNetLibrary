@@ -6,8 +6,8 @@ globs: ["requirements.yaml", "docs/reqstream/**/*.yaml"]
 
 # ReqStream Requirements Management Standards
 
-This document defines DEMA Consulting standards for requirements management
-using ReqStream within Continuous Compliance environments.
+This document defines standards for requirements management using ReqStream
+within Continuous Compliance environments.
 
 ## Required Standards
 
@@ -29,11 +29,8 @@ generation:
 
 # Software Items Integration (CRITICAL)
 
-Before creating requirements files, agents MUST:
-
-1. **Read `.github/standards/software-items.md`** to understand System/Subsystem/Unit/OTS classifications
-2. **Apply proper categorization** when organizing requirements files
-3. **Mirror source code structure** in requirements folder organization
+Read `software-items.md` before creating requirements files — correct
+categorization and folder structure must mirror source code organization.
 
 # Requirements Organization
 
@@ -47,8 +44,9 @@ docs/reqstream/
 ├── {system-name}/                  # System-level requirements folder (one per system)
 │   ├── {system-name}.yaml          # System-level requirements
 │   ├── platform-requirements.yaml  # Platform support requirements
-│   ├── {subsystem-name}/           # Subsystem requirements (kebab-case folders)
+│   ├── {subsystem-name}/           # Subsystem (kebab-case); may nest recursively
 │   │   ├── {subsystem-name}.yaml   # Requirements for this subsystem
+│   │   ├── {child-subsystem}/      # Child subsystem (same structure as parent)
 │   │   └── {unit-name}.yaml        # Requirements for units within this subsystem
 │   └── {unit-name}.yaml            # Requirements for top-level units (outside subsystems)
 └── ots/                            # OTS software items folder
@@ -65,7 +63,7 @@ ones they decompose into:
 
 - **System requirements** → may link to subsystem or unit requirements
 - **Subsystem requirements** → may link to unit requirements within that subsystem
-- **Unit requirements** → should NOT link upward to parent requirements
+- **Unit requirements** → MUST NOT link upward to parent requirements
 
 This prevents circular dependencies and ensures clear hierarchical relationships
 for compliance auditing.
@@ -87,7 +85,7 @@ are validated through integration behavior at their architectural level.
 sections:
   - title: Functional Requirements
     requirements:
-      - id: System-Subsystem-Feature
+      - id: System-Component-Feature
         title: The system shall perform the required function.
         justification: |
           Business rationale explaining why this requirement exists.
@@ -123,10 +121,14 @@ sections:
 
 # Semantic IDs (MANDATORY)
 
-Use meaningful IDs following `System-Section-ShortDesc` pattern because
-auditors need to understand requirements without cross-referencing:
+Use meaningful IDs following the `System-Component-Feature` pattern because
+auditors need to understand requirements without cross-referencing. The
+`Component` segment identifies the relevant part of the system at any level
+(functional area, subsystem, or unit):
 
-- **Good**: `TemplateTool-Core-DisplayHelp`
+- **System-level**: `TemplateTool-Core-DisplayHelp`
+- **Subsystem-level**: `TemplateTool-Parser-ParseYaml`
+- **Unit-level**: `TemplateTool-Validator-CheckFormat`
 - **Bad**: `REQ-042` (requires lookup to understand)
 
 # Source Filter Requirements (CRITICAL)
@@ -185,5 +187,4 @@ Before submitting requirements, verify:
 - [ ] OTS requirements placed in `ots/` subfolder
 - [ ] Every software unit has requirements file, design doc, and tests
 - [ ] Valid YAML syntax passes yamllint validation
-- [ ] ReqStream enforcement passes: `dotnet reqstream --enforce`
 - [ ] Test result formats compatible (TRX, JUnit XML)

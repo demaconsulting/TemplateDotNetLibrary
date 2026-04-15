@@ -7,32 +7,21 @@ user-invocable: true
 # Code Review Agent
 
 This agent runs the formal review based on the review-set it's told to perform.
+Document findings only — never modify code during a review.
 
 # Formal Review Steps
 
-Formal reviews are a quality enforcement mechanism, and as such MUST be performed using the following four steps:
-
-1. Download the
-   <https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/review-template/review-template.md>
-   to get the checklist to fill in
+1. Download the review checklist from
+   <https://github.com/demaconsulting/ContinuousCompliance/raw/refs/heads/main/docs/review-template/review-template.md>.
+   If the download fails, report the failure rather than proceeding without the template.
 2. Use `dotnet reviewmark --elaborate {review-set}` to get the files to review
-3. Review the files all together
-4. Populate the checklist with the findings to `.agent-logs/reviews/review-report-{review-set}.md` of the project.
+3. Review all files holistically, checking for cross-file consistency and
+   compliance with the review checklist
+4. Save the populated review checklist to `.agent-logs/reviews/review-report-{review-set}.md`.
+   This directory holds formal review artifacts, not agent logs.
+5. Generate a completion report per the AGENTS.md reporting requirements.
 
-# Don't Do These Things
-
-- **Never modify code during review** (document findings only)
-- **Never skip applicable checklist items** (comprehensive review required)
-- **Never approve reviews with unresolved critical findings**
-- **Never bypass review status requirements** for compliance
-- **Never conduct reviews without proper documentation**
-- **Never ignore security or compliance findings**
-- **Never approve without verifying all quality gates**
-
-# Reporting
-
-Upon completion create a summary in `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
-of the project consisting of:
+# Report Template
 
 ```markdown
 # Code Review Report
@@ -70,5 +59,3 @@ For each issue found, include:
 - **Quality Gates**: {Status of review checklist items}
 - **Approval Status**: {Approved/Rejected with justification}
 ```
-
-Return summary to caller.

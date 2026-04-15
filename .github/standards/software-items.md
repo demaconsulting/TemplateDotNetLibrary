@@ -5,10 +5,9 @@ description: Follow these standards when categorizing software components.
 
 # Software Items Definition Standards
 
-This document defines DEMA Consulting standards for categorizing software
-items within Continuous Compliance environments because proper categorization
-determines requirements management approach, testing strategy, and review
-scope.
+This document defines standards for categorizing software items within
+Continuous Compliance environments because proper categorization determines
+requirements management approach, testing strategy, and review scope.
 
 # Software Item Categories
 
@@ -28,6 +27,16 @@ Categorize all software into four primary groups:
 - System: Application/Library/System (e.g. TestResults → TestResultsLibrary)
 - Subsystem: Subsystem (e.g. Linter → LinterSubsystem)
 
+# Naming Conventions in File Path Patterns
+
+Two placeholder styles appear in path patterns across these standards:
+
+- **Kebab-case** (`{system-name}`, `{unit-name}`): always kebab-case —
+  used in documentation and requirements paths
+- **Cased** (`{SystemName}`, `{UnitName}`): follow your language's convention —
+  `PascalCase` for C#/Java, `snake_case` for C++/Python —
+  used in source and test file paths
+
 # Categorization Guidelines
 
 Choose the appropriate category based on scope and testability:
@@ -40,7 +49,8 @@ Choose the appropriate category based on scope and testability:
 ## Software Subsystem
 
 - Major architectural boundary (authentication, data layer, UI, communications)
-- Contains multiple software units working together
+- Contains software units and optionally child subsystems
+- Subsystems may nest when a component has distinct internal boundaries
 - Typically maps to project folders or namespaces
 - Tested through subsystem integration tests
 

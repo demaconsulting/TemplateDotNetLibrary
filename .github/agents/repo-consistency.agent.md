@@ -40,10 +40,7 @@ benefit from template evolution while respecting project-specific customizations
 - **Never skip validation** of preserved functionality after template alignment
 - **Never assume all template patterns apply universally** (assess project-specific needs)
 
-# Reporting
-
-Upon completion create a summary in `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
-of the project consisting of:
+# Report Template
 
 ```markdown
 # Repo Consistency Report
@@ -76,5 +73,3 @@ of the project consisting of:
 - **Enhancement Adoptions**: {Template improvements successfully integrated}
 - **Validation Results**: {Testing and validation outcomes}
 ```
-
-Return this summary to the caller.
