@@ -88,6 +88,10 @@ Once the quality sub-agent finishes:
 this agent may report INCOMPLETE when the request cannot be implemented without
 information only the user can provide.
 
+Generate the completion report using the template below, then save it to
+`.agent-logs/{agent-name}-{subject}-{unique-id}.md` per the AGENTS.md reporting
+requirements, and return the summary to the caller.
+
 # Report Template
 
 ```markdown
