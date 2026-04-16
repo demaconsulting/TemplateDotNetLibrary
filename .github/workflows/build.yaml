@@ -648,6 +648,6 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: documents
-          path: |
+          path: |-
             docs/*.pdf
             docs/build_notes.md

@@ -49,7 +49,9 @@ if ($FixOnly) {
     # Fixes markdownlint-detectable formatting issues automatically.
     $env:PUPPETEER_SKIP_DOWNLOAD = "true"
     npm install --silent 2>$null
-    npx markdownlint-cli2 --fix "**/*.md" 2>$null
+    if ($LASTEXITCODE -eq 0) {
+        npx markdownlint-cli2 --fix "**/*.md" 2>$null
+    }
 
     # --- YAML Auto-Fix ---
     # Fixes common YAML formatting issues automatically.
@@ -63,8 +65,11 @@ if ($FixOnly) {
     }
     if (Test-Path $activateScript) {
         & $activateScript 2>$null
-        pip install -r pip-requirements.txt --quiet --disable-pip-version-check 2>$null
-        yamlfix . 2>$null
+        if (Get-Command deactivate -ErrorAction SilentlyContinue) {
+            pip install -r pip-requirements.txt --quiet --disable-pip-version-check 2>$null
+            yamlfix . 2>$null
+            deactivate 2>$null
+        }
     }
 
     # [PROJECT-SPECIFIC] Add additional auto-fixers here.
@@ -113,9 +118,10 @@ if (-not $skipPython) {
 if (-not $skipPython) {
     yamllint .
     if ($LASTEXITCODE -ne 0) { $lintError = $true }
+    deactivate
 }
 
-# [PROJECT-SPECIFIC] Add additional Python-based lint checks here.
+# [PROJECT-SPECIFIC]Add additional Python-based lint checks here.
 # Example:
 #   if (-not $skipPython) {
 #       flake8 src/
