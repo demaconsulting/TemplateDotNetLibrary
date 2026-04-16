@@ -18,8 +18,8 @@ Perform software development tasks by determining and applying appropriate stand
      (requirements, design docs, tests, review-sets)
    - Include companion artifact updates in the work plan
 4. **Execute work** following standards requirements and quality checks
-5. **Lint fixes**: Run lint auto-fixes following the linting process in AGENTS.md
-   before checking quality gates
+5. **Lint auto-fix**: Run `pwsh lint.ps1 -FixOnly` to silently apply all
+   available auto-fixers (dotnet format, markdown, YAML) before committing
 6. **Generate completion report** per the AGENTS.md reporting requirements — save to
    `.agent-logs/{agent-name}-{subject}-{unique-id}.md` and return the summary to the caller
 

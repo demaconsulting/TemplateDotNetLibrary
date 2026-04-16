@@ -36,7 +36,7 @@ before searching the filesystem.
 - **`package.json`** - Node.js dependencies for linting tools
 - **`requirements.yaml`** - Root requirements file with includes
 - **`pip-requirements.txt`** - Python dependencies for yamllint and yamlfix
-- **`lint.sh` / `lint.bat`** - Cross-platform comprehensive linting scripts
+- **`lint.ps1`** - Cross-platform linting script (PowerShell 7, replaces lint.bat/lint.sh)
 
 # Standards Application (ALL Agents Must Follow)
 
@@ -61,6 +61,7 @@ Load only the standards relevant to your specific task scope.
 The default agent should handle simple, straightforward tasks directly.
 Delegate to specialized agents only for specific scenarios:
 
+- **Pre-PR lint cleanup** (fix all lint issues before pull request) → Call the lint-fix agent
 - **Light development work** (small fixes, simple features) → Call the developer agent
 - **Light quality checking** (linting, basic validation) → Call the quality agent
 - **Formal feature implementation** (complex, multi-step) → Call the implementation agent
@@ -70,6 +71,8 @@ Delegate to specialized agents only for specific scenarios:
 
 ## Available Specialized Agents
 
+- **lint-fix** - Pre-PR lint sweep agent that loops running `pwsh lint.ps1`,
+  fixing issues until the repository is lint-clean
 - **developer** - General-purpose software development agent that applies appropriate
   standards based on the work being performed
 - **formal-review** - Agent for performing formal reviews using standardized review processes
@@ -99,21 +102,24 @@ Result semantics for orchestrator decision-making:
 - **INCOMPLETE**: Work cannot proceed without information only the user can
   provide (implementation agent only)
 
-# Linting (Required Before Quality Gates)
+# Linting (After Making Changes)
 
-1. **Language auto-fix**: Run language-appropriate auto-formatters
-   (e.g., `dotnet format` for .NET)
-2. **Markdown auto-fix**: `npx markdownlint-cli2 --fix **/*.md`
-3. **YAML auto-fix**: `yamlfix .`
-4. **Run full check**: `lint.bat` (Windows) or `lint.sh` (Unix)
-5. **Fix remaining**: Address line length, spelling, YAML syntax manually
-6. **Verify clean**: Re-run until 0 errors before quality validation
+After making changes, run the auto-fix pass. This applies all available fixers
+silently and **always exits 0** — agents do not need to respond to its output.
 
-## Linting Tools (ALL Must Pass)
+```pwsh
+pwsh lint.ps1 -FixOnly
+```
+
+This automatically handles: `dotnet format`, markdown formatting, and YAML
+formatting. Full lint compliance is a **pre-PR responsibility**, not an agent
+responsibility — invoke the lint-fix agent once before submitting a pull request.
+
+## Linting Tools (ALL Must Pass in CI)
 
 - **markdownlint-cli2**: Markdown style and formatting enforcement
 - **cspell**: Spell-checking across all text files (use `.cspell.yaml` for technical terms)
-- **yamlfix**: YAML auto-formatter (run before lint.bat to auto-fix common issues)
+- **yamlfix**: YAML auto-formatter (run before full check to auto-fix common issues)
 - **yamllint**: YAML structure and formatting validation
 - **Language-specific linters**: Based on repository technology stack
 
@@ -146,7 +152,7 @@ requires it and the modification preserves the documented design intent:
 
 - `.reviewmark.yaml`, `.cspell.yaml`, `.editorconfig`
 - `.markdownlint-cli2.yaml`, `.yamllint.yaml`
-- `requirements.yaml`, `lint.sh` / `lint.bat`
+- `requirements.yaml`, `lint.ps1`
 
 # Continuous Compliance Overview
 
