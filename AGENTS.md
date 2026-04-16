@@ -63,7 +63,7 @@ Delegate to specialized agents only for specific scenarios:
 
 - **Pre-PR lint cleanup** (fix all lint issues before pull request) → Call the lint-fix agent
 - **Light development work** (small fixes, simple features) → Call the developer agent
-- **Light quality checking** (linting, basic validation) → Call the quality agent
+- **Light quality checking** (basic validation) → Call the quality agent
 - **Formal feature implementation** (complex, multi-step) → Call the implementation agent
 - **Formal bug resolution** (complex debugging, systematic fixes) → Call the implementation agent
 - **Formal reviews** (compliance verification, detailed analysis) → Call the formal-review agent
