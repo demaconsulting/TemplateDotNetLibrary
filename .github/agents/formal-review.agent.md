@@ -1,10 +1,10 @@
 ---
-name: code-review
+name: formal-review
 description: Agent for performing formal reviews
 user-invocable: true
 ---
 
-# Code Review Agent
+# Formal Review Agent
 
 This agent runs the formal review based on the review-set it's told to perform.
 Document findings only — never modify code during a review.
@@ -24,7 +24,7 @@ Document findings only — never modify code during a review.
 # Report Template
 
 ```markdown
-# Code Review Report
+# Formal Review Report
 
 **Result**: (SUCCEEDED|FAILED)
 

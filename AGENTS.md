@@ -65,14 +65,14 @@ Delegate to specialized agents only for specific scenarios:
 - **Light quality checking** (linting, basic validation) → Call the quality agent
 - **Formal feature implementation** (complex, multi-step) → Call the implementation agent
 - **Formal bug resolution** (complex debugging, systematic fixes) → Call the implementation agent
-- **Formal reviews** (compliance verification, detailed analysis) → Call the code-review agent
+- **Formal reviews** (compliance verification, detailed analysis) → Call the formal-review agent
 - **Template consistency** (downstream repository alignment) → Call the repo-consistency agent
 
 ## Available Specialized Agents
 
 - **developer** - General-purpose software development agent that applies appropriate
   standards based on the work being performed
-- **code-review** - Agent for performing formal reviews using standardized review processes
+- **formal-review** - Agent for performing formal reviews using standardized review processes
 - **implementation** - Orchestrator agent that manages quality implementations
   through a formal state machine workflow
 - **quality** - Quality assurance agent that grades developer work against project
