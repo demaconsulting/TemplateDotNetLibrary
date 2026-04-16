@@ -85,7 +85,7 @@ Delegate to specialized agents only for specific scenarios:
 
 # Agent Reporting (Specialized Agents Must Follow)
 
-Specialized agents (developer, quality, implementation, code-review,
+Specialized agents (developer, quality, implementation, formal-review,
 repo-consistency) MUST generate a completion report:
 
 1. Save to `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
