@@ -68,9 +68,5 @@ All code MUST follow literate programming principles:
 
 # Language-Specific Implementation
 
-For each detected language:
-
-- **Load Standards**: Read the appropriate `{language}-language.md` file from `.github/standards/`
-- **Apply Tooling**: Use language-specific formatting, linting, and build tools
-- **Follow Conventions**: Apply language-specific naming, patterns, and best practices
-- **Generate Documentation**: Use language-appropriate documentation format (XmlDoc, Doxygen, JSDoc, etc.)
+For each detected language, read `{language}-language.md` from `.github/standards/`
+and apply its standards, tooling, and conventions.

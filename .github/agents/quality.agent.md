@@ -15,7 +15,7 @@ Grade and validate software development work by ensuring compliance with project
 2. **Read relevant standards** using the selection matrix in AGENTS.md
 3. **Evaluate only applicable categories** - skip entire report sections where
    no related artifacts were changed
-4. **Validate tool compliance** using ReqStream, ReviewMark, and language tools
+4. **Validate tool compliance** using ReqStream, ReviewMark, and build tools
 5. **Generate focused quality report** per the AGENTS.md reporting requirements - save to
    `.agent-logs/{agent-name}-{subject}-{unique-id}.md` and return the summary to the caller
 
@@ -39,12 +39,6 @@ Priority-ordered list of issues that MUST be resolved for the next retry:
 1. **[severity]** {one-line description}
    - File: {path:line}
    - Action: {specific fix instruction}
-
-## Assessment Summary
-
-- **Work Reviewed**: {Description of work assessed}
-- **Standards Applied**: {Standards files used for assessment}
-- **Categories Evaluated**: {Quality check categories assessed}
 
 ## Evaluation Scope
 
@@ -80,7 +74,7 @@ Priority-ordered list of issues that MUST be resolved for the next retry:
 - Are quality checks from standards files satisfied?
 - Is code properly categorized (system/subsystem/unit/OTS)?
 - Is appropriate separation of concerns maintained?
-- Was language-specific tooling executed and passing?
+- Was language-specific build tooling executed and passing?
 
 ## Testing Compliance: (PASS|FAIL|N/A)
 

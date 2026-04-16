@@ -6,18 +6,18 @@ user-invocable: true
 
 # Lint Fix Agent
 
-Fix all lint issues in the repository until `pwsh lint.ps1` exits cleanly.
+Fix all lint issues in the repository until `pwsh ./lint.ps1` exits cleanly.
 This is the **pre-PR lint sweep** — run it once before pull request
 submission, not during normal development.
 
 # Workflow (MANDATORY)
 
-1. **Auto-fix pass**: Run `pwsh lint.ps1 -FixOnly` to silently apply all
+1. **Auto-fix pass**: Run `pwsh ./fix.ps1` to silently apply all
    automatic fixes (dotnet format, markdownlint, yamlfix).
 
 2. **Fix loop** (maximum 5 iterations):
 
-   a. Run `pwsh lint.ps1` and capture the full output.
+   a. Run `pwsh ./lint.ps1` and capture the full output.
 
    b. If exit code is 0 — the repository is lint-clean. Proceed to the report.
 
@@ -42,15 +42,12 @@ submission, not during normal development.
   (e.g., missing blank lines, heading levels, code fence languages).
 
 - **yamllint errors**: Fix indentation, trailing spaces, or missing document
-  markers as indicated. Run `pwsh lint.ps1 -FixOnly` again if structural YAML
+  markers as indicated. Run `pwsh ./fix.ps1` again if structural YAML
   issues appear — yamlfix may handle them.
 
 - **reqstream / reviewmark / versionmark failures**: Fix the referenced
   requirements or review configuration per the standards in
   `.github/standards/reqstream-usage.md` and `.github/standards/reviewmark-usage.md`.
-
-- **dotnet format failures**: These should not occur after `-FixOnly`. If they
-  do, run `dotnet format` explicitly and check `.editorconfig` rules.
 
 # Rules
 

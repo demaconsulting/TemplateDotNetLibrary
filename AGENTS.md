@@ -29,14 +29,16 @@ before searching the filesystem.
 - **`.editorconfig`** - Code formatting rules
 - **`.clang-format`** - C/C++ formatting (if applicable)
 - **`.cspell.yaml`** - Spell-check configuration and technical term dictionary
-- **`.markdownlint-cli2.yaml`** - Markdown linting rules
-- **`.yamllint.yaml`** - YAML linting configuration
+- **`.markdownlint-cli2.yaml`** - Markdown formatting rules
+- **`.yamllint.yaml`** - YAML formatting configuration
 - **`.reviewmark.yaml`** - File review definitions and tracking
 - **`nuget.config`** - NuGet package sources (if .NET)
-- **`package.json`** - Node.js dependencies for linting tools
+- **`package.json`** - Node.js dependencies for formatting tools
 - **`requirements.yaml`** - Root requirements file with includes
 - **`pip-requirements.txt`** - Python dependencies for yamllint and yamlfix
-- **`lint.ps1`** - Cross-platform linting script (PowerShell 7, replaces lint.bat/lint.sh)
+- **`fix.ps1`** - Applies all auto-fixers silently (dotnet format, markdown, YAML). Always exits 0.
+- **`lint.ps1`** - Runs all lint checks and reports failures. Exits 1 on error.
+- **`build.ps1`** - Builds the solution and runs all tests.
 
 # Standards Application (ALL Agents Must Follow)
 
@@ -71,7 +73,7 @@ Delegate to specialized agents only for specific scenarios:
 
 ## Available Specialized Agents
 
-- **lint-fix** - Pre-PR lint sweep agent that loops running `pwsh lint.ps1`,
+- **lint-fix** - Pre-PR lint sweep agent that loops running `pwsh ./lint.ps1`,
   fixing issues until the repository is lint-clean
 - **developer** - General-purpose software development agent that applies appropriate
   standards based on the work being performed
@@ -102,26 +104,23 @@ Result semantics for orchestrator decision-making:
 - **INCOMPLETE**: Work cannot proceed without information only the user can
   provide (implementation agent only)
 
-# Linting (After Making Changes)
+# Formatting (After Making Changes)
 
 After making changes, run the auto-fix pass. This applies all available fixers
 silently and **always exits 0** — agents do not need to respond to its output.
 
 ```pwsh
-pwsh lint.ps1 -FixOnly
+pwsh ./fix.ps1
 ```
 
 This automatically handles: `dotnet format`, markdown formatting, and YAML
 formatting. Full lint compliance is a **pre-PR responsibility**, not an agent
 responsibility — invoke the lint-fix agent once before submitting a pull request.
 
-## Linting Tools (ALL Must Pass in CI)
+## CI Quality Tools
 
-- **markdownlint-cli2**: Markdown style and formatting enforcement
-- **cspell**: Spell-checking across all text files (use `.cspell.yaml` for technical terms)
-- **yamlfix**: YAML auto-formatter (run before full check to auto-fix common issues)
-- **yamllint**: YAML structure and formatting validation
-- **Language-specific linters**: Based on repository technology stack
+CI runs `lint.ps1` which checks: markdownlint-cli2, cspell, yamllint, dotnet format,
+reqstream, versionmark, and reviewmark.
 
 # Quality Gate Enforcement (ALL Agents Must Verify)
 
@@ -152,24 +151,10 @@ requires it and the modification preserves the documented design intent:
 
 - `.reviewmark.yaml`, `.cspell.yaml`, `.editorconfig`
 - `.markdownlint-cli2.yaml`, `.yamllint.yaml`
-- `requirements.yaml`, `lint.ps1`
+- `requirements.yaml`, `fix.ps1`, `lint.ps1`
 
 # Continuous Compliance Overview
 
-This repository follows the Continuous Compliance
-<https://github.com/demaconsulting/ContinuousCompliance> approach, which enforces quality and
-compliance gates on every CI/CD run instead of as a last-mile activity.
-
-## Core Principles
-
-- **Requirements Traceability**: Every requirement MUST link to passing tests
-- **Quality Gates**: All quality checks must pass before merge
-- **Documentation Currency**: All docs auto-generated and kept current
-- **Automated Evidence**: Full audit trail generated with every build
-
-## Requirements & Compliance
-
-- **ReqStream**: Requirements traceability enforcement (`dotnet reqstream --enforce`)
-- **ReviewMark**: File review status enforcement
-- **BuildMark**: Tool version documentation
-- **VersionMark**: Version tracking across CI/CD jobs
+This repository follows the [Continuous Compliance](https://github.com/demaconsulting/ContinuousCompliance)
+approach. Tools: **ReqStream** (requirements traceability), **ReviewMark** (file review enforcement),
+**BuildMark** (tool versions), **VersionMark** (version tracking).

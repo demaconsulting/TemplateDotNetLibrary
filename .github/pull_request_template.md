@@ -40,7 +40,7 @@ Before submitting this pull request, ensure you have completed the following:
 
 Please run the following checks before submitting:
 
-- [ ] **All linters pass**: `pwsh lint.ps1` (cross-platform)
+- [ ] **All linters pass**: `pwsh ./lint.ps1` (cross-platform)
 
 ### Testing
 
