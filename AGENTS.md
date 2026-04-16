@@ -85,8 +85,8 @@ Delegate to specialized agents only for specific scenarios:
 
 # Agent Reporting (Specialized Agents Must Follow)
 
-Specialized agents (developer, quality, implementation, formal-review,
-repo-consistency) MUST generate a completion report:
+Specialized agents (lint-fix, developer, quality, implementation,
+formal-review, repo-consistency) MUST generate a completion report:
 
 1. Save to `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
    where `{subject}` is a kebab-case task summary (max 5 words) and

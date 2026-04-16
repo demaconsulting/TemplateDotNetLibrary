@@ -148,7 +148,7 @@ if (-not $skipPython) {
     deactivate
 }
 
-# [PROJECT-SPECIFIC]Add additional Python-based lint checks here.
+# [PROJECT-SPECIFIC] Add additional Python-based lint checks here.
 # Example:
 #   if (-not $skipPython) {
 #       flake8 src/
