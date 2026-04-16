@@ -35,7 +35,7 @@ before searching the filesystem.
 - **`nuget.config`** - NuGet package sources (if .NET)
 - **`package.json`** - Node.js dependencies for linting tools
 - **`requirements.yaml`** - Root requirements file with includes
-- **`pip-requirements.txt`** - Python dependencies for yamllint
+- **`pip-requirements.txt`** - Python dependencies for yamllint and yamlfix
 - **`lint.sh` / `lint.bat`** - Cross-platform comprehensive linting scripts
 
 # Standards Application (ALL Agents Must Follow)
@@ -104,14 +104,16 @@ Result semantics for orchestrator decision-making:
 1. **Language auto-fix**: Run language-appropriate auto-formatters
    (e.g., `dotnet format` for .NET)
 2. **Markdown auto-fix**: `npx markdownlint-cli2 --fix **/*.md`
-3. **Run full check**: `lint.bat` (Windows) or `lint.sh` (Unix)
-4. **Fix remaining**: Address line length, spelling, YAML syntax manually
-5. **Verify clean**: Re-run until 0 errors before quality validation
+3. **YAML auto-fix**: `yamlfix .`
+4. **Run full check**: `lint.bat` (Windows) or `lint.sh` (Unix)
+5. **Fix remaining**: Address line length, spelling, YAML syntax manually
+6. **Verify clean**: Re-run until 0 errors before quality validation
 
 ## Linting Tools (ALL Must Pass)
 
 - **markdownlint-cli2**: Markdown style and formatting enforcement
 - **cspell**: Spell-checking across all text files (use `.cspell.yaml` for technical terms)
+- **yamlfix**: YAML auto-formatter (run before lint.bat to auto-fix common issues)
 - **yamllint**: YAML structure and formatting validation
 - **Language-specific linters**: Based on repository technology stack
 
