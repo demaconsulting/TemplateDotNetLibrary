@@ -34,8 +34,8 @@ submission, not during normal development.
   under the `words` list. Correct genuine misspellings in the source text.
   Do not add misspelled words to the dictionary.
 
-- **markdownlint MD013 (line length)**: Wrap long lines at natural break points
-  - after commas, before conjunctions, or at sentence boundaries. Do not break
+- **markdownlint MD013 (line length)**: Wrap long lines at natural break points,
+  after commas, before conjunctions, or at sentence boundaries. Do not break
   in the middle of a code span or URL.
 
 - **markdownlint other rules**: Apply the specific fix indicated in the output
