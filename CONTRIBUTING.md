@@ -192,7 +192,7 @@ spell-checking failure. Doing so defeats the purpose of spell-checking and reduc
 
 Before submitting a pull request, ensure all quality checks pass:
 
-### 1. Build, Test, and Validate
+### 1. Build and Test
 
 ```bash
 # Build the project

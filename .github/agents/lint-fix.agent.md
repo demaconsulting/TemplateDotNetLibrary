@@ -7,7 +7,7 @@ user-invocable: true
 # Lint Fix Agent
 
 Fix all lint issues in the repository until `pwsh ./lint.ps1` exits cleanly.
-This is the **pre-PR lint sweep** — run it once before pull request
+This is the **pre-PR lint sweep** - run it once before pull request
 submission, not during normal development.
 
 # Workflow (MANDATORY)
@@ -19,7 +19,7 @@ submission, not during normal development.
 
    a. Run `pwsh ./lint.ps1` and capture the full output.
 
-   b. If exit code is 0 — the repository is lint-clean. Proceed to the report.
+   b. If exit code is 0 - the repository is lint-clean. Proceed to the report.
 
    c. Parse the failures and fix each one using the guidance below.
 
@@ -35,7 +35,7 @@ submission, not during normal development.
   Do not add misspelled words to the dictionary.
 
 - **markdownlint MD013 (line length)**: Wrap long lines at natural break points
-  — after commas, before conjunctions, or at sentence boundaries. Do not break
+  - after commas, before conjunctions, or at sentence boundaries. Do not break
   in the middle of a code span or URL.
 
 - **markdownlint other rules**: Apply the specific fix indicated in the output
@@ -43,7 +43,7 @@ submission, not during normal development.
 
 - **yamllint errors**: Fix indentation, trailing spaces, or missing document
   markers as indicated. Run `pwsh ./fix.ps1` again if structural YAML
-  issues appear — yamlfix may handle them.
+  issues appear - yamlfix may handle them.
 
 - **reqstream / reviewmark / versionmark failures**: Fix the referenced
   requirements or review configuration per the standards in
@@ -51,7 +51,7 @@ submission, not during normal development.
 
 # Rules
 
-- Fix **only** lint issues — do not refactor, restructure, or make functional changes
+- Fix **only** lint issues - do not refactor, restructure, or make functional changes
 - For spelling: prefer adding terms to `.cspell.yaml` over rewriting correct technical text
 - Never modify auto-generated files (check file headers for "auto-generated" or "do not edit")
 - Respect all protected configuration files listed in AGENTS.md

@@ -20,7 +20,7 @@ Perform software development tasks by determining and applying appropriate stand
 4. **Execute work** following standards requirements and quality checks
 5. **Formatting**: Run `pwsh ./fix.ps1` to silently apply all
    available auto-fixers (dotnet format, markdown, YAML) before committing
-6. **Generate completion report** per the AGENTS.md reporting requirements — save to
+6. **Generate completion report** per the AGENTS.md reporting requirements - save to
    `.agent-logs/{agent-name}-{subject}-{unique-id}.md` and return the summary to the caller
 
 # Report Template

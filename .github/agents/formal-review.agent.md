@@ -7,7 +7,7 @@ user-invocable: true
 # Formal Review Agent
 
 This agent runs the formal review based on the review-set it's told to perform.
-Document findings only — never modify code during a review.
+Document findings only - never modify code during a review.
 
 # Formal Review Steps
 
