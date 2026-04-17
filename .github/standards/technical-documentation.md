@@ -6,8 +6,8 @@ globs: ["docs/**/*.md", "README.md"]
 
 # Technical Documentation Standards
 
-This document defines DEMA Consulting standards for technical documentation
-within Continuous Compliance environments.
+This document defines standards for technical documentation within Continuous
+Compliance environments.
 
 # Core Principles
 
@@ -41,16 +41,18 @@ docs/
     introduction.md              # Design overview
     {system-name}/               # System architecture folder
       {system-name}.md           # System architecture
-      {subsystem-name}/          # Subsystem design folder
+      {subsystem-name}/          # Subsystem folder; may nest recursively
         {subsystem-name}.md      # Subsystem-specific designs
+        {child-subsystem}/       # Child subsystem (same structure)
         {unit-name}.md           # Unit-specific designs
       {unit-name}.md             # Top-level unit design
   reqstream/                     # Requirements source files
     {system-name}/               # System requirements folder
       {system-name}.yaml         # System requirements
       platform-requirements.yaml # Platform requirements
-      {subsystem-name}/          # Subsystem requirements folder
+      {subsystem-name}/          # Subsystem folder; may nest recursively
         {subsystem-name}.yaml    # Subsystem requirements
+        {child-subsystem}/       # Child subsystem (same structure)
         {unit-name}.yaml         # Unit-specific requirements
       {unit-name}.yaml           # Top-level unit requirements
     ots/                         # OTS requirement files

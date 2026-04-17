@@ -206,11 +206,12 @@ All tests must pass with zero warnings.
 
 ### 2. Linting
 
-```bash
-# Use the lint script which installs dependencies and runs all linters
-./lint.sh           # Linux/macOS (or: bash ./lint.sh)
-cmd /c lint.bat     # Windows (Command Prompt)
-./lint.bat          # Windows (PowerShell)
+```pwsh
+# After making changes: applies dotnet format, markdown, and YAML fixes silently
+pwsh ./fix.ps1
+
+# Before submitting a pull request: all linters must pass
+pwsh ./lint.ps1
 ```
 
 ### 3. Code Coverage

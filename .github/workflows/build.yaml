@@ -74,8 +74,8 @@ jobs:
       # Downstream projects: Add any additional quality check steps here.
 
       - name: Run linters
-        shell: bash
-        run: bash ./lint.sh
+        shell: pwsh
+        run: ./lint.ps1
 
       # === UPLOAD ARTIFACTS ===
       # This section uploads all generated artifacts for use by downstream jobs.
@@ -648,6 +648,6 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: documents
-          path: |
+          path: |-
             docs/*.pdf
             docs/build_notes.md
