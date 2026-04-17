@@ -15,8 +15,8 @@ Continuous Compliance environments.
 All code MUST follow literate programming principles:
 
 - **Intent Documentation**: Function and method documentation (XmlDoc, Doxygen,
-  JSDoc, etc.) MUST explain WHY the function exists and its design purpose —
-  not just restate what it does — because reviewers must verify implementation
+  JSDoc, etc.) MUST explain WHY the function exists and its design purpose -
+  not just restate what it does - because reviewers must verify implementation
   matches design intent without reading the full codebase
 - **Logical Separation**: Complex functions use block comments to separate and
   describe logical steps within the implementation
