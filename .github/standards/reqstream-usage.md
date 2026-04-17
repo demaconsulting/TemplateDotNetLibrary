@@ -29,7 +29,7 @@ generation:
 
 # Software Items Integration (CRITICAL)
 
-Read `software-items.md` before creating requirements files — correct
+Read `software-items.md` before creating requirements files - correct
 categorization and folder structure must mirror source code organization.
 
 # Requirements Organization

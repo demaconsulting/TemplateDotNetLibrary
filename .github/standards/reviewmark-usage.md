@@ -78,7 +78,7 @@ When constructing review-sets, follow these principles to maintain manageable sc
 Organize review-sets using these standard patterns to ensure comprehensive coverage
 while keeping each review manageable in scope:
 
-**Naming conventions**: See `software-items.md` — kebab-case placeholders
+**Naming conventions**: See `software-items.md` - kebab-case placeholders
 (e.g., `{system-name}`) are always kebab-case; cased placeholders
 (e.g., `{SystemName}`) follow your language's convention.
 
