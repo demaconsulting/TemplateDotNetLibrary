@@ -37,7 +37,6 @@ before searching the filesystem.
 - **`requirements.yaml`** - Root requirements file with includes
 - **`pip-requirements.txt`** - Python dependencies for yamllint and yamlfix
 - **`fix.ps1`** - Applies all auto-fixers silently (dotnet format, markdown, YAML). Always exits 0.
-- **`lint.ps1`** - Runs all lint checks and reports failures. Exits 1 on error.
 - **`build.ps1`** - Builds the solution and runs all tests.
 
 # Standards Application (ALL Agents Must Follow)
@@ -121,17 +120,6 @@ responsibility — invoke the lint-fix agent once before submitting a pull reque
 
 CI runs `lint.ps1` which checks: markdownlint-cli2, cspell, yamllint, dotnet format,
 reqstream, versionmark, and reviewmark.
-
-# Quality Gate Enforcement (ALL Agents Must Verify)
-
-Configuration files and scripts are self-documenting with their design intent and
-modification policies in header comments.
-
-1. **Build Quality**: Zero warnings (`TreatWarningsAsErrors=true`)
-2. **Static Analysis**: SonarQube/CodeQL passing with no blockers (when configured)
-3. **Test Coverage**: All requirements linked to passing tests
-4. **Documentation Currency**: All docs current and generated
-5. **File Review Status**: All reviewable files have current reviews
 
 # Scope Discipline (ALL Agents Must Follow)
 
