@@ -208,10 +208,10 @@ All tests must pass with zero warnings.
 
 ```pwsh
 # After making changes: applies dotnet format, markdown, and YAML fixes silently
-./fix.ps1
+pwsh ./fix.ps1
 
 # Before submitting a pull request: all linters must pass
-./lint.ps1
+pwsh ./lint.ps1
 ```
 
 ### 3. Code Coverage
