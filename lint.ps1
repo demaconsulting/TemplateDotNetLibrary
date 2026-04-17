@@ -50,7 +50,7 @@ $lintError = $false
 
 # --- PYTHON SECTION ---
 # Sets up a virtual environment and runs yamllint.
-
+Write-Host "Linting: YAML..."
 $skipPython = -not (Initialize-PythonVenv)
 if ($skipPython) { $lintError = $true }
 
@@ -69,7 +69,7 @@ if (-not $skipPython) {
 
 # --- NPM SECTION ---
 # Installs npm dependencies and runs cspell and markdownlint-cli2.
-
+Write-Host "Linting: spelling and markdown..."
 $skipNpm = $false
 $env:PUPPETEER_SKIP_DOWNLOAD = "true"
 npm install --silent
@@ -92,7 +92,7 @@ if (-not $skipNpm) {
 
 # --- DOTNET LINTING SECTION ---
 # Runs compliance tools: reqstream, versionmark, reviewmark.
-
+Write-Host "Linting: compliance tools..."
 $skipDotnetTools = $false
 dotnet tool restore > $null
 if ($LASTEXITCODE -ne 0) { $lintError = $true; $skipDotnetTools = $true }
@@ -117,7 +117,7 @@ if (-not $skipDotnetTools) {
 
 # --- DOTNET FORMATTING SECTION ---
 # Verifies C# code formatting matches .editorconfig rules.
-
+Write-Host "Linting: dotnet format..."
 $skipDotnetFormat = $false
 dotnet restore > $null
 if ($LASTEXITCODE -ne 0) { $lintError = $true; $skipDotnetFormat = $true }
@@ -135,3 +135,4 @@ if (-not $skipDotnetFormat) {
 #   }
 
 exit ($lintError ? 1 : 0)
+

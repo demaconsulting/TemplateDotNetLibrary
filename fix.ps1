@@ -66,7 +66,28 @@ function Normalize-YamlLineEndings {
 # exits 0 so agents do not react to any output as a problem to solve.
 # ==============================================================================
 
+# --- YAML Auto-Fix ---
+Write-Host "Fixing: YAML..."
+if (Initialize-PythonVenv -Silent) {
+    yamlfix . 2>$null
+    deactivate 2>$null
+}
+Normalize-YamlLineEndings
+
+# --- Markdown Auto-Fix ---
+Write-Host "Fixing: markdown..."
+$env:PUPPETEER_SKIP_DOWNLOAD = "true"
+npm install --silent 2>$null
+if ($LASTEXITCODE -eq 0) {
+    npx markdownlint-cli2 --fix "**/*.md" 2>$null
+}
+
+# [PROJECT-SPECIFIC] Add additional auto-fixers here.
+# Example (Prettier for TypeScript/JSON):
+#   npx prettier --write "src/**/*.{ts,json}" 2>$null
+
 # --- .NET Auto-Format ---
+Write-Host "Fixing: dotnet format..."
 $slnFiles = @(Get-ChildItem -Filter "*.sln" -ErrorAction SilentlyContinue) +
             @(Get-ChildItem -Filter "*.slnx" -ErrorAction SilentlyContinue)
 if ($slnFiles.Count -gt 0) {
@@ -78,22 +99,5 @@ if ($slnFiles.Count -gt 0) {
 #   Get-ChildItem -Recurse -Include "*.cpp","*.hpp","*.h" |
 #       ForEach-Object { clang-format -i $_.FullName } 2>$null
 
-# --- Markdown Auto-Fix ---
-$env:PUPPETEER_SKIP_DOWNLOAD = "true"
-npm install --silent 2>$null
-if ($LASTEXITCODE -eq 0) {
-    npx markdownlint-cli2 --fix "**/*.md" 2>$null
-}
-
-# --- YAML Auto-Fix ---
-if (Initialize-PythonVenv -Silent) {
-    yamlfix . 2>$null
-    deactivate 2>$null
-}
-Normalize-YamlLineEndings
-
-# [PROJECT-SPECIFIC] Add additional auto-fixers here.
-# Example (Prettier for TypeScript/JSON):
-#   npx prettier --write "src/**/*.{ts,json}" 2>$null
-
+Write-Host "Auto-fix complete."
 exit 0
