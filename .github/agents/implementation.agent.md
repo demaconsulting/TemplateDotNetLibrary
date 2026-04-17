@@ -37,7 +37,7 @@ Call the **explore** agent as a sub-agent (built-in agent type) with:
      addresses the request
   2. **Identify companion artifact deliverables**: for every code change in the
      plan, list the requirements files, design documents, and review-set entries
-     that must be created or updated — traceability must flow requirements →
+     that must be created or updated - traceability must flow requirements →
      design → code, so these are mandatory deliverables, not optional extras
   3. Review the plan for assumptions, weaknesses, and gaps - identify up to 5
      key assumptions and rate each as:
