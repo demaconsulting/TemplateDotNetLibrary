@@ -34,7 +34,6 @@ function Initialize-PythonVenv {
     $activateScript = Get-VenvActivateScript
     if (-not $activateScript) { return $false }
     & $activateScript
-    if ($LASTEXITCODE -ne 0) { return $false }
     if (-not (Get-Command deactivate -ErrorAction SilentlyContinue)) { return $false }
 
     $installSucceeded = $false
