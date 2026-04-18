@@ -97,15 +97,15 @@ Example format:
 src/Project1Name/
 ├── ComponentA/
 │   ├── SubComponentP/
-│   │   └── ClassW.cs           — Specialized processing engine
-│   ├── ClassX.cs               — Core business logic handler
-│   └── ClassY.cs               — Data validation service
+│   │   └── ClassW.cs           - Specialized processing engine
+│   ├── ClassX.cs               - Core business logic handler
+│   └── ClassY.cs               - Data validation service
 ├── ComponentB/
-│   └── ClassZ.cs               — Integration interface
-└── UtilityClass.cs             — Common utility functions
+│   └── ClassZ.cs               - Integration interface
+└── UtilityClass.cs             - Common utility functions
 
 src/Project2Name/
-└── HelperClass.cs              — Helper functions
+└── HelperClass.cs              - Helper functions
 ```
 
 ### Companion Artifact Structure (RECOMMENDED)
@@ -122,8 +122,8 @@ parallel directory trees:
 
 - Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
 - Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
-- Source code: `src/{System}/.../{Item}.{ext}` (cased per language — see `software-items.md`)
-- Tests: `test/{System}.Tests/.../{Item}Tests.{ext}` (cased per language — see `software-items.md`)
+- Source code: `src/{System}/.../{Item}.{ext}` (cased per language - see `software-items.md`)
+- Tests: `test/{System}.Tests/.../{Item}Tests.{ext}` (cased per language - see `software-items.md`)
 - Review-sets: defined in `.reviewmark.yaml`
 ```
 
@@ -156,7 +156,7 @@ For every unit identified in the software structure:
 
 # Software Items Integration (CRITICAL)
 
-Read `software-items.md` before creating design documentation — correct
+Read `software-items.md` before creating design documentation - correct
 System/Subsystem/Unit categorization is required for software structure
 diagrams and folder layout.
 

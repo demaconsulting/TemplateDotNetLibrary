@@ -35,18 +35,22 @@ Call the **explore** agent as a sub-agent (built-in agent type) with:
 
   1. Investigate the codebase and develop a concrete implementation plan that
      addresses the request
-  2. Review the plan for assumptions, weaknesses, and gaps - identify up to 5
+  2. **Identify companion artifact deliverables**: for every code change in the
+     plan, list the requirements files, design documents, and review-set entries
+     that must be created or updated - traceability must flow requirements →
+     design → code, so these are mandatory deliverables, not optional extras
+  3. Review the plan for assumptions, weaknesses, and gaps - identify up to 5
      key assumptions and rate each as:
      - **VERIFIED**: confirmed by codebase evidence
      - **LIKELY**: consistent with codebase patterns but not directly confirmed
      - **UNVERIFIED**: not confirmed by any evidence
-  3. For any assumption rated UNVERIFIED or LIKELY, attempt to resolve it
+  4. For any assumption rated UNVERIFIED or LIKELY, attempt to resolve it
      through additional investigation and revise the plan to address identified
      weaknesses - repeat the critique-and-strengthen cycle up to 2 additional
      times if unresolved issues remain, but stop as soon as the plan is stable
-  4. List up to 5 risks to the implementation
-  5. Assess feasibility: can this be implemented in a single development pass?
-  6. State a **recommendation**: GO or INCOMPLETE - GO if the plan is sound, or
+  5. List up to 5 risks to the implementation
+  6. Assess feasibility: can this be implemented in a single development pass?
+  7. State a **recommendation**: GO or INCOMPLETE - GO if the plan is sound, or
      INCOMPLETE if critical unknowns remain that only the user can resolve
 
 Once the explore sub-agent finishes:

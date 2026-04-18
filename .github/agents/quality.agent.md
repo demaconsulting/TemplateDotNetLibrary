@@ -10,11 +10,15 @@ Grade and validate software development work by ensuring compliance with project
 
 # Standards-Based Quality Assessment
 
-1. **Analyze completed work** to identify scope: which artifact categories
-   were changed (code, tests, requirements, design docs, reviews, documentation)
+1. **Analyze the task request AND completed work** to determine scope: identify
+   which artifact categories were changed, and which *should have been changed*
+   given the task - new features or components always require requirements,
+   design, and review-set coverage regardless of whether those files were touched
 2. **Read relevant standards** using the selection matrix in AGENTS.md
-3. **Evaluate only applicable categories** - skip entire report sections where
-   no related artifacts were changed
+3. **Evaluate all in-scope categories** - N/A only when the task genuinely
+   cannot affect a category; if the task introduces new features, components,
+   or structural changes then Requirements, Design Documentation, and Review
+   Management are always in scope and FAIL if the artifacts were not updated
 4. **Validate tool compliance** using ReqStream, ReviewMark, and build tools
 5. **Generate focused quality report** per the AGENTS.md reporting requirements - save to
    `.agent-logs/{agent-name}-{subject}-{unique-id}.md` and return the summary to the caller

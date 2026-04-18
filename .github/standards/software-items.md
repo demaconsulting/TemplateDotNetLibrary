@@ -31,10 +31,10 @@ Categorize all software into four primary groups:
 
 Two placeholder styles appear in path patterns across these standards:
 
-- **Kebab-case** (`{system-name}`, `{unit-name}`): always kebab-case —
+- **Kebab-case** (`{system-name}`, `{unit-name}`): always kebab-case -
   used in documentation and requirements paths
-- **Cased** (`{SystemName}`, `{UnitName}`): follow your language's convention —
-  `PascalCase` for C#/Java, `snake_case` for C++/Python —
+- **Cased** (`{SystemName}`, `{UnitName}`): follow your language's convention -
+  `PascalCase` for C#/Java, `snake_case` for C++/Python -
   used in source and test file paths
 
 # Categorization Guidelines
