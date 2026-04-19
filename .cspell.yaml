@@ -17,6 +17,8 @@ words:
   - buildmark
   - DEMA
   - Dema
+  - FileAssert
+  - fileassert
   - mstest
   - Pandoc
   - Qube
@@ -27,6 +29,9 @@ words:
   - sarifmark
   - sonarmark
   - versionmark
+  - Weasy
+  - WeasyPrint
+  - weasyprint
   - yamlfix
 
 # Exclude common build artifacts, dependencies, and vendored third-party code

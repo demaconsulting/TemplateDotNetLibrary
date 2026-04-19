@@ -353,7 +353,8 @@ jobs:
           echo "Capturing tool versions..."
           dotnet versionmark --capture --job-id "build-docs" \
             --output "artifacts/versionmark-build-docs.json" -- \
-            dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream buildmark versionmark reviewmark fileassert
+            dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream \
+            buildmark versionmark reviewmark fileassert
           echo "✓ Tool versions captured"
 
       # === COMPILE BUILD NOTES ===
