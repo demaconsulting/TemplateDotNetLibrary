@@ -11,3 +11,6 @@ includes:
   - docs/reqstream/ots/sarifmark.yaml
   - docs/reqstream/ots/sonarmark.yaml
   - docs/reqstream/ots/reviewmark.yaml
+  - docs/reqstream/ots/pandoc.yaml
+  - docs/reqstream/ots/weasyprint.yaml
+  - docs/reqstream/ots/fileassert.yaml
