@@ -1,8 +1,8 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/TemplateDotNetLibrary/TemplateDotNetLibrary.csproj" />
+    <Project Path="src/DemaConsulting.TemplateDotNetLibrary/DemaConsulting.TemplateDotNetLibrary.csproj" />
   </Folder>
   <Folder Name="/test/">
-    <Project Path="test/TemplateDotNetLibrary.Tests/TemplateDotNetLibrary.Tests.csproj" />
+    <Project Path="test/DemaConsulting.TemplateDotNetLibrary.Tests/DemaConsulting.TemplateDotNetLibrary.Tests.csproj" />
   </Folder>
 </Solution>

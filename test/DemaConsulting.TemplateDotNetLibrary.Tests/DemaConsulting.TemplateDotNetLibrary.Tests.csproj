@@ -58,7 +58,7 @@
 
   <!-- Project References -->
   <ItemGroup>
-    <ProjectReference Include="..\..\src\TemplateDotNetLibrary\TemplateDotNetLibrary.csproj" />
+    <ProjectReference Include="..\..\src\DemaConsulting.TemplateDotNetLibrary\DemaConsulting.TemplateDotNetLibrary.csproj" />
   </ItemGroup>
 
 </Project>
