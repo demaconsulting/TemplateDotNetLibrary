@@ -350,6 +350,7 @@ jobs:
       - name: Capture tool versions for build-docs
         shell: bash
         run: |
+          mkdir -p artifacts
           echo "Capturing tool versions..."
           dotnet versionmark --capture --job-id "build-docs" \
             --output "artifacts/versionmark-build-docs.json" -- \
