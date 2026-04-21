@@ -79,9 +79,10 @@ ProductName
 # Deliverable
 
 At the end of the interview, produce a standalone guidance document (suitable
-for attaching to a work item or issue ticket). Do not place it in `docs/` or
-commit it unless the user explicitly asks. Use the appropriate template below,
-filled from the interview conversation.
+for attaching to a work item or issue ticket). Write it as `architecture.md` in
+the current working directory. Do not place it in `docs/`, the session workspace,
+or any other location, and do not commit it unless the user explicitly asks.
+Use the appropriate template below, filled from the interview conversation.
 
 ## Single-Package Template (`architecture.md`)
 
