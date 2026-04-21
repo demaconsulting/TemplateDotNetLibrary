@@ -19,7 +19,7 @@ Read `.github/standards/software-items.md` before starting. Use its definitions
 
 - Ask one question at a time
 - Update tree and concerns every 2-3 questions
-- Aim for 18-25 questions based on complexity
+- Use 18-25 questions as a rough complexity heuristic, not a hard limit or target
 
 # Core Questions
 
@@ -43,6 +43,17 @@ tree mode for the rest of the interview:
 - **Multi-package**: focus only on package decomposition (name, responsibility,
   inter-package interfaces); do not drill into each package's internals —
   each package is architected independently in a separate session
+
+# Wrapping Up
+
+Once the Core Questions have been covered and the architecture tree and concerns
+feel stable, prompt the user before ending the interview:
+
+> "I feel I have a solid understanding of the architecture. Is there anything
+> else you'd like to add or clarify, or shall I write up the architecture document?"
+
+Continue the interview as long as the user wants. Only produce the deliverable
+when the user confirms they are satisfied.
 
 # Output Format
 
