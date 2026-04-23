@@ -69,12 +69,26 @@ docs/
 
 # Pandoc Document Structure (MANDATORY)
 
-All document collections processed by Pandoc MUST include:
+All document collections processed by Pandoc MUST include all four files below -
+without `title.txt` and `definition.yaml` the pipeline cannot generate the document:
 
-- `definition.yaml` - specifying the files to include
-- `title.txt` - document metadata
+- `title.txt` - YAML metadata (title, subtitle, author, description, lang, keywords)
+- `definition.yaml` - Pandoc build definition (resource paths, input file list, template)
 - `introduction.md` - document introduction
-- `{sections}.md` - additional document sections
+- `{sections}.md` - additional content sections
+
+When creating a new document collection, create `title.txt` and `definition.yaml`
+alongside `introduction.md`. Use the existing files under `docs/` as templates -
+they share a consistent structure across all collections.
+
+**`title.txt`** - YAML front matter with document metadata. Use the existing
+files under `docs/` as a pattern and keep fields consistent with the rest of
+the repository.
+
+**`definition.yaml`** - Pandoc build configuration. List `title.txt` first in
+`input-files` followed by `introduction.md` and content sections in reading
+order. Use the existing files under `docs/` as a pattern for resource paths
+and template settings.
 
 ## Introduction File Format
 

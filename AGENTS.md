@@ -9,7 +9,8 @@
 │   ├── design/
 │   ├── requirements_doc/
 │   ├── requirements_report/
-│   └── reqstream/
+│   ├── reqstream/
+│   └── user_guide/
 ├── src/
 │   └── {project}/
 └── test/
@@ -50,7 +51,7 @@ from `.github/standards/`. Use this matrix to determine which to load:
 | C# code              | `coding-principles.md`, `csharp-language.md`                                 |
 | Any tests            | `testing-principles.md`                                                      |
 | C# tests             | `testing-principles.md`, `csharp-testing.md`                                 |
-| Requirements         | `software-items.md`, `reqstream-usage.md`                                    |
+| Requirements         | `requirements-principles.md`, `software-items.md`, `reqstream-usage.md`      |
 | Design docs          | `software-items.md`, `design-documentation.md`, `technical-documentation.md` |
 | Review configuration | `software-items.md`, `reviewmark-usage.md`                                   |
 | Any documentation    | `technical-documentation.md`                                                 |
