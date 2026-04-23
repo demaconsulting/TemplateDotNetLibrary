@@ -61,7 +61,7 @@ After every update, show the current tree and concerns.
 
 **Single-package** — System → Subsystems → Units. Collapse to ~20 items with "...":
 
-```
+```text
 SystemName
 ├── Subsystem
 │   ├── Unit
@@ -72,7 +72,7 @@ SystemName
 **Multi-package** — packages only; no internal structure (each package is
 architected independently in a separate session). Packages may be hierarchical:
 
-```
+```text
 ProductName
 ├── PackageA — responsibility summary
 │   ├── PackageA.Child1 — responsibility summary
