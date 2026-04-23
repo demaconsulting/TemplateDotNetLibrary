@@ -81,3 +81,14 @@ Choose the appropriate category based on scope and testability:
   consumes it
 - Tested through integration tests proving required functionality works
 - Examples: System.Text.Json, Entity Framework, third-party APIs
+
+# Software Item Artifact Model
+
+Each software item has four artifact types that together form a complete review
+unit — because reviewing any one artifact in isolation cannot determine whether
+the item is correct, well-designed, and proven to work:
+
+- **Requirements** — WHAT the item must do (drives all other artifacts; applies to all item types)
+- **Design** — HOW the item satisfies its requirements (in-house items only: system, subsystem, unit)
+- **Source code** — The implementation of the design (in-house units only)
+- **Tests** — PROOF the item does WHAT it is required to do (applies to all item types)
