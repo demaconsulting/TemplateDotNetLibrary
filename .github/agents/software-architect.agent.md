@@ -41,7 +41,7 @@ tree mode for the rest of the interview:
 
 - **Single package**: explore System → Subsystems → Units for all remaining topics
 - **Multi-package**: focus only on package decomposition (name, responsibility,
-  inter-package interfaces); do not drill into each package's internals —
+  inter-package interfaces); do not drill into each package's internals -
   each package is architected independently in a separate session
 
 # Wrapping Up
@@ -59,7 +59,7 @@ when the user confirms they are satisfied.
 
 After every update, show the current tree and concerns.
 
-**Single-package** — System → Subsystems → Units. Collapse to ~20 items with "...":
+**Single-package** - System → Subsystems → Units. Collapse to ~20 items with "...":
 
 ```text
 SystemName
@@ -69,19 +69,19 @@ SystemName
 └── Subsystem (Unit, Unit/...)
 ```
 
-**Multi-package** — packages only; no internal structure (each package is
+**Multi-package** - packages only; no internal structure (each package is
 architected independently in a separate session). Packages may be hierarchical:
 
 ```text
 ProductName
-├── PackageA — responsibility summary
-│   ├── PackageA.Child1 — responsibility summary
-│   └── PackageA.Child2 — responsibility summary
-├── PackageB — responsibility summary
-└── PackageC — responsibility summary
+├── PackageA - responsibility summary
+│   ├── PackageA.Child1 - responsibility summary
+│   └── PackageA.Child2 - responsibility summary
+├── PackageB - responsibility summary
+└── PackageC - responsibility summary
 ```
 
-**Concerns** — architectural gaps and decision points only, not implementation quality:
+**Concerns** - architectural gaps and decision points only, not implementation quality:
 
 1. 🔴 **HIGH** \<topic\>: \<gap or decision needed\>
 2. 🟡 **MEDIUM** \<topic\>: \<gap or decision needed\>

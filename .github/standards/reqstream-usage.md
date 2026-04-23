@@ -38,7 +38,7 @@ docs/reqstream/
 sections:
   - title: Functional Requirements
     requirements:
-      - id: System-Component-Feature      # Used as-is in all reports — make it readable
+      - id: System-Component-Feature      # Used as-is in all reports - make it readable
         title: The system shall perform the required function.
         justification: |
           Business rationale and any regulatory references.
@@ -71,7 +71,7 @@ sections:
 # Semantic IDs (MANDATORY)
 
 Use the `System-Component-Feature` pattern because ReqStream uses IDs as-is in
-all generated reports and the trace matrix — opaque IDs make those outputs
+all generated reports and the trace matrix - opaque IDs make those outputs
 unreadable without a separate lookup:
 
 - **System-level**: `TemplateTool-Core-DisplayHelp`
@@ -82,7 +82,7 @@ unreadable without a separate lookup:
 # Source Filter Requirements (CRITICAL)
 
 Platform-specific requirements MUST use source filters because without them
-ReqStream accepts test results from any platform as evidence — a Windows-only
+ReqStream accepts test results from any platform as evidence - a Windows-only
 requirement would incorrectly pass on Linux:
 
 ```yaml

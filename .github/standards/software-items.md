@@ -75,7 +75,7 @@ Choose the appropriate category based on scope and testability:
 
 ## OTS Software Item
 
-- External dependency not developed in-house — typically a third-party published
+- External dependency not developed in-house - typically a third-party published
   software package (NuGet, npm, etc.), hosted service, or tool
 - Our own published software package becomes an OTS item to any system that
   consumes it
@@ -85,10 +85,10 @@ Choose the appropriate category based on scope and testability:
 # Software Item Artifact Model
 
 Each software item has four artifact types that together form a complete review
-unit — because reviewing any one artifact in isolation cannot determine whether
+unit - because reviewing any one artifact in isolation cannot determine whether
 the item is correct, well-designed, and proven to work:
 
-- **Requirements** — WHAT the item must do (drives all other artifacts; applies to all item types)
-- **Design** — HOW the item satisfies its requirements (in-house items only: system, subsystem, unit)
-- **Source code** — The implementation of the design (in-house units only)
-- **Tests** — PROOF the item does WHAT it is required to do (applies to all item types)
+- **Requirements** - WHAT the item must do (drives all other artifacts; applies to all item types)
+- **Design** - HOW the item satisfies its requirements (in-house items only: system, subsystem, unit)
+- **Source code** - The implementation of the design (in-house units only)
+- **Tests** - PROOF the item does WHAT it is required to do (applies to all item types)

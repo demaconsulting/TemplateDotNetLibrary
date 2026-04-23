@@ -13,12 +13,12 @@ Document findings only - never modify code during a review.
 
 Before reviewing, read these standards to inform review judgments:
 
-- **`requirements-principles.md`** — establishes that requirements flow one-way
+- **`requirements-principles.md`** - establishes that requirements flow one-way
   and that tests need not link to requirements; informs all requirements and
   traceability review judgments
-- **`software-items.md`** — defines System/Subsystem/Unit scope; informs all
+- **`software-items.md`** - defines System/Subsystem/Unit scope; informs all
   hierarchy and categorization review judgments
-- **`design-documentation.md`** — defines mandatory sections, structural conventions,
+- **`design-documentation.md`** - defines mandatory sections, structural conventions,
   and coverage expected at each level; informs all design documentation review judgments
 
 For review sets that include source code or tests, also consult the relevant

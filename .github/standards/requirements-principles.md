@@ -5,14 +5,14 @@ description: Follow these standards when creating, reviewing, or evaluating requ
 
 # Unidirectional Flow (MANDATORY)
 
-Requirements flow strictly top-down — never in reverse:
+Requirements flow strictly top-down - never in reverse:
 
 ```text
 User/System Needs → Requirements → Design → Implementation
 ```
 
-- **Requirements** express WHAT is needed — derived from user/system needs only
-- **Design** expresses HOW requirements are satisfied — derived from requirements only
+- **Requirements** express WHAT is needed - derived from user/system needs only
+- **Design** expresses HOW requirements are satisfied - derived from requirements only
 
 Anti-patterns that MUST NOT occur:
 
@@ -22,7 +22,7 @@ Anti-patterns that MUST NOT occur:
 
 # What Makes a Requirement
 
-A requirement expresses **observable, testable behavior** — what the system must
+A requirement expresses **observable, testable behavior** - what the system must
 do, not how it does it, so that compliance can be verified without reading
 implementation code.
 
@@ -36,7 +36,7 @@ reviewers must see what each item is responsible for satisfying and auditors mus
 be able to trace which items implement which requirements.
 
 Requirements at each level decompose the parent requirement into the behavioral
-responsibility of that software item, and links flow downward only —
+responsibility of that software item, and links flow downward only -
 unit requirements MUST NOT link upward to parent requirements:
 
 ```text
@@ -53,11 +53,11 @@ Decomposing a parent requirement is valid. Describing existing code is back-driv
 
 - **Every requirement MUST link to at least one passing test** because untested
   requirements have no compliance evidence
-- **Requirements MUST link to tests at their own level** — system requirements to
+- **Requirements MUST link to tests at their own level** - system requirements to
   system-level tests, subsystem requirements to subsystem-level tests, unit
   requirements to unit-level tests; linking across levels produces misleading
   compliance evidence
-- **Tests MAY exist without a requirement** — corner-case, defensive, and regression
+- **Tests MAY exist without a requirement** - corner-case, defensive, and regression
   tests are valid; never flag them as non-compliant
 
 # Quality Gates
