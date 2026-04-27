@@ -106,7 +106,16 @@ Include regulatory or business drivers where applicable.
 
 Define what is covered and what is explicitly excluded from this documentation.
 Specify version, system boundaries, and applicability constraints.
+
+## References
+
+- [REF-1] Document Title, Author, Version, Date
+- [REF-2] Standard Name (e.g., IEEE 12207, ISO 9001)
 ```
+
+The `Purpose`, `Scope`, and `References` sections are **unique to `introduction.md`** and must
+**not** be replicated in other markdown files within the same document collection. Including them
+elsewhere causes duplicate sections in the compiled PDF.
 
 ## Document Ordering
 
@@ -134,6 +143,19 @@ References in design/technical documents must point to **external specifications
 
 - **INCLUDE**: Requirements documents, system specifications, program documents, standards (IEEE, ISO, etc.)
 - **NEVER INCLUDE**: Internal development standards (`.github/standards/` files) - these are agent guides
+
+## Cross-References (Within-Document and Cross-Document)
+
+Do **not** use markdown hyperlinks to reference other sections or documents. Markdown anchor links
+(`[text](#heading)`) and relative file links work in a browser but break when compiled to a PDF.
+
+Instead use **verbal references** — plain prose that identifies the target by name:
+
+> See *XYZ Design* for more details.
+>
+> Refer to the *System Requirements* document for the full specification.
+
+Verbal references are readable by both AI agents and humans in any rendering environment.
 
 # Markdown Format Requirements
 
