@@ -15,13 +15,14 @@ extends: default
 
 # Exclude common build artifacts, dependencies, and vendored third-party code
 ignore: |
-  .git/
-  node_modules/
-  .venv/
-  thirdparty/
-  third-party/
-  3rd-party/
-  .agent-logs/
+  **/.git/**
+  **/node_modules/**
+  **/.venv/**
+  **/thirdparty/**
+  **/third-party/**
+  **/3rd-party/**
+  **/generated/**
+  **/.agent-logs/**
 
 rules:
   # Allow 'on:' in GitHub Actions workflows (not a boolean value)
