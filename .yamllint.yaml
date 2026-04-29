@@ -21,6 +21,7 @@ ignore: |
   thirdparty/
   third-party/
   3rd-party/
+  generated/
   .agent-logs/
 
 rules:
