@@ -111,9 +111,9 @@ src/Project2Name/
 ### References Section (RECOMMENDED)
 
 If the design references external documents (standards, specifications), include
-a `## References` section listing them. This is the **only** place in the design
-document collection where a References section should appear — do not add one to
-any other design file.
+a `## References` section in `introduction.md`. This is the **only** place in the
+design document collection where a References section should appear — do not add
+one to any other design file.
 
 ### Companion Artifact Structure (RECOMMENDED)
 
