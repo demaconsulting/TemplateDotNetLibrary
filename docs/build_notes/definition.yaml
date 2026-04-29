@@ -5,7 +5,7 @@ resource-path:
 input-files:
   - docs/build_notes/title.txt
   - docs/build_notes/introduction.md
-  - docs/generated/build_notes.md
+  - docs/build_notes/generated/build_notes.md
   - docs/build_notes/generated/versions.md
 template: template.html
 table-of-contents: true

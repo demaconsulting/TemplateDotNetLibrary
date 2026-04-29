@@ -398,14 +398,14 @@ jobs:
         run: >
           dotnet buildmark
           --build-version ${{ inputs.version }}
-          --report docs/generated/build_notes.md
+          --report docs/build_notes/generated/build_notes.md
           --report-depth 1
 
       - name: Display Build Notes Report
         shell: bash
         run: |
           echo "=== Build Notes Report ==="
-          cat docs/generated/build_notes.md
+          cat docs/build_notes/generated/build_notes.md
 
       - name: Publish Tool Versions
         shell: bash
@@ -443,6 +443,10 @@ jobs:
           dotnet fileassert
           --results artifacts/fileassert-build-notes.trx
           build-notes
+
+      - name: Copy Build Notes report to docs/generated
+        shell: bash
+        run: cp docs/build_notes/generated/build_notes.md docs/generated/build_notes.md
 
       # === COMPILE CODE QUALITY REPORT ===
       # This section generates the Code Quality document. SarifMark and SonarMark self-validations
