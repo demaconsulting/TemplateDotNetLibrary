@@ -20,7 +20,7 @@ review, organizes them into review-sets, and generates review plans and reports.
 
 - **Lint Configuration**: `dotnet reviewmark --lint`
 - **Elaborate Review-Set**: `dotnet reviewmark --elaborate {review-set}`
-- **Generate Plan**: `dotnet reviewmark --plan docs/code_review_plan/plan.md --enforce`
+- **Generate Plan**: `dotnet reviewmark --plan docs/code_review_plan/generated/plan.md --enforce`
 
 > **Note**: `--enforce` causes the plan to fail with a non-zero exit code if any repository
 > files are not covered by a review-set. Uncovered files indicate a gap in review-set
@@ -31,7 +31,8 @@ review, organizes them into review-sets, and generates review plans and reports.
 Required repository items for ReviewMark operation:
 
 - `.reviewmark.yaml` - Configuration for review-sets, file-patterns, and review evidence-source.
-- `docs/code_review_plan/` - Review planning artifacts
+- `docs/code_review_plan/generated/` - Generated review plan (build output, do not edit)
+- `docs/code_review_report/generated/` - Generated review report (build output, do not edit)
 
 # Review Definition Structure
 

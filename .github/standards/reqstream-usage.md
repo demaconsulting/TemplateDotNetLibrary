@@ -104,16 +104,16 @@ dotnet reqstream --requirements requirements.yaml --lint
 
 # Generate requirements document for compliance record
 dotnet reqstream --requirements requirements.yaml \
-  --report docs/requirements_doc/requirements.md
+  --report docs/requirements_doc/generated/requirements.md
 
 # Generate justifications document for compliance record
 dotnet reqstream --requirements requirements.yaml \
-  --justifications docs/requirements_doc/justifications.md
+  --justifications docs/requirements_doc/generated/justifications.md
 
 # Generate trace matrix proving each requirement is covered by passing tests
 dotnet reqstream --requirements requirements.yaml \
   --tests "artifacts/**/*.trx" \
-  --matrix docs/requirements_report/trace_matrix.md
+  --matrix docs/requirements_report/generated/trace_matrix.md
 ```
 
 # Quality Checks
