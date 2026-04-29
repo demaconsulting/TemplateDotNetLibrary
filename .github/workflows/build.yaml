@@ -365,6 +365,7 @@ jobs:
       # section can be commented out without breaking the shared output directory.
 
       - name: Create documents output directory
+        shell: bash
         run: mkdir -p docs/generated
 
       # === COMPILE BUILD NOTES ===
@@ -375,6 +376,7 @@ jobs:
       # Downstream projects: Add any additional build notes steps here.
 
       - name: Create build notes output directories
+        shell: bash
         run: mkdir -p docs/build_notes/generated
 
       - name: Run BuildMark self-validation
@@ -450,6 +452,7 @@ jobs:
       # Downstream projects: Add any additional code quality steps here.
 
       - name: Create code quality output directory
+        shell: bash
         run: mkdir -p docs/code_quality/generated
 
       - name: Run SarifMark self-validation
@@ -528,6 +531,7 @@ jobs:
       # Downstream projects: Add any additional code review steps here.
 
       - name: Create code review output directories
+        shell: bash
         run: mkdir -p docs/code_review_plan/generated docs/code_review_report/generated
 
       - name: Run ReviewMark self-validation
@@ -604,6 +608,7 @@ jobs:
       # Downstream projects: Add any additional design document steps here.
 
       - name: Create design output directory
+        shell: bash
         run: mkdir -p docs/design/generated
 
       - name: Generate Design HTML with Pandoc
@@ -635,6 +640,7 @@ jobs:
       # Downstream projects: Add any additional user guide steps here.
 
       - name: Create user guide output directory
+        shell: bash
         run: mkdir -p docs/user_guide/generated
 
       - name: Generate User Guide HTML with Pandoc
@@ -683,6 +689,7 @@ jobs:
       # Downstream projects: Add any additional requirements steps here.
 
       - name: Create requirements output directories
+        shell: bash
         run: mkdir -p docs/requirements_doc/generated docs/requirements_report/generated
 
       - name: Run ReqStream self-validation
