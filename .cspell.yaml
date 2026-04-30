@@ -19,7 +19,7 @@ words:
   - Dema
   - FileAssert
   - fileassert
-  - mstest
+  - xunit
   - Pandoc
   - Qube
   - reqstream
