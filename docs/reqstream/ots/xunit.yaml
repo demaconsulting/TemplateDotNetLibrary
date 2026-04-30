@@ -1,17 +1,17 @@
 ---
-# MSTest OTS Software Requirements
+# xUnit v3 OTS Software Requirements
 #
-# Requirements for the MSTest testing framework functionality.
+# Requirements for the xUnit v3 testing framework functionality.
 
 sections:
   - title: OTS Software Requirements
     sections:
-      - title: MSTest Requirements
+      - title: xUnit v3 Requirements
         requirements:
-          - id: Template-OTS-MSTest
-            title: MSTest shall execute unit tests and report results.
+          - id: Template-OTS-XUnit
+            title: xUnit v3 shall execute unit tests and report results.
             justification: |
-              MSTest (MSTest.TestFramework and MSTest.TestAdapter) is the unit-testing framework used
+              xUnit v3 (xunit.v3 and xunit.runner.visualstudio) is the unit-testing framework used
               by the project. It discovers and runs all test methods and writes TRX result files that
               feed into coverage reporting and requirements traceability. Passing tests confirm the
               framework is functioning correctly.

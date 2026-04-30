@@ -3,14 +3,13 @@ namespace TemplateDotNetLibrary.Tests;
 /// <summary>
 ///     System-level integration tests for the TemplateDotNetLibrary system.
 /// </summary>
-[TestClass]
 public class TemplateDotNetLibraryTests
 {
     /// <summary>
     ///     Proves that the system can be instantiated and provides expected functionality
     ///     when integrated with all components.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality()
     {
         // Arrange: set up system-level integration test
@@ -21,14 +20,14 @@ public class TemplateDotNetLibraryTests
         var result = demo.DemoMethod(testName);
 
         // Assert: system produces expected integrated behavior
-        Assert.AreEqual("Hello, System!", result);
+        Assert.Equal("Hello, System!", result);
     }
 
     /// <summary>
     ///     Proves that the system handles configuration and customization properly
     ///     across all integrated components.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly()
     {
         // Arrange: set up system with custom configuration
@@ -40,56 +39,56 @@ public class TemplateDotNetLibraryTests
         var result = demo.DemoMethod(testName);
 
         // Assert: system respects configuration across components
-        Assert.AreEqual("Welcome, Integration!", result);
+        Assert.Equal("Welcome, Integration!", result);
     }
 
     /// <summary>
     ///     Proves that the system rejects null input passed to DemoMethod
     ///     with the expected exception at the system level.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput()
     {
         // Arrange: set up system components
         var demo = new Demo();
 
         // Act & Assert: system validates DemoMethod null input properly
-        Assert.ThrowsExactly<ArgumentNullException>(() => demo.DemoMethod(null!));
+        Assert.Throws<ArgumentNullException>(() => demo.DemoMethod(null!));
     }
 
     /// <summary>
     ///     Proves that the system rejects empty input passed to DemoMethod
     ///     with the expected exception at the system level.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput()
     {
         // Arrange: set up system components
         var demo = new Demo();
 
         // Act & Assert: system validates DemoMethod empty input properly
-        Assert.ThrowsExactly<ArgumentException>(() => demo.DemoMethod(string.Empty));
+        Assert.Throws<ArgumentException>(() => demo.DemoMethod(string.Empty));
     }
 
     /// <summary>
     ///     Proves that the system rejects a null constructor prefix
     ///     with the expected exception at the system level.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix()
     {
         // Act & Assert: system validates constructor null prefix properly
-        Assert.ThrowsExactly<ArgumentNullException>(() => new Demo(null!));
+        Assert.Throws<ArgumentNullException>(() => new Demo(null!));
     }
 
     /// <summary>
     ///     Proves that the system rejects an empty constructor prefix
     ///     with the expected exception at the system level.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix()
     {
         // Act & Assert: system validates constructor empty prefix properly
-        Assert.ThrowsExactly<ArgumentException>(() => new Demo(string.Empty));
+        Assert.Throws<ArgumentException>(() => new Demo(string.Empty));
     }
 }
