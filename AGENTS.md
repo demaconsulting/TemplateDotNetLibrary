@@ -1,4 +1,17 @@
+# Project Overview
+
+> **Downstream customization required**: Replace the `TODO` values below with
+> values specific to the target repository.
+
+- **name**: TODO
+- **description**: TODO
+- **languages**: TODO
+- **technologies**: TODO
+
 # Project Structure
+
+> **Downstream customization required**: Replace `{project}` and
+> `{test-project}` with the actual source and test project folder names.
 
 ```text
 ├── docs/
@@ -69,26 +82,10 @@ Delegate to specialized agents only for specific scenarios:
 - **Formal feature implementation** (complex, multi-step) → Call the implementation agent
 - **Formal bug resolution** (complex debugging, systematic fixes) → Call the implementation agent
 - **Formal reviews** (compliance verification, detailed analysis) → Call the formal-review agent
-- **Template consistency** (downstream repository alignment) → Call the repo-consistency agent
-
-## Available Specialized Agents
-
-- **lint-fix** - Pre-PR lint sweep agent that loops running `pwsh ./lint.ps1`,
-  fixing issues until the repository is lint-clean
-- **developer** - General-purpose software development agent that applies appropriate
-  standards based on the work being performed
-- **formal-review** - Agent for performing formal reviews using standardized review processes
-- **implementation** - Orchestrator agent that manages quality implementations
-  through a formal state machine workflow
-- **quality** - Quality assurance agent that grades developer work against project
-  standards and Continuous Compliance practices
-- **repo-consistency** - Ensures downstream repositories remain consistent with
-  the TemplateDotNetLibrary template patterns and best practices
 
 # Agent Reporting (Specialized Agents Must Follow)
 
-Specialized agents (lint-fix, developer, quality, implementation,
-formal-review, repo-consistency) MUST generate a completion report:
+Specialized agents MUST generate a completion report:
 
 1. Save to `.agent-logs/{agent-name}-{subject}-{unique-id}.md`
    where `{subject}` is a kebab-case task summary (max 5 words) and

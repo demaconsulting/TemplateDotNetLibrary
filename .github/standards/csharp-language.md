@@ -4,17 +4,11 @@ description: Follow these standards when developing C# source code.
 globs: ["**/*.cs"]
 ---
 
-# C# Language Development Standard
-
-## Required Standards
+# Required Standards
 
 Read these standards first before applying this standard:
 
 - **`coding-principles.md`** - Universal coding principles and quality gates
-
-# File Patterns
-
-- **Source Files**: `**/*.cs`
 
 # API Documentation and Literate Coding Example
 
