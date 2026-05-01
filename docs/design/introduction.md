@@ -57,11 +57,8 @@ The source code folder structure mirrors the software structure organization, wi
 and descriptions as follows:
 
 ```text
-src/TemplateDotNetLibrary/
+src/DemaConsulting.TemplateDotNetLibrary/
 └── Demo.cs                     — Demonstration greeting class implementing template functionality
-
-test/TemplateDotNetLibrary.Tests/
-└── DemoTests.cs                — Unit tests validating Demo class behavior and requirements
 ```
 
 This flat folder structure reflects the single-unit nature of this template system. As the system
@@ -80,10 +77,5 @@ Throughout this document:
 
 ## References
 
-<!-- TODO: Fill in for your project -->
-
-- [Template DotNet Library User Guide][user-guide]
-- [Template DotNet Library Repository][repo]
-
-[user-guide]: ../user_guide/introduction.md
-[repo]: https://github.com/demaconsulting/TemplateDotNetLibrary
+- [REF-1] Template DotNet Library User Guide
+- [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)

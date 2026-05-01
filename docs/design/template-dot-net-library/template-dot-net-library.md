@@ -8,17 +8,18 @@ The Template DotNet Library is a minimal .NET library template demonstrating DEM
 best practices. The system consists of:
 
 - **Demo Unit**: Simple greeting functionality demonstrating library patterns
-- **Testing Framework**: MSTest-based unit tests with requirements traceability
-- **Compliance Framework**: Integrated ReqStream, ReviewMark, and quality tooling
 
 ## External Interfaces
 
 ### Dependencies
 
-The system depends on the following OTS components:
+**Runtime Dependencies:**
 
 - **.NET Runtime**: Provides core framework functionality
-- **MSTest**: Unit testing framework for verification
+
+**Build and Quality Tooling:**
+
+- **xUnit v3**: Unit testing framework for verification
 - **ReqStream**: Requirements traceability enforcement
 - **ReviewMark**: File review management
 - **BuildMark/VersionMark**: Build and version documentation
@@ -28,7 +29,10 @@ The system depends on the following OTS components:
 
 The system exposes:
 
-- **Demo.DemoMethod(string name)**: Returns greeting string for demonstration purposes
+- **Demo()**: Default constructor; initializes the instance with the default greeting prefix
+- **Demo(string prefix)**: Custom-prefix constructor; initializes the instance with the specified prefix
+- **Demo.Prefix**: Read-only property that returns the greeting prefix configured at construction
+- **Demo.DemoMethod(string name)**: Returns a greeting string in the format `{prefix}, {name}!`
 - Package metadata and documentation for NuGet distribution
 
 ## Data Flow

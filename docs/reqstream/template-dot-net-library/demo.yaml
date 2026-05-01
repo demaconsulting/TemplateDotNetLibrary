@@ -16,23 +16,31 @@ sections:
           - Demo_DemoMethod_CustomPrefix_ReturnsGreeting
 
       - id: Template-Demo-Prefix
-        title: The Demo class shall expose the greeting prefix via a Prefix property.
+        title: The Demo class shall allow callers to read the configured greeting prefix.
         justification: |
           Exposing the prefix as a read-only property allows callers to inspect the
           configured prefix without resorting to reflection or other indirect means.
         tests:
           - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
           - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix
+          - Demo_DefaultPrefix_IsHello
 
-      - id: Template-Demo-Validation
-        title: The Demo class shall reject null and empty arguments with an appropriate ArgumentException.
+      - id: Template-Demo-ValidationNull
+        title: The Demo class shall reject null arguments with ArgumentNullException.
         justification: |
-          Null-safety and non-empty validation are fundamental contracts at the unit level:
-          DemoMethod and the custom-prefix constructor must throw ArgumentNullException for
-          null arguments and ArgumentException for empty-string arguments to immediately
-          surface programming errors to callers.
+          Null-safety is a fundamental contract at the unit level: DemoMethod and the
+          custom-prefix constructor must throw ArgumentNullException for null arguments
+          to immediately surface programming errors to callers.
         tests:
           - Demo_DemoMethod_NullInput_ThrowsArgumentNullException
-          - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
           - Demo_Constructor_NullPrefix_ThrowsArgumentNullException
+
+      - id: Template-Demo-ValidationEmpty
+        title: The Demo class shall reject empty-string arguments with ArgumentException.
+        justification: |
+          Non-empty validation is a fundamental contract at the unit level: DemoMethod and the
+          custom-prefix constructor must throw ArgumentException for empty-string arguments
+          to immediately surface programming errors to callers and prevent malformed output.
+        tests:
+          - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
           - Demo_Constructor_EmptyPrefix_ThrowsArgumentException

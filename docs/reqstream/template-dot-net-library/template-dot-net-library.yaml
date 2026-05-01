@@ -15,7 +15,7 @@ sections:
         children:
           - Template-Demo-Greeting
         tests:
-          - TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality
+          - TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting
 
       - id: Template-Lib-CustomPrefix
         title: The library shall support a customizable greeting prefix.
@@ -26,20 +26,30 @@ sections:
         children:
           - Template-Demo-Prefix
         tests:
-          - TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly
+          - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
 
-      - id: Template-Lib-Validation
-        title: The library shall reject null and empty arguments with an appropriate ArgumentException.
+      - id: Template-Lib-ValidationNull
+        title: The library shall reject null arguments with ArgumentNullException.
         justification: |
-          Null-safety and non-empty validation are fundamental API contracts: passing null or an
-          empty string to the constructor or to DemoMethod is a programming error. Throwing
-          ArgumentNullException for null arguments and ArgumentException for empty-string arguments
-          immediately surfaces the mistake to callers and prevents malformed output (such as
-          ", World!" or "Hello, !") and obscure failures deeper in the call stack.
+          Null-safety is a fundamental API contract: passing null to the constructor or to
+          DemoMethod is a programming error. Throwing ArgumentNullException for null arguments
+          immediately surfaces the mistake to callers and prevents obscure failures deeper in
+          the call stack.
         children:
-          - Template-Demo-Validation
+          - Template-Demo-ValidationNull
         tests:
-          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput
-          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput
-          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix
-          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodNullInput_ThrowsArgumentNullException
+          - TemplateDotNetLibrary_SystemValidation_ConstructorNullPrefix_ThrowsArgumentNullException
+
+      - id: Template-Lib-ValidationEmpty
+        title: The library shall reject empty-string arguments with ArgumentException.
+        justification: |
+          Non-empty validation is a fundamental API contract: passing an empty string to the
+          constructor or to DemoMethod is a programming error. Throwing ArgumentException for
+          empty-string arguments immediately surfaces the mistake to callers and prevents
+          malformed output such as ", World!" or "Hello, !".
+        children:
+          - Template-Demo-ValidationEmpty
+        tests:
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodEmptyInput_ThrowsArgumentException
+          - TemplateDotNetLibrary_SystemValidation_ConstructorEmptyPrefix_ThrowsArgumentException

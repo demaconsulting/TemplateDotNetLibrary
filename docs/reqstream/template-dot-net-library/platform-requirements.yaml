@@ -11,9 +11,11 @@
 # Source filter prefixes:
 #   windows@TestName  - proves the test passed on a Windows platform
 #   ubuntu@TestName   - proves the test passed on a Linux (Ubuntu) platform
+#   macos@TestName    - proves the test passed on a macOS platform
 #   net8.0@TestName   - proves the test passed under the .NET 8 runtime
 #   net9.0@TestName   - proves the test passed under the .NET 9 runtime
 #   net10.0@TestName  - proves the test passed under the .NET 10 runtime
+#   net481@TestName   - proves the test passed under .NET Framework 4.8.1 (implements .NET Standard 2.0)
 
 sections:
   - title: Platform Support
@@ -70,5 +72,7 @@ sections:
           be used in MSBuild extensions and other tooling that requires .NET Standard compatibility.
           Supporting this target framework ensures the library can be integrated into a broader
           range of .NET projects, including those targeting .NET Framework and older .NET Core versions.
+          Because .NET Framework 4.8.1 implements .NET Standard 2.0, a passing test on net481
+          demonstrates .NET Standard 2.0 compatibility.
         tests:
           - "net481@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"

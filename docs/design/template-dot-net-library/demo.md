@@ -1,21 +1,15 @@
 # Demo
 
-<!-- TODO: This is an example design section for the Demo class. Replace with your own unit design. -->
-
 The `Demo` class is the sole software unit in the Template DotNet Library. It serves as a
 demonstration of how a DEMA Consulting .NET library class should be structured, documented,
 and tested.
 
 ## Overview
 
-<!-- TODO: Fill in for your project -->
-
 `Demo` is a simple greeting class that constructs a greeting string by combining a configurable
 prefix with a caller-supplied name. It has no external dependencies and performs no I/O.
 
 ## Data Model
-
-<!-- TODO: Fill in for your project -->
 
 | Field           | Type           | Description                                      |
 |-----------------|----------------|--------------------------------------------------|
@@ -23,8 +17,6 @@ prefix with a caller-supplied name. It has no external dependencies and performs
 | `DefaultPrefix` | `const string` | The default greeting prefix (`"Hello"`).         |
 
 ## Methods
-
-<!-- TODO: Fill in for your project -->
 
 ### Demo()
 
@@ -57,8 +49,6 @@ non-null and non-empty using `ArgumentException.ThrowIfNullOrEmpty`.
 Read-only property that exposes `_prefix` to callers.
 
 ## Interactions
-
-<!-- TODO: Fill in for your project -->
 
 `Demo` has no interactions with other units. It is a self-contained leaf class with no
 dependencies beyond the .NET base class library.

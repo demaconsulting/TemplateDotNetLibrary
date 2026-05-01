@@ -18,7 +18,7 @@ This template demonstrates:
 - **Simple Library Structure**: Demo class with example methods
 - **Multi-Platform Support**: Builds and runs on Windows, Linux, and macOS
 - **Multi-Runtime Support**: Targets .NET Standard 2.0, .NET 8, 9, and 10
-- **MSTest V4**: Modern unit testing with MSTest framework version 4
+- **xUnit v3**: Modern unit testing with xUnit framework version 3
 - **Comprehensive CI/CD**: GitHub Actions workflows with quality checks and builds
 - **Linting Enforcement**: markdownlint, cspell, and yamllint enforced on every CI run
 - **Continuous Compliance**: Compliance evidence generated automatically on every CI run, following
@@ -55,6 +55,11 @@ Generated documentation includes:
 - **Requirements**: Functional and non-functional requirements
 - **Requirements Justifications**: Detailed requirement rationale
 - **Trace Matrix**: Requirements to test traceability
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, coding
+standards, and the pull request process.
 
 ## License
 

@@ -1,7 +1,5 @@
 # Demo Unit Verification Design
 
-<!-- TODO: This is an example verification design section for the Demo class. Replace with your own unit verification. -->
-
 This document describes the unit-level verification strategy for the `Demo` class.
 
 ## Verification Strategy
@@ -63,7 +61,7 @@ Reads the `Demo.DefaultPrefix` constant directly and asserts its value is `"Hell
 that the constant has not silently changed, protecting callers who depend on the default greeting
 string.
 
-### Template-Demo-Validation: DemoMethod Null Input Throws ArgumentNullException
+### Template-Demo-ValidationNull: DemoMethod Null Input Throws ArgumentNullException
 
 **Test**: `Demo_DemoMethod_NullInput_ThrowsArgumentNullException`
 
@@ -71,7 +69,7 @@ Constructs a `Demo` with the default constructor and calls `DemoMethod(null)`. A
 `ArgumentNullException` (not the base `ArgumentException`) is thrown. Verifies that the unit
 explicitly rejects `null` with the precise exception subtype.
 
-### Template-Demo-Validation: DemoMethod Empty Input Throws ArgumentException
+### Template-Demo-ValidationEmpty: DemoMethod Empty Input Throws ArgumentException
 
 **Test**: `Demo_DemoMethod_EmptyInput_ThrowsArgumentException`
 
@@ -79,7 +77,7 @@ Constructs a `Demo` with the default constructor and calls `DemoMethod(string.Em
 that `ArgumentException` (not `ArgumentNullException`) is thrown. This is the empty-string
 boundary condition — distinct from the null case.
 
-### Template-Demo-Validation: Constructor Null Prefix Throws ArgumentNullException
+### Template-Demo-ValidationNull: Constructor Null Prefix Throws ArgumentNullException
 
 **Test**: `Demo_Constructor_NullPrefix_ThrowsArgumentNullException`
 
@@ -87,7 +85,7 @@ Attempts to construct a `Demo` with a `null` prefix argument. Asserts that
 `ArgumentNullException` (not the base `ArgumentException`) is thrown. Verifies that the
 custom-prefix constructor explicitly rejects `null`.
 
-### Template-Demo-Validation: Constructor Empty Prefix Throws ArgumentException
+### Template-Demo-ValidationEmpty: Constructor Empty Prefix Throws ArgumentException
 
 **Test**: `Demo_Constructor_EmptyPrefix_ThrowsArgumentException`
 
@@ -97,14 +95,14 @@ condition for the constructor — distinct from the null case.
 
 ## Requirements Coverage
 
-| Requirement ID           | Test Scenario(s)                                           |
-|--------------------------|------------------------------------------------------------|
-| Template-Demo-Greeting   | DemoMethod Default Prefix Returns Greeting                 |
-| Template-Demo-Greeting   | DemoMethod Custom Prefix Returns Greeting                  |
-| Template-Demo-Prefix     | Prefix With Custom Construction Returns Custom Prefix      |
-| Template-Demo-Prefix     | Default Constructor Sets Default Prefix                    |
-| Template-Demo-Prefix     | DefaultPrefix Constant Is Hello                            |
-| Template-Demo-Validation | DemoMethod Null Input Throws ArgumentNullException         |
-| Template-Demo-Validation | DemoMethod Empty Input Throws ArgumentException            |
-| Template-Demo-Validation | Constructor Null Prefix Throws ArgumentNullException       |
-| Template-Demo-Validation | Constructor Empty Prefix Throws ArgumentException          |
+| Requirement ID                | Test Scenario(s)                                      |
+|-------------------------------|-------------------------------------------------------|
+| Template-Demo-Greeting        | DemoMethod Default Prefix Returns Greeting            |
+| Template-Demo-Greeting        | DemoMethod Custom Prefix Returns Greeting             |
+| Template-Demo-Prefix          | Prefix With Custom Construction Returns Custom Prefix |
+| Template-Demo-Prefix          | Default Constructor Sets Default Prefix               |
+| Template-Demo-Prefix          | DefaultPrefix Constant Is Hello                       |
+| Template-Demo-ValidationNull  | DemoMethod Null Input Throws ArgumentNullException    |
+| Template-Demo-ValidationNull  | Constructor Null Prefix Throws ArgumentNullException  |
+| Template-Demo-ValidationEmpty | DemoMethod Empty Input Throws ArgumentException       |
+| Template-Demo-ValidationEmpty | Constructor Empty Prefix Throws ArgumentException     |

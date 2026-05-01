@@ -30,7 +30,7 @@ with controlled inputs and verify returned values and thrown exceptions.
 
 ### Integration: Provides Expected Functionality
 
-**Test**: `TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality`
+**Test**: `TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting`
 
 Exercises end-to-end system behavior: constructs a `Demo` instance using the default constructor
 and calls `DemoMethod` with a valid name. Asserts that the system produces the expected greeting
@@ -39,40 +39,40 @@ configuration.
 
 ### Customization: Handles Configuration Properly
 
-**Test**: `TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly`
+**Test**: `TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting`
 
 Verifies that the system correctly propagates a custom prefix supplied at construction time.
 Constructs a `Demo` instance with prefix `"Welcome"`, calls `DemoMethod` with a valid name, and
 asserts the result is `"Welcome, Integration!"`. Confirms that the configuration path through all
 integrated components functions as expected.
 
-### Validation: DemoMethod Rejects Null Input
+### Validation: DemoMethod Null Input Throws ArgumentNullException
 
-**Test**: `TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput`
+**Test**: `TemplateDotNetLibrary_SystemValidation_DemoMethodNullInput_ThrowsArgumentNullException`
 
 Verifies that the system rejects a `null` argument to `DemoMethod` with `ArgumentNullException`.
 Constructs a `Demo` instance with the default constructor and passes `null` to `DemoMethod`.
 Confirms that the system boundary enforces the null-rejection contract.
 
-### Validation: DemoMethod Rejects Empty Input
+### Validation: DemoMethod Empty Input Throws ArgumentException
 
-**Test**: `TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput`
+**Test**: `TemplateDotNetLibrary_SystemValidation_DemoMethodEmptyInput_ThrowsArgumentException`
 
 Verifies that the system rejects an empty-string argument to `DemoMethod` with `ArgumentException`.
 Constructs a `Demo` instance with the default constructor and passes `string.Empty` to `DemoMethod`.
 Confirms that the system boundary enforces the empty-string rejection contract.
 
-### Validation: Constructor Rejects Null Prefix
+### Validation: Constructor Null Prefix Throws ArgumentNullException
 
-**Test**: `TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix`
+**Test**: `TemplateDotNetLibrary_SystemValidation_ConstructorNullPrefix_ThrowsArgumentNullException`
 
 Verifies that the system rejects a `null` prefix argument at construction time with
 `ArgumentNullException`. Attempts to construct a `Demo` instance with `null` as the prefix.
 Confirms that the system boundary prevents invalid configuration from being established.
 
-### Validation: Constructor Rejects Empty Prefix
+### Validation: Constructor Empty Prefix Throws ArgumentException
 
-**Test**: `TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix`
+**Test**: `TemplateDotNetLibrary_SystemValidation_ConstructorEmptyPrefix_ThrowsArgumentException`
 
 Verifies that the system rejects an empty-string prefix argument at construction time with
 `ArgumentException`. Attempts to construct a `Demo` instance with `string.Empty` as the prefix.
@@ -86,11 +86,11 @@ constitutes a failure.
 
 ## Requirements Coverage
 
-| Requirement ID            | Test Scenario(s)                               |
-|---------------------------|------------------------------------------------|
-| Template-Lib-Greeting     | Integration: Provides Expected Functionality   |
-| Template-Lib-CustomPrefix | Customization: Handles Configuration Properly  |
-| Template-Lib-Validation   | Validation: DemoMethod Rejects Null Input      |
-| Template-Lib-Validation   | Validation: DemoMethod Rejects Empty Input     |
-| Template-Lib-Validation   | Validation: Constructor Rejects Null Prefix    |
-| Template-Lib-Validation   | Validation: Constructor Rejects Empty Prefix   |
+| Requirement ID               | Test Scenario(s)                                                 |
+|------------------------------|------------------------------------------------------------------|
+| Template-Lib-Greeting        | Integration: Provides Expected Functionality                     |
+| Template-Lib-CustomPrefix    | Customization: Handles Configuration Properly                    |
+| Template-Lib-ValidationNull  | Validation: DemoMethod Null Input Throws ArgumentNullException   |
+| Template-Lib-ValidationNull  | Validation: Constructor Null Prefix Throws ArgumentNullException |
+| Template-Lib-ValidationEmpty | Validation: DemoMethod Empty Input Throws ArgumentException      |
+| Template-Lib-ValidationEmpty | Validation: Constructor Empty Prefix Throws ArgumentException    |

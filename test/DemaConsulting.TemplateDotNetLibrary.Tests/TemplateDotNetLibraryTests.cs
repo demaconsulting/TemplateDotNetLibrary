@@ -10,7 +10,7 @@ public class TemplateDotNetLibraryTests
     ///     when integrated with all components.
     /// </summary>
     [Fact]
-    public void TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality()
+    public void TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting()
     {
         // Arrange: set up system-level integration test
         var demo = new Demo();
@@ -28,7 +28,7 @@ public class TemplateDotNetLibraryTests
     ///     across all integrated components.
     /// </summary>
     [Fact]
-    public void TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly()
+    public void TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting()
     {
         // Arrange: set up system with custom configuration
         const string customPrefix = "Welcome";
@@ -47,7 +47,7 @@ public class TemplateDotNetLibraryTests
     ///     with the expected exception at the system level.
     /// </summary>
     [Fact]
-    public void TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput()
+    public void TemplateDotNetLibrary_SystemValidation_DemoMethodNullInput_ThrowsArgumentNullException()
     {
         // Arrange: set up system components
         var demo = new Demo();
@@ -61,7 +61,7 @@ public class TemplateDotNetLibraryTests
     ///     with the expected exception at the system level.
     /// </summary>
     [Fact]
-    public void TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput()
+    public void TemplateDotNetLibrary_SystemValidation_DemoMethodEmptyInput_ThrowsArgumentException()
     {
         // Arrange: set up system components
         var demo = new Demo();
@@ -75,7 +75,7 @@ public class TemplateDotNetLibraryTests
     ///     with the expected exception at the system level.
     /// </summary>
     [Fact]
-    public void TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix()
+    public void TemplateDotNetLibrary_SystemValidation_ConstructorNullPrefix_ThrowsArgumentNullException()
     {
         // Act & Assert: system validates constructor null prefix properly
         Assert.Throws<ArgumentNullException>(() => new Demo(null!));
@@ -86,7 +86,7 @@ public class TemplateDotNetLibraryTests
     ///     with the expected exception at the system level.
     /// </summary>
     [Fact]
-    public void TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix()
+    public void TemplateDotNetLibrary_SystemValidation_ConstructorEmptyPrefix_ThrowsArgumentException()
     {
         // Act & Assert: system validates constructor empty prefix properly
         Assert.Throws<ArgumentException>(() => new Demo(string.Empty));

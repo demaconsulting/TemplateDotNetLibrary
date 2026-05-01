@@ -171,3 +171,7 @@ catch (ArgumentNullException ex)
     Console.WriteLine("Name cannot be null");
 }
 ```
+
+## References
+
+- [REF-1] Continuous Compliance Methodology (<https://github.com/demaconsulting/ContinuousCompliance>)
