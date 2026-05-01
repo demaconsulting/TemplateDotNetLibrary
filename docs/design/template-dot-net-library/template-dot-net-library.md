@@ -29,17 +29,32 @@ best practices. The system consists of:
 
 The system exposes:
 
-- **Demo()**: Default constructor; initializes the instance with the default greeting prefix
-- **Demo(string prefix)**: Custom-prefix constructor; initializes the instance with the specified prefix
+- **Demo()**: Default constructor; initializes the instance with the default prefix `"Hello"`
+- **Demo(string prefix)**: Custom-prefix constructor; initializes the instance with the specified
+  prefix. Throws `ArgumentNullException` if `prefix` is null; throws `ArgumentException` if
+  `prefix` is an empty string.
 - **Demo.Prefix**: Read-only property that returns the greeting prefix configured at construction
-- **Demo.DemoMethod(string name)**: Returns a greeting string in the format `{prefix}, {name}!`
+- **Demo.DemoMethod(string name)**: Returns a greeting string in the format `{prefix}, {name}!`.
+  Throws `ArgumentNullException` if `name` is null; throws `ArgumentException` if `name` is an
+  empty string.
 - Package metadata and documentation for NuGet distribution
 
 ## Data Flow
 
-1. **Input**: Method parameter `name` (required, non-empty string for greeting; null or empty values result in an error)
-2. **Processing**: Input validation and simple string formatting within Demo unit
-3. **Output**: Formatted greeting string when a valid `name` is provided
+**Construction path:**
+
+1. **Input**: Constructor parameter `prefix` (optional; defaults to `"Hello"` when using `Demo()`)
+2. **Validation**: `Demo(string prefix)` rejects null with `ArgumentNullException`; rejects empty
+   string with `ArgumentException`
+3. **Storage**: Valid prefix stored for use in subsequent greeting calls
+
+**Method-call path:**
+
+1. **Input**: Method parameter `name` (required, non-empty string)
+2. **Validation**: `DemoMethod` rejects null with `ArgumentNullException`; rejects empty string
+   with `ArgumentException`
+3. **Processing**: Simple string formatting combining stored prefix and supplied name
+4. **Output**: Formatted greeting string in the format `{prefix}, {name}!`
 
 ## System Constraints
 

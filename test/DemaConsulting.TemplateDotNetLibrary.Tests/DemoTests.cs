@@ -1,4 +1,6 @@
-namespace TemplateDotNetLibrary.Tests;
+using TemplateDotNetLibrary;
+
+namespace DemaConsulting.TemplateDotNetLibrary.Tests;
 
 /// <summary>
 ///     Unit tests for the Demo class.
@@ -96,7 +98,7 @@ public class DemoTests
     ///     which is the expected default greeting prefix.
     /// </summary>
     [Fact]
-    public void Demo_DefaultPrefix_IsHello()
+    public void Demo_DefaultPrefix_Read_IsHello()
     {
         // Arrange: set expected value
         const string expected = "Hello";

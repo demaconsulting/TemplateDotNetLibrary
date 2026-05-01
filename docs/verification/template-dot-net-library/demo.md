@@ -37,6 +37,22 @@ Constructs a `Demo` with custom prefix `"Hi"` and calls `DemoMethod("Alice")`. A
 value is exactly `"Hi, Alice!"`. Verifies that a non-default prefix is correctly combined with the
 caller-supplied name in the `"{prefix}, {name}!"` format.
 
+### Template-Demo-DefaultPrefix: DefaultPrefix Constant Is Hello
+
+**Test**: `Demo_DefaultPrefix_Read_IsHello`
+
+Reads the `Demo.DefaultPrefix` constant directly and asserts its value is `"Hello"`. Verifies
+that the constant has not silently changed, protecting callers who depend on the default greeting
+string.
+
+### Template-Demo-DefaultPrefix: Default Constructor Sets Default Prefix
+
+**Test**: `Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix`
+
+Constructs a `Demo` using the default constructor and reads the `Prefix` property. Asserts the
+property value equals `Demo.DefaultPrefix`. Verifies that the default constructor stores the
+expected prefix constant, confirming the `"Hello"` default is propagated end-to-end.
+
 ### Template-Demo-Prefix: Prefix With Custom Construction Returns Custom Prefix
 
 **Test**: `Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix`
@@ -53,15 +69,7 @@ Constructs a `Demo` using the default constructor and reads the `Prefix` propert
 property value equals `Demo.DefaultPrefix`. Verifies that the default constructor stores the
 expected prefix constant.
 
-### Template-Demo-Prefix: DefaultPrefix Constant Is Hello
-
-**Test**: `Demo_DefaultPrefix_IsHello`
-
-Reads the `Demo.DefaultPrefix` constant directly and asserts its value is `"Hello"`. Verifies
-that the constant has not silently changed, protecting callers who depend on the default greeting
-string.
-
-### Template-Demo-ValidationNull: DemoMethod Null Input Throws ArgumentNullException
+### Template-Demo-ValidationNull-DemoMethod: DemoMethod Null Input Throws ArgumentNullException
 
 **Test**: `Demo_DemoMethod_NullInput_ThrowsArgumentNullException`
 
@@ -69,7 +77,7 @@ Constructs a `Demo` with the default constructor and calls `DemoMethod(null)`. A
 `ArgumentNullException` (not the base `ArgumentException`) is thrown. Verifies that the unit
 explicitly rejects `null` with the precise exception subtype.
 
-### Template-Demo-ValidationEmpty: DemoMethod Empty Input Throws ArgumentException
+### Template-Demo-ValidationEmpty-DemoMethod: DemoMethod Empty Input Throws ArgumentException
 
 **Test**: `Demo_DemoMethod_EmptyInput_ThrowsArgumentException`
 
@@ -77,7 +85,7 @@ Constructs a `Demo` with the default constructor and calls `DemoMethod(string.Em
 that `ArgumentException` (not `ArgumentNullException`) is thrown. This is the empty-string
 boundary condition — distinct from the null case.
 
-### Template-Demo-ValidationNull: Constructor Null Prefix Throws ArgumentNullException
+### Template-Demo-ValidationNull-Constructor: Constructor Null Prefix Throws ArgumentNullException
 
 **Test**: `Demo_Constructor_NullPrefix_ThrowsArgumentNullException`
 
@@ -85,7 +93,7 @@ Attempts to construct a `Demo` with a `null` prefix argument. Asserts that
 `ArgumentNullException` (not the base `ArgumentException`) is thrown. Verifies that the
 custom-prefix constructor explicitly rejects `null`.
 
-### Template-Demo-ValidationEmpty: Constructor Empty Prefix Throws ArgumentException
+### Template-Demo-ValidationEmpty-Constructor: Constructor Empty Prefix Throws ArgumentException
 
 **Test**: `Demo_Constructor_EmptyPrefix_ThrowsArgumentException`
 
@@ -95,14 +103,15 @@ condition for the constructor — distinct from the null case.
 
 ## Requirements Coverage
 
-| Requirement ID                | Test Scenario(s)                                      |
-|-------------------------------|-------------------------------------------------------|
-| Template-Demo-Greeting        | DemoMethod Default Prefix Returns Greeting            |
-| Template-Demo-Greeting        | DemoMethod Custom Prefix Returns Greeting             |
-| Template-Demo-Prefix          | Prefix With Custom Construction Returns Custom Prefix |
-| Template-Demo-Prefix          | Default Constructor Sets Default Prefix               |
-| Template-Demo-Prefix          | DefaultPrefix Constant Is Hello                       |
-| Template-Demo-ValidationNull  | DemoMethod Null Input Throws ArgumentNullException    |
-| Template-Demo-ValidationNull  | Constructor Null Prefix Throws ArgumentNullException  |
-| Template-Demo-ValidationEmpty | DemoMethod Empty Input Throws ArgumentException       |
-| Template-Demo-ValidationEmpty | Constructor Empty Prefix Throws ArgumentException     |
+| Requirement ID                            | Test Scenario(s)                                      |
+|-------------------------------------------|-------------------------------------------------------|
+| Template-Demo-Greeting                    | DemoMethod Default Prefix Returns Greeting            |
+| Template-Demo-Greeting                    | DemoMethod Custom Prefix Returns Greeting             |
+| Template-Demo-DefaultPrefix               | DefaultPrefix Constant Is Hello                       |
+| Template-Demo-DefaultPrefix               | Default Constructor Sets Default Prefix               |
+| Template-Demo-Prefix                      | Prefix With Custom Construction Returns Custom Prefix |
+| Template-Demo-Prefix                      | Default Constructor Sets Default Prefix               |
+| Template-Demo-ValidationNull-DemoMethod   | DemoMethod Null Input Throws ArgumentNullException    |
+| Template-Demo-ValidationNull-Constructor  | Constructor Null Prefix Throws ArgumentNullException  |
+| Template-Demo-ValidationEmpty-DemoMethod  | DemoMethod Empty Input Throws ArgumentException       |
+| Template-Demo-ValidationEmpty-Constructor | Constructor Empty Prefix Throws ArgumentException     |

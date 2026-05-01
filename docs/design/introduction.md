@@ -51,6 +51,24 @@ This template demonstrates a minimal system structure with no subsystems — it 
 organize related units and provide architectural boundaries with well-defined interfaces and
 responsibilities.
 
+## Companion Artifact Structure
+
+Each software item has corresponding artifacts in parallel directory trees:
+
+```text
+TemplateDotNetLibrary (System)
+└── Demo (Unit)
+```
+
+Each software item has artifacts in these parallel locations:
+
+- Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
+- Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
+- Verification design: `docs/verification/{system}/.../{item}.md` (kebab-case)
+- Source code: `src/{System}/.../{Item}.cs` (PascalCase for C#)
+- Tests: `test/{System}.Tests/.../{Item}Tests.cs` (PascalCase for C#)
+- Review-sets: defined in `.reviewmark.yaml`
+
 ## Folder Layout
 
 The source code folder structure mirrors the software structure organization, with file paths

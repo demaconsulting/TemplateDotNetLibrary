@@ -86,11 +86,12 @@ constitutes a failure.
 
 ## Requirements Coverage
 
-| Requirement ID               | Test Scenario(s)                                                 |
-|------------------------------|------------------------------------------------------------------|
-| Template-Lib-Greeting        | Integration: Provides Expected Functionality                     |
-| Template-Lib-CustomPrefix    | Customization: Handles Configuration Properly                    |
-| Template-Lib-ValidationNull  | Validation: DemoMethod Null Input Throws ArgumentNullException   |
-| Template-Lib-ValidationNull  | Validation: Constructor Null Prefix Throws ArgumentNullException |
-| Template-Lib-ValidationEmpty | Validation: DemoMethod Empty Input Throws ArgumentException      |
-| Template-Lib-ValidationEmpty | Validation: Constructor Empty Prefix Throws ArgumentException    |
+| Requirement ID                           | Test Scenario(s)                                                 |
+|------------------------------------------|------------------------------------------------------------------|
+| Template-Lib-Greeting                    | Integration: Provides Expected Functionality                     |
+| Template-Lib-DefaultPrefix               | Integration: Provides Expected Functionality                     |
+| Template-Lib-CustomPrefix                | Customization: Handles Configuration Properly                    |
+| Template-Lib-ValidationNull-DemoMethod   | Validation: DemoMethod Null Input Throws ArgumentNullException   |
+| Template-Lib-ValidationNull-Constructor  | Validation: Constructor Null Prefix Throws ArgumentNullException |
+| Template-Lib-ValidationEmpty-DemoMethod  | Validation: DemoMethod Empty Input Throws ArgumentException      |
+| Template-Lib-ValidationEmpty-Constructor | Validation: Constructor Empty Prefix Throws ArgumentException    |

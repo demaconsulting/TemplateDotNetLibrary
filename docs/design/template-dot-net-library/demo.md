@@ -7,7 +7,8 @@ and tested.
 ## Overview
 
 `Demo` is a simple greeting class that constructs a greeting string by combining a configurable
-prefix with a caller-supplied name. It has no external dependencies and performs no I/O.
+prefix with a caller-supplied name. It has no external dependencies and performs no I/O. Instances
+are immutable after construction and are therefore safe for concurrent access.
 
 ## Data Model
 

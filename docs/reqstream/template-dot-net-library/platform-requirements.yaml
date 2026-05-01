@@ -17,6 +17,11 @@
 #   net10.0@TestName  - proves the test passed under the .NET 10 runtime
 #   net481@TestName   - proves the test passed under .NET Framework 4.8.1 (implements .NET Standard 2.0)
 
+# Cross-level test evidence: unit tests (Demo_*) are accepted as platform-compatibility evidence
+# for these system-level requirements. Because the Demo unit exercises the full .NET runtime
+# stack (string formatting, exception handling, property access), a passing unit test on a given
+# platform confirms end-to-end library functionality on that platform.
+
 sections:
   - title: Platform Support
     requirements:

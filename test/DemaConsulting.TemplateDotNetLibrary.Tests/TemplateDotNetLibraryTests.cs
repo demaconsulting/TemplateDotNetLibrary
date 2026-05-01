@@ -1,4 +1,6 @@
-namespace TemplateDotNetLibrary.Tests;
+using TemplateDotNetLibrary;
+
+namespace DemaConsulting.TemplateDotNetLibrary.Tests;
 
 /// <summary>
 ///     System-level integration tests for the TemplateDotNetLibrary system.

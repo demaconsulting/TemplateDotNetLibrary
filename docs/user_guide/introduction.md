@@ -172,6 +172,6 @@ catch (ArgumentNullException ex)
 }
 ```
 
-## References
+# References
 
 - [REF-1] Continuous Compliance Methodology (<https://github.com/demaconsulting/ContinuousCompliance>)

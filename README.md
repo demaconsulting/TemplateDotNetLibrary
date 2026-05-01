@@ -42,7 +42,7 @@ dotnet add package TemplateDotNetLibrary
 using TemplateDotNetLibrary;
 
 var demo = new Demo();
-var result = demo.DemoMethod("World");
+var result = demo.DemoMethod("World"); // result = "Hello, World!"
 ```
 
 ## Documentation
