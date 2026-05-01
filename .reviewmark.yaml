@@ -11,6 +11,7 @@ needs-review:
   - "**/*.cs"                     # All C# source and test files
   - "docs/reqstream/**/*.yaml"    # Requirements files
   - "docs/design/**/*.md"         # Design documentation files
+  - "docs/verification/**/*.md"   # Verification documentation files
   - "docs/user_guide/**/*.md"     # User guide documentation
   - "!**/obj/**"                  # Exclude build output
   - "!**/bin/**"                  # Exclude build output
@@ -28,6 +29,7 @@ evidence-source:
 # Review sets following hierarchical scope principles.
 # Each review-set focuses on a single compliance question with manageable file counts.
 reviews:
+  # Purpose
   - id: Purpose
     title: Review of user-facing capabilities and system promises
     paths:
@@ -37,16 +39,19 @@ reviews:
       - "docs/design/introduction.md"
       - "docs/design/template-dot-net-library/template-dot-net-library.md"
 
+  # TemplateDotNetLibrary - Specials
   - id: TemplateDotNetLibrary-Architecture
-    title: Review of Template DotNet Library System Architecture and Operational Validation
+    title: Review of Template DotNet Library system architecture and operational validation
     paths:
       - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
       - "docs/design/introduction.md"
       - "docs/design/template-dot-net-library/template-dot-net-library.md"
+      - "docs/verification/introduction.md"
+      - "docs/verification/template-dot-net-library/template-dot-net-library.md"
       - "test/DemaConsulting.TemplateDotNetLibrary.Tests/TemplateDotNetLibraryTests.cs"
 
   - id: TemplateDotNetLibrary-Design
-    title: Review of Template DotNet Library Architectural and Design Consistency
+    title: Review of Template DotNet Library architectural and design consistency
     paths:
       - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
       - "docs/reqstream/template-dot-net-library/platform-requirements.yaml"
@@ -54,15 +59,18 @@ reviews:
       - "docs/design/template-dot-net-library/**/*.md"
 
   - id: TemplateDotNetLibrary-AllRequirements
-    title: Review of All Requirements Including Platform and OTS Dependencies
+    title: Review of Template DotNet Library requirements quality and traceability
     paths:
       - "requirements.yaml"
-      - "docs/reqstream/**/*.yaml"
+      - "docs/reqstream/template-dot-net-library/**/*.yaml"
+      - "docs/reqstream/ots/*.yaml"
 
+  # TemplateDotNetLibrary - Demo
   - id: TemplateDotNetLibrary-Demo
     title: Review of Demo Unit Implementation
     paths:
       - "docs/reqstream/template-dot-net-library/demo.yaml"
       - "docs/design/template-dot-net-library/demo.md"
+      - "docs/verification/template-dot-net-library/demo.md"
       - "src/DemaConsulting.TemplateDotNetLibrary/Demo.cs"
       - "test/DemaConsulting.TemplateDotNetLibrary.Tests/DemoTests.cs"

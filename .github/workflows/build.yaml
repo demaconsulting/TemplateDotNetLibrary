@@ -638,6 +638,38 @@ jobs:
           --results artifacts/fileassert-design.trx
           design
 
+      # === COMPILE VERIFICATION DOCUMENT ===
+      # This section generates the Verification Design document using Pandoc and WeasyPrint.
+      # FileAssert validates that the HTML and PDF outputs contain expected content.
+      # Downstream projects: Add any additional verification document steps here.
+
+      - name: Create verification output directory
+        shell: bash
+        run: mkdir -p docs/verification/generated
+
+      - name: Generate Verification HTML with Pandoc
+        shell: bash
+        run: >
+          dotnet pandoc
+          --defaults docs/verification/definition.yaml
+          --filter node_modules/.bin/mermaid-filter.cmd
+          --metadata version="${{ inputs.version }}"
+          --metadata date="$(date +'%Y-%m-%d')"
+          --output docs/verification/generated/verification.html
+
+      - name: Generate Verification PDF with WeasyPrint
+        run: >
+          dotnet weasyprint
+          --pdf-variant pdf/a-3u
+          docs/verification/generated/verification.html
+          "docs/generated/TemplateDotNetLibrary Verification Design.pdf"
+
+      - name: Assert Verification Documents with FileAssert
+        run: >
+          dotnet fileassert
+          --results artifacts/fileassert-verification.trx
+          verification
+
       # === COMPILE USER GUIDE ===
       # This section generates the User Guide document using Pandoc and WeasyPrint.
       # FileAssert validates that the HTML and PDF outputs contain expected content.
@@ -671,8 +703,8 @@ jobs:
           user-guide
 
       # === FILEASSERT SELF-VALIDATION ===
-      # By this point Pandoc and WeasyPrint have each produced 6 validated documents
-      # (Build Notes, Code Quality, Review Plan, Review Report, Design, User Guide),
+      # By this point Pandoc and WeasyPrint have each produced 7 validated documents
+      # (Build Notes, Code Quality, Review Plan, Review Report, Design, Verification, User Guide),
       # providing strong OTS evidence for both tools before ReqStream runs. FileAssert
       # self-validation confirms the assertion tool itself is operational.
       # Downstream projects: Add any additional FileAssert self-validation steps here.
