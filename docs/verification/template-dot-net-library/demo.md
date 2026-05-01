@@ -59,23 +59,8 @@ expected prefix constant, confirming the `"Hello"` default is propagated end-to-
 
 Constructs a `Demo` with a specific custom prefix and reads the `Prefix` property. Asserts the
 property value exactly matches the string passed at construction. Verifies that the constructor
-accepts and stores a caller-specified prefix.
-
-### Template-Demo-Prefix: Prefix With Custom Construction Returns Custom Prefix
-
-**Test**: `Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix`
-
-Constructs a `Demo` with prefix `"Greetings"` and reads the `Prefix` property. Asserts the
-property value exactly matches the string passed at construction. Verifies that the `Prefix`
-property exposes the configured prefix correctly.
-
-### Template-Demo-Prefix: Default Constructor Sets Default Prefix
-
-**Test**: `Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix`
-
-Constructs a `Demo` using the default constructor and reads the `Prefix` property. Asserts the
-property value equals `Demo.DefaultPrefix`. Verifies that the default constructor stores the
-expected prefix constant.
+accepts and stores a caller-specified prefix, and that the `Prefix` property exposes the
+configured value correctly.
 
 ### Template-Demo-ValidationNull-DemoMethod: DemoMethod Null Input Throws ArgumentNullException
 
@@ -118,7 +103,7 @@ condition for the constructor — distinct from the null case.
 | Template-Demo-DefaultPrefix               | DefaultPrefix Constant Is Hello                           |
 | Template-Demo-DefaultPrefix               | Default Constructor Sets Default Prefix                   |
 | Template-Demo-AcceptCustomPrefix          | Constructor With Custom Prefix Sets Prefix                |
-| Template-Demo-Prefix                      | Prefix With Custom Construction Returns Custom Prefix     |
+| Template-Demo-Prefix                      | Constructor With Custom Prefix Sets Prefix                |
 | Template-Demo-Prefix                      | Default Constructor Sets Default Prefix                   |
 | Template-Demo-ValidationNull-DemoMethod   | DemoMethod Null Input Throws ArgumentNullException        |
 | Template-Demo-ValidationNull-Constructor  | Constructor Null Prefix Throws ArgumentNullException      |
