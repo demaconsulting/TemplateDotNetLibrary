@@ -58,5 +58,5 @@ Each software item has artifacts in these parallel locations:
 
 ## References
 
-- [REF-1] Template DotNet Library User Guide
+- [REF-1] Template DotNet Library User Guide (<https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/docs/user_guide/introduction.md>)
 - [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)

@@ -93,4 +93,21 @@ public class TemplateDotNetLibraryTests
         // Act & Assert: system validates constructor empty prefix properly
         Assert.Throws<ArgumentException>(() => new Demo(string.Empty));
     }
+
+    /// <summary>
+    ///     Proves that the Prefix property exposes the configured prefix at the system level.
+    /// </summary>
+    [Fact]
+    public void TemplateDotNetLibrary_SystemIntegration_CustomPrefix_ExposesPrefix()
+    {
+        // Arrange: construct system with a custom prefix
+        const string customPrefix = "Greetings";
+        var demo = new Demo(customPrefix);
+
+        // Act: read the Prefix property through the public API
+        var prefix = demo.Prefix;
+
+        // Assert: the system exposes the configured prefix correctly
+        Assert.Equal(customPrefix, prefix);
+    }
 }

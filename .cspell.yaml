@@ -32,6 +32,7 @@ words:
   - Weasy
   - WeasyPrint
   - weasyprint
+  - netstandard
   - yamlfix
 
 # Exclude common build artifacts, dependencies, and vendored third-party code

@@ -18,18 +18,25 @@ sections:
       - id: Template-Demo-DefaultPrefix
         title: The Demo class shall use "Hello" as the default greeting prefix.
         justification: |
-          Callers constructing Demo without a prefix argument rely on a predictable default.
-          The constant DefaultPrefix exposes this value so dependents can reference it
-          symbolically rather than hard-coding the string "Hello".
+          Callers constructing Demo without a prefix argument need a stable, well-known default
+          they can rely on in documentation examples and integration code without reading source.
         tests:
           - Demo_DefaultPrefix_Read_IsHello
           - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix
 
+      - id: Template-Demo-AcceptCustomPrefix
+        title: The Demo class shall accept a caller-specified prefix at construction time.
+        justification: |
+          Callers who need a non-default greeting style must be able to supply their own prefix
+          at construction time; storing it enables all subsequent greeting calls to use it.
+        tests:
+          - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
+
       - id: Template-Demo-Prefix
         title: The Demo class shall allow callers to read the configured greeting prefix.
         justification: |
-          Exposing the prefix as a read-only property allows callers to inspect the
-          configured prefix without resorting to reflection or other indirect means.
+          Callers may need to inspect which prefix a Demo instance was configured with,
+          for example to display it in logs or validate it against their own configuration.
         tests:
           - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
           - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix

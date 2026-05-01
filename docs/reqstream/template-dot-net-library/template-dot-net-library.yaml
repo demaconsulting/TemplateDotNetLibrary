@@ -8,7 +8,7 @@ sections:
   - title: Library API
     requirements:
       - id: Template-Lib-Greeting
-        title: The library shall provide a method to generate a greeting.
+        title: The library shall generate a greeting string when given a name.
         justification: |
           Provides a simple demonstration of library functionality following
           .NET library best practices for DEMA Consulting libraries.
@@ -16,6 +16,18 @@ sections:
           - Template-Demo-Greeting
         tests:
           - TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting
+          - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
+
+      - id: Template-Lib-GreetingFormat
+        title: The library shall return a greeting string in the format "{prefix}, {name}!".
+        justification: |
+          The format is the core observable contract of the library: callers depend on this
+          specific structure in documentation examples and integration code.
+        children:
+          - Template-Demo-Greeting
+        tests:
+          - TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting
+          - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
 
       - id: Template-Lib-DefaultPrefix
         title: The library shall use "Hello" as the default greeting prefix.
@@ -34,9 +46,20 @@ sections:
           default, so the library must allow the prefix to be specified at
           construction time.
         children:
+          - Template-Demo-AcceptCustomPrefix
           - Template-Demo-Prefix
         tests:
           - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
+
+      - id: Template-Lib-Prefix
+        title: The library shall expose the configured greeting prefix via a read-only property.
+        justification: |
+          Callers may need to inspect the prefix configured at construction time without
+          re-specifying it or relying on the greeting output format to infer it.
+        children:
+          - Template-Demo-Prefix
+        tests:
+          - TemplateDotNetLibrary_SystemIntegration_CustomPrefix_ExposesPrefix
 
       - id: Template-Lib-ValidationNull-DemoMethod
         title: The library shall reject a null name argument to DemoMethod with ArgumentNullException.

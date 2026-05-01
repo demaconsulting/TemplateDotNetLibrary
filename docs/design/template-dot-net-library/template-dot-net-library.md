@@ -63,6 +63,28 @@ The system exposes:
 - **Quality**: Zero warnings, full test coverage, complete documentation
 - **Portability**: Compatible across supported .NET platforms
 
+## Platform Support
+
+The library targets the following frameworks, enabling broad compatibility across modern .NET
+runtimes and legacy environments:
+
+| Target Framework   | Runtime / Environment                             |
+|--------------------|---------------------------------------------------|
+| `netstandard2.0`   | .NET Standard 2.0 (implemented by .NET FX 4.8.1+) |
+| `net8.0`           | .NET 8 LTS                                        |
+| `net9.0`           | .NET 9                                            |
+| `net10.0`          | .NET 10                                           |
+
+The library is supported on the following operating systems:
+
+- **Windows** — primary developer and CI platform
+- **Linux** — CI/CD and containerized environments
+- **macOS** — developer workstations using Apple platforms
+
+Portability is achieved by restricting the implementation exclusively to Base Class Library (BCL)
+APIs available across all target frameworks. No platform-specific native interop, OS-specific
+APIs, or framework-version-specific features are used.
+
 ## Integration Patterns
 
 - **NuGet Packaging**: Standard .NET library packaging and distribution

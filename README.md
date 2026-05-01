@@ -58,7 +58,7 @@ Generated documentation includes:
 
 ## Contributing
 
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, coding
+Contributions are welcome. See [CONTRIBUTING.md][link-contributing] for development setup, coding
 standards, and the pull request process.
 
 ## License
@@ -87,3 +87,4 @@ By contributing to this project, you agree that your contributions will be licen
 [link-security]: https://sonarcloud.io/dashboard?id=demaconsulting_TemplateDotNetLibrary
 [link-nuget]: https://www.nuget.org/packages/TemplateDotNetLibrary
 [link-continuous-compliance]: https://github.com/demaconsulting/ContinuousCompliance
+[link-contributing]: https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/CONTRIBUTING.md

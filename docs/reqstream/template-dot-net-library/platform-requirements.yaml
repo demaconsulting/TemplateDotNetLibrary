@@ -17,11 +17,6 @@
 #   net10.0@TestName  - proves the test passed under the .NET 10 runtime
 #   net481@TestName   - proves the test passed under .NET Framework 4.8.1 (implements .NET Standard 2.0)
 
-# Cross-level test evidence: unit tests (Demo_*) are accepted as platform-compatibility evidence
-# for these system-level requirements. Because the Demo unit exercises the full .NET runtime
-# stack (string formatting, exception handling, property access), a passing unit test on a given
-# platform confirms end-to-end library functionality on that platform.
-
 sections:
   - title: Platform Support
     requirements:
@@ -31,7 +26,7 @@ sections:
           DEMA Consulting libraries must support Windows as a major development platform.
         tests:
           # Tests link to "windows" to ensure results come from Windows platform
-          - "windows@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "windows@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-Linux
         title: The library shall build and run on Linux platforms.
@@ -39,7 +34,7 @@ sections:
           DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
         tests:
           # Tests link to "ubuntu" to ensure results come from Linux platform
-          - "ubuntu@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "ubuntu@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-MacOS
         title: The library shall build and run on macOS platforms.
@@ -47,28 +42,28 @@ sections:
           DEMA Consulting libraries must support macOS for developers using Apple platforms.
         tests:
           # Tests link to "macos" to ensure results come from macOS platform
-          - "macos@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "macos@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-Net8
         title: The library shall support .NET 8 runtime.
         justification: |
           .NET 8 is an LTS release providing long-term stability for enterprise users.
         tests:
-          - "net8.0@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "net8.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-Net9
         title: The library shall support .NET 9 runtime.
         justification: |
           .NET 9 support enables users to leverage the latest .NET features.
         tests:
-          - "net9.0@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "net9.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-Net10
         title: The library shall support .NET 10 runtime.
         justification: |
           .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
         tests:
-          - "net10.0@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "net10.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-NetStd20
         title: The library shall support the .NET Standard 2.0 target framework.
@@ -80,4 +75,4 @@ sections:
           Because .NET Framework 4.8.1 implements .NET Standard 2.0, a passing test on net481
           demonstrates .NET Standard 2.0 compatibility.
         tests:
-          - "net481@Demo_DemoMethod_DefaultPrefix_ReturnsGreeting"
+          - "net481@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"

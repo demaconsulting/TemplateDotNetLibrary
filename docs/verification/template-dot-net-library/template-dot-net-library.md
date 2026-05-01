@@ -78,9 +78,17 @@ Verifies that the system rejects an empty-string prefix argument at construction
 `ArgumentException`. Attempts to construct a `Demo` instance with `string.Empty` as the prefix.
 Confirms that the system boundary prevents empty-string configuration from being established.
 
+### Integration: Exposes Configured Prefix
+
+**Test**: `TemplateDotNetLibrary_SystemIntegration_CustomPrefix_ExposesPrefix`
+
+Verifies that the `Prefix` property exposes the prefix supplied at construction time. Constructs
+a `Demo` instance with a custom prefix and reads the `Prefix` property. Confirms the system's
+public API correctly surfaces the configured prefix to callers.
+
 ## Acceptance Criteria
 
-A system-level test run passes when all six scenarios above pass without error or exception beyond
+A system-level test run passes when all seven scenarios above pass without error or exception beyond
 those explicitly asserted. Any unexpected exception, wrong exception type, or wrong return value
 constitutes a failure.
 
@@ -89,8 +97,12 @@ constitutes a failure.
 | Requirement ID                           | Test Scenario(s)                                                 |
 |------------------------------------------|------------------------------------------------------------------|
 | Template-Lib-Greeting                    | Integration: Provides Expected Functionality                     |
+| Template-Lib-Greeting                    | Customization: Handles Configuration Properly                    |
+| Template-Lib-GreetingFormat              | Integration: Provides Expected Functionality                     |
+| Template-Lib-GreetingFormat              | Customization: Handles Configuration Properly                    |
 | Template-Lib-DefaultPrefix               | Integration: Provides Expected Functionality                     |
 | Template-Lib-CustomPrefix                | Customization: Handles Configuration Properly                    |
+| Template-Lib-Prefix                      | Integration: Exposes Configured Prefix                           |
 | Template-Lib-ValidationNull-DemoMethod   | Validation: DemoMethod Null Input Throws ArgumentNullException   |
 | Template-Lib-ValidationNull-Constructor  | Validation: Constructor Null Prefix Throws ArgumentNullException |
 | Template-Lib-ValidationEmpty-DemoMethod  | Validation: DemoMethod Empty Input Throws ArgumentException      |

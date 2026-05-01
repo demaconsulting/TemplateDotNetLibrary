@@ -24,7 +24,9 @@ public class Demo
     ///     Initializes a new instance of the <see cref="Demo"/> class with the default prefix.
     /// </summary>
     /// <remarks>
-    ///     The prefix is set to <see cref="DefaultPrefix"/>.
+    ///     Provides a zero-argument construction path for callers who want the standard greeting
+    ///     without specifying a prefix. Delegates to <see cref="Demo(string)"/> so that
+    ///     validation and storage logic remain in one place.
     /// </remarks>
     public Demo()
         : this(DefaultPrefix)

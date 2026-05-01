@@ -35,6 +35,7 @@ The following topics are explicitly excluded from this design documentation:
 - Build pipeline configuration and CI/CD processes
 - Deployment, packaging, and distribution mechanisms
 - Infrastructure and hosting environment details
+- Test projects and test infrastructure
 
 ## Software Structure
 
@@ -95,5 +96,5 @@ Throughout this document:
 
 ## References
 
-- [REF-1] Template DotNet Library User Guide
+- [REF-1] Template DotNet Library User Guide (<https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/docs/user_guide/introduction.md>)
 - [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
