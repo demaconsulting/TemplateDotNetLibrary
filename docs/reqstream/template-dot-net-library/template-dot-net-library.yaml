@@ -8,14 +8,36 @@ sections:
   - title: Library API
     requirements:
       - id: Template-Lib-Greeting
-        title: The library shall provide a method to generate a greeting.
+        title: The library shall generate a greeting string when given a name.
         justification: |
           Provides a simple demonstration of library functionality following
           .NET library best practices for DEMA Consulting libraries.
         children:
           - Template-Demo-Greeting
         tests:
-          - TemplateDotNetLibrary_SystemIntegration_ProvidesExpectedFunctionality
+          - TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting
+          - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
+
+      - id: Template-Lib-GreetingFormat
+        title: The library shall return a greeting string in the format "{prefix}, {name}!".
+        justification: |
+          The format is the core observable contract of the library: callers depend on this
+          specific structure in documentation examples and integration code.
+        children:
+          - Template-Demo-Greeting
+        tests:
+          - TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting
+          - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
+
+      - id: Template-Lib-DefaultPrefix
+        title: The library shall use "Hello" as the default greeting prefix.
+        justification: |
+          Callers constructing the library without a prefix argument need a predictable default
+          greeting to rely on in documentation and examples.
+        children:
+          - Template-Demo-DefaultPrefix
+        tests:
+          - TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting
 
       - id: Template-Lib-CustomPrefix
         title: The library shall support a customizable greeting prefix.
@@ -24,22 +46,58 @@ sections:
           default, so the library must allow the prefix to be specified at
           construction time.
         children:
+          - Template-Demo-AcceptCustomPrefix
           - Template-Demo-Prefix
         tests:
-          - TemplateDotNetLibrary_SystemCustomization_HandlesConfigurationProperly
+          - TemplateDotNetLibrary_SystemCustomization_CustomPrefix_ReturnsExpectedGreeting
 
-      - id: Template-Lib-Validation
-        title: The library shall reject null and empty arguments with an appropriate ArgumentException.
+      - id: Template-Lib-Prefix
+        title: The library shall expose the configured greeting prefix via a read-only property.
         justification: |
-          Null-safety and non-empty validation are fundamental API contracts: passing null or an
-          empty string to the constructor or to DemoMethod is a programming error. Throwing
-          ArgumentNullException for null arguments and ArgumentException for empty-string arguments
-          immediately surfaces the mistake to callers and prevents malformed output (such as
-          ", World!" or "Hello, !") and obscure failures deeper in the call stack.
+          Callers may need to inspect the prefix configured at construction time without
+          re-specifying it or relying on the greeting output format to infer it.
         children:
-          - Template-Demo-Validation
+          - Template-Demo-Prefix
         tests:
-          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsNullInput
-          - TemplateDotNetLibrary_SystemValidation_DemoMethodRejectsEmptyInput
-          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsNullPrefix
-          - TemplateDotNetLibrary_SystemValidation_ConstructorRejectsEmptyPrefix
+          - TemplateDotNetLibrary_SystemIntegration_CustomPrefix_ExposesPrefix
+
+      - id: Template-Lib-ValidationNull-DemoMethod
+        title: The library shall reject a null name argument to DemoMethod with ArgumentNullException.
+        justification: |
+          Passing null to DemoMethod is a programming error. Throwing ArgumentNullException
+          immediately surfaces the mistake to callers and prevents obscure failures deeper in
+          the call stack.
+        children:
+          - Template-Demo-ValidationNull-DemoMethod
+        tests:
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodNullInput_ThrowsArgumentNullException
+
+      - id: Template-Lib-ValidationNull-Constructor
+        title: The library shall reject a null prefix argument to the constructor with ArgumentNullException.
+        justification: |
+          Passing null to the constructor is a programming error. Throwing ArgumentNullException
+          immediately surfaces the mistake and prevents invalid instances from being created.
+        children:
+          - Template-Demo-ValidationNull-Constructor
+        tests:
+          - TemplateDotNetLibrary_SystemValidation_ConstructorNullPrefix_ThrowsArgumentNullException
+
+      - id: Template-Lib-ValidationEmpty-DemoMethod
+        title: The library shall reject an empty-string name argument to DemoMethod with ArgumentException.
+        justification: |
+          Passing an empty string to DemoMethod is a programming error. Throwing ArgumentException
+          immediately surfaces the mistake and prevents malformed output such as "Hello, !".
+        children:
+          - Template-Demo-ValidationEmpty-DemoMethod
+        tests:
+          - TemplateDotNetLibrary_SystemValidation_DemoMethodEmptyInput_ThrowsArgumentException
+
+      - id: Template-Lib-ValidationEmpty-Constructor
+        title: The library shall reject an empty-string prefix argument to the constructor with ArgumentException.
+        justification: |
+          Passing an empty string to the constructor is a programming error. Throwing ArgumentException
+          immediately surfaces the mistake and prevents malformed output such as ", World!".
+        children:
+          - Template-Demo-ValidationEmpty-Constructor
+        tests:
+          - TemplateDotNetLibrary_SystemValidation_ConstructorEmptyPrefix_ThrowsArgumentException

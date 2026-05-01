@@ -1,0 +1,13 @@
+---
+title: Template DotNet Library Verification Design Document
+subtitle: A .NET Reference Implementation for Libraries
+author: DEMA Consulting
+description: Verification design document for the Template DotNet Library
+lang: en-US
+keywords:
+  - Template DotNet Library
+  - .NET
+  - Library
+  - Verification
+  - Verification Design Document
+---

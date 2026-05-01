@@ -9,7 +9,7 @@ sections:
       - title: xUnit v3 Requirements
         requirements:
           - id: Template-OTS-XUnit
-            title: xUnit v3 shall execute unit tests and report results.
+            title: xUnit v3 shall produce passing test-result reports for all discovered test methods.
             justification: |
               xUnit v3 (xunit.v3 and xunit.runner.visualstudio) is the unit-testing framework used
               by the project. It discovers and runs all test methods and writes TRX result files that
@@ -23,6 +23,6 @@ sections:
               - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
               - Demo_Constructor_NullPrefix_ThrowsArgumentNullException
               - Demo_Constructor_EmptyPrefix_ThrowsArgumentException
-              - Demo_DefaultPrefix_IsHello
+              - Demo_DefaultPrefix_Read_IsHello
               - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
               - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix

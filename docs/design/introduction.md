@@ -35,6 +35,7 @@ The following topics are explicitly excluded from this design documentation:
 - Build pipeline configuration and CI/CD processes
 - Deployment, packaging, and distribution mechanisms
 - Infrastructure and hosting environment details
+- Test projects and test infrastructure
 
 ## Software Structure
 
@@ -51,17 +52,32 @@ This template demonstrates a minimal system structure with no subsystems — it 
 organize related units and provide architectural boundaries with well-defined interfaces and
 responsibilities.
 
+## Companion Artifact Structure
+
+Each software item has corresponding artifacts in parallel directory trees:
+
+```text
+TemplateDotNetLibrary (System)
+└── Demo (Unit)
+```
+
+Each software item has artifacts in these parallel locations:
+
+- Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
+- Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
+- Verification design: `docs/verification/{system}/.../{item}.md` (kebab-case)
+- Source code: `src/{System}/.../{Item}.cs` (PascalCase for C#)
+- Tests: `test/{System}.Tests/.../{Item}Tests.cs` (PascalCase for C#)
+- Review-sets: defined in `.reviewmark.yaml`
+
 ## Folder Layout
 
 The source code folder structure mirrors the software structure organization, with file paths
 and descriptions as follows:
 
 ```text
-src/TemplateDotNetLibrary/
+src/DemaConsulting.TemplateDotNetLibrary/
 └── Demo.cs                     — Demonstration greeting class implementing template functionality
-
-test/TemplateDotNetLibrary.Tests/
-└── DemoTests.cs                — Unit tests validating Demo class behavior and requirements
 ```
 
 This flat folder structure reflects the single-unit nature of this template system. As the system
@@ -80,10 +96,5 @@ Throughout this document:
 
 ## References
 
-<!-- TODO: Fill in for your project -->
-
-- [Template DotNet Library User Guide][user-guide]
-- [Template DotNet Library Repository][repo]
-
-[user-guide]: ../user_guide/introduction.md
-[repo]: https://github.com/demaconsulting/TemplateDotNetLibrary
+- [REF-1] Template DotNet Library User Guide (<https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/docs/user_guide/introduction.md>)
+- [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)

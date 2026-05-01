@@ -71,7 +71,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="TemplateDotNetLibrary.Tests" />
+    <InternalsVisibleTo Include="DemaConsulting.TemplateDotNetLibrary.Tests" />
   </ItemGroup>
 
   <ItemGroup>

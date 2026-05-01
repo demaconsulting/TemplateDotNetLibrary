@@ -129,6 +129,7 @@ parallel directory trees:
 
 - Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
 - Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
+- Verification design: `docs/verification/{system}/.../{item}.md` (kebab-case)
 - Source code: `src/{System}/.../{Item}.{ext}` (cased per language - see `software-items.md`)
 - Tests: `test/{System}.Tests/.../{Item}Tests.{ext}` (cased per language - see `software-items.md`)
 - Review-sets: defined in `.reviewmark.yaml`

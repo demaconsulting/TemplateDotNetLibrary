@@ -3,6 +3,11 @@ namespace TemplateDotNetLibrary;
 /// <summary>
 ///     Demonstration class for the template library.
 /// </summary>
+/// <remarks>
+///     This class serves as the sole software unit in the Template DotNet Library,
+///     demonstrating DEMA Consulting patterns for structure, documentation, and testing.
+///     Instances are immutable after construction and are therefore thread-safe.
+/// </remarks>
 public class Demo
 {
     /// <summary>
@@ -19,7 +24,9 @@ public class Demo
     ///     Initializes a new instance of the <see cref="Demo"/> class with the default prefix.
     /// </summary>
     /// <remarks>
-    ///     The prefix is set to <see cref="DefaultPrefix"/>.
+    ///     Provides a zero-argument construction path for callers who want the standard greeting
+    ///     without specifying a prefix. Delegates to <see cref="Demo(string)"/> so that
+    ///     validation and storage logic remain in one place.
     /// </remarks>
     public Demo()
         : this(DefaultPrefix)
@@ -62,6 +69,10 @@ public class Demo
     /// <exception cref="ArgumentException">
     ///     Thrown when <paramref name="name"/> is an empty string.
     /// </exception>
+    /// <remarks>
+    ///     This method is stateless and has no side effects. The output depends only on
+    ///     the prefix stored at construction time and the <paramref name="name"/> argument.
+    /// </remarks>
     public string DemoMethod(string name)
     {
         // Validate that the name is non-null and non-empty before building the greeting

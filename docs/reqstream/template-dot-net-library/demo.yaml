@@ -15,24 +15,62 @@ sections:
           - Demo_DemoMethod_DefaultPrefix_ReturnsGreeting
           - Demo_DemoMethod_CustomPrefix_ReturnsGreeting
 
-      - id: Template-Demo-Prefix
-        title: The Demo class shall expose the greeting prefix via a Prefix property.
+      - id: Template-Demo-DefaultPrefix
+        title: The Demo class shall use "Hello" as the default greeting prefix.
         justification: |
-          Exposing the prefix as a read-only property allows callers to inspect the
-          configured prefix without resorting to reflection or other indirect means.
+          Callers constructing Demo without a prefix argument need a stable, well-known default
+          they can rely on in documentation examples and integration code without reading source.
+        tests:
+          - Demo_DefaultPrefix_Read_IsHello
+          - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix
+
+      - id: Template-Demo-AcceptCustomPrefix
+        title: The Demo class shall accept a caller-specified prefix at construction time.
+        justification: |
+          Callers who need a non-default greeting style must be able to supply their own prefix
+          at construction time; storing it enables all subsequent greeting calls to use it.
+        tests:
+          - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
+
+      - id: Template-Demo-Prefix
+        title: The Demo class shall allow callers to read the configured greeting prefix.
+        justification: |
+          Callers may need to inspect which prefix a Demo instance was configured with,
+          for example to display it in logs or validate it against their own configuration.
         tests:
           - Demo_Prefix_WithCustomConstruction_ReturnsCustomPrefix
           - Demo_DefaultConstructor_WithNoArgs_SetsDefaultPrefix
 
-      - id: Template-Demo-Validation
-        title: The Demo class shall reject null and empty arguments with an appropriate ArgumentException.
+      - id: Template-Demo-ValidationNull-DemoMethod
+        title: The Demo class shall reject a null name argument to DemoMethod with ArgumentNullException.
         justification: |
-          Null-safety and non-empty validation are fundamental contracts at the unit level:
-          DemoMethod and the custom-prefix constructor must throw ArgumentNullException for
-          null arguments and ArgumentException for empty-string arguments to immediately
-          surface programming errors to callers.
+          Null-safety is a fundamental contract: DemoMethod must throw ArgumentNullException
+          for a null name argument to immediately surface the programming error to callers.
         tests:
           - Demo_DemoMethod_NullInput_ThrowsArgumentNullException
-          - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
+
+      - id: Template-Demo-ValidationNull-Constructor
+        title: The Demo class shall reject a null prefix argument to the constructor with ArgumentNullException.
+        justification: |
+          Null-safety is a fundamental contract: the custom-prefix constructor must throw
+          ArgumentNullException for a null prefix argument to immediately surface the
+          programming error to callers.
+        tests:
           - Demo_Constructor_NullPrefix_ThrowsArgumentNullException
+
+      - id: Template-Demo-ValidationEmpty-DemoMethod
+        title: The Demo class shall reject an empty-string name argument to DemoMethod with ArgumentException.
+        justification: |
+          Non-empty validation is a fundamental contract: DemoMethod must throw ArgumentException
+          for an empty-string name argument to prevent malformed output such as "Hello, !".
+        tests:
+          - Demo_DemoMethod_EmptyInput_ThrowsArgumentException
+
+      - id: Template-Demo-ValidationEmpty-Constructor
+        title: The Demo class shall reject an empty-string prefix argument to the constructor with ArgumentException.
+        justification: |
+          Non-empty validation is a fundamental contract: the custom-prefix constructor must throw
+          ArgumentException for an empty-string prefix argument to prevent malformed output
+          such as ", World!".
+        tests:
           - Demo_Constructor_EmptyPrefix_ThrowsArgumentException
