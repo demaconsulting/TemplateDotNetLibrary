@@ -128,19 +128,6 @@ Reviews architectural and design consistency:
   - Design introduction: `docs/design/introduction.md`
   - System design files: `docs/design/{system-name}/**/*.md`
 
-## `{System}-Verification` Review (one per system)
-
-Reviews verification design completeness and consistency:
-
-- **Purpose**: Proves the verification design is consistent and complete relative to requirements
-- **Title**: "Review that {System} Verification Design is Consistent and Complete"
-- **Scope**: Only brings in top-level requirements alongside the full verification design hierarchy
-- **File Path Patterns**:
-  - System requirements: `docs/reqstream/{system-name}/{system-name}.yaml`
-  - Platform requirements: `docs/reqstream/{system-name}/platform-requirements.yaml`
-  - Verification introduction: `docs/verification/introduction.md`
-  - System verification design files: `docs/verification/{system-name}/**/*.md`
-
 ## `{System}-AllRequirements` Review (one per system)
 
 Reviews requirements quality and traceability:
@@ -197,7 +184,6 @@ Before submitting ReviewMark configuration, verify:
 - [ ] Architecture review-sets include system verification design alongside system design
 - [ ] Subsystem review-sets include subsystem verification design
 - [ ] Unit review-sets include unit verification design
-- [ ] A {System}-Verification review-set covers the full verification design hierarchy
 - [ ] Each review-set focuses on a single compliance question (single focus principle)
 - [ ] File patterns use correct glob syntax and match intended files
 - [ ] Review-set file counts remain manageable (context management principle)
