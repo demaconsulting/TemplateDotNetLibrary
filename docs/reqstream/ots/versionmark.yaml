@@ -19,5 +19,13 @@ sections:
             tests:
               - VersionMark_CapturesVersions
               - VersionMark_GeneratesMarkdownReport
+          - id: Template-OTS-VersionMark-Lint
+            title: VersionMark shall validate its configuration file and report errors for invalid input.
+            justification: |
+              DemaConsulting.VersionMark provides a lint mode that checks the .versionmark.yaml
+              configuration for structural and semantic errors. Running lint mode in CI provides early
+              detection of misconfigurations before capture-and-publish steps execute.
+            tags: [ots]
+            tests:
               - VersionMark_LintPassesForValidConfig
               - VersionMark_LintReportsErrorsForInvalidConfig

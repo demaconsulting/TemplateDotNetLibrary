@@ -19,9 +19,8 @@ Second, each CI job runs `versionmark --capture` to collect tool-version JSON fi
 build-docs job runs `versionmark --publish` to produce
 `docs/build_notes/generated/versions.md`. This file is included in the Build Notes document
 compiled by Pandoc. If VersionMark failed to produce the versions document, the Build Notes
-compilation would be incomplete. WeasyPrint renders the result to PDF and FileAssert asserts
-its content (`WeasyPrint_BuildNotesPdf`). A CI build failure at any step is evidence that
-VersionMark did not execute correctly.
+compilation would be incomplete and the subsequent Pandoc step would fail. A CI build failure
+at any step is evidence that VersionMark did not execute correctly.
 
 ## Test Scenarios
 
@@ -48,7 +47,7 @@ config.
 
 **Expected**: Exits 0 and reports no errors.
 
-**Requirement coverage**: `Template-OTS-VersionMark`.
+**Requirement coverage**: `Template-OTS-VersionMark-Lint`.
 
 ### VersionMark_LintReportsErrorsForInvalidConfig
 
@@ -57,9 +56,10 @@ deliberate errors.
 
 **Expected**: Correctly identifies and reports the configuration errors.
 
-**Requirement coverage**: `Template-OTS-VersionMark`.
+**Requirement coverage**: `Template-OTS-VersionMark-Lint`.
 
 ## Requirements Coverage
 
-- **`Template-OTS-VersionMark`**: VersionMark_CapturesVersions, VersionMark_GeneratesMarkdownReport,
-  VersionMark_LintPassesForValidConfig, VersionMark_LintReportsErrorsForInvalidConfig
+- **`Template-OTS-VersionMark`**: VersionMark_CapturesVersions, VersionMark_GeneratesMarkdownReport
+- **`Template-OTS-VersionMark-Lint`**: VersionMark_LintPassesForValidConfig,
+  VersionMark_LintReportsErrorsForInvalidConfig

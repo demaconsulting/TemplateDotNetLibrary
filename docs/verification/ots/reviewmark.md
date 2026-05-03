@@ -51,7 +51,7 @@ report from a test configuration and evidence store.
 
 **Expected**: Exits 0 and produces a correctly structured `index.json`.
 
-**Requirement coverage**: `Template-OTS-ReviewMark-Operations`.
+**Requirement coverage**: `Template-OTS-ReviewMark-IndexScan`.
 
 ### ReviewMark_WorkingDirectoryOverride
 
@@ -60,7 +60,7 @@ operations.
 
 **Expected**: Exits 0 and resolves paths relative to the specified directory.
 
-**Requirement coverage**: `Template-OTS-ReviewMark-Operations`.
+**Requirement coverage**: `Template-OTS-ReviewMark-DirectoryOverride`.
 
 ### ReviewMark_Enforce
 
@@ -69,7 +69,7 @@ issues.
 
 **Expected**: Exits with a non-zero exit code when review issues are present.
 
-**Requirement coverage**: `Template-OTS-ReviewMark-Operations`.
+**Requirement coverage**: `Template-OTS-ReviewMark-Enforce`.
 
 ### ReviewMark_Elaborate
 
@@ -78,19 +78,23 @@ named review set.
 
 **Expected**: Exits 0 and prints the review-set ID, fingerprint, and file list.
 
-**Requirement coverage**: `Template-OTS-ReviewMark-Operations`.
+**Requirement coverage**: `Template-OTS-ReviewMark-Elaborate`.
 
 ### ReviewMark_Lint
 
 **Scenario**: ReviewMark self-validation uses `--lint` to validate a definition file and report
 issues.
 
-**Expected**: Correctly reports structural and semantic issues found in the test definition.
+**Expected**: Exits non-zero and outputs at least one reported issue identifying a structural or
+semantic error in the test definition that contains known errors.
 
-**Requirement coverage**: `Template-OTS-ReviewMark-Operations`.
+**Requirement coverage**: `Template-OTS-ReviewMark-Lint`.
 
 ## Requirements Coverage
 
 - **`Template-OTS-ReviewMark`**: ReviewMark_ReviewPlanGeneration, ReviewMark_ReviewReportGeneration
-- **`Template-OTS-ReviewMark-Operations`**: ReviewMark_IndexScan, ReviewMark_WorkingDirectoryOverride,
-  ReviewMark_Enforce, ReviewMark_Elaborate, ReviewMark_Lint
+- **`Template-OTS-ReviewMark-IndexScan`**: ReviewMark_IndexScan
+- **`Template-OTS-ReviewMark-Enforce`**: ReviewMark_Enforce
+- **`Template-OTS-ReviewMark-Elaborate`**: ReviewMark_Elaborate
+- **`Template-OTS-ReviewMark-Lint`**: ReviewMark_Lint
+- **`Template-OTS-ReviewMark-DirectoryOverride`**: ReviewMark_WorkingDirectoryOverride

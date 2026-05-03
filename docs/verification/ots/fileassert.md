@@ -5,11 +5,10 @@ for this OTS item are defined in the FileAssert OTS Software Requirements docume
 
 ## Required Functionality
 
-DemaConsulting.FileAssert validates HTML and PDF documents produced during the build, asserting that
-each document exists, has a non-trivial size, is structurally valid, and contains expected content.
-It provides OTS evidence for Pandoc and WeasyPrint and independently confirms file assertion is
-functioning. Self-validation proves the tool itself is operational before ReqStream consumes the
-results.
+DemaConsulting.FileAssert validates HTML and PDF documents produced during the build, asserting
+that each document exists and contains expected content. It provides OTS evidence for Pandoc
+and WeasyPrint and independently confirms file assertion is functioning. Self-validation proves
+the tool itself is operational before ReqStream consumes the results.
 
 ## Verification Approach
 
