@@ -66,12 +66,6 @@ reviews:
       - "docs/reqstream/template-dot-net-library/**/*.yaml"
       - "docs/reqstream/ots/*.yaml"
 
-  - id: OTS-Verification
-    title: Review of OTS software verification evidence
-    paths:
-      - "docs/reqstream/ots/*.yaml"
-      - "docs/verification/ots/*.md"
-
   # TemplateDotNetLibrary - Demo
   - id: TemplateDotNetLibrary-Demo
     title: Review of Demo Unit Implementation
@@ -81,3 +75,64 @@ reviews:
       - "docs/verification/template-dot-net-library/demo.md"
       - "src/DemaConsulting.TemplateDotNetLibrary/Demo.cs"
       - "test/DemaConsulting.TemplateDotNetLibrary.Tests/DemoTests.cs"
+
+  # OTS Items
+  - id: OTS-BuildMark
+    title: Review of BuildMark OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/buildmark.yaml"
+      - "docs/verification/ots/buildmark.md"
+
+  - id: OTS-FileAssert
+    title: Review of FileAssert OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/fileassert.yaml"
+      - "docs/verification/ots/fileassert.md"
+
+  - id: OTS-Pandoc
+    title: Review of Pandoc OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/pandoc.yaml"
+      - "docs/verification/ots/pandoc.md"
+
+  - id: OTS-ReqStream
+    title: Review of ReqStream OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/reqstream.yaml"
+      - "docs/verification/ots/reqstream.md"
+
+  - id: OTS-ReviewMark
+    title: Review of ReviewMark OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/reviewmark.yaml"
+      - "docs/verification/ots/reviewmark.md"
+
+  - id: OTS-SarifMark
+    title: Review of SarifMark OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/sarifmark.yaml"
+      - "docs/verification/ots/sarifmark.md"
+
+  - id: OTS-SonarMark
+    title: Review of SonarMark OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/sonarmark.yaml"
+      - "docs/verification/ots/sonarmark.md"
+
+  - id: OTS-VersionMark
+    title: Review of VersionMark OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/versionmark.yaml"
+      - "docs/verification/ots/versionmark.md"
+
+  - id: OTS-WeasyPrint
+    title: Review of WeasyPrint OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/weasyprint.yaml"
+      - "docs/verification/ots/weasyprint.md"
+
+  - id: OTS-xUnit
+    title: Review of xUnit OTS verification evidence
+    paths:
+      - "docs/reqstream/ots/xunit.yaml"
+      - "docs/verification/ots/xunit.md"
