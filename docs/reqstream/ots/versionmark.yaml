@@ -19,3 +19,5 @@ sections:
             tests:
               - VersionMark_CapturesVersions
               - VersionMark_GeneratesMarkdownReport
+              - VersionMark_LintPassesForValidConfig
+              - VersionMark_LintReportsErrorsForInvalidConfig

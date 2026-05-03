@@ -57,6 +57,7 @@ reviews:
       - "docs/reqstream/template-dot-net-library/platform-requirements.yaml"
       - "docs/design/introduction.md"
       - "docs/design/template-dot-net-library/**/*.md"
+      - "docs/verification/introduction.md"
 
   - id: TemplateDotNetLibrary-AllRequirements
     title: Review of Template DotNet Library requirements quality and traceability
@@ -64,6 +65,12 @@ reviews:
       - "requirements.yaml"
       - "docs/reqstream/template-dot-net-library/**/*.yaml"
       - "docs/reqstream/ots/*.yaml"
+
+  - id: OTS-Verification
+    title: Review of OTS software verification evidence
+    paths:
+      - "docs/reqstream/ots/*.yaml"
+      - "docs/verification/ots/*.md"
 
   # TemplateDotNetLibrary - Demo
   - id: TemplateDotNetLibrary-Demo

@@ -19,3 +19,12 @@ sections:
             tests:
               - SarifMark_SarifReading
               - SarifMark_MarkdownReportGeneration
+          - id: Template-OTS-SarifMark-Enforcement
+            title: SarifMark shall return a non-zero exit code when SARIF issues are detected.
+            justification: |
+              When invoked in enforcement mode, SarifMark exits non-zero if the SARIF input
+              contains any reported issues. This enables CI pipelines to fail on detected code
+              quality violations and confirms the enforcement gate is functioning correctly.
+            tags: [ots]
+            tests:
+              - SarifMark_Enforcement
