@@ -7,6 +7,16 @@ input-files:
   - docs/verification/introduction.md
   - docs/verification/template-dot-net-library/template-dot-net-library.md
   - docs/verification/template-dot-net-library/demo.md
+  - docs/verification/ots/buildmark.md
+  - docs/verification/ots/fileassert.md
+  - docs/verification/ots/pandoc.md
+  - docs/verification/ots/reqstream.md
+  - docs/verification/ots/reviewmark.md
+  - docs/verification/ots/sarifmark.md
+  - docs/verification/ots/sonarmark.md
+  - docs/verification/ots/versionmark.md
+  - docs/verification/ots/weasyprint.md
+  - docs/verification/ots/xunit.md
 template: template.html
 table-of-contents: true
 number-sections: true

@@ -6,10 +6,9 @@ for this OTS item are defined in the WeasyPrint OTS Software Requirements docume
 ## Required Functionality
 
 DemaConsulting.WeasyPrintTool converts HTML documents to PDF as part of the documentation build
-pipeline. FileAssert validates that each generated PDF file exists, has a non-trivial size, contains
-at least one page, and includes expected document content in the rendered text. Passing FileAssert
-assertions for each document type proves WeasyPrint executed correctly and produced meaningful
-output.
+pipeline. FileAssert validates that each generated PDF file exists, contains at least one page, and
+includes expected document content in the rendered text. Passing FileAssert assertions for each
+document type proves WeasyPrint executed correctly and produced meaningful output.
 
 ## Verification Approach
 
@@ -21,8 +20,8 @@ pipeline run for all scenarios constitutes evidence that the requirement is sati
 
 ### WeasyPrint_BuildNotesPdf
 
-**Scenario**: FileAssert asserts the build-notes PDF file exists, is non-trivially sized, contains
-at least one page, and includes expected document content.
+**Scenario**: FileAssert asserts the build-notes PDF file exists, contains at least one page, and
+includes expected document content.
 
 **Expected**: FileAssert exits 0 for the build-notes PDF document.
 
@@ -30,8 +29,8 @@ at least one page, and includes expected document content.
 
 ### WeasyPrint_CodeQualityPdf
 
-**Scenario**: FileAssert asserts the code-quality PDF file exists, is non-trivially sized, contains
-at least one page, and includes expected document content.
+**Scenario**: FileAssert asserts the code-quality PDF file exists, contains at least one page, and
+includes expected document content.
 
 **Expected**: FileAssert exits 0 for the code-quality PDF document.
 
@@ -39,8 +38,8 @@ at least one page, and includes expected document content.
 
 ### WeasyPrint_ReviewPlanPdf
 
-**Scenario**: FileAssert asserts the review plan PDF file exists, is non-trivially sized, contains
-at least one page, and includes expected document content.
+**Scenario**: FileAssert asserts the review plan PDF file exists, contains at least one page, and
+includes expected document content.
 
 **Expected**: FileAssert exits 0 for the review plan PDF document.
 
@@ -48,8 +47,8 @@ at least one page, and includes expected document content.
 
 ### WeasyPrint_ReviewReportPdf
 
-**Scenario**: FileAssert asserts the review report PDF file exists, is non-trivially sized, contains
-at least one page, and includes expected document content.
+**Scenario**: FileAssert asserts the review report PDF file exists, contains at least one page, and
+includes expected document content.
 
 **Expected**: FileAssert exits 0 for the review report PDF document.
 
@@ -57,8 +56,8 @@ at least one page, and includes expected document content.
 
 ### WeasyPrint_DesignPdf
 
-**Scenario**: FileAssert asserts the design document PDF file exists, is non-trivially sized,
-contains at least one page, and includes expected document content.
+**Scenario**: FileAssert asserts the design document PDF file exists, contains at least one page,
+and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the design document PDF.
 
@@ -66,8 +65,8 @@ contains at least one page, and includes expected document content.
 
 ### WeasyPrint_VerificationPdf
 
-**Scenario**: FileAssert asserts the verification PDF file exists, is non-trivially sized, contains
-at least one page, and includes expected verification document content.
+**Scenario**: FileAssert asserts the verification PDF file exists, contains at least one page, and
+includes expected verification document content.
 
 **Expected**: FileAssert exits 0 for the verification PDF.
 
@@ -75,8 +74,8 @@ at least one page, and includes expected verification document content.
 
 ### WeasyPrint_UserGuidePdf
 
-**Scenario**: FileAssert asserts the user guide PDF file exists, is non-trivially sized, contains
-at least one page, and includes expected document content.
+**Scenario**: FileAssert asserts the user guide PDF file exists, contains at least one page, and
+includes expected document content.
 
 **Expected**: FileAssert exits 0 for the user guide PDF document.
 

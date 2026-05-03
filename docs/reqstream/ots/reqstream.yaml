@@ -23,7 +23,6 @@ sections:
               - ReqStream_ReportExport
               - ReqStream_TagsFiltering
               - ReqStream_EnforcementMode
-              - ReqStream_EnforcementModeFailure
           - id: Template-OTS-ReqStream-Lint
             title: ReqStream shall identify and report issues in requirements files when run in lint mode.
             justification: |

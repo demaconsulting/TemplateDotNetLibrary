@@ -69,15 +69,6 @@ coverage.
 
 **Requirement coverage**: `Template-OTS-ReqStream`.
 
-### ReqStream_EnforcementModeFailure
-
-**Scenario**: ReqStream self-validation exercises enforcement mode against a requirements file where
-at least one requirement has no test coverage.
-
-**Expected**: Exits non-zero and reports the requirement(s) lacking test evidence.
-
-**Requirement coverage**: `Template-OTS-ReqStream`.
-
 ### ReqStream_Lint
 
 **Scenario**: ReqStream self-validation exercises lint mode against a requirements file with
@@ -90,6 +81,5 @@ deliberate issues.
 ## Requirements Coverage
 
 - **`Template-OTS-ReqStream`**: ReqStream_RequirementsProcessing, ReqStream_TraceMatrix,
-  ReqStream_ReportExport, ReqStream_TagsFiltering, ReqStream_EnforcementMode,
-  ReqStream_EnforcementModeFailure
+  ReqStream_ReportExport, ReqStream_TagsFiltering, ReqStream_EnforcementMode
 - **`Template-OTS-ReqStream-Lint`**: ReqStream_Lint

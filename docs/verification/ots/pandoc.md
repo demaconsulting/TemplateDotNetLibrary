@@ -5,9 +5,9 @@ This document provides the verification evidence for the `Pandoc` OTS software i
 ## Required Functionality
 
 DemaConsulting.PandocTool converts Markdown source documents to HTML as part of the documentation
-build pipeline. FileAssert validates that each generated HTML file exists, has a non-trivial size,
-contains a valid HTML title element, and includes expected document content. Passing FileAssert
-assertions for each document type proves Pandoc executed correctly and produced meaningful output.
+build pipeline. FileAssert validates that each generated HTML file exists, contains a valid HTML
+title element, and includes expected document content. Passing FileAssert assertions for each
+document type proves Pandoc executed correctly and produced meaningful output.
 
 ## Verification Approach
 
@@ -19,8 +19,8 @@ run for all scenarios constitutes evidence that the requirement is satisfied.
 
 ### Pandoc_BuildNotesHtml
 
-**Scenario**: FileAssert asserts the build-notes HTML file exists, is non-trivially sized, contains
-a valid HTML title element, and includes expected document content.
+**Scenario**: FileAssert asserts the build-notes HTML file exists, contains a valid HTML title
+element, and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the build-notes HTML document.
 
@@ -28,8 +28,8 @@ a valid HTML title element, and includes expected document content.
 
 ### Pandoc_CodeQualityHtml
 
-**Scenario**: FileAssert asserts the code-quality HTML file exists, is non-trivially sized, contains
-a valid HTML title element, and includes expected document content.
+**Scenario**: FileAssert asserts the code-quality HTML file exists, contains a valid HTML title
+element, and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the code-quality HTML document.
 
@@ -37,8 +37,8 @@ a valid HTML title element, and includes expected document content.
 
 ### Pandoc_ReviewPlanHtml
 
-**Scenario**: FileAssert asserts the review plan HTML file exists, is non-trivially sized, contains
-a valid HTML title element, and includes expected document content.
+**Scenario**: FileAssert asserts the review plan HTML file exists, contains a valid HTML title
+element, and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the review plan HTML document.
 
@@ -46,8 +46,8 @@ a valid HTML title element, and includes expected document content.
 
 ### Pandoc_ReviewReportHtml
 
-**Scenario**: FileAssert asserts the review report HTML file exists, is non-trivially sized,
-contains a valid HTML title element, and includes expected document content.
+**Scenario**: FileAssert asserts the review report HTML file exists, contains a valid HTML title
+element, and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the review report HTML document.
 
@@ -55,8 +55,8 @@ contains a valid HTML title element, and includes expected document content.
 
 ### Pandoc_DesignHtml
 
-**Scenario**: FileAssert asserts the design document HTML file exists, is non-trivially sized,
-contains a valid HTML title element, and includes expected document content.
+**Scenario**: FileAssert asserts the design document HTML file exists, contains a valid HTML title
+element, and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the design document HTML.
 
@@ -64,8 +64,8 @@ contains a valid HTML title element, and includes expected document content.
 
 ### Pandoc_VerificationHtml
 
-**Scenario**: FileAssert asserts the verification HTML file exists, is non-trivially sized, contains
-a valid HTML title element, and includes expected verification document content.
+**Scenario**: FileAssert asserts the verification HTML file exists, contains a valid HTML title
+element, and includes expected verification document content.
 
 **Expected**: FileAssert exits 0 for the verification document.
 
@@ -73,8 +73,8 @@ a valid HTML title element, and includes expected verification document content.
 
 ### Pandoc_UserGuideHtml
 
-**Scenario**: FileAssert asserts the user guide HTML file exists, is non-trivially sized, contains
-a valid HTML title element, and includes expected document content.
+**Scenario**: FileAssert asserts the user guide HTML file exists, contains a valid HTML title
+element, and includes expected document content.
 
 **Expected**: FileAssert exits 0 for the user guide HTML document.
 
