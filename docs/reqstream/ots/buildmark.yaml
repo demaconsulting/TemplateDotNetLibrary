@@ -18,3 +18,7 @@ sections:
             tags: [ots]
             tests:
               - BuildMark_MarkdownReportGeneration
+              - BuildMark_GitIntegration
+              - BuildMark_IssueTracking
+              - BuildMark_KnownIssuesReporting
+              - BuildMark_RulesRouting

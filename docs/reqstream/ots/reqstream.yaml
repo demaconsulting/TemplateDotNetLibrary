@@ -18,4 +18,18 @@ sections:
               --enforce proves all requirements are covered and that ReqStream is functioning.
             tags: [ots]
             tests:
+              - ReqStream_RequirementsProcessing
+              - ReqStream_TraceMatrix
+              - ReqStream_ReportExport
+              - ReqStream_TagsFiltering
               - ReqStream_EnforcementMode
+          - id: Template-OTS-ReqStream-Lint
+            title: ReqStream shall identify and report issues in requirements files when run in lint mode.
+            justification: |
+              DemaConsulting.ReqStream provides a lint mode that checks requirements YAML files for
+              structural and semantic issues such as duplicate IDs, missing fields, and broken
+              references. Running lint in CI provides early detection of requirements authoring errors
+              before enforcement and report-generation steps execute.
+            tags: [ots]
+            tests:
+              - ReqStream_Lint

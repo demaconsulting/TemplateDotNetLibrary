@@ -29,7 +29,7 @@ implementation code.
 - **Valid**: "The parser shall report the line number of the first syntax error."
 - **Not a requirement (design decision)**: "The parser shall use a `TokenStream` class."
 
-A unit may use its own name freely — that is identity, not HOW. What is
+A unit may use its own name freely - that is identity, not HOW. What is
 forbidden is describing *internal construction*: class names, method signatures,
 algorithms, or data structures.
 

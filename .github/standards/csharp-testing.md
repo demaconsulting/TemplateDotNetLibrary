@@ -18,17 +18,20 @@ Every xUnit v3 test project requires the following package references for
 
 | Package | Purpose |
 | ------- | ------- |
-| `xunit.v3` | xUnit v3 framework (monolithic — includes assertions and fixtures) |
+| `xunit.v3` | xUnit v3 framework (monolithic - includes assertions and fixtures) |
 | `Microsoft.NET.Test.Sdk` | Required by the VSTest/`dotnet test` host for test discovery |
 | `xunit.runner.visualstudio` | VSTest adapter that bridges xUnit v3 to `dotnet test` |
-| `NSubstitute` | Mocking library |
 
 Omitting `Microsoft.NET.Test.Sdk` or `xunit.runner.visualstudio` causes tests
 to be silently undiscoverable by `dotnet test`.
 
+If tests require mocking of dependencies, add `NSubstitute` as a package
+reference - it is recommended when mocking is needed but is not required for
+every test project.
+
 # Test Style
 
-Test names appear in requirements traceability matrices — use the hierarchical
+Test names appear in requirements traceability matrices - use the hierarchical
 naming pattern, and follow AAA with labeled comments:
 
 - **System tests**: `{SystemName}_{Functionality}_{Scenario}_{ExpectedBehavior}`
@@ -55,11 +58,11 @@ public void UserValidator_ValidateEmail_InvalidFormat_ThrowsArgumentException()
 These are non-obvious v3 behaviors that differ from v2 or common assumptions:
 
 - **`IAsyncLifetime`**: Both `InitializeAsync` and `DisposeAsync` return `ValueTask`
-  in v3, not `Task` — using `Task` compiles but does not satisfy the v3 interface
+  in v3, not `Task` - using `Task` compiles but does not satisfy the v3 interface
 - **`Assert.Multiple`**: Use to collect all assertion failures in a single test
   rather than stopping at the first
 - **`[Collection]` without `[CollectionDefinition]`**: Silently disables parallelism
-  without providing any shared fixture — always pair them or remove `[Collection]`
+  without providing any shared fixture - always pair them or remove `[Collection]`
 
 # Quality Checks
 
@@ -69,6 +72,6 @@ Before submitting C# tests, verify:
 - [ ] Test names follow hierarchical naming pattern above
 - [ ] Each test verifies single, specific behavior (no shared state between tests)
 - [ ] Both success and failure scenarios covered including edge cases
-- [ ] External dependencies mocked with NSubstitute
+- [ ] External dependencies mocked with NSubstitute (when mocking is needed)
 - [ ] Tests linked to requirements with source filters where needed
 - [ ] Test results generated in TRX format for ReqStream compatibility (`dotnet test --logger trx`)

@@ -20,9 +20,10 @@ All code MUST follow literate programming principles:
   matches design intent without reading the full codebase
 - **Logical Separation**: Complex functions use block comments to separate and
   describe logical steps within the implementation
-- **Full Symbol Documentation**: ALL symbols (public, protected, and private)
-  have comprehensive documentation because reviewers and auditors must verify
-  every implementation detail, not just the public interface
+- **Full Symbol Documentation**: ALL symbols have comprehensive documentation
+  because reviewers and auditors must verify every implementation detail, not
+  just the public interface - access-level specifics (public, protected,
+  private, internal, etc.) vary by language; see the language-specific standard
 - **Clarity Over Cleverness**: Code should be immediately understandable by team members
 
 ## API Documentation

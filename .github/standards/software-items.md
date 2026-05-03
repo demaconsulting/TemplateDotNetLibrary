@@ -90,6 +90,6 @@ the item is correct, well-designed, and proven to work:
 
 - **Requirements** - WHAT the item must do (drives all other artifacts; applies to all item types)
 - **Design** - HOW the item satisfies its requirements (in-house items only: system, subsystem, unit)
-- **Verification Design** - HOW the requirements will be tested (in-house items only: system, subsystem, unit)
+- **Verification Design** - HOW the requirements will be tested (applies to all item types)
 - **Source code** - The implementation of the design (in-house units only)
 - **Tests** - PROOF the item does WHAT it is required to do (applies to all item types)

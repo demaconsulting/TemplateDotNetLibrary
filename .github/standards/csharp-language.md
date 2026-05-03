@@ -49,7 +49,7 @@ public double ProcessReading(double reading, CalibrationProfile calibration)
 Key qualities demonstrated above:
 
 - **`<summary>`** is a brief one-liner explaining *what* the method does
-- **`<remarks>`** sits directly after summary and carries the extended intent —
+- **`<remarks>`** sits directly after summary and carries the extended intent -
   *why* it exists, design decisions, thread-safety, and side-effect disclosures
 - **`<param>` tags** state constraints (finite, non-null) so callers know what
   is valid without reading the body

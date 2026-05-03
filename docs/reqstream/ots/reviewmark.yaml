@@ -8,24 +8,58 @@ sections:
     sections:
       - title: ReviewMark Requirements
         requirements:
-          - id: Template-OTS-ReviewMark-Plan
-            title: ReviewMark shall generate a review plan from the review configuration.
+          - id: Template-OTS-ReviewMark
+            title: ReviewMark shall produce review documentation from the review configuration.
             justification: |
               DemaConsulting.ReviewMark reads the .reviewmark.yaml configuration and the review
-              evidence store to produce a review plan documenting file review coverage and currency.
-              It runs in the same CI pipeline that produces the TRX test results, so a successful
-              pipeline run is evidence that ReviewMark executed without error.
+              evidence store to produce a review plan and review report documenting file review
+              coverage and currency. It runs in the same CI pipeline that produces the TRX test
+              results, so a successful pipeline run is evidence that ReviewMark executed without error.
             tags: [ots]
             tests:
               - ReviewMark_ReviewPlanGeneration
-
-          - id: Template-OTS-ReviewMark-Report
-            title: ReviewMark shall generate a review report from the review configuration.
+              - ReviewMark_ReviewReportGeneration
+          - id: Template-OTS-ReviewMark-IndexScan
+            title: ReviewMark shall scan PDF evidence files into an index catalogue.
             justification: |
-              DemaConsulting.ReviewMark reads the .reviewmark.yaml configuration and the review
-              evidence store to produce a review report documenting file review coverage and currency.
-              It runs in the same CI pipeline that produces the TRX test results, so a successful
-              pipeline run is evidence that ReviewMark executed without error.
+              ReviewMark's --index command scans review evidence PDFs and writes an index.json
+              catalogue used by the enforcement pipeline to verify review currency.
             tags: [ots]
             tests:
-              - ReviewMark_ReviewReportGeneration
+              - ReviewMark_IndexScan
+          - id: Template-OTS-ReviewMark-Enforce
+            title: ReviewMark shall enforce review currency by exiting non-zero when files are not current.
+            justification: |
+              ReviewMark's --enforce command exits with a non-zero code when any file in a review
+              set has been modified after the most recent review, making stale reviews a
+              build-breaking condition.
+            tags: [ots]
+            tests:
+              - ReviewMark_Enforce
+          - id: Template-OTS-ReviewMark-Elaborate
+            title: ReviewMark shall elaborate review-set details for agent and pipeline use.
+            justification: |
+              ReviewMark's --elaborate command prints the review-set ID, fingerprint, and file
+              list in a structured Markdown format, enabling automated agents to consume
+              review-set metadata.
+            tags: [ots]
+            tests:
+              - ReviewMark_Elaborate
+          - id: Template-OTS-ReviewMark-Lint
+            title: ReviewMark shall validate review definition files and report configuration issues.
+            justification: |
+              ReviewMark's --lint command checks the .reviewmark.yaml configuration for structural
+              and semantic issues, providing early detection of misconfigurations before pipeline
+              execution.
+            tags: [ots]
+            tests:
+              - ReviewMark_Lint
+          - id: Template-OTS-ReviewMark-DirectoryOverride
+            title: ReviewMark shall support overriding the working directory for file operations.
+            justification: |
+              ReviewMark's --dir flag allows callers to specify the working directory used when
+              resolving file paths, enabling the tool to operate correctly from any invocation
+              context.
+            tags: [ots]
+            tests:
+              - ReviewMark_WorkingDirectoryOverride

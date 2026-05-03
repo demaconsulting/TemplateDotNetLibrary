@@ -23,7 +23,7 @@ best practices. The system consists of:
 - **ReqStream**: Requirements traceability enforcement
 - **ReviewMark**: File review management
 - **BuildMark/VersionMark**: Build and version documentation
-- **SonarMark/SARIFMark**: Quality analysis integration
+- **SonarMark/SarifMark**: Quality analysis integration
 
 ### Public API
 

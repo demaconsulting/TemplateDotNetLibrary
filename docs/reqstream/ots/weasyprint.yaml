@@ -23,4 +23,5 @@ sections:
               - WeasyPrint_ReviewPlanPdf
               - WeasyPrint_ReviewReportPdf
               - WeasyPrint_DesignPdf
+              - WeasyPrint_VerificationPdf
               - WeasyPrint_UserGuidePdf

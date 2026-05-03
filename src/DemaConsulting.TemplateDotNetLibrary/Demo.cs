@@ -43,6 +43,12 @@ public class Demo
     /// <exception cref="ArgumentException">
     ///     Thrown when <paramref name="prefix"/> is an empty string.
     /// </exception>
+    /// <remarks>
+    ///     Validation is performed at construction time so that a misconfigured instance is
+    ///     refused immediately rather than silently producing malformed output on the first
+    ///     method call. This is the canonical constructor; <see cref="Demo()"/> delegates
+    ///     to this overload with <see cref="DefaultPrefix"/>.
+    /// </remarks>
     public Demo(string prefix)
     {
         // Validate that the prefix is non-null and non-empty before storing it
@@ -53,6 +59,10 @@ public class Demo
     /// <summary>
     ///     Gets the greeting prefix used by this instance.
     /// </summary>
+    /// <remarks>
+    ///     Exposed so that callers can inspect the configured prefix without maintaining an
+    ///     independent copy of the value passed at construction time.
+    /// </remarks>
     public string Prefix => _prefix;
 
     /// <summary>
