@@ -19,5 +19,7 @@ sections:
             tags: [ots]
             tests:
               - FileAssert_Results
-              - FileAssert_Exists
-              - FileAssert_Contains
+              - FileAssert_File
+              - FileAssert_Text
+              - FileAssert_Html
+              - FileAssert_Pdf
