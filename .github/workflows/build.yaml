@@ -615,6 +615,12 @@ jobs:
         shell: bash
         run: mkdir -p docs/design/generated
 
+      - name: Run SysML2Tools self-validation
+        run: >
+          dotnet sysml2tools
+          --validate
+          --results artifacts/sysml2tools-self-validation.trx
+
       - name: Render Software Structure diagrams with SysML2Tools
         shell: pwsh
         run: >

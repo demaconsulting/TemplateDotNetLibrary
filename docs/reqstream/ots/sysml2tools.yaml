@@ -25,3 +25,5 @@ sections:
             tags: [ots]
             tests:
               - SysML2Tools_RenderSvgSelfTest
+              - SysML2Tools_SoftwareStructureViewSvg
+              - SysML2Tools_TemplateDotNetLibraryViewSvg
