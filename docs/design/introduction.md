@@ -27,6 +27,19 @@ software items, specifically:
 - **TemplateDotNetLibrary (System)** — The complete .NET library template system
 - **Demo (Unit)** — Demonstration greeting class providing example functionality
 
+The following OTS items are also covered:
+
+- **BuildMark** — build-notes documentation tool
+- **FileAssert** — document assertion tool
+- **Pandoc** — Markdown-to-HTML conversion tool
+- **ReqStream** — requirements traceability tool
+- **ReviewMark** — file review enforcement tool
+- **SarifMark** — SARIF report conversion tool
+- **SonarMark** — SonarCloud quality report tool
+- **VersionMark** — tool-version documentation tool
+- **WeasyPrint** — HTML-to-PDF conversion tool
+- **xUnit** — unit-testing framework
+
 Version applicability: This design applies to all versions of the Template DotNet Library.
 
 The following topics are explicitly excluded from this design documentation:
@@ -39,36 +52,17 @@ The following topics are explicitly excluded from this design documentation:
 
 ## Software Structure
 
-The following tree diagram shows how the Template DotNet Library software items are organized
-across System, Subsystem, and Unit levels according to software-items classification standards:
+The software structure is modeled in SysML2 under `docs/sysml2/` and rendered to the
+diagram below by SysML2Tools as part of the build pipeline. AI agents should query the
+SysML2 model directly (see the `sysml2tools-query` skill) rather than parsing this
+diagram or the prose below.
 
-```text
-TemplateDotNetLibrary (System)
-└── Demo (Unit)
-```
+![Software Structure](SoftwareStructureView.svg)
 
 This template demonstrates a minimal system structure with no subsystems — it contains only the
 `Demo` unit directly under the system level. In more complex implementations, subsystems would
 organize related units and provide architectural boundaries with well-defined interfaces and
 responsibilities.
-
-## Companion Artifact Structure
-
-Each software item has corresponding artifacts in parallel directory trees:
-
-```text
-TemplateDotNetLibrary (System)
-└── Demo (Unit)
-```
-
-Each software item has artifacts in these parallel locations:
-
-- Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
-- Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
-- Verification design: `docs/verification/{system}/.../{item}.md` (kebab-case)
-- Source code: `src/{System}/.../{Item}.cs` (PascalCase for C#)
-- Tests: `test/{System}.Tests/.../{Item}Tests.cs` (PascalCase for C#)
-- Review-sets: defined in `.reviewmark.yaml`
 
 ## Folder Layout
 
@@ -93,6 +87,18 @@ Throughout this document:
 - Section headings within each unit chapter follow a consistent structure: overview, data model,
   methods/algorithms, and interactions with other units.
 - Text tables are used in preference to diagrams, which may not render in all PDF viewers.
+
+## Companion Artifact Structure
+
+Each software item has corresponding artifacts in parallel directory trees:
+
+- Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
+- Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
+- Verification design: `docs/verification/{system}/.../{item}.md` (kebab-case)
+- Source code: `src/{System}/.../{Item}.cs` (PascalCase for C#)
+- Tests: `test/{System}.Tests/.../{Item}Tests.cs` (PascalCase for C#)
+- SysML2 model: `docs/sysml2/model/{system}/.../{item}.sysml` (kebab-case)
+- Review-sets: defined in `.reviewmark.yaml`
 
 ## References
 

@@ -11,11 +11,12 @@ needs-review:
   - "**/*.cs"                     # All C# source and test files
   - "docs/reqstream/**/*.yaml"    # Requirements files
   - "docs/design/**/*.md"         # Design documentation files
-  - "docs/verification/**/*.md"   # Verification documentation files
-  - "docs/user_guide/**/*.md"     # User guide documentation
+  - "docs/verification/**/*.md"  # Verification documentation files
+  - "docs/user_guide/**/*.md"    # User guide documentation
+  - "docs/sysml2/**/*.sysml"     # SysML2 architecture model
   - "!**/obj/**"                  # Exclude build output
   - "!**/bin/**"                  # Exclude build output
-  - "!node_modules/**"            # Exclude npm dependencies
+  - "!node_modules/**"           # Exclude npm dependencies
   - "!**/.venv/**"                # Exclude Python virtual environment
 
 # Evidence source: review data and index.json are located in the 'reviews' branch
@@ -26,113 +27,169 @@ evidence-source:
   type: url
   location: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/reviews/index.json
 
+# Global context shown to every reviewer for orientation (not fingerprinted).
+context:
+  - docs/design/introduction.md
+
 # Review sets following hierarchical scope principles.
 # Each review-set focuses on a single compliance question with manageable file counts.
 reviews:
-  # Purpose
+  # Purpose Review (only one per repository)
   - id: Purpose
-    title: Review of user-facing capabilities and system promises
+    title: Review that README and User Guide are Coherent and Complete
+    context:
+      - "!docs/design/introduction.md"                              # exclude design intro from user-facing review
     paths:
+      - "README.md"                                                 # project readme
+      - "docs/user_guide/**/*.md"                                   # user guide
+
+  # Decomposition Review (only one per repository)
+  - id: Decomposition
+    title: Review that TemplateDotNetLibrary Decomposition Addresses the Stated Purpose
+    context:
       - "README.md"
       - "docs/user_guide/**/*.md"
-      - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
-      - "docs/design/introduction.md"
-      - "docs/design/template-dot-net-library/template-dot-net-library.md"
+    paths:
+      - "requirements.yaml"                                         # root requirements file
+      - "docs/design/introduction.md"                               # design introduction
+      - "docs/sysml2/**/*.sysml"                                    # SysML2 model (authoritative structure)
 
-  # TemplateDotNetLibrary - Specials
+  # TemplateDotNetLibrary-Architecture Review (one per system)
   - id: TemplateDotNetLibrary-Architecture
-    title: Review of Template DotNet Library system architecture and operational validation
+    title: Review that TemplateDotNetLibrary Architecture Satisfies Requirements
+    context:
+      - "README.md"
+      - "docs/user_guide/**/*.md"
     paths:
-      - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
-      - "docs/design/introduction.md"
-      - "docs/design/template-dot-net-library/template-dot-net-library.md"
-      - "docs/verification/introduction.md"
-      - "docs/verification/template-dot-net-library/template-dot-net-library.md"
-      - "test/DemaConsulting.TemplateDotNetLibrary.Tests/TemplateDotNetLibraryTests.cs"
+      - "docs/reqstream/template-dot-net-library.yaml"                      # system requirements
+      - "docs/design/introduction.md"                                           # design introduction
+      - "docs/design/template-dot-net-library.md"                               # system design
+      - "docs/verification/introduction.md"                                    # verification introduction
+      - "docs/verification/template-dot-net-library.md"                        # system verification
+      - "test/DemaConsulting.TemplateDotNetLibrary.Tests/TemplateDotNetLibraryTests.cs"  # integration tests
 
+  # TemplateDotNetLibrary-Design Review (one per system)
   - id: TemplateDotNetLibrary-Design
-    title: Review of Template DotNet Library architectural and design consistency
+    title: Review that TemplateDotNetLibrary Design is Consistent and Complete
+    context:
+      - "docs/reqstream/template-dot-net-library.yaml"
     paths:
-      - "docs/reqstream/template-dot-net-library/template-dot-net-library.yaml"
-      - "docs/reqstream/template-dot-net-library/platform-requirements.yaml"
-      - "docs/design/introduction.md"
-      - "docs/design/template-dot-net-library/**/*.md"
-      - "docs/verification/introduction.md"
+      - "docs/reqstream/template-dot-net-library/platform-requirements.yaml"  # platform requirements
+      - "docs/design/introduction.md"                                       # design introduction
+      - "docs/design/template-dot-net-library.md"                           # system design
+      - "docs/design/template-dot-net-library/**/*.md"                      # all system design documents
+      - "docs/design/ots.md"                                                # OTS overview
 
+  # TemplateDotNetLibrary-Verification Review (one per system)
+  - id: TemplateDotNetLibrary-Verification
+    title: Review that TemplateDotNetLibrary Verification is Consistent and Complete
+    context:
+      - "docs/reqstream/template-dot-net-library.yaml"
+    paths:
+      - "docs/verification/introduction.md"                                 # verification introduction
+      - "docs/verification/template-dot-net-library.md"                     # system verification
+      - "docs/verification/template-dot-net-library/**/*.md"               # all verification documents
+      - "docs/verification/ots.md"                                          # OTS overview
+
+  # TemplateDotNetLibrary-AllRequirements Review (one per system)
   - id: TemplateDotNetLibrary-AllRequirements
-    title: Review of Template DotNet Library requirements quality and traceability
+    title: Review that All TemplateDotNetLibrary Requirements are Complete
+    context:
+      - "docs/design/template-dot-net-library.md"
+      - "docs/reqstream/template-dot-net-library.yaml"
     paths:
-      - "requirements.yaml"
-      - "docs/reqstream/template-dot-net-library/**/*.yaml"
-      - "docs/reqstream/ots/*.yaml"
+      - "requirements.yaml"                                                 # root requirements file
+      - "docs/reqstream/**/*.yaml"                                          # all requirements files
 
-  # TemplateDotNetLibrary - Demo
+  # TemplateDotNetLibrary-Demo Review (one per unit)
   - id: TemplateDotNetLibrary-Demo
-    title: Review of Demo Unit Implementation
+    title: Review that TemplateDotNetLibrary Demo Implementation is Correct
+    context:
+      - "docs/design/template-dot-net-library.md"
+      - "docs/reqstream/template-dot-net-library.yaml"
     paths:
-      - "docs/reqstream/template-dot-net-library/demo.yaml"
-      - "docs/design/template-dot-net-library/demo.md"
-      - "docs/verification/template-dot-net-library/demo.md"
-      - "src/DemaConsulting.TemplateDotNetLibrary/Demo.cs"
-      - "test/DemaConsulting.TemplateDotNetLibrary.Tests/DemoTests.cs"
+      - "docs/reqstream/template-dot-net-library/demo.yaml"                 # unit requirements
+      - "docs/design/template-dot-net-library/demo.md"                     # unit design
+      - "docs/verification/template-dot-net-library/demo.md"               # unit verification
+      - "src/DemaConsulting.TemplateDotNetLibrary/Demo.cs"                  # unit source
+      - "test/DemaConsulting.TemplateDotNetLibrary.Tests/DemoTests.cs"      # unit tests
 
-  # OTS Items
+  # OTS-BuildMark Review (one per OTS item)
   - id: OTS-BuildMark
-    title: Review of BuildMark OTS verification evidence
+    title: Review that BuildMark Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/buildmark.yaml"
-      - "docs/verification/ots/buildmark.md"
+      - "docs/reqstream/ots/buildmark.yaml"                                 # OTS requirements
+      - "docs/design/ots/buildmark.md"                                      # OTS integration design
+      - "docs/verification/ots/buildmark.md"                               # OTS verification
 
+  # OTS-FileAssert Review (one per OTS item)
   - id: OTS-FileAssert
-    title: Review of FileAssert OTS verification evidence
+    title: Review that FileAssert Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/fileassert.yaml"
-      - "docs/verification/ots/fileassert.md"
+      - "docs/reqstream/ots/fileassert.yaml"                               # OTS requirements
+      - "docs/design/ots/fileassert.md"                                    # OTS integration design
+      - "docs/verification/ots/fileassert.md"                              # OTS verification
 
+  # OTS-Pandoc Review (one per OTS item)
   - id: OTS-Pandoc
-    title: Review of Pandoc OTS verification evidence
+    title: Review that Pandoc Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/pandoc.yaml"
-      - "docs/verification/ots/pandoc.md"
+      - "docs/reqstream/ots/pandoc.yaml"                                   # OTS requirements
+      - "docs/design/ots/pandoc.md"                                       # OTS integration design
+      - "docs/verification/ots/pandoc.md"                                 # OTS verification
 
+  # OTS-ReqStream Review (one per OTS item)
   - id: OTS-ReqStream
-    title: Review of ReqStream OTS verification evidence
+    title: Review that ReqStream Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/reqstream.yaml"
-      - "docs/verification/ots/reqstream.md"
+      - "docs/reqstream/ots/reqstream.yaml"                                # OTS requirements
+      - "docs/design/ots/reqstream.md"                                     # OTS integration design
+      - "docs/verification/ots/reqstream.md"                               # OTS verification
 
+  # OTS-ReviewMark Review (one per OTS item)
   - id: OTS-ReviewMark
-    title: Review of ReviewMark OTS verification evidence
+    title: Review that ReviewMark Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/reviewmark.yaml"
-      - "docs/verification/ots/reviewmark.md"
+      - "docs/reqstream/ots/reviewmark.yaml"                               # OTS requirements
+      - "docs/design/ots/reviewmark.md"                                    # OTS integration design
+      - "docs/verification/ots/reviewmark.md"                             # OTS verification
 
+  # OTS-SarifMark Review (one per OTS item)
   - id: OTS-SarifMark
-    title: Review of SarifMark OTS verification evidence
+    title: Review that SarifMark Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/sarifmark.yaml"
-      - "docs/verification/ots/sarifmark.md"
+      - "docs/reqstream/ots/sarifmark.yaml"                                # OTS requirements
+      - "docs/design/ots/sarifmark.md"                                     # OTS integration design
+      - "docs/verification/ots/sarifmark.md"                              # OTS verification
 
+  # OTS-SonarMark Review (one per OTS item)
   - id: OTS-SonarMark
-    title: Review of SonarMark OTS verification evidence
+    title: Review that SonarMark Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/sonarmark.yaml"
-      - "docs/verification/ots/sonarmark.md"
+      - "docs/reqstream/ots/sonarmark.yaml"                                # OTS requirements
+      - "docs/design/ots/sonarmark.md"                                     # OTS integration design
+      - "docs/verification/ots/sonarmark.md"                              # OTS verification
 
+  # OTS-VersionMark Review (one per OTS item)
   - id: OTS-VersionMark
-    title: Review of VersionMark OTS verification evidence
+    title: Review that VersionMark Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/versionmark.yaml"
-      - "docs/verification/ots/versionmark.md"
+      - "docs/reqstream/ots/versionmark.yaml"                              # OTS requirements
+      - "docs/design/ots/versionmark.md"                                   # OTS integration design
+      - "docs/verification/ots/versionmark.md"                           # OTS verification
 
+  # OTS-WeasyPrint Review (one per OTS item)
   - id: OTS-WeasyPrint
-    title: Review of WeasyPrint OTS verification evidence
+    title: Review that WeasyPrint Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/weasyprint.yaml"
-      - "docs/verification/ots/weasyprint.md"
+      - "docs/reqstream/ots/weasyprint.yaml"                              # OTS requirements
+      - "docs/design/ots/weasyprint.md"                                   # OTS integration design
+      - "docs/verification/ots/weasyprint.md"                            # OTS verification
 
+  # OTS-xUnit Review (one per OTS item)
   - id: OTS-xUnit
-    title: Review of xUnit OTS verification evidence
+    title: Review that xUnit Provides Required Functionality
     paths:
-      - "docs/reqstream/ots/xunit.yaml"
-      - "docs/verification/ots/xunit.md"
+      - "docs/reqstream/ots/xunit.yaml"                                   # OTS requirements
+      - "docs/design/ots/xunit.md"                                        # OTS integration design
+      - "docs/verification/ots/xunit.md"                                 # OTS verification

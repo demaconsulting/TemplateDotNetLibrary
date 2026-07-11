@@ -3,11 +3,6 @@ name: Coding Principles
 description: Follow these standards when developing any software code.
 ---
 
-# Coding Principles Standards
-
-This document defines universal coding principles and quality standards for software development within
-Continuous Compliance environments.
-
 # Core Principles
 
 ## Literate Coding
@@ -20,10 +15,9 @@ All code MUST follow literate programming principles:
   matches design intent without reading the full codebase
 - **Logical Separation**: Complex functions use block comments to separate and
   describe logical steps within the implementation
-- **Full Symbol Documentation**: ALL symbols have comprehensive documentation
-  because reviewers and auditors must verify every implementation detail, not
-  just the public interface - access-level specifics (public, protected,
-  private, internal, etc.) vary by language; see the language-specific standard
+- **Full Symbol Documentation**: ALL symbols have comprehensive documentation —
+  not just the public interface, because reviewers and auditors must verify every
+  implementation detail. Access-level specifics vary by language; see the language-specific standard.
 - **Clarity Over Cleverness**: Code should be immediately understandable by team members
 
 ## API Documentation
@@ -79,13 +73,13 @@ interface correctly without reading the implementation:
 
 ## Universal Anti-Patterns
 
-- **Skip Literate Coding**: Don't skip literate programming comments - they are required for maintainability
-- **Ignore Compiler Warnings**: Don't ignore compiler warnings - they exist for quality enforcement
+- **Skip Literate Coding**: Don't skip literate programming comments
+- **Ignore Compiler Warnings**: Don't ignore compiler warnings
 - **Hidden Dependencies**: Don't create untestable code with hidden dependencies
 - **Hidden Functionality**: Don't implement functionality without requirement
   traceability because untraced functionality cannot be validated during audits
 - **Monolithic Functions**: Don't write monolithic functions with multiple responsibilities
-- **Overcomplicated Solutions**: Don't make solutions more complex than necessary - favor simplicity and clarity
+- **Overcomplicated Solutions**: Don't make solutions more complex than necessary
 - **Premature Optimization**: Don't optimize for performance before establishing correctness
 - **Copy-Paste Programming**: Don't duplicate logic - extract common functionality into reusable components
 - **Magic Numbers**: Don't use unexplained constants - either name them or add clear comments

@@ -1,7 +1,7 @@
 ---
 # Root requirements file - includes all system, unit, platform, and OTS requirements
 includes:
-  - docs/reqstream/template-dot-net-library/template-dot-net-library.yaml
+  - docs/reqstream/template-dot-net-library.yaml
   - docs/reqstream/template-dot-net-library/demo.yaml
   - docs/reqstream/template-dot-net-library/platform-requirements.yaml
   - docs/reqstream/ots/xunit.yaml

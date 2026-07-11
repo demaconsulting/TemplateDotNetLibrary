@@ -12,9 +12,6 @@ Read these standards first before applying this standard:
 
 # API Documentation and Literate Coding Example
 
-The example below demonstrates good XmlDoc API documentation combined with
-literate coding comments.
-
 ```csharp
 /// <summary>
 ///     Converts a raw sensor reading into a validated measurement ready for downstream consumers.
