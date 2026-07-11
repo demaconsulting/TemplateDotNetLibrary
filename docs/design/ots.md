@@ -23,6 +23,7 @@ these tools are linked into, or shipped with, the compiled NuGet package.
 | ReviewMark  | Enforces file review coverage and currency                           |
 | SarifMark   | Converts CodeQL SARIF results into a markdown report                 |
 | SonarMark   | Generates a SonarCloud quality report                                |
+| SysML2Tools | Validates the SysML2 architecture model and renders its views to SVG |
 | VersionMark | Captures and publishes tool-version information                      |
 | WeasyPrint  | Converts HTML documentation to PDF                                   |
 | xUnit       | Discovers and executes unit and integration tests                    |

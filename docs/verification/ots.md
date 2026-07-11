@@ -23,6 +23,7 @@ detailed approach and named test scenarios.
 | ReviewMark  | Self-validation CLI suite plus pipeline evidence via review plan/report     |
 | SarifMark   | Self-validation CLI suite plus pipeline evidence via SARIF markdown report  |
 | SonarMark   | Self-validation CLI suite plus pipeline evidence via SonarCloud report      |
+| SysML2Tools | Self-validation CLI suite plus pipeline evidence via lint and rendered SVGs |
 | VersionMark | Self-validation CLI suite plus pipeline evidence via version data           |
 | WeasyPrint  | Pipeline evidence: FileAssert assertions on each generated PDF document     |
 | xUnit       | Self-validation via discovery, execution, and TRX reporting of tests        |

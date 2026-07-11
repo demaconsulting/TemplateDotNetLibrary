@@ -69,5 +69,6 @@ Review-sets: defined in `.reviewmark.yaml`
 
 ## References
 
-- [REF-1] Template DotNet Library User Guide (<https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/docs/user_guide/introduction.md>)
-- [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
+- Template DotNet Library User Guide — the compiled User Guide document for this repository.
+- Template DotNet Library Repository — the TemplateDotNetLibrary source repository hosted on
+  GitHub.

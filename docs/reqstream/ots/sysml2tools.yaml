@@ -1,0 +1,27 @@
+---
+# SysML2Tools OTS Software Requirements
+#
+# Requirements for the SysML2Tools architecture modeling tool functionality.
+
+sections:
+  - title: OTS Software Requirements
+    sections:
+      - title: SysML2Tools Requirements
+        requirements:
+          - id: Template-OTS-SysML2Tools-Lint
+            title: SysML2Tools shall validate the SysML2 model for syntax and reference errors.
+            justification: |
+              Linting the model in CI catches broken references and syntax errors in the
+              architecture model before they reach the generated documentation.
+            tags: [ots]
+            tests:
+              - SysML2Tools_LintSelfTest
+
+          - id: Template-OTS-SysML2Tools-Render
+            title: SysML2Tools shall render the declared views to SVG diagrams.
+            justification: |
+              The rendered diagrams are embedded in the design documentation, so a failure to
+              render must fail the build rather than silently omit a diagram.
+            tags: [ots]
+            tests:
+              - SysML2Tools_RenderSvgSelfTest

@@ -170,6 +170,14 @@ reviews:
       - "docs/design/ots/sonarmark.md"                                     # OTS integration design
       - "docs/verification/ots/sonarmark.md"                              # OTS verification
 
+  # OTS-SysML2Tools Review (one per OTS item)
+  - id: OTS-SysML2Tools
+    title: Review that SysML2Tools Provides Required Functionality
+    paths:
+      - "docs/reqstream/ots/sysml2tools.yaml"                              # OTS requirements
+      - "docs/design/ots/sysml2tools.md"                                   # OTS integration design
+      - "docs/verification/ots/sysml2tools.md"                            # OTS verification
+
   # OTS-VersionMark Review (one per OTS item)
   - id: OTS-VersionMark
     title: Review that VersionMark Provides Required Functionality

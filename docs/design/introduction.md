@@ -36,6 +36,7 @@ The following OTS items are also covered:
 - **ReviewMark** — file review enforcement tool
 - **SarifMark** — SARIF report conversion tool
 - **SonarMark** — SonarCloud quality report tool
+- **SysML2Tools** — architecture model lint and diagram rendering tool
 - **VersionMark** — tool-version documentation tool
 - **WeasyPrint** — HTML-to-PDF conversion tool
 - **xUnit** — unit-testing framework
@@ -102,5 +103,6 @@ Each software item has corresponding artifacts in parallel directory trees:
 
 ## References
 
-- [REF-1] Template DotNet Library User Guide (<https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/docs/user_guide/introduction.md>)
-- [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
+- Template DotNet Library User Guide — the compiled User Guide document for this repository.
+- Template DotNet Library Repository — the TemplateDotNetLibrary source repository hosted on
+  GitHub.
