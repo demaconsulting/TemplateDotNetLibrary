@@ -66,8 +66,6 @@ These are non-obvious v3 behaviors that differ from v2 or common assumptions:
 
 # Quality Checks
 
-Before submitting C# tests, verify:
-
 - [ ] All tests follow AAA pattern with clear section comments
 - [ ] Test names follow hierarchical naming pattern above
 - [ ] Each test verifies single, specific behavior (no shared state between tests)

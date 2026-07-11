@@ -1,15 +1,15 @@
-# VersionMark Verification
+## VersionMark Verification
 
 This document provides the verification evidence for the `VersionMark` OTS software item.
 
-## Required Functionality
+### Required Functionality
 
 DemaConsulting.VersionMark reads version metadata for each dotnet tool used in the pipeline and
 writes a versions markdown document included in the release artifacts. It runs in the same CI
 pipeline that produces the TRX test results, so a successful pipeline run is evidence that
 VersionMark executed without error.
 
-## Verification Approach
+### Verification Approach
 
 VersionMark is verified by two complementary layers of evidence. First, the CI pipeline runs
 `versionmark --validate --results *.trx` in each build job, exercising VersionMark's built-in
@@ -22,9 +22,9 @@ compiled by Pandoc. If VersionMark failed to produce the versions document, the 
 compilation would be incomplete and the subsequent Pandoc step would fail. A CI build failure
 at any step is evidence that VersionMark did not execute correctly.
 
-## Test Scenarios
+### Test Scenarios
 
-### VersionMark_CapturesVersions
+#### VersionMark_CapturesVersions
 
 **Scenario**: VersionMark reads version metadata for each dotnet tool defined in the pipeline.
 
@@ -32,7 +32,7 @@ at any step is evidence that VersionMark did not execute correctly.
 
 **Requirement coverage**: `Template-OTS-VersionMark`.
 
-### VersionMark_GeneratesMarkdownReport
+#### VersionMark_GeneratesMarkdownReport
 
 **Scenario**: VersionMark writes a versions markdown document to the release artifacts.
 
@@ -40,7 +40,7 @@ at any step is evidence that VersionMark did not execute correctly.
 
 **Requirement coverage**: `Template-OTS-VersionMark`.
 
-### VersionMark_LintPassesForValidConfig
+#### VersionMark_LintPassesForValidConfig
 
 **Scenario**: VersionMark self-validation exercises lint mode against a valid `.versionmark.yaml`
 config.
@@ -49,7 +49,7 @@ config.
 
 **Requirement coverage**: `Template-OTS-VersionMark-Lint`.
 
-### VersionMark_LintReportsErrorsForInvalidConfig
+#### VersionMark_LintReportsErrorsForInvalidConfig
 
 **Scenario**: VersionMark self-validation exercises lint mode against a malformed config with
 deliberate errors.
@@ -58,7 +58,7 @@ deliberate errors.
 
 **Requirement coverage**: `Template-OTS-VersionMark-Lint`.
 
-## Requirements Coverage
+### Requirements Coverage
 
 - **`Template-OTS-VersionMark`**: VersionMark_CapturesVersions, VersionMark_GeneratesMarkdownReport
 - **`Template-OTS-VersionMark-Lint`**: VersionMark_LintPassesForValidConfig,

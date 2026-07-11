@@ -51,26 +51,8 @@ The following topics are explicitly excluded from this verification documentatio
 
 ## Companion Artifact Structure
 
-Each software item in the structure below has corresponding artifacts in parallel directory trees:
-
-```text
-TemplateDotNetLibrary (System)
-└── Demo (Unit)
-
-OTS Items
-├── BuildMark
-├── FileAssert
-├── Pandoc
-├── ReqStream
-├── ReviewMark
-├── SarifMark
-├── SonarMark
-├── VersionMark
-├── WeasyPrint
-└── xUnit
-```
-
-In-house items have artifacts in these parallel locations:
+Each software item covered by this document has corresponding artifacts in parallel directory
+trees. In-house items have artifacts in these parallel locations:
 
 - Requirements: `docs/reqstream/{system}/.../{item}.yaml` (kebab-case)
 - Design docs: `docs/design/{system}/.../{item}.md` (kebab-case)
@@ -87,5 +69,6 @@ Review-sets: defined in `.reviewmark.yaml`
 
 ## References
 
-- [REF-1] Template DotNet Library User Guide (<https://github.com/demaconsulting/TemplateDotNetLibrary/blob/main/docs/user_guide/introduction.md>)
-- [REF-2] Template DotNet Library Repository (<https://github.com/demaconsulting/TemplateDotNetLibrary>)
+- Template DotNet Library User Guide — the compiled User Guide document for this repository.
+- Template DotNet Library Repository — the TemplateDotNetLibrary source repository hosted on
+  GitHub.

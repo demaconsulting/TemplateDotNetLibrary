@@ -6,9 +6,6 @@ globs: ["docs/**/*.md", "README.md", "!docs/**/generated/**"]
 
 # Technical Documentation Standards
 
-This document defines standards for technical documentation within Continuous
-Compliance environments.
-
 # Core Principles
 
 Technical documentation serves as compliance evidence and must be structured
@@ -40,8 +37,11 @@ docs/{collection}/
 
 Without `title.txt` and `definition.yaml` the pipeline cannot generate the document.
 When creating a new document collection, create these three files together and use
-the existing collections under `docs/` as templates - they share a consistent
-structure across all collections.
+the existing collections under `docs/` as templates.
+
+The `generated/` folder is **never committed** to the repository - it is created
+locally and in CI by the build pipeline. Do not flag its absence as a conformance
+issue.
 
 **`title.txt`** - YAML front matter with document metadata. Use the existing
 files under `docs/` as a pattern and keep fields consistent with the rest of
@@ -81,23 +81,34 @@ elsewhere causes duplicate sections in the compiled PDF.
 
 ## Document Ordering
 
-List documents in logical reading order in Pandoc configuration because
-readers need coherent information flow from general to specific topics.
+List documents in logical reading order in `definition.yaml`.
+
+## Heading Depth Rule (MANDATORY)
+
+A file's top-level heading depth must equal its folder depth under the document
+collection root - this ensures Pandoc can concatenate all files in `definition.yaml`
+order and produce a coherent outline with no heading-shift configuration:
+
+| Folder depth | Top heading |
+| --- | --- |
+| 0 - collection root | `#` |
+| 1 - one subfolder deep | `##` |
+| 2 - two subfolders deep | `###` |
+| N - N subfolders deep | `#` × (N+1) |
+
+Internal sections use the next heading level down (e.g. a `##` file uses `###`
+for *Overview*, *Interfaces*, etc.). Deeply nested files have fewer heading levels
+available - keep internal structure flat to avoid excessive nesting.
 
 # Writing Guidelines
 
 Write technical documentation for clarity and compliance verification:
 
 - **Clear and Concise**: Use direct language and avoid unnecessary complexity.
-  Regulatory reviewers must understand content quickly.
-- **Structured Sections**: Use consistent heading hierarchy and section
-  organization. Enables automated processing and review.
-- **Specific Examples**: Include concrete examples with actual values rather
-  than placeholders. Supports implementation verification.
+- **Structured Sections**: Use consistent heading hierarchy and section organization.
+- **Specific Examples**: Include concrete examples with actual values rather than placeholders.
 - **Current Information**: Keep documentation synchronized with code changes.
-  Outdated documentation invalidates compliance evidence.
-- **Traceable Content**: Link documentation to requirements and implementation
-  where applicable for audit trails.
+- **Traceable Content**: Link documentation to requirements and implementation where applicable.
 
 ## References Sections
 
@@ -117,26 +128,16 @@ Instead use **verbal references** - plain prose that identifies the target by na
 >
 > Refer to the *System Requirements* document for the full specification.
 
-Verbal references are readable by both AI agents and humans in any rendering environment.
-
 # Markdown Format Requirements
 
-Markdown documentation in this repository must follow the formatting standards
-defined in `.markdownlint-cli2.yaml` (subject to any exclusions configured there)
-for consistency and professional presentation:
+Follow `.markdownlint-cli2.yaml` formatting standards:
 
-- **120 Character Line Limit**: Keep lines 120 characters or fewer for readability.
-  Break long lines naturally at punctuation or logical breaks.
-- **No Trailing Whitespace**: Remove all trailing spaces and tabs from line
-  endings to prevent formatting inconsistencies.
-- **Blank Lines Around Headings**: Include a blank line both before and after
-  each heading to improve document structure and readability.
-- **Blank Lines Around Lists**: Include a blank line both before and after
-  numbered and bullet lists to ensure proper rendering and visual separation.
-- **ATX-Style Headers**: Use `#` syntax for headers instead of underline style
-  for consistency across all documentation.
-- **Consistent List Indentation**: Use 2-space indentation for nested list
-  items to maintain uniform formatting.
+- **120 Character Line Limit**: Keep lines 120 characters or fewer; break at punctuation or logical breaks.
+- **No Trailing Whitespace**: Remove all trailing spaces and tabs.
+- **Blank Lines Around Headings**: Include a blank line before and after each heading.
+- **Blank Lines Around Lists**: Include a blank line before and after numbered and bullet lists.
+- **ATX-Style Headers**: Use `#` syntax, not underline style.
+- **Consistent List Indentation**: Use 2-space indentation for nested list items.
 
 # Auto-Generated Content (CRITICAL)
 
@@ -147,8 +148,6 @@ build outputs that are overwritten on every CI run:
   respective `docs/` sections, or in `docs/generated/` for final release artifacts
 - **Source Modification**: Update source files (requirements YAML, `.reviewmark.yaml`,
   tool configuration) instead of generated output
-- **Tool Integration**: Generated content integrates with CI/CD pipelines and
-  manual changes disrupt automation
 
 # README.md Best Practices
 
@@ -171,20 +170,12 @@ Structure README.md for both human readers and AI agent processing:
 - **Code Block Languages**: Specify language for syntax highlighting and tool processing
 - **Clear Prerequisites**: List exact version requirements and dependencies
 
-## Quality Guidelines
-
-- **Scannable Structure**: Use bullet points, headings, and short paragraphs
-- **Current Examples**: Verify all code examples work with current version
-- **Link Validation**: Ensure all external links are accessible and current
-- **Consistent Tone**: Professional, helpful tone appropriate for technical audience
-
 # Quality Checks
 
 Before submitting technical documentation, verify:
 
 - [ ] Documentation organized under `docs/` following standard folder structure
 - [ ] Pandoc collections include `introduction.md` with Purpose and Scope sections
-- [ ] Content follows clear and concise writing guidelines with specific examples
 - [ ] No modifications made to auto-generated markdown files in compliance folders
 - [ ] README.md includes all required sections with absolute URLs and concrete examples
 - [ ] Documentation integrated into ReviewMark review-sets for formal review

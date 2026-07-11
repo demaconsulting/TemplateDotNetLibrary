@@ -1,16 +1,16 @@
-# SonarMark Verification
+## SonarMark Verification
 
 This document provides the verification evidence for the SonarMark OTS software item. Requirements
 for this OTS item are defined in the SonarMark OTS Software Requirements document.
 
-## Required Functionality
+### Required Functionality
 
 DemaConsulting.SonarMark retrieves quality-gate and metrics data from SonarCloud and renders it as
 a markdown document included in the release artifacts. It runs in the same CI pipeline that produces
 the TRX test results, so a successful pipeline run is evidence that SonarMark executed without
 error.
 
-## Verification Approach
+### Verification Approach
 
 SonarMark is verified by two complementary layers of evidence. First, the CI pipeline runs
 `sonarmark --validate --results artifacts/sonarmark-self-validation.trx`, which exercises
@@ -24,9 +24,9 @@ renders the result to PDF and FileAssert asserts the PDF contains expected conte
 (`WeasyPrint_CodeQualityPdf`). A CI build failure at any step is evidence that SonarMark did
 not retrieve and render quality data correctly.
 
-## Test Scenarios
+### Test Scenarios
 
-### SonarMark_QualityGateRetrieval
+#### SonarMark_QualityGateRetrieval
 
 **Scenario**: SonarMark queries the SonarCloud API for quality-gate status.
 
@@ -34,7 +34,7 @@ not retrieve and render quality data correctly.
 
 **Requirement coverage**: `Template-OTS-SonarMark`.
 
-### SonarMark_IssuesRetrieval
+#### SonarMark_IssuesRetrieval
 
 **Scenario**: SonarMark queries the SonarCloud API for issues.
 
@@ -42,7 +42,7 @@ not retrieve and render quality data correctly.
 
 **Requirement coverage**: `Template-OTS-SonarMark`.
 
-### SonarMark_HotSpotsRetrieval
+#### SonarMark_HotSpotsRetrieval
 
 **Scenario**: SonarMark queries the SonarCloud API for hot spots.
 
@@ -50,7 +50,7 @@ not retrieve and render quality data correctly.
 
 **Requirement coverage**: `Template-OTS-SonarMark`.
 
-### SonarMark_MarkdownReportGeneration
+#### SonarMark_MarkdownReportGeneration
 
 **Scenario**: SonarMark renders quality-gate, issues, and hot-spots data as a markdown report.
 
@@ -58,7 +58,7 @@ not retrieve and render quality data correctly.
 
 **Requirement coverage**: `Template-OTS-SonarMark`.
 
-## Requirements Coverage
+### Requirements Coverage
 
 - **`Template-OTS-SonarMark`**: SonarMark_QualityGateRetrieval, SonarMark_IssuesRetrieval,
   SonarMark_HotSpotsRetrieval, SonarMark_MarkdownReportGeneration

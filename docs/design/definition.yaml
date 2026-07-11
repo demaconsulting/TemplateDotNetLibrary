@@ -5,8 +5,20 @@ resource-path:
 input-files:
   - docs/design/title.txt
   - docs/design/introduction.md
-  - docs/design/template-dot-net-library/template-dot-net-library.md
+  - docs/design/template-dot-net-library.md
   - docs/design/template-dot-net-library/demo.md
+  - docs/design/ots.md
+  - docs/design/ots/buildmark.md
+  - docs/design/ots/fileassert.md
+  - docs/design/ots/pandoc.md
+  - docs/design/ots/reqstream.md
+  - docs/design/ots/reviewmark.md
+  - docs/design/ots/sarifmark.md
+  - docs/design/ots/sonarmark.md
+  - docs/design/ots/sysml2tools.md
+  - docs/design/ots/versionmark.md
+  - docs/design/ots/weasyprint.md
+  - docs/design/ots/xunit.md
 template: template.html
 table-of-contents: true
 number-sections: true

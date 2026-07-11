@@ -2,7 +2,7 @@
 
 This document describes the system-level verification strategy for the Template DotNet Library.
 
-## Verification Strategy
+## Verification Approach
 
 The Template DotNet Library system is verified through system-level integration tests that
 exercise the library as a whole from the perspective of a consumer. Tests instantiate the library
@@ -91,19 +91,3 @@ public API correctly surfaces the configured prefix to callers.
 A system-level test run passes when all seven scenarios above pass without error or exception beyond
 those explicitly asserted. Any unexpected exception, wrong exception type, or wrong return value
 constitutes a failure.
-
-## Requirements Coverage
-
-| Requirement ID                           | Test Scenario(s)                                                 |
-|------------------------------------------|------------------------------------------------------------------|
-| Template-Lib-Greeting                    | Integration: Provides Expected Functionality                     |
-| Template-Lib-Greeting                    | Customization: Handles Configuration Properly                    |
-| Template-Lib-GreetingFormat              | Integration: Provides Expected Functionality                     |
-| Template-Lib-GreetingFormat              | Customization: Handles Configuration Properly                    |
-| Template-Lib-DefaultPrefix               | Integration: Provides Expected Functionality                     |
-| Template-Lib-CustomPrefix                | Customization: Handles Configuration Properly                    |
-| Template-Lib-Prefix                      | Integration: Exposes Configured Prefix                           |
-| Template-Lib-ValidationNull-DemoMethod   | Validation: DemoMethod Null Input Throws ArgumentNullException   |
-| Template-Lib-ValidationNull-Constructor  | Validation: Constructor Null Prefix Throws ArgumentNullException |
-| Template-Lib-ValidationEmpty-DemoMethod  | Validation: DemoMethod Empty Input Throws ArgumentException      |
-| Template-Lib-ValidationEmpty-Constructor | Validation: Constructor Empty Prefix Throws ArgumentException    |
