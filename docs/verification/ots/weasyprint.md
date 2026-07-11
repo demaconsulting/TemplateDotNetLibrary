@@ -1,24 +1,24 @@
-# WeasyPrint Verification
+## WeasyPrint Verification
 
 This document provides the verification evidence for the WeasyPrint OTS software item. Requirements
 for this OTS item are defined in the WeasyPrint OTS Software Requirements document.
 
-## Required Functionality
+### Required Functionality
 
 DemaConsulting.WeasyPrintTool converts HTML documents to PDF as part of the documentation build
 pipeline. FileAssert validates that each generated PDF file exists, contains at least one page, and
 includes expected document content in the rendered text. Passing FileAssert assertions for each
 document type proves WeasyPrint executed correctly and produced meaningful output.
 
-## Verification Approach
+### Verification Approach
 
 WeasyPrint is verified by self-validation evidence from the CI pipeline. Each scenario is a
 FileAssert assertion that runs after WeasyPrint converts a specific HTML document to PDF. A passing
 pipeline run for all scenarios constitutes evidence that the requirement is satisfied.
 
-## Test Scenarios
+### Test Scenarios
 
-### WeasyPrint_BuildNotesPdf
+#### WeasyPrint_BuildNotesPdf
 
 **Scenario**: FileAssert asserts the build-notes PDF file exists, contains at least one page, and
 includes expected document content.
@@ -27,7 +27,7 @@ includes expected document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-### WeasyPrint_CodeQualityPdf
+#### WeasyPrint_CodeQualityPdf
 
 **Scenario**: FileAssert asserts the code-quality PDF file exists, contains at least one page, and
 includes expected document content.
@@ -36,7 +36,7 @@ includes expected document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-### WeasyPrint_ReviewPlanPdf
+#### WeasyPrint_ReviewPlanPdf
 
 **Scenario**: FileAssert asserts the review plan PDF file exists, contains at least one page, and
 includes expected document content.
@@ -45,7 +45,7 @@ includes expected document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-### WeasyPrint_ReviewReportPdf
+#### WeasyPrint_ReviewReportPdf
 
 **Scenario**: FileAssert asserts the review report PDF file exists, contains at least one page, and
 includes expected document content.
@@ -54,7 +54,7 @@ includes expected document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-### WeasyPrint_DesignPdf
+#### WeasyPrint_DesignPdf
 
 **Scenario**: FileAssert asserts the design document PDF file exists, contains at least one page,
 and includes expected document content.
@@ -63,7 +63,7 @@ and includes expected document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-### WeasyPrint_VerificationPdf
+#### WeasyPrint_VerificationPdf
 
 **Scenario**: FileAssert asserts the verification PDF file exists, contains at least one page, and
 includes expected verification document content.
@@ -72,7 +72,7 @@ includes expected verification document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-### WeasyPrint_UserGuidePdf
+#### WeasyPrint_UserGuidePdf
 
 **Scenario**: FileAssert asserts the user guide PDF file exists, contains at least one page, and
 includes expected document content.
@@ -81,7 +81,7 @@ includes expected document content.
 
 **Requirement coverage**: `Template-OTS-WeasyPrint`.
 
-## Requirements Coverage
+### Requirements Coverage
 
 - **`Template-OTS-WeasyPrint`**: WeasyPrint_BuildNotesPdf, WeasyPrint_CodeQualityPdf,
   WeasyPrint_ReviewPlanPdf, WeasyPrint_ReviewReportPdf, WeasyPrint_DesignPdf,

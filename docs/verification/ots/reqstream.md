@@ -1,8 +1,8 @@
-# ReqStream Verification
+## ReqStream Verification
 
 This document provides the verification evidence for the `ReqStream` OTS software item.
 
-## Required Functionality
+### Required Functionality
 
 DemaConsulting.ReqStream processes requirements.yaml and the TRX test-result files to produce a
 requirements report, justifications document, and traceability matrix. When run with `--enforce`, it
@@ -10,7 +10,7 @@ exits with a non-zero code if any requirement lacks test evidence, making unprov
 build-breaking condition. A successful pipeline run with `--enforce` proves all requirements are
 covered and that ReqStream is functioning.
 
-## Verification Approach
+### Verification Approach
 
 ReqStream is verified by two complementary layers of evidence. First, the CI pipeline runs
 `reqstream --validate --results artifacts/reqstream-self-validation.trx`, which exercises
@@ -25,9 +25,9 @@ non-zero if any requirement lacks test evidence, which would also fail the build
 CI build proves ReqStream correctly processed the project's real requirements and found
 complete test coverage.
 
-## Test Scenarios
+### Test Scenarios
 
-### ReqStream_RequirementsProcessing
+#### ReqStream_RequirementsProcessing
 
 **Scenario**: ReqStream self-validation loads and processes a set of requirements YAML files.
 
@@ -35,7 +35,7 @@ complete test coverage.
 
 **Requirement coverage**: `Template-OTS-ReqStream`.
 
-### ReqStream_TraceMatrix
+#### ReqStream_TraceMatrix
 
 **Scenario**: ReqStream self-validation generates a trace matrix from requirements and TRX test
 results.
@@ -44,7 +44,7 @@ results.
 
 **Requirement coverage**: `Template-OTS-ReqStream`.
 
-### ReqStream_ReportExport
+#### ReqStream_ReportExport
 
 **Scenario**: ReqStream self-validation exports a requirements report to a markdown file.
 
@@ -52,7 +52,7 @@ results.
 
 **Requirement coverage**: `Template-OTS-ReqStream`.
 
-### ReqStream_TagsFiltering
+#### ReqStream_TagsFiltering
 
 **Scenario**: ReqStream self-validation filters requirements by tags.
 
@@ -60,7 +60,7 @@ results.
 
 **Requirement coverage**: `Template-OTS-ReqStream`.
 
-### ReqStream_EnforcementMode
+#### ReqStream_EnforcementMode
 
 **Scenario**: ReqStream self-validation exercises enforcement mode where all requirements have test
 coverage.
@@ -69,7 +69,7 @@ coverage.
 
 **Requirement coverage**: `Template-OTS-ReqStream`.
 
-### ReqStream_Lint
+#### ReqStream_Lint
 
 **Scenario**: ReqStream self-validation exercises lint mode against a requirements file with
 deliberate issues.
@@ -78,7 +78,7 @@ deliberate issues.
 
 **Requirement coverage**: `Template-OTS-ReqStream-Lint`.
 
-## Requirements Coverage
+### Requirements Coverage
 
 - **`Template-OTS-ReqStream`**: ReqStream_RequirementsProcessing, ReqStream_TraceMatrix,
   ReqStream_ReportExport, ReqStream_TagsFiltering, ReqStream_EnforcementMode

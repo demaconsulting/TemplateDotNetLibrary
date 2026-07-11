@@ -1,8 +1,8 @@
-# SysML2Tools Verification
+## SysML2Tools Verification
 
 This document provides the verification evidence for the `SysML2Tools` OTS software item.
 
-## Required Functionality
+### Required Functionality
 
 DemaConsulting.SysML2Tools validates the SysML2 architecture model under `docs/sysml2/` for
 syntax and reference errors, and renders each view declared in
@@ -10,7 +10,7 @@ syntax and reference errors, and renders each view declared in
 Both behaviors run in the same CI pipeline that produces the compiled Design document, so a
 successful pipeline run is evidence that SysML2Tools executed without error.
 
-## Verification Approach
+### Verification Approach
 
 SysML2Tools is verified by two complementary layers of evidence. First, the CI pipeline runs
 `dotnet sysml2tools --validate --results artifacts/sysml2tools-self-validation.trx`, which
@@ -26,9 +26,9 @@ exists and is well-formed XML with an `<svg>` root element (`SysML2Tools_Softwar
 those SVG files by filename. A CI build failure at any of these steps is evidence that SysML2Tools
 did not produce the required model validation or diagrams against the real model.
 
-## Test Scenarios
+### Test Scenarios
 
-### SysML2Tools_LintSelfTest
+#### SysML2Tools_LintSelfTest
 
 **Scenario**: SysML2Tools is invoked with `--validate`, which exercises `lint` against a known-good
 and a known-bad model fixture as part of its built-in self-test suite.
@@ -38,7 +38,7 @@ correctly reports an error for the invalid fixture.
 
 **Requirement coverage**: `Template-OTS-SysML2Tools-Lint`.
 
-### SysML2Tools_RenderSvgSelfTest
+#### SysML2Tools_RenderSvgSelfTest
 
 **Scenario**: SysML2Tools is invoked with `--validate`, which exercises `render --format svg`
 against a known-good model fixture as part of its built-in self-test suite.
@@ -47,7 +47,7 @@ against a known-good model fixture as part of its built-in self-test suite.
 
 **Requirement coverage**: `Template-OTS-SysML2Tools-Render`.
 
-### SysML2Tools_SoftwareStructureViewSvg
+#### SysML2Tools_SoftwareStructureViewSvg
 
 **Scenario**: The build-docs CI job runs `dotnet sysml2tools render` against the real Template
 DotNet Library model, then FileAssert checks the resulting file at
@@ -58,7 +58,7 @@ named `svg`.
 
 **Requirement coverage**: `Template-OTS-SysML2Tools-Render`.
 
-### SysML2Tools_TemplateDotNetLibraryViewSvg
+#### SysML2Tools_TemplateDotNetLibraryViewSvg
 
 **Scenario**: The build-docs CI job runs `dotnet sysml2tools render` against the real Template
 DotNet Library model, then FileAssert checks the resulting file at
@@ -69,7 +69,7 @@ named `svg`.
 
 **Requirement coverage**: `Template-OTS-SysML2Tools-Render`.
 
-## Requirements Coverage
+### Requirements Coverage
 
 - **`Template-OTS-SysML2Tools-Lint`**: SysML2Tools_LintSelfTest
 - **`Template-OTS-SysML2Tools-Render`**: SysML2Tools_RenderSvgSelfTest,

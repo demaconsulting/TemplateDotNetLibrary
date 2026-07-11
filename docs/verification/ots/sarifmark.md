@@ -1,16 +1,16 @@
-# SarifMark Verification
+## SarifMark Verification
 
 This document provides the verification evidence for the SarifMark OTS software item. Requirements
 for this OTS item are defined in the SarifMark OTS Software Requirements document.
 
-## Required Functionality
+### Required Functionality
 
 DemaConsulting.SarifMark reads the SARIF output produced by CodeQL code scanning and renders it as
 a human-readable markdown document included in the release artifacts. It runs in the same CI
 pipeline that produces the TRX test results, so a successful pipeline run is evidence that SarifMark
 executed without error.
 
-## Verification Approach
+### Verification Approach
 
 SarifMark is verified by two complementary layers of evidence. First, the CI pipeline runs
 `sarifmark --validate --results artifacts/sarifmark-self-validation.trx`, which exercises
@@ -24,9 +24,9 @@ renders the result to PDF and FileAssert asserts the PDF contains expected conte
 (`WeasyPrint_CodeQualityPdf`). A CI build failure at any step is evidence that SarifMark did
 not produce the required output.
 
-## Test Scenarios
+### Test Scenarios
 
-### SarifMark_SarifReading
+#### SarifMark_SarifReading
 
 **Scenario**: SarifMark is invoked with a CodeQL SARIF results file as input.
 
@@ -34,7 +34,7 @@ not produce the required output.
 
 **Requirement coverage**: `Template-OTS-SarifMark`.
 
-### SarifMark_MarkdownReportGeneration
+#### SarifMark_MarkdownReportGeneration
 
 **Scenario**: SarifMark renders the SARIF input as a markdown report included in the release
 artifacts.
@@ -43,7 +43,7 @@ artifacts.
 
 **Requirement coverage**: `Template-OTS-SarifMark`.
 
-### SarifMark_Enforcement
+#### SarifMark_Enforcement
 
 **Scenario**: SarifMark self-validation processes a SARIF file containing known issues in
 enforcement mode.
@@ -52,7 +52,7 @@ enforcement mode.
 
 **Requirement coverage**: `Template-OTS-SarifMark-Enforcement`.
 
-## Requirements Coverage
+### Requirements Coverage
 
 - **`Template-OTS-SarifMark`**: SarifMark_SarifReading, SarifMark_MarkdownReportGeneration
 - **`Template-OTS-SarifMark-Enforcement`**: SarifMark_Enforcement
