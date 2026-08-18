@@ -21,7 +21,7 @@ if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 # [PROJECT-SPECIFIC] Add additional build steps here.
 
 Write-Host "Running unit tests..."
-dotnet test --configuration Release
+dotnet test --configuration Release --report-trx
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 # [PROJECT-SPECIFIC] Add additional test or post-build steps here.
