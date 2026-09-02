@@ -1,0 +1,108 @@
+---
+# Quality/process requirements grouping TemplateDotNetLibrary's use of off-the-shelf
+# (OTS) process tooling. These requirements exist so that OTS-derived requirements
+# (which describe capabilities the repository's build/quality pipeline relies on
+# from third-party tools, not user-visible library functionality) are not reported
+# as orphans by `dotnet reqstream --requirements requirements.yaml --enforce`.
+sections:
+  - title: Quality Requirements
+    requirements:
+      - id: Quality-TestInfrastructure
+        title: The repository shall rely on xUnit to execute and report automated test results.
+        tags: [quality]
+        justification: |
+          Automated testing depends on xUnit's test execution and reporting
+          capabilities. This grouping requirement links the xUnit OTS requirements
+          to the quality root so they participate in orphan detection without being
+          falsely reported as disconnected from library functionality.
+        children:
+          - Template-OTS-xUnit-Execute
+          - Template-OTS-xUnit-Report
+
+      - id: Quality-BuildIntegrity
+        title: >-
+          The repository's build pipeline shall rely on BuildMark and VersionMark
+          to validate tool versions and enforce build integrity.
+        tags: [quality]
+        justification: |
+          CI/CD reliability depends on BuildMark's build-integrity checks and
+          VersionMark's version-tracking capabilities. This grouping requirement
+          links those OTS requirements to the quality root so they participate in
+          orphan detection without being falsely reported as disconnected from
+          library functionality.
+        children:
+          - Template-OTS-BuildMark
+          - Template-OTS-VersionMark
+          - Template-OTS-VersionMark-Lint
+
+      - id: Quality-StaticAnalysis
+        title: The repository shall rely on SarifMark and SonarMark to enforce static-analysis quality gates.
+        tags: [quality]
+        justification: |
+          Code quality assurance depends on SarifMark's SARIF-based enforcement and
+          SonarMark's SonarCloud integration. This grouping requirement links those
+          OTS requirements to the quality root so they participate in orphan
+          detection without being falsely reported as disconnected from library
+          functionality.
+        children:
+          - Template-OTS-SarifMark
+          - Template-OTS-SarifMark-Enforcement
+          - Template-OTS-SonarMark
+
+      - id: Quality-PeerReview
+        title: The repository shall rely on ReviewMark to enforce peer-review tracking and reporting.
+        tags: [quality]
+        justification: |
+          Peer-review compliance depends on ReviewMark's indexing, enforcement,
+          elaboration, linting, and directory-override capabilities. This grouping
+          requirement links those OTS requirements to the quality root so they
+          participate in orphan detection without being falsely reported as
+          disconnected from library functionality.
+        children:
+          - Template-OTS-ReviewMark
+          - Template-OTS-ReviewMark-IndexScan
+          - Template-OTS-ReviewMark-Enforce
+          - Template-OTS-ReviewMark-Elaborate
+          - Template-OTS-ReviewMark-Lint
+          - Template-OTS-ReviewMark-DirectoryOverride
+
+      - id: Quality-DocumentationGeneration
+        title: The repository shall rely on Pandoc and WeasyPrint to generate HTML and PDF documentation.
+        tags: [quality]
+        justification: |
+          Documentation generation depends on Pandoc's format conversion and
+          WeasyPrint's PDF rendering. This grouping requirement links those OTS
+          requirements to the quality root so they participate in orphan detection
+          without being falsely reported as disconnected from library functionality.
+        children:
+          - Template-OTS-Pandoc
+          - Template-OTS-WeasyPrint
+
+      - id: Quality-RequirementsTraceability
+        title: >-
+          The repository shall rely on ReqStream and FileAssert to validate
+          requirements traceability and generated documentation.
+        tags: [quality]
+        justification: |
+          Requirements traceability depends on ReqStream's linting and reporting
+          capabilities, and generated-document verification depends on FileAssert.
+          This grouping requirement links those OTS requirements to the quality
+          root so they participate in orphan detection without being falsely
+          reported as disconnected from library functionality.
+        children:
+          - Template-OTS-ReqStream
+          - Template-OTS-ReqStream-Lint
+          - Template-OTS-FileAssert
+
+      - id: Quality-SoftwareStructureModeling
+        title: The repository shall rely on SysML2Tools to lint and render software-structure models.
+        tags: [quality]
+        justification: |
+          Software-structure documentation depends on SysML2Tools' model-linting
+          and diagram-rendering capabilities. This grouping requirement links those
+          OTS requirements to the quality root so they participate in orphan
+          detection without being falsely reported as disconnected from library
+          functionality.
+        children:
+          - Template-OTS-SysML2Tools-Lint
+          - Template-OTS-SysML2Tools-Render

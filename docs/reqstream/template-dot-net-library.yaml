@@ -9,6 +9,7 @@ sections:
     requirements:
       - id: Template-Lib-Greeting
         title: The library shall generate a greeting string when given a name.
+        tags: [system]
         justification: |
           Provides a simple demonstration of library functionality following
           .NET library best practices for DEMA Consulting libraries.
@@ -20,6 +21,7 @@ sections:
 
       - id: Template-Lib-GreetingFormat
         title: The library shall return a greeting string in the format "{prefix}, {name}!".
+        tags: [system]
         justification: |
           The format is the core observable contract of the library: callers depend on this
           specific structure in documentation examples and integration code.
@@ -31,6 +33,7 @@ sections:
 
       - id: Template-Lib-DefaultPrefix
         title: The library shall use "Hello" as the default greeting prefix.
+        tags: [system]
         justification: |
           Callers constructing the library without a prefix argument need a predictable default
           greeting to rely on in documentation and examples.
@@ -41,6 +44,7 @@ sections:
 
       - id: Template-Lib-CustomPrefix
         title: The library shall support a customizable greeting prefix.
+        tags: [system]
         justification: |
           Consumers may need to produce greetings with a prefix other than the
           default, so the library must allow the prefix to be specified at
@@ -53,6 +57,7 @@ sections:
 
       - id: Template-Lib-Prefix
         title: The library shall expose the configured greeting prefix via a read-only property.
+        tags: [system]
         justification: |
           Callers may need to inspect the prefix configured at construction time without
           re-specifying it or relying on the greeting output format to infer it.
@@ -63,6 +68,7 @@ sections:
 
       - id: Template-Lib-ValidationNull-DemoMethod
         title: The library shall reject a null name argument to DemoMethod with ArgumentNullException.
+        tags: [system]
         justification: |
           Passing null to DemoMethod is a programming error. Throwing ArgumentNullException
           immediately surfaces the mistake to callers and prevents obscure failures deeper in
@@ -74,6 +80,7 @@ sections:
 
       - id: Template-Lib-ValidationNull-Constructor
         title: The library shall reject a null prefix argument to the constructor with ArgumentNullException.
+        tags: [system]
         justification: |
           Passing null to the constructor is a programming error. Throwing ArgumentNullException
           immediately surfaces the mistake and prevents invalid instances from being created.
@@ -84,6 +91,7 @@ sections:
 
       - id: Template-Lib-ValidationEmpty-DemoMethod
         title: The library shall reject an empty-string name argument to DemoMethod with ArgumentException.
+        tags: [system]
         justification: |
           Passing an empty string to DemoMethod is a programming error. Throwing ArgumentException
           immediately surfaces the mistake and prevents malformed output such as "Hello, !".
@@ -94,6 +102,7 @@ sections:
 
       - id: Template-Lib-ValidationEmpty-Constructor
         title: The library shall reject an empty-string prefix argument to the constructor with ArgumentException.
+        tags: [system]
         justification: |
           Passing an empty string to the constructor is a programming error. Throwing ArgumentException
           immediately surfaces the mistake and prevents malformed output such as ", World!".

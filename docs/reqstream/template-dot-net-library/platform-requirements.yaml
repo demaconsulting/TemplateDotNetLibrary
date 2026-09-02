@@ -22,6 +22,7 @@ sections:
     requirements:
       - id: Template-Platform-Windows
         title: The library shall build and run on Windows platforms.
+        tags: [system]
         justification: |
           DEMA Consulting libraries must support Windows as a major development platform.
         tests:
@@ -30,6 +31,7 @@ sections:
 
       - id: Template-Platform-Linux
         title: The library shall build and run on Linux platforms.
+        tags: [system]
         justification: |
           DEMA Consulting libraries must support Linux for CI/CD and containerized environments.
         tests:
@@ -38,6 +40,7 @@ sections:
 
       - id: Template-Platform-MacOS
         title: The library shall build and run on macOS platforms.
+        tags: [system]
         justification: |
           DEMA Consulting libraries must support macOS for developers using Apple platforms.
         tests:
@@ -46,6 +49,7 @@ sections:
 
       - id: Template-Platform-Net8
         title: The library shall support .NET 8 runtime.
+        tags: [system]
         justification: |
           .NET 8 is an LTS release providing long-term stability for enterprise users.
         tests:
@@ -53,6 +57,7 @@ sections:
 
       - id: Template-Platform-Net9
         title: The library shall support .NET 9 runtime.
+        tags: [system]
         justification: |
           .NET 9 support enables users to leverage the latest .NET features.
         tests:
@@ -60,6 +65,7 @@ sections:
 
       - id: Template-Platform-Net10
         title: The library shall support .NET 10 runtime.
+        tags: [system]
         justification: |
           .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
         tests:
@@ -67,6 +73,7 @@ sections:
 
       - id: Template-Platform-NetStd20
         title: The library shall support the .NET Standard 2.0 target framework.
+        tags: [system]
         justification: |
           .NET Standard 2.0 is a widely-supported target framework that enables the library to
           be used in MSBuild extensions and other tooling that requires .NET Standard compatibility.
