@@ -1,5 +1,7 @@
 # Introduction
 
+![Template DotNet Library architecture: your application creates a Demo class from DemaConsulting.TemplateDotNetLibrary, passing a name and an optional prefix, and receives a greeting string; the package targets netstandard2.0, net8.0, net9.0, and net10.0](architecture.svg)
+
 ## Purpose
 
 This document is the user guide for the Template DotNet Library, a demonstration project that

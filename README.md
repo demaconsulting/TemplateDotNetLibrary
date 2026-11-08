@@ -11,6 +11,8 @@
 
 DEMA Consulting template project for DotNet Libraries, demonstrating best practices for building reusable .NET libraries.
 
+![Template DotNet Library architecture: your application creates a Demo class from DemaConsulting.TemplateDotNetLibrary, passing a name and an optional prefix, and receives a greeting string; the package targets netstandard2.0, net8.0, net9.0, and net10.0][architecture]
+
 ## Features
 
 This template demonstrates:
@@ -68,6 +70,7 @@ Copyright (c) DEMA Consulting. Licensed under the MIT License. See [LICENSE][lin
 By contributing to this project, you agree that your contributions will be licensed under the MIT License.
 
 <!-- Badge References -->
+[architecture]: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/main/docs/images/architecture.png
 [badge-forks]: https://img.shields.io/github/forks/demaconsulting/TemplateDotNetLibrary?style=plastic
 [badge-stars]: https://img.shields.io/github/stars/demaconsulting/TemplateDotNetLibrary?style=plastic
 [badge-contributors]: https://img.shields.io/github/contributors/demaconsulting/TemplateDotNetLibrary?style=plastic
