@@ -628,6 +628,7 @@ jobs:
         run: >
           dotnet sysml2tools render
           --output docs/design/generated --format svg
+          'docs/sysml2/common/**/*.sysml'
           'docs/sysml2/model/**/*.sysml'
           'docs/sysml2/views/design-views.sysml'
 
