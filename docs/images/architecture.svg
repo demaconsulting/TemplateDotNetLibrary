@@ -9,66 +9,68 @@
 
   <g transform="translate(30,30)">
     <rect x="170" y="0" width="520" height="60" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-    <text x="430" y="27" font-size="16" font-weight="600" fill="#92400e" text-anchor="middle">Your application</text>
-    <text x="430" y="47" font-size="13" fill="#92400e" text-anchor="middle">references the TemplateDotNetLibrary NuGet package</text>
+    <text x="430" y="27" font-size="16" font-weight="600" fill="#92400e" text-anchor="middle">TODO: Your application</text>
+    <text x="430" y="47" font-size="13" fill="#92400e" text-anchor="middle">Replace with the program or consumer that calls the library</text>
     <line x1="430" y1="64" x2="430" y2="100" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
-    <text x="442" y="86" font-size="12" fill="#334155">creates a Demo and calls it</text>
+    <text x="442" y="86" font-size="12" fill="#334155">TODO: describe the call</text>
 
     <rect x="170" y="104" width="520" height="188" rx="14" fill="#f8fafc" stroke="#2563eb" stroke-width="2" stroke-dasharray="8 5"/>
-    <text x="186" y="126" font-size="14" font-weight="600" fill="#2563eb">DemaConsulting.TemplateDotNetLibrary</text>
+    <text x="186" y="126" font-size="14" font-weight="600" fill="#2563eb">TODO: DemaConsulting.YourLibrary</text>
 
-    <rect x="190" y="136" width="480" height="140" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-    <text x="430" y="160" font-size="16" font-weight="600" fill="#4c1d95" text-anchor="middle">Demo</text>
-    <text x="430" y="178" font-size="12" fill="#5b21b6" text-anchor="middle">Immutable, thread-safe greeting class</text>
     <g font-size="11" fill="#5b21b6" text-anchor="middle">
-      <rect x="204" y="192" width="140" height="72" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
-      <text x="274" y="214" font-size="13" font-family="Consolas, monospace" font-weight="600" fill="#4c1d95">Demo(prefix)</text>
-      <text x="274" y="234">Constructors; the default</text>
-      <text x="274" y="248">prefix is "Hello"</text>
-      <rect x="360" y="192" width="140" height="72" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
-      <text x="430" y="214" font-size="13" font-family="Consolas, monospace" font-weight="600" fill="#4c1d95">Prefix</text>
-      <text x="430" y="234">Read-only property that</text>
-      <text x="430" y="248">returns the prefix</text>
-      <rect x="516" y="192" width="140" height="72" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
-      <text x="586" y="214" font-size="13" font-family="Consolas, monospace" font-weight="600" fill="#4c1d95">DemoMethod(name)</text>
-      <text x="586" y="234">Returns a greeting such</text>
-      <text x="586" y="248">as "Hello, World!"</text>
+      <rect x="190" y="136" width="153" height="68" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="266" y="162" font-size="14" font-weight="600" fill="#4c1d95">TODO: Subsystem A</text>
+      <text x="266" y="182">Replace with a main</text>
+      <text x="266" y="196">subsystem and its role</text>
+      <rect x="353" y="136" width="153" height="68" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="429" y="162" font-size="14" font-weight="600" fill="#4c1d95">TODO: Subsystem B</text>
+      <text x="429" y="182">Replace with a main</text>
+      <text x="429" y="196">subsystem and its role</text>
+      <rect x="516" y="136" width="153" height="68" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="592" y="162" font-size="14" font-weight="600" fill="#4c1d95">TODO: Subsystem C</text>
+      <text x="592" y="182">Replace with a main</text>
+      <text x="592" y="196">subsystem and its role</text>
+    </g>
+
+    <g font-size="11" fill="#1e40af" text-anchor="middle">
+      <rect x="190" y="216" width="236" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="308" y="242" font-size="14" font-weight="600" fill="#1e3a8a">TODO: Support unit</text>
+      <text x="308" y="262">Replace with a supporting unit</text>
+      <rect x="436" y="216" width="233" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="552" y="242" font-size="14" font-weight="600" fill="#1e3a8a">TODO: Support unit</text>
+      <text x="552" y="262">Replace with a supporting unit</text>
     </g>
 
     <line x1="430" y1="296" x2="430" y2="320" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
-    <text x="442" y="312" font-size="12" fill="#334155">ships in one package targeting</text>
+    <text x="442" y="312" font-size="12" fill="#334155">TODO: built on</text>
 
     <g text-anchor="middle">
-      <rect x="170" y="324" width="118" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-      <text x="229" y="350" font-size="15" font-weight="600" fill="#334155">.NET Std</text>
-      <text x="229" y="370" font-size="12" fill="#475569">netstandard2.0</text>
-      <rect x="304" y="324" width="118" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-      <text x="363" y="350" font-size="15" font-weight="600" fill="#334155">.NET 8</text>
-      <text x="363" y="370" font-size="12" fill="#475569">net8.0</text>
-      <rect x="438" y="324" width="118" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-      <text x="497" y="350" font-size="15" font-weight="600" fill="#334155">.NET 9</text>
-      <text x="497" y="370" font-size="12" fill="#475569">net9.0</text>
-      <rect x="572" y="324" width="118" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-      <text x="631" y="350" font-size="15" font-weight="600" fill="#334155">.NET 10</text>
-      <text x="631" y="370" font-size="12" fill="#475569">net10.0</text>
+      <rect x="170" y="324" width="166" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+      <text x="253" y="350" font-size="15" font-weight="600" fill="#334155">TODO: Dependency</text>
+      <text x="253" y="370" font-size="12" fill="#475569">Replace with a library</text>
+      <rect x="347" y="324" width="166" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+      <text x="430" y="350" font-size="15" font-weight="600" fill="#334155">TODO: Dependency</text>
+      <text x="430" y="370" font-size="12" fill="#475569">Replace with a library</text>
+      <rect x="524" y="324" width="166" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+      <text x="607" y="350" font-size="15" font-weight="600" fill="#334155">TODO: Dependency</text>
+      <text x="607" y="370" font-size="12" fill="#475569">Replace with a library</text>
     </g>
 
     <text x="70" y="151" font-size="13" font-weight="600" fill="#475569" text-anchor="middle">Inputs</text>
     <rect x="0" y="165" width="140" height="66" rx="6" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-    <text x="70" y="192" font-size="15" font-weight="600" fill="#334155" text-anchor="middle">Arguments</text>
-    <text x="70" y="213" font-size="12" fill="#475569" text-anchor="middle">name, optional prefix</text>
+    <text x="70" y="192" font-size="15" font-weight="600" fill="#334155" text-anchor="middle">TODO: Inputs</text>
+    <text x="70" y="213" font-size="12" fill="#475569" text-anchor="middle">Replace with real inputs</text>
     <line x1="144" y1="198" x2="166" y2="198" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
 
     <rect x="720" y="133" width="165" height="130" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
     <text x="802" y="159" font-size="16" font-weight="600" fill="#166534" text-anchor="middle">Outputs</text>
     <g font-size="13" fill="#14532d" text-anchor="middle">
       <rect x="734" y="171" width="137" height="26" rx="5" fill="#ffffff" stroke="#16a34a"/>
-      <text x="802" y="189">Greeting string</text>
+      <text x="802" y="189">TODO: Output 1</text>
       <rect x="734" y="201" width="137" height="26" rx="5" fill="#ffffff" stroke="#16a34a"/>
-      <text x="802" y="219">Prefix value</text>
+      <text x="802" y="219">TODO: Output 2</text>
       <rect x="734" y="231" width="137" height="26" rx="5" fill="#ffffff" stroke="#16a34a"/>
-      <text x="802" y="249">Argument exceptions</text>
+      <text x="802" y="249">TODO: Output 3</text>
     </g>
     <line x1="694" y1="198" x2="716" y2="198" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
-  </g>
-</svg>
+  </g></svg>
