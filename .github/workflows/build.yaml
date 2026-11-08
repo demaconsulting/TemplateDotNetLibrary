@@ -358,7 +358,7 @@ jobs:
           dotnet versionmark --capture --job-id "build-docs" \
             --output "artifacts/versionmark-build-docs.json" -- \
             dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream \
-            buildmark versionmark reviewmark fileassert sysml2tools canvasnet
+            buildmark versionmark reviewmark fileassert sysml2tools canvasnet textlint
           echo "✓ Tool versions captured"
 
       # === PREPARE DOCUMENT OUTPUT ===
@@ -628,6 +628,7 @@ jobs:
         run: >
           dotnet sysml2tools render
           --output docs/design/generated --format svg
+          'docs/sysml2/common/**/*.sysml'
           'docs/sysml2/model/**/*.sysml'
           'docs/sysml2/views/design-views.sysml'
 

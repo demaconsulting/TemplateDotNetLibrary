@@ -20,10 +20,10 @@ sections:
               - ReviewMark_ReviewPlanGeneration
               - ReviewMark_ReviewReportGeneration
           - id: Template-OTS-ReviewMark-IndexScan
-            title: ReviewMark shall scan PDF evidence files into an index catalogue.
+            title: ReviewMark shall scan PDF evidence files into an index catalog.
             justification: |
               ReviewMark's --index command scans review evidence PDFs and writes an index.json
-              catalogue used by the enforcement pipeline to verify review currency.
+              catalog used by the enforcement pipeline to verify review currency.
             tags: [ots]
             tests:
               - ReviewMark_IndexScan
