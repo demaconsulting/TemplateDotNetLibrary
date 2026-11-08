@@ -1,5 +1,8 @@
 # Introduction
 
+The following diagram is a placeholder: replace its TODO boxes to show how your application calls the
+library's subsystems, which inputs it takes, and which outputs it produces.
+
 ![Placeholder architecture diagram: replace the TODO boxes for your application, library subsystems, support units, dependencies, inputs, and outputs with the real ones](architecture.svg)
 
 ## Purpose
