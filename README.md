@@ -11,6 +11,11 @@
 
 DEMA Consulting template project for DotNet Libraries, demonstrating best practices for building reusable .NET libraries.
 
+The diagram below is a placeholder: replace its TODO boxes to show how an application calls your library's
+subsystems, which inputs it takes, and which outputs it produces.
+
+![Placeholder architecture diagram: replace the TODO boxes for your application, library subsystems, support units, dependencies, inputs, and outputs with the real ones][architecture]
+
 ## Features
 
 This template demonstrates:
@@ -68,6 +73,7 @@ Copyright (c) DEMA Consulting. Licensed under the MIT License. See [LICENSE][lin
 By contributing to this project, you agree that your contributions will be licensed under the MIT License.
 
 <!-- Badge References -->
+[architecture]: https://raw.githubusercontent.com/demaconsulting/TemplateDotNetLibrary/main/docs/images/architecture.png
 [badge-forks]: https://img.shields.io/github/forks/demaconsulting/TemplateDotNetLibrary?style=plastic
 [badge-stars]: https://img.shields.io/github/stars/demaconsulting/TemplateDotNetLibrary?style=plastic
 [badge-contributors]: https://img.shields.io/github/contributors/demaconsulting/TemplateDotNetLibrary?style=plastic
