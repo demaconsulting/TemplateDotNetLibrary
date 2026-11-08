@@ -219,7 +219,8 @@ or explicit per-file listing is needed):
 dotnet sysml2tools render `
   --output docs/design/generated --format svg `
   'docs/sysml2/common/**/*.sysml' `
-  'docs/sysml2/model/**/*.sysml' `n  'docs/sysml2/views/design-views.sysml'
+  'docs/sysml2/model/**/*.sysml' `
+  'docs/sysml2/views/design-views.sysml'
 ```
 
 With multiple views declared and no `--view` flag, `sysml2tools` renders every declared view
