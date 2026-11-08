@@ -12,7 +12,7 @@ than relying on manual sign-off.
 - Review-plan generation (`--plan`) from `.reviewmark.yaml` review-set definitions
 - Review-report generation (`--report`) documenting review coverage and currency against the
   evidence store
-- Evidence-index scanning (`--index`) of PDF review evidence into an `index.json` catalogue
+- Evidence-index scanning (`--index`) of PDF review evidence into an `index.json` catalog
 - Enforcement mode (`--enforce`), which exits non-zero when files in a review-set are not current
 - Elaboration mode (`--elaborate`), which prints a review-set's ID, fingerprint, and file list for
   agent consumption

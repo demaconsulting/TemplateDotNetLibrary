@@ -47,7 +47,7 @@ report from a test configuration and evidence store.
 #### ReviewMark_IndexScan
 
 **Scenario**: ReviewMark self-validation uses `--index` to scan PDF evidence files and write an
-`index.json` catalogue.
+`index.json` catalog.
 
 **Expected**: Exits 0 and produces a correctly structured `index.json`.
 
