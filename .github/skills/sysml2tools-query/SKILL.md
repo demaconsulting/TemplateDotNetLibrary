@@ -43,7 +43,7 @@ correctly — pass a single **quoted** glob string and let the tool resolve it, 
 relying on the shell (quoting works identically in both PowerShell and bash):
 
 ```pwsh
-dotnet sysml2tools query list 'docs/sysml2/model/**/*.sysml'
+dotnet sysml2tools query list 'docs/sysml2/**/*.sysml'
 ```
 
 ## Artifact-location metadata
@@ -85,7 +85,7 @@ version and fall back to reading `comment sourceRef`/`testRef`/`designRef`/`veri
 1. **Discover the system(s) present** — do not assume a fixed name:
 
    ```pwsh
-   dotnet sysml2tools query list --kind "part def" 'docs/sysml2/model/**/*.sysml'
+   dotnet sysml2tools query list --kind "part def" 'docs/sysml2/**/*.sysml'
    ```
 
    Look for the top-level part def with no containing part (or the one with the most
@@ -94,7 +94,7 @@ version and fall back to reading `comment sourceRef`/`testRef`/`designRef`/`veri
 2. **Get the full hierarchy** (subsystems and units) for a system found above:
 
    ```pwsh
-   dotnet sysml2tools query describe -e <QualifiedName> 'docs/sysml2/model/**/*.sysml'
+   dotnet sysml2tools query describe -e <QualifiedName> 'docs/sysml2/**/*.sysml'
    ```
 
    `describe` lists direct children and every artifact-location metadata attribute; repeat on
@@ -105,15 +105,15 @@ version and fall back to reading `comment sourceRef`/`testRef`/`designRef`/`veri
    artifact-location line in one call (see Artifact-location metadata above):
 
    ```pwsh
-   dotnet sysml2tools query describe -e <QualifiedName> 'docs/sysml2/model/**/*.sysml'
+   dotnet sysml2tools query describe -e <QualifiedName> 'docs/sysml2/**/*.sysml'
    ```
 
 4. **Assess impact before editing a unit, and see what it depends on** — use `dependencies`
    for the combined view, or `uses`/`used-by`/`impact` individually:
 
    ```pwsh
-   dotnet sysml2tools query dependencies -e <QualifiedName> 'docs/sysml2/model/**/*.sysml'
-   dotnet sysml2tools query impact -e <QualifiedName> 'docs/sysml2/model/**/*.sysml'
+   dotnet sysml2tools query dependencies -e <QualifiedName> 'docs/sysml2/**/*.sysml'
+   dotnet sysml2tools query impact -e <QualifiedName> 'docs/sysml2/**/*.sysml'
    ```
 
    `dependencies`/`uses`/`used-by` return both structural (typing/containment) references
@@ -127,14 +127,14 @@ version and fall back to reading `comment sourceRef`/`testRef`/`designRef`/`veri
 5. **Trace requirements** linked to a unit, if modeled:
 
    ```pwsh
-   dotnet sysml2tools query requirements -e <QualifiedName> 'docs/sysml2/model/**/*.sysml'
+   dotnet sysml2tools query requirements -e <QualifiedName> 'docs/sysml2/**/*.sysml'
    ```
 
 6. **Search by name or kind** when the qualified name is unknown:
 
    ```pwsh
-   dotnet sysml2tools query find --name <PartialOrFullName> 'docs/sysml2/model/**/*.sysml'
-   dotnet sysml2tools query list --kind "part def" 'docs/sysml2/model/**/*.sysml'
+   dotnet sysml2tools query find --name <PartialOrFullName> 'docs/sysml2/**/*.sysml'
+   dotnet sysml2tools query list --kind "part def" 'docs/sysml2/**/*.sysml'
    ```
 
 Use `--format json` on any query verb for machine-parsed output.

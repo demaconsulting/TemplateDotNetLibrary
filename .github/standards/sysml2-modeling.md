@@ -59,7 +59,7 @@ exclude-glob syntax).
 There is no separate "stable entry point" file — a repository may contain multiple systems,
 so no single alias name would generalize. Agents discover the system(s) present by running
 `query list --kind "part def"` or `query find` (see the `sysml2tools-query` skill) over
-`docs/sysml2/model/**/*.sysml`, not by assuming a fixed name.
+`docs/sysml2/**/*.sysml`, not by assuming a fixed name.
 
 Always pass the full set of `.sysml` files (or an equivalent glob) to every `sysml2tools`
 invocation — the model spans multiple files and cross-references between them; files sharing
@@ -211,15 +211,15 @@ whichever produces a single coherent overview diagram.
 
 ## Diagram Embedding
 
-Render with a single quoted recursive glob for the model tree, plus the views file
+Render with quoted recursive globs for the shared metadata definition and the model tree, plus the views file
 (`sysml2tools` 0.1.0-beta.5+ expands and recurses `**` internally, so no shell-side globbing
 or explicit per-file listing is needed):
 
 ```pwsh
 dotnet sysml2tools render `
   --output docs/design/generated --format svg `
-  'docs/sysml2/model/**/*.sysml' `
-  'docs/sysml2/views/design-views.sysml'
+  'docs/sysml2/common/**/*.sysml' `
+  'docs/sysml2/model/**/*.sysml' `n  'docs/sysml2/views/design-views.sysml'
 ```
 
 With multiple views declared and no `--view` flag, `sysml2tools` renders every declared view
@@ -248,17 +248,12 @@ Document dependencies in prose instead of a diagram: each System/Subsystem desig
   step in the CI design-document job — `lint.ps1` gates every later job (including document
   generation) transitively, so linting the model there is both earlier and non-duplicated.
   Pass a single quoted recursive glob, e.g. `dotnet sysml2tools lint 'docs/sysml2/**/*.sysml'`
-
-- `sysml2tools lint` belongs in `lint.ps1`'s compliance-tools section, **not** as a separate
-  step in the CI design-document job — `lint.ps1` gates every later job (including document
-  generation) transitively, so linting the model there is both earlier and non-duplicated.
-  Pass a single quoted recursive glob, e.g. `dotnet sysml2tools lint 'docs/sysml2/**/*.sysml'`
   — `sysml2tools` (0.1.0-beta.5+) expands and recurses this itself, so no
   `Get-ChildItem`/shell-side globbing is needed.
 - The CI design-document job renders the views (see the render command above) before running
   Pandoc, so generated SVGs exist before HTML generation. Rename/stable-filename workarounds
-  are unnecessary since view names are stable by definition. Pass the model and views globs as
-  separate quoted arguments (e.g. `'docs/sysml2/model/**/*.sysml' 'docs/sysml2/views/design-views.sysml'`)
+  are unnecessary since view names are stable by definition. Pass the common, model, and views globs as
+  separate quoted arguments (e.g. `'docs/sysml2/common/**/*.sysml' 'docs/sysml2/model/**/*.sysml' 'docs/sysml2/views/design-views.sysml'`)
   — plain PowerShell (the default shell) is sufficient; no `shell: bash`/`shopt -s globstar`
   workaround is needed.
 - Add `sysml2tools` to `.config/dotnet-tools.json` (`demaconsulting.sysml2tools.tool`) and to
