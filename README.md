@@ -11,6 +11,9 @@
 
 DEMA Consulting template project for DotNet Libraries, demonstrating best practices for building reusable .NET libraries.
 
+The diagram below is a placeholder: replace its TODO boxes to show how an application calls your library's
+subsystems, which inputs it takes, and which outputs it produces.
+
 ![Placeholder architecture diagram: replace the TODO boxes for your application, library subsystems, support units, dependencies, inputs, and outputs with the real ones][architecture]
 
 ## Features
