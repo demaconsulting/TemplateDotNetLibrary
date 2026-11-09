@@ -21,41 +21,20 @@ files:
 
 # Project-specific technical terms and tool names
 words:
-  - sonarscanner
-  - demaconsulting
-  - pandoctool
-  - weasyprinttool
-  - opencover
-  - snupkg
-  - ncipollo
-  - DEMACONSULTINGNUGETKEY
-  - Setext
-  - venv
-  - thirdparty
-  - shopt
-  - unidirectionality
-  - nestings
-  - buildmark
-  - canvasnet
   - DEMA
-  - Dema
-  - FileAssert
-  - fileassert
-  - xunit
-  - Pandoc
-  - Qube
-  - reqstream
-  - reviewmark
-  - Sarif
-  - SARIF
-  - sarifmark
-  - sonarmark
-  - sysml
-  - versionmark
-  - Weasy
-  - WeasyPrint
-  - weasyprint
+  - demaconsulting
+  - DEMACONSULTINGNUGETKEY
+  - ncipollo
+  - nestings
   - netstandard
+  - SARIF
+  - Setext
+  - shopt
+  - snupkg
+  - sonarscanner
+  - thirdparty
+  - unidirectionality
+  - venv
   - yamlfix
 
 # Exclude common build artifacts, dependencies, and vendored third-party code
