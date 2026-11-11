@@ -65,6 +65,13 @@ This template demonstrates a minimal system structure with no subsystems — it 
 organize related units and provide architectural boundaries with well-defined interfaces and
 responsibilities.
 
+The diagram below complements the structure view by showing the library in its run-time context:
+how the calling application uses the library's subsystems and units, and which inputs, outputs,
+and dependencies they involve. It is a placeholder: replace its TODO boxes with the real
+application, subsystems, units, dependencies, inputs, and outputs of your library.
+
+![Placeholder architecture diagram: replace the TODO boxes for your application, library subsystems, support units, dependencies, inputs, and outputs with the real ones](architecture.svg)
+
 ## Folder Layout
 
 The source code folder structure mirrors the software structure organization, with file paths

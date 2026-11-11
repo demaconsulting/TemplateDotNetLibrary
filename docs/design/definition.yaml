@@ -1,6 +1,7 @@
 ---
 resource-path:
   - docs/design
+  - docs/images
   - docs/template
 input-files:
   - docs/design/title.txt

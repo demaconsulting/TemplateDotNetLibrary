@@ -22,7 +22,7 @@ This template demonstrates:
 
 - **Simple Library Structure**: Demo class with example methods
 - **Multi-Platform Support**: Builds and runs on Windows, Linux, and macOS
-- **Multi-Runtime Support**: Targets .NET Standard 2.0, .NET 8, 9, and 10
+- **Multi-Runtime Support**: Targets .NET Standard 2.0, .NET 8, 9, 10, and 11
 - **xUnit v3**: Modern unit testing with xUnit framework version 3
 - **Comprehensive CI/CD**: GitHub Actions workflows with quality checks and builds
 - **Linting Enforcement**: markdownlint, TextLint, and yamllint enforced on every CI run

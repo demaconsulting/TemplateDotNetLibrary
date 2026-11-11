@@ -15,6 +15,7 @@
 #   net8.0@TestName   - proves the test passed under the .NET 8 runtime
 #   net9.0@TestName   - proves the test passed under the .NET 9 runtime
 #   net10.0@TestName  - proves the test passed under the .NET 10 runtime
+#   net11.0@TestName  - proves the test passed under the .NET 11 runtime
 #   net481@TestName   - proves the test passed under .NET Framework 4.8.1 (implements .NET Standard 2.0)
 
 sections:
@@ -51,7 +52,10 @@ sections:
         title: The library shall support .NET 8 runtime.
         tags: [system]
         justification: |
-          .NET 8 is an LTS release providing long-term stability for enterprise users.
+          .NET 8 is a Long-Term Support (LTS) release that reached end of support in November 2026.
+          The library continues to support this runtime so that users who have not yet migrated to
+          a newer release, such as enterprise environments with slow upgrade cycles, can keep
+          using it.
         tests:
           - "net8.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
@@ -59,7 +63,9 @@ sections:
         title: The library shall support .NET 9 runtime.
         tags: [system]
         justification: |
-          .NET 9 support enables users to leverage the latest .NET features.
+          .NET 9 is a Standard-Term Support (STS) release that has reached end of support. The
+          library continues to support this runtime so that users who have not yet migrated to a
+          newer release can keep using it.
         tests:
           - "net9.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
@@ -67,9 +73,19 @@ sections:
         title: The library shall support .NET 10 runtime.
         tags: [system]
         justification: |
-          .NET 10 support ensures the library remains compatible with the latest .NET ecosystem.
+          .NET 10 is the current Long-Term Support (LTS) release. Supporting this runtime provides
+          a stable, long-term supported target for users who prefer LTS releases.
         tests:
           - "net10.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
+
+      - id: Template-Platform-Net11
+        title: The library shall support .NET 11 runtime.
+        tags: [system]
+        justification: |
+          .NET 11 is the latest release in the .NET platform roadmap. Supporting this runtime
+          ensures the library works for users as they adopt the newest .NET version.
+        tests:
+          - "net11.0@TemplateDotNetLibrary_SystemIntegration_DefaultConstruction_ReturnsExpectedGreeting"
 
       - id: Template-Platform-NetStd20
         title: The library shall support the .NET Standard 2.0 target framework.
