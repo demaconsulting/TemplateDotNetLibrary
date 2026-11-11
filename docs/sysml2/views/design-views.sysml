@@ -5,7 +5,8 @@
 // 'render' - is what scopes the rendered diagram content.
 package TemplateDotNetLibrary {
     view SoftwareStructureView {
-        expose TemplateDotNetLibrary;
+        expose TemplateDotNetLibrary::**;
+        render asInterconnectionDiagram;
     }
 
     view TemplateDotNetLibraryView {
