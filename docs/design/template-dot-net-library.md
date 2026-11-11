@@ -93,7 +93,8 @@ runtimes and legacy environments:
 | `netstandard2.0`   | .NET Standard 2.0 (implemented by .NET FX 4.8.1+) |
 | `net8.0`           | .NET 8 LTS                                        |
 | `net9.0`           | .NET 9                                            |
-| `net10.0`          | .NET 10                                           |
+| `net10.0`          | .NET 10 LTS                                       |
+| `net11.0`          | .NET 11                                           |
 
 The library is supported on the following operating systems:
 
