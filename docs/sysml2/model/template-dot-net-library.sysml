@@ -11,7 +11,6 @@ package TemplateDotNetLibrary {
         doc /* The Template DotNet Library system as a whole. */
 
         metadata info : SoftwareInfo {
-            description = "The Template DotNet Library system as a whole.";
             testFiles = ("test/DemaConsulting.TemplateDotNetLibrary.Tests/TemplateDotNetLibraryTests.cs");
             designFiles = ("docs/design/template-dot-net-library.md");
             verificationFiles = ("docs/verification/template-dot-net-library.md");
