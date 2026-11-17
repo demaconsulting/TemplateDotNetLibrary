@@ -14,10 +14,10 @@ are immutable after construction and are therefore safe for concurrent access.
 
 ### Data Model
 
-| Field           | Type           | Description                                      |
-|-----------------|----------------|--------------------------------------------------|
-| `_prefix`       | `string`       | The greeting prefix stored at construction time. |
-| `DefaultPrefix` | `const string` | The default greeting prefix (`"Hello"`).         |
+| Field | Type | Description |
+| --- | --- | --- |
+| `_prefix` | `string` | The greeting prefix stored at construction time. |
+| `DefaultPrefix` | `const string` | The default greeting prefix (`"Hello"`). |
 
 ### Key Methods
 
