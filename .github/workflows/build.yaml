@@ -36,11 +36,6 @@ jobs:
         run: >
           dotnet tool restore
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24.x
-
       - name: Setup Python
         uses: actions/setup-python@v7
         with:
@@ -57,7 +52,7 @@ jobs:
           echo "Capturing tool versions..."
           dotnet versionmark --capture --job-id "quality" \
             --output "artifacts/versionmark-quality.json" -- \
-            dotnet git versionmark
+            dotnet git versionmark lintmark
           echo "✓ Tool versions captured"
 
       # === CAPTURE OTS SELF-VALIDATION RESULTS ===
@@ -334,18 +329,10 @@ jobs:
       # This section installs all required dependencies and tools for document generation.
       # Downstream projects: Add any additional dependency installations here.
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 'lts/*'
-
       - name: Setup dotnet
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.x
-
-      - name: Install npm dependencies
-        run: npm install
 
       - name: Restore Tools
         run: dotnet tool restore
@@ -361,7 +348,7 @@ jobs:
           echo "Capturing tool versions..."
           dotnet versionmark --capture --job-id "build-docs" \
             --output "artifacts/versionmark-build-docs.json" -- \
-            dotnet git node npm pandoc weasyprint sarifmark sonarmark reqstream \
+            dotnet git pandoc weasyprint sarifmark sonarmark reqstream \
             buildmark versionmark reviewmark fileassert sysml2tools canvasnet textlint
           echo "✓ Tool versions captured"
 
@@ -432,7 +419,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/build_notes/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/build_notes/generated/build_notes.html
@@ -515,7 +501,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/code_quality/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/code_quality/generated/quality.html
@@ -577,7 +562,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/code_review_plan/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/code_review_plan/generated/plan.html
@@ -594,7 +578,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/code_review_report/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/code_review_report/generated/report.html
@@ -641,7 +624,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/design/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/design/generated/design.html
@@ -673,7 +655,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/verification/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/verification/generated/verification.html
@@ -705,7 +686,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/user_guide/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/user_guide/generated/user_guide.html
@@ -770,7 +750,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/requirements_doc/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/requirements_doc/generated/requirements.html
@@ -787,7 +766,6 @@ jobs:
         run: >
           dotnet pandoc
           --defaults docs/requirements_report/definition.yaml
-          --filter node_modules/.bin/mermaid-filter.cmd
           --metadata version="${{ inputs.version }}"
           --metadata date="$(date +'%Y-%m-%d')"
           --output docs/requirements_report/generated/trace_matrix.html

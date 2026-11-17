@@ -14,16 +14,16 @@ detailed approach and named test scenarios.
 
 ## OTS Items
 
-| OTS Item    | Verification Approach                                                       |
-|-------------|-----------------------------------------------------------------------------|
-| BuildMark   | Self-validation CLI suite plus pipeline evidence via build-notes document   |
-| FileAssert  | Self-validation CLI suite plus transitive evidence from document assertions |
-| Pandoc      | Pipeline evidence: FileAssert assertions on each generated HTML document    |
-| ReqStream   | Self-validation CLI suite plus pipeline evidence via --enforce traceability |
-| ReviewMark  | Self-validation CLI suite plus pipeline evidence via review plan/report     |
-| SarifMark   | Self-validation CLI suite plus pipeline evidence via SARIF markdown report  |
-| SonarMark   | Self-validation CLI suite plus pipeline evidence via SonarCloud report      |
+| OTS Item | Verification Approach |
+| --- | --- |
+| BuildMark | Self-validation CLI suite plus pipeline evidence via build-notes document |
+| FileAssert | Self-validation CLI suite plus transitive evidence from document assertions |
+| Pandoc | Pipeline evidence: FileAssert assertions on each generated HTML document |
+| ReqStream | Self-validation CLI suite plus pipeline evidence via --enforce traceability |
+| ReviewMark | Self-validation CLI suite plus pipeline evidence via review plan/report |
+| SarifMark | Self-validation CLI suite plus pipeline evidence via SARIF markdown report |
+| SonarMark | Self-validation CLI suite plus pipeline evidence via SonarCloud report |
 | SysML2Tools | Self-validation CLI suite plus pipeline evidence via lint and rendered SVGs |
-| VersionMark | Self-validation CLI suite plus pipeline evidence via version data           |
-| WeasyPrint  | Pipeline evidence: FileAssert assertions on each generated PDF document     |
-| xUnit       | Self-validation via discovery, execution, and TRX reporting of tests        |
+| VersionMark | Self-validation CLI suite plus pipeline evidence via version data |
+| WeasyPrint | Pipeline evidence: FileAssert assertions on each generated PDF document |
+| xUnit | Self-validation via discovery, execution, and TRX reporting of tests |

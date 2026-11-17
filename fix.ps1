@@ -4,7 +4,7 @@
 #   Applies all available auto-fixers with progress output. Always exits 0.
 #   Run this after making changes to automatically handle formatting
 #   so agents and developers do not need to respond to lint output.
-#   Handles: dotnet format, markdownlint, yamlfix, YAML line endings.
+#   Handles: dotnet format, LintMark (markdown), yamlfix, YAML line endings.
 #
 # EXTENSION POINTS:
 #   Search for "[PROJECT-SPECIFIC]" comments to find the designated locations
@@ -84,15 +84,12 @@ Normalize-YamlLineEndings
 
 # --- Markdown Auto-Fix ---
 Write-Host "Fixing: markdown..."
-$env:PUPPETEER_SKIP_DOWNLOAD = "true"
-npm install --silent 2>$null
+dotnet tool restore > $null 2>&1
 if ($LASTEXITCODE -eq 0) {
-    npx markdownlint-cli2 --fix "**/*.md" 2>$null
+    dotnet lintmark --fix 2>$null
 }
 
 # [PROJECT-SPECIFIC] Add additional auto-fixers here.
-# Example (Prettier for TypeScript/JSON):
-#   npx prettier --write "src/**/*.{ts,json}" 2>$null
 
 # --- .NET Auto-Format ---
 Write-Host "Fixing: dotnet format..."

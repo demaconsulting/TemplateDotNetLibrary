@@ -12,7 +12,7 @@ best practices. The system consists of:
 - **Demo Unit**: Simple greeting functionality demonstrating library patterns
 
 There are no subsystems and no relationships between software items beyond the system exposing
-the `Demo` unit directly through its public API; see _Demo Unit Design_ for the unit's internal
+the `Demo` unit directly through its public API; see *Demo Unit Design* for the unit's internal
 collaboration (none — `Demo` is a self-contained leaf class).
 
 ## External Interfaces
@@ -28,31 +28,31 @@ The system exposes the following public API to external consumers:
   Throws `ArgumentNullException` if `name` is null; throws `ArgumentException` if `name` is an
   empty string.
 
-| Interface                      | Direction        | Format                        | Constraints                  |
-|--------------------------------|------------------|-------------------------------|------------------------------|
-| `Demo()`                       | Inbound          | Constructor call              | None; always succeeds        |
-| `Demo(string prefix)`          | Inbound          | Constructor call              | `prefix` non-null, non-empty |
-| `Demo.Prefix`                  | Outbound         | `string` property read        | None; always succeeds        |
-| `Demo.DemoMethod(string name)` | Inbound/Outbound | Method call / `string` return | `name` non-null, non-empty   |
+| Interface | Direction | Format | Constraints |
+| --- | --- | --- | --- |
+| `Demo()` | Inbound | Constructor call | None; always succeeds |
+| `Demo(string prefix)` | Inbound | Constructor call | `prefix` non-null, non-empty |
+| `Demo.Prefix` | Outbound | `string` property read | None; always succeeds |
+| `Demo.DemoMethod(string name)` | Inbound/Outbound | Method call / `string` return | `name` non-null, non-empty |
 
 ## Dependencies
 
 The Template DotNet Library has zero runtime NuGet dependencies — it is implemented exclusively
 against the .NET Base Class Library. The following OTS items are used for building and verifying
-this system (not consumed at runtime); see _OTS Integration Design_ (`docs/design/ots.md`) and
+this system (not consumed at runtime); see *OTS Integration Design* (`docs/design/ots.md`) and
 each item's dedicated design document for details:
 
-- **BuildMark** — generates build-notes documentation; see _BuildMark Design_
+- **BuildMark** — generates build-notes documentation; see *BuildMark Design*
 - **FileAssert** — validates generated documents against acceptance criteria; see
-  _FileAssert Design_
-- **Pandoc** — converts Markdown documentation to HTML; see _Pandoc Design_
-- **ReqStream** — enforces requirements-to-test traceability; see _ReqStream Design_
-- **ReviewMark** — enforces file review coverage and currency; see _ReviewMark Design_
-- **SarifMark** — converts CodeQL SARIF results to markdown; see _SarifMark Design_
-- **SonarMark** — generates SonarCloud quality reports; see _SonarMark Design_
-- **VersionMark** — captures and publishes tool-version information; see _VersionMark Design_
-- **WeasyPrint** — converts HTML documentation to PDF; see _WeasyPrint Design_
-- **xUnit** — executes unit and integration tests; see _xUnit Design_
+  *FileAssert Design*
+- **Pandoc** — converts Markdown documentation to HTML; see *Pandoc Design*
+- **ReqStream** — enforces requirements-to-test traceability; see *ReqStream Design*
+- **ReviewMark** — enforces file review coverage and currency; see *ReviewMark Design*
+- **SarifMark** — converts CodeQL SARIF results to markdown; see *SarifMark Design*
+- **SonarMark** — generates SonarCloud quality reports; see *SonarMark Design*
+- **VersionMark** — captures and publishes tool-version information; see *VersionMark Design*
+- **WeasyPrint** — converts HTML documentation to PDF; see *WeasyPrint Design*
+- **xUnit** — executes unit and integration tests; see *xUnit Design*
 
 ## Risk Control Measures
 
@@ -88,13 +88,13 @@ requiring risk control measures (IEC 62304 §5.3.3).
 The library targets the following frameworks, enabling broad compatibility across modern .NET
 runtimes and legacy environments:
 
-| Target Framework   | Runtime / Environment                             |
-|--------------------|---------------------------------------------------|
-| `netstandard2.0`   | .NET Standard 2.0 (implemented by .NET FX 4.8.1+) |
-| `net8.0`           | .NET 8 LTS                                        |
-| `net9.0`           | .NET 9                                            |
-| `net10.0`          | .NET 10 LTS                                       |
-| `net11.0`          | .NET 11                                           |
+| Target Framework | Runtime / Environment |
+| --- | --- |
+| `netstandard2.0` | .NET Standard 2.0 (implemented by .NET FX 4.8.1+) |
+| `net8.0` | .NET 8 LTS |
+| `net9.0` | .NET 9 |
+| `net10.0` | .NET 10 LTS |
+| `net11.0` | .NET 11 |
 
 The library is supported on the following operating systems:
 

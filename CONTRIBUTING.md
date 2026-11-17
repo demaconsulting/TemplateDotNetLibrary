@@ -169,7 +169,7 @@ dotnet test --collect "XPlat Code Coverage"
 
 ### Markdown Guidelines
 
-All markdown files must follow these rules (enforced by markdownlint):
+All markdown files must follow these rules (enforced by LintMark):
 
 - Maximum line length: 120 characters
 - Use ATX-style headers (`# Header`)

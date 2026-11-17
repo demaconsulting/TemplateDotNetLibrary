@@ -76,11 +76,6 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
-# Node.js
-node_modules/
-package-lock.json
-npm-debug.log
-
 # Python
 __pycache__/
 *.py[cod]
