@@ -9,7 +9,8 @@
 [![Security][badge-security]][link-security]
 [![NuGet][badge-nuget]][link-nuget]
 
-DEMA Consulting template project for DotNet Libraries, demonstrating best practices for building reusable .NET libraries.
+DEMA Consulting template project for DotNet Libraries, demonstrating best practices for building reusable .NET
+libraries.
 
 The diagram below is a placeholder: replace its TODO boxes to show how an application calls your library's
 subsystems, which inputs it takes, and which outputs it produces.
@@ -25,7 +26,7 @@ This template demonstrates:
 - **Multi-Runtime Support**: Targets .NET Standard 2.0, .NET 8, 9, 10, and 11
 - **xUnit v3**: Modern unit testing with xUnit framework version 3
 - **Comprehensive CI/CD**: GitHub Actions workflows with quality checks and builds
-- **Linting Enforcement**: markdownlint, TextLint, and yamllint enforced on every CI run
+- **Linting Enforcement**: LintMark, TextLint, and yamllint enforced on every CI run
 - **Continuous Compliance**: Compliance evidence generated automatically on every CI run, following
   the [Continuous Compliance][link-continuous-compliance] methodology
 - **SonarCloud Integration**: Quality gate and security analysis on every build
