@@ -1,4 +1,5 @@
 package TemplateDotNetLibrary {
+    public import TemplateDotNetLibrary_Demo::*;
     private import SoftwareItemMetadata::*;
 
     doc

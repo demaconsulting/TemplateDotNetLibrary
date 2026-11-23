@@ -17,7 +17,7 @@ SysML2Tools is verified by two complementary layers of evidence. First, the CI p
 exercises the tool's built-in self-test suite against known-good and known-bad model fixtures
 and writes a TRX file consumed by `reqstream --enforce`.
 
-Second, `lint.ps1` runs `dotnet sysml2tools lint 'docs/sysml2/**/*.sysml'` against the actual
+Second, `lint.ps1` runs `dotnet sysml2tools lint --strict-unresolved 'docs/sysml2/**/*.sysml'` against the actual
 Template DotNet Library model and fails the build on any syntax or reference error. The build-docs
 job runs `dotnet sysml2tools render` to produce one SVG file per declared view under
 `docs/design/generated/`. FileAssert then directly asserts that each declared view's SVG file

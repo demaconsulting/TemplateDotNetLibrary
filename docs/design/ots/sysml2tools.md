@@ -9,7 +9,7 @@ dotnet-tool restore and CI pipeline used by the other pipeline tools.
 
 ### Features Used
 
-- Model validation via `dotnet sysml2tools lint 'docs/sysml2/**/*.sysml'`, which reports syntax
+- Model validation via `dotnet sysml2tools lint --strict-unresolved 'docs/sysml2/**/*.sysml'`, which reports syntax
   errors and unresolved references without producing output files
 - View rendering via `dotnet sysml2tools render`, which renders every `view` declared in
   `docs/sysml2/views/design-views.sysml` to an SVG file named after the view (for example
@@ -19,7 +19,7 @@ dotnet-tool restore and CI pipeline used by the other pipeline tools.
 ### Integration Pattern
 
 SysML2Tools is invoked as a `dotnet tool` from two places: `lint.ps1` runs
-`dotnet sysml2tools lint 'docs/sysml2/**/*.sysml'` as an early-detection lint gate, and
+`dotnet sysml2tools lint --strict-unresolved 'docs/sysml2/**/*.sysml'` as an early-detection lint gate, and
 `.github/workflows/build.yaml` runs the following command
 
 ```pwsh
