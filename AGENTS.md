@@ -145,6 +145,17 @@ responsibility - invoke the lint-fix agent once before submitting a pull request
 CI runs `lint.ps1` which checks: lintmark, textlint, yamllint, dotnet format,
 reqstream, versionmark, reviewmark, and sysml2tools.
 
+# Efficient Validation (ALL Agents)
+
+Full `build.ps1` and `lint.ps1` runs can take many minutes on large repositories. Spend them
+once, not after every edit:
+
+- **While iterating**, run only the checks covering what you just changed - e.g. a test filter or
+  single test project, one linter on the changed files, one document build
+- **Before handing back**, run the full gates your agent requires once; re-run them only if you
+  change files after they pass
+- Never report a targeted check as the full gate - state which full gates ran in your report
+
 # Scope Discipline (ALL Agents Must Follow)
 
 - **No generated file access**: Files inside any `generated/` folder are build

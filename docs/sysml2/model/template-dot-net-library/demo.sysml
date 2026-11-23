@@ -1,4 +1,4 @@
-package TemplateDotNetLibrary {
+package TemplateDotNetLibrary_Demo {
     private import SoftwareItemMetadata::*;
 
     part def Demo {
