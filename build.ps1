@@ -1,8 +1,5 @@
 # build.ps1
 #
-# TODO: Update this script to build and test your solution.
-# Replace {ProjectName} with your actual solution/project name.
-#
 # PURPOSE:
 #   Builds the solution in Release configuration and runs the unit tests, either all of them
 #   (-All, the full local build and test run) or only the test projects a change affects
@@ -15,7 +12,7 @@
 #                                              (default origin/main, else main) plus uncommitted changes
 #   pwsh ./build.ps1 -Project Tests            Only the test projects affected by the named projects (full or short
 #                                              names: Core is the core library, other short names are relative to it,
-#                                              so Tests is SystemName.Tests here; -Help lists this repository's)
+#                                              so Tests is DemaConsulting.TemplateDotNetLibrary.Tests here; -Help lists this repository's)
 #   Add -DryRun to any scope to print the selection without building anything.
 #   With no arguments the usage text is printed and the script exits 1 (a scope must be chosen).
 #
@@ -40,6 +37,11 @@
 #   With no arguments the script prints the usage text and exits 1; -All must still build and run
 #   the standard test suite (agents rely on that), and never remove or weaken a test step to make
 #   it pass.
+#
+#   When creating a new library from this template, no edit is needed for the project names: the
+#   scripts discover the projects from the solution and the ProjectReference graph. Add a
+#   $RuntimeReads entry for each repository file a test reads at run time, and put any extra
+#   build, packaging, or test steps at the [PROJECT-SPECIFIC] points.
 
 param(
     # Full local build and all tests.
@@ -65,7 +67,7 @@ Import-Module (Join-Path $PSScriptRoot 'scripts/ProjectScripts.psm1') -Force
 
 # [PROJECT-SPECIFIC] Repository files that tests read at run time (through the repository root, not through a
 # project item), mapped to the test project that reads them. Keep in step with the tests. Example:
-#   '^docs/user_guide/tool\.md$' = 'SystemName.Tests'
+#   '^docs/user_guide/library\.md$' = 'DemaConsulting.TemplateDotNetLibrary.Tests'
 $RuntimeReads = [ordered]@{}
 
 # ==============================================================================
