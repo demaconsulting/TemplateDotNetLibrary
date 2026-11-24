@@ -38,9 +38,9 @@
 #   the standard test suite (agents rely on that), and never remove or weaken a test step to make
 #   it pass.
 #
-#   When creating a new library from this template, no edit is needed for the project names: the
-#   scripts discover the projects from the solution and the ProjectReference graph. Add a
-#   $RuntimeReads entry for each repository file a test reads at run time, and put any extra
+#   When creating a new library from this template, the project names need no edit: Get-ProjectGraph
+#   scans the .csproj files under src/, test/, and tools/ (call it with -Root to scan other folders).
+#   Add a $RuntimeReads entry for each repository file a test reads at run time, and put any extra
 #   build, packaging, or test steps at the [PROJECT-SPECIFIC] points.
 
 param(
